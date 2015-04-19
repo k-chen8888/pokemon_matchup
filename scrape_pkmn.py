@@ -52,12 +52,10 @@ def pkmn(base_url = "http://serebii.net/pokedex-xy/"):
 		# Name
 		pokemon['name'] = summary[1].renderContents().strip()
 		# Types
+		pokemon['type'] = []
 		typelist = soup.find("td", { "class" : "cen" })
-		count = 1
 		for child in typelist.findAll("img"):
-			typen = "type" + str(count)
-			pokemon[typen] = str(child)[38:-7]
-			count += 1
+			pokemon['type']. append( str(child)[38:-7] )
 		# Moves and abilities
 		pokemon['abilities'] = []
 		pokemon['moves'] = []
@@ -92,12 +90,10 @@ def pkmn(base_url = "http://serebii.net/pokedex-xy/"):
 			pokemon_x['moves'] = pokemon['moves']
 			
 			# Types may change
+			pokemon_x['type'] = []
 			typelist_x = soup.find(text = re.compile(r'Mega Evolution X$') ).parent.parent.parent.parent.parent.find("td", { "class" : "cen" })
-			count = 1
-			for child in typelist_x.findAll("img"):
-				typen = "type" + str(count)
-				pokemon_x[typen] = str(child)[38:-7]
-				count += 1
+			for child in typelist_y.findAll("img"):
+				pokemon_x['type'].append( str(child)[38:-7] )
 			
 			# Abilities may change
 			pokemon_x['abilities'] = [ pokemon['abilities'].pop(-2) ]
@@ -122,14 +118,12 @@ def pkmn(base_url = "http://serebii.net/pokedex-xy/"):
 			pokemon_y['id'] = pokemon['id']
 			
 			pokemon_y['moves'] = pokemon['moves']
-						
+			
 			# Types may change
+			pokemon_y['type'] = []
 			typelist_y = soup.find(text = re.compile(r'Mega Evolution Y$') ).parent.parent.parent.parent.parent.find("td", { "class" : "cen" })
-			count = 1
 			for child in typelist_y.findAll("img"):
-				typen = "type" + str(count)
-				pokemon_y[typen] = str(child)[38:-7]
-				count += 1
+				pokemon_y['type'].append( str(child)[38:-7] )
 			
 			# Abilities may change
 			pokemon_y['abilities'] = [pokemon['abilities'].pop()]

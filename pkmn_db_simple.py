@@ -64,7 +64,7 @@ formats = ['NU', 'UU', 'OU', 'Uber', 'Smogon']
 Make a database in the cwd if it doesn't already exist
 Engine is used to store data in database in local directory
 '''
-engine = create_engine('sqlite:///C:\\Users\\ScionOfTheVoid\\Documents\\GitHub\\pokemon_matchup\\pkmn_db.db', echo = True)
+engine = create_engine('sqlite:///pkmn_db_simple.db', echo = True)
 Base = declarative_base()
 
 
@@ -141,6 +141,7 @@ class Pokemon(Base):
 	# Takes a dictionary that represents a Pokemon
 	def __init__(self, stats):
 		self.name = stats['name']
+		self.dex_id = stats['id']
 		
 		# Populate types
 		self.type1 = stats['type'][0]
@@ -155,10 +156,10 @@ class Pokemon(Base):
 		self.base_spdef = stats['base'][4]
 		self.base_spd = stats['base'][5]
 		
-		# Can this Pokemon Mega-Evolve?
-		self.mega = stats['can_mega']
+		# Is this Pokemon a Mega-Evolution?
+		self.mega = stats['mega']
 
-		
+
 '''
 All possible moves
 '''

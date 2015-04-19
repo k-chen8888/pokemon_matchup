@@ -132,21 +132,6 @@ class Pokemon(Base):
 	base_spdef = Column(Integer, nullable = False)
 	base_spd = Column(Integer, nullable = False)
 	
-	# Can this Pokemon Mega-Evolve?
-	can_mega = Column(Boolean, default = False)
-	
-	# Mega-Evolution types
-	mega_type1 = Column(Integer)
-	mega_type2 = Column(Integer)
-	
-	# Base stats (Mega Evolution)
-	base_mega_hp = Column(Integer)
-	base_mega_atk = Column(Integer)
-	base_mega_def = Column(Integer)
-	base_mega_spatk = Column(Integer)
-	base_mega_spdef = Column(Integer)
-	base_mega_spd = Column(Integer)
-	
 	# Move pool and ability pool(many to many)
 	possible_moves = relationship("Move", secondary = moveset)
 	possible_abilities = relationship("Ability", secondary = abilityset)
@@ -178,23 +163,8 @@ class Pokemon(Base):
 		self.base_spdef = stats['base'][4]
 		self.base_spd = stats['base'][5]
 		
-		# Can this Pokemon Mega-Evolve?
-		self.can_mega = stats['can_mega']
-		
-		# Type for Mega-Evolution
-		if len(stats['mega_type']) > 0:
-			self.mega_type1 = stats['type'][0]
-			if len(stats['mega_type']) > 1:
-				self.mega_type2 = stats['type'][1]
-		
-		# Populate base Mega stats
-		if len(stats['base_mega']) > 0:
-			self.base_mega_hp = stats['base_mega'][0]
-			self.base_mega_atk = stats['base_mega'][1]
-			self.base_mega_def = stats['base_mega'][2]
-			self.base_mega_spatk = stats['base_mega'][3]
-			self.base_mega_spdef = stats['base_mega'][4]
-			self.base_mega_spd = stats['base_mega'][5]
+		# Is this Pokemon a Mega-Evolution?
+		self.mega = stats['mega']
 
 
 '''
