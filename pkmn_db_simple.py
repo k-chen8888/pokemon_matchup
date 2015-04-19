@@ -23,6 +23,11 @@ pkmn_types = ['normal', 'fire', 'water', 'electric', 'grass', 'ice',
 			  'rock', 'ghost', 'dragon', 'dark', 'steel', 'fairy']
 
 
+# Use this to look up move categories
+# Save category in database as array index
+move_cats = ['physical', 'special', 'other']
+
+
 # Table of damage multipliers for type matchups (indices match the pkmn_types array)
 #	Row: Attacking type
 # 	Column: Defending type
@@ -163,7 +168,8 @@ class Move(Base):
 	id = Column(Integer, primary_key = True)
 	
 	name = Column(String(20), nullable = False)
-	type = Column(Integer, nullable = False)
+	move_type = Column(Integer, nullable = False)
+	move_cat = Column(Integer, nullable = False)
 	base_power = Column(Integer, nullable = False)
 	
 	# The higher the speed priority, the faster it is; 0 means read from SPD staticmethod
@@ -176,7 +182,7 @@ class Move(Base):
 	# Takes a dictionary that represents a move
 	def __init__(self, stats):
 		self.name = stats['name']
-		self.type = stats['type']
+		self.move_type = stats['type']
 		self.base_power = stats['base_power']
 
 
