@@ -156,7 +156,7 @@ class Pokemon(Base):
 		self.base_spd = stats['base'][5]
 		
 		# Can this Pokemon Mega-Evolve?
-		self.can_mega = stats['can_mega']
+		self.mega = stats['can_mega']
 
 '''
 All possible moves
