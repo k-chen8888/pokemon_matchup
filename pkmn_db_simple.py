@@ -64,7 +64,7 @@ formats = ['NU', 'UU', 'OU', 'Uber', 'Smogon']
 Make a database in the cwd if it doesn't already exist
 Engine is used to store data in database in local directory
 '''
-engine = create_engine('sqlite:///C:\\Users\\ScionOfTheVoid\\Documents\\GitHub\\pokemon_matchup\\pkmn_db.db', echo = True)
+engine = create_engine('sqlite:///pkmn_db_simple.db', echo = True)
 Base = declarative_base()
 
 
