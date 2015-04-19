@@ -158,6 +158,7 @@ class Pokemon(Base):
 		# Can this Pokemon Mega-Evolve?
 		self.mega = stats['can_mega']
 
+		
 '''
 All possible moves
 '''
@@ -206,6 +207,14 @@ class HoldItem(Base):
 	# Pokemon holding this item
 	# Parent in relationship
 	held_by = relationship("TrainedPokemon")
+	
+	
+	# Add hold item to database
+	# Takes a dictionary that represents a hold item
+	def __init__(self, stats):
+		self.name = stats['name']
+		self.fling_dmg = stats['fling']
+		self.mega_stone = stats['mega_stone']
 
 
 '''
@@ -222,6 +231,12 @@ class Ability(Base):
 	# Pokemon with this ability
 	# Parent in relationship
 	has_ability = relationship("TrainedPokemon")
+	
+	
+	# Add ability to database
+	# Takes a dictionary that represents an ability
+	def __init__(self, stats):
+		self.name = stats['name']
 
 
 '''
