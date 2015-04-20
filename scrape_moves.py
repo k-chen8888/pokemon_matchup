@@ -96,7 +96,7 @@ def moves(base_url = "http://serebii.net/attackdex-xy/"):
 			if i == priority_loc:
 				try:
 					# print "Priority", child.getText().strip()
-					move['priority'] = abs( int( child.getText().strip() ) )
+					move['priority'] = int( child.getText().strip() )
 				except:
 					priority_loc += 1
 			

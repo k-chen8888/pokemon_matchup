@@ -55,7 +55,7 @@ if __name__ == '__main__':
 	# For each item, make a new HoldItem and commit to database
 	# Only add if it doesn't exist
 	for i in d_items:
-		if not Session.query(exists().where(HoldItem.name == i['name'])).scalar():
+		if not s.query(exists().where(HoldItem.name == i['name'])).scalar():
 			new_item = HoldItem(i)
 			s.add(new_item)
 		s.commit()
@@ -63,7 +63,7 @@ if __name__ == '__main__':
 	# For each move, make a new Move and commit to database
 	# Only add if it doesn't exist
 	for m in d_moves:
-		if not Session.query(exists().where(Move.name == m['name'])).scalar():
+		if not s.query(exists().where(Move.name == m['name'])).scalar():
 			new_move = Move(m)
 			s.add(new_move)
 		s.commit()
@@ -71,7 +71,7 @@ if __name__ == '__main__':
 	# For each item, make a new Ability and commit to database
 	# Only add if it doesn't exist
 	for a in d_abilities:
-		if not Session.query(exists().where(Ability.name == a['name'])).scalar():
+		if not s.query(exists().where(Ability.name == a['name'])).scalar():
 			new_ability = Ability(a)
 			s.add(new_ability)
 		s.commit()
@@ -81,14 +81,23 @@ if __name__ == '__main__':
 	# Set up relationship between (moves, abilities) and the Pokemon that can possibly have them
 	#	Again, only add an entry if it doesn't exist
 	for p in d_pkmn:
-		if not Session.query(exists().where(Pokemon.name == p['name'])).scalar():
+		if not s.query(exists().where(Pokemon.name == p['name'])).scalar():
 			new_pkmn = Pokemon(p)
-			s.add(new_pkmn)
 			
 			# Moves
-			
-			
+			for m in d_pkmn['moves']:
+				# Pull the Move object to add out of database
+				link_move = s.query(Move).filter_by(name = m).first()
+				# Actually add the move to the list of possible moves
+				new_pkmn.possible_moves.append(link_move)
+				
 			# Abilities
+			for a in d_pkmn['abilities']:
+				# Pull the Ability object to add out of database
+				link_ability = s.query(Ability).filter_by(name = a).first()
+				# Actually add the ability to the list of possible abilities
+				new_pkmn.possible_abilities.append(link_ability)
 			
+			s.add(new_pkmn)
 		
 		s.commit()

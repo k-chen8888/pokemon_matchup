@@ -18,6 +18,28 @@ pkmn_types = ['normal', 'fire', 'water', 'electric', 'grass', 'ice',
 			  'rock', 'ghost', 'dragon', 'dark', 'steel', 'fairy']
 
 
+# Use this to look up the type granted to Arceus by its hold item
+# Key = name of plate
+plate_types = {}
+plate_types['dragon'] = 'Draco Plate'
+plate_types['dark'] = 'Dread Plate'
+plate_types['ground'] = 'Earth Plate'
+plate_types['fighting'] = 'Fist Plate'
+plate_types['fire'] = 'Flame Plate'
+plate_types['ice'] = 'Icicle Plate'
+plate_types['bug'] = 'Insect Plate'
+plate_types['steel'] = 'Iron Plate'
+plate_types['grass'] = 'Meadow Plate'
+plate_types['psychic'] = 'Mind Plate'
+plate_types['fairy'] = 'Pixie Plate'
+plate_types['flying'] = 'Sky Plate'
+plate_types['water'] = 'Splash Plate'
+plate_types['ghost'] = 'Spooky Plate'
+plate_types['rock'] = 'Stone Plate'
+plate_types['poison'] = 'Toxic Plate'
+plate_types['electric'] = 'Zap Plate'
+
+
 # Use this to look up move categories
 # Save category in database as array index
 move_cats = ['physical', 'special', 'other']
