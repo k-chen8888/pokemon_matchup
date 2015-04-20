@@ -51,6 +51,7 @@ def pkmn(base_url = "http://serebii.net/pokedex-xy/"):
 		pokemon['id'] = i
 		# Name
 		pokemon['name'] = summary[1].renderContents().strip()
+		pokemon['mega'] = False
 		# Types
 		pokemon['type'] = []
 		typelist = soup.find("td", { "class" : "cen" })
@@ -285,6 +286,7 @@ def pkmn(base_url = "http://serebii.net/pokedex-xy/"):
 			pokemon_x = {}
 			pokemon_x['name'] = "Mega " + pokemon['name'] + " X"
 			pokemon_x['id'] = pokemon['id']
+			pokemon_x['mega'] = True
 			
 			pokemon_x['moves'] = pokemon['moves']
 			
@@ -315,6 +317,7 @@ def pkmn(base_url = "http://serebii.net/pokedex-xy/"):
 			pokemon_y = {}
 			pokemon_y['name'] = "Mega " + pokemon['name'] + " Y"
 			pokemon_y['id'] = pokemon['id']
+			pokemon_y['mega'] =  True
 			
 			pokemon_y['moves'] = pokemon['moves']
 						
@@ -379,6 +382,7 @@ def pkmn(base_url = "http://serebii.net/pokedex-xy/"):
 			pokemon_mega = {}
 			pokemon_mega['name'] = "Mega " + pokemon['name']
 			pokemon_mega['id'] = pokemon['id']
+			pokemon_mega['mega'] = True
 			
 			pokemon_mega['moves'] = pokemon['moves']
 			

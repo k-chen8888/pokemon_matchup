@@ -187,8 +187,8 @@ class Pokemon(Base):
 		self.base_spdef = stats['base'][4]
 		self.base_spd = stats['base'][5]
 		
-		# Can this Pokemon Mega-Evolve?
-		self.mega = stats['can_mega']
+		# Is this Pokemon a Mega-Evolution?
+		self.mega = stats['mega']
 
 		
 '''
