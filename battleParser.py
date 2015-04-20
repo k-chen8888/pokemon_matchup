@@ -38,13 +38,16 @@ def player(input):
 		p1a.name = input[3]
 	else:
 		p2a.name = input[3]
-	
+
+#|poke|p1|Togekiss, F
 def pokemon(input):
 	if(input[2] == "p1")
 		p1a.pokemon[input[3]] = Pokemon(input[3])
 	else:
 		p2a.pokemon[input[3]] = Pokemon(input[3])
 
+#|switch|p2a: LCS is on rn|Dialga|243\/404
+#|drag|p1a: Vaporeon|Vaporeon, F|379\/463
 def switch(input):
 	nick = input[2].split()
 	if("p1a:" in nick[0]):
@@ -55,6 +58,7 @@ def switch(input):
 		p2cur = p2a.pokemon[input[3]]
 		p2cur.nickname = nick[1]
 
+#|-ability|p2a: LCS is on rn|Pressure		
 def ability(input):
 	nick = input[2].split()
 	if("p1a:" in nick[0]):
@@ -62,13 +66,14 @@ def ability(input):
 	else:
 		p2cur.ability = input[3]
 
-	
+#|detailschange|p1a: i built that.|Kyogre-Primal
+##|-mega|p2a: steeljackal<3|Sableye|Sablenite
 def transformation(input):
 	nick = input[2].split()
 	if "p1a:" in nick[0]:
-		p1a.formchange += 1
+		
 	else:
-		p2a.formchange += 1
+		
 
 #|move|p1a: Lopunny|Fake Out|p2a: Umbreon
 def move(input):
@@ -90,6 +95,7 @@ def heal(input):
 	else:
 		
 #|-enditem|p2a: Umbreon|Red Card|[of] p1a: Lopunny
+#|-enditem|p2a: Zell|Normal Gem|[from] gem|[move] Quick Attack
 def item(input):
 	
 
