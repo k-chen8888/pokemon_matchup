@@ -148,8 +148,10 @@ class Pokemon(Base):
 	
 	id = Column(Integer, primary_key = True)
 	
-	# Pokemon name
+	
+	# Pokemon name and PokeDex ID
 	name = Column(String(12), nullable = False)
+	dex_id = Column(Integer, nullable = False)
 	
 	# Pokemon type (up to 2)
 	type1 = Column(Integer, nullable = False)
@@ -163,20 +165,8 @@ class Pokemon(Base):
 	base_spdef = Column(Integer, nullable = False)
 	base_spd = Column(Integer, nullable = False)
 	
-	# Can this Pokemon Mega-Evolve?
-	can_mega = Column(Boolean, default = False)
-	
-	# Mega-Evolution types
-	mega_type1 = Column(Integer)
-	mega_type2 = Column(Integer)
-	
-	# Base stats (Mega Evolution)
-	base_mega_hp = Column(Integer)
-	base_mega_atk = Column(Integer)
-	base_mega_def = Column(Integer)
-	base_mega_spatk = Column(Integer)
-	base_mega_spdef = Column(Integer)
-	base_mega_spd = Column(Integer)
+	# Is this Pokemon a Mega-Evolution?
+	mega = Column(Boolean, default = False)
 	
 	# Move pool and ability pool(many to many)
 	possible_moves = relationship("Move", secondary = moveset)
@@ -195,6 +185,7 @@ class Pokemon(Base):
 	# Takes a dictionary that represents a Pokemon
 	def __init__(self, stats):
 		self.name = stats['name']
+		self.dex_id = stats['id']
 		
 		# Populate types
 		self.type1 = stats['type'][0]
@@ -209,8 +200,8 @@ class Pokemon(Base):
 		self.base_spdef = stats['base'][4]
 		self.base_spd = stats['base'][5]
 		
-		# Can this Pokemon Mega-Evolve?
-		self.can_mega = stats['can_mega']
+		#Is this Pokemon a Mega-Evolution?
+		self.mega = stats['can_mega']
 
 
 '''
@@ -240,8 +231,11 @@ class Move(Base):
 	# Takes a dictionary that represents a move
 	def __init__(self, stats):
 		self.name = stats['name']
-		self.move_type = stats['type']
+		self.move_type = stats['move_type']
+		self.move_cat = stats['move_cat']
 		self.base_power = stats['base_power']
+		self.priority = stats['priority']
+		self.accuracy = stats['accuracy']
 
 
 '''

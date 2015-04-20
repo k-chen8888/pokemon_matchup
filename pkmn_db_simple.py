@@ -172,6 +172,7 @@ class Pokemon(Base):
 	# Takes a dictionary that represents a Pokemon
 	def __init__(self, stats):
 		self.name = stats['name']
+		self.dex_id = stats['id']
 		
 		# Populate types
 		self.type1 = pkmn_types.index( stats['type'][0] )
@@ -214,8 +215,11 @@ class Move(Base):
 	# Takes a dictionary that represents a move
 	def __init__(self, stats):
 		self.name = stats['name']
-		self.move_type = stats['type']
+		self.move_type = stats['move_type']
+		self.move_cat = stats['move_cat']
 		self.base_power = stats['base_power']
+		self.priority = stats['priority']
+		self.accuracy = stats['accuracy']
 
 
 '''
