@@ -24,7 +24,7 @@ pkmn_types = ['normal', 'fire', 'water', 'electric', 'grass', 'ice',
 
 
 # Use this to look up the type granted to Arceus by its hold item
-# Key = name of plate
+# Key = type
 plate_types = {}
 plate_types['dragon'] = 'Draco Plate'
 plate_types['dark'] = 'Dread Plate'
@@ -43,6 +43,15 @@ plate_types['ghost'] = 'Spooky Plate'
 plate_types['rock'] = 'Stone Plate'
 plate_types['poison'] = 'Toxic Plate'
 plate_types['electric'] = 'Zap Plate'
+
+
+# Use this to look up the type granted to Techno Blast
+# Key = type
+techno_blast = {}
+techno_blast['electric'] = "Shock Drive"
+techno_blast['fire'] = "Burn Drive"
+techno_blast['ice'] = "Chill Drive"
+techno_blast['water'] = "Douse Drive"
 
 
 # Use this to look up move categories

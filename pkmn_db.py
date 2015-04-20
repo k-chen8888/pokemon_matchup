@@ -40,6 +40,15 @@ plate_types['poison'] = 'Toxic Plate'
 plate_types['electric'] = 'Zap Plate'
 
 
+# Use this to look up the type granted to Techno Blast
+# Key = type
+techno_blast = {}
+techno_blast['electric'] = "Shock Drive"
+techno_blast['fire'] = "Burn Drive"
+techno_blast['ice'] = "Chill Drive"
+techno_blast['water'] = "Douse Drive"
+
+
 # Use this to look up move categories
 # Save category in database as array index
 move_cats = ['physical', 'special', 'other']

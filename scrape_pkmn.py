@@ -25,8 +25,8 @@ def pkmn(base_url = "http://serebii.net/pokedex-xy/"):
 	# Store the pokedex as a list of dictionaries
 	pokedex = []
 	
-	# Get each Pokemon (there are 721)
-	for i in range(678, 679):
+	# Get each Pokemon (there are 721, but Hoopa and Volcanion are not yet released)
+	for i in range(1, 720):
 		page = str(i)
 		
 		# Fix the length of the page
@@ -193,7 +193,43 @@ def pkmn(base_url = "http://serebii.net/pokedex-xy/"):
 			pokedex.append(therian_645)
 		
 		elif i == 646: # Kyurem
-			pass
+			# Remove exclusive abilities
+			pokemon['abilities'].remove("Teravolt")
+			pokemon['abilities'].remove("Turboblaze")
+			
+			# Sort moves by the version that has them
+			plain_moves = ["Scary Face", "Glaciate"]
+			black_moves = ["Fusion Flare", "Ice Burn"]
+			for bm in black_moves:
+				pokemon['moves'].remove(bm)
+			white_moves = ["Fusion Bolt", "Freeze Shock"]
+			for wm in white_moves:
+				pokemon['moves'].remove(wm)
+			
+			black = copy.deepcopy(pokemon)
+			black['name'] = "Black " + pokemon['name']
+			black['abilities'] = ["Teravolt"]
+			black['base'] = [125, 170, 100, 120, 90, 95]
+			for pm in plain_moves:
+				black['moves'].remove(pm)
+			for bm in black_moves:
+				black['moves'].append(bm)
+			# Add black form
+			pokedex.append(black)
+			
+			white = copy.deepcopy(pokemon)
+			white['name'] = "White " + pokemon['name']
+			white['abilities'] = ["Turboblaze"]
+			white['base'] = [125, 120, 90, 170, 100, 95]
+			for pm in plain_moves:
+				white['moves'].remove(pm)
+			for wm in white_moves:
+				white['moves'].append(wm)
+			# Add white form
+			pokedex.append(white)
+		
+		elif i == 669: # Flabebe
+			pokemon['name'] = "Flabebe"
 		
 		elif i == 678: # Meowstic
 			# Remove female's abilities and moves
@@ -212,10 +248,15 @@ def pkmn(base_url = "http://serebii.net/pokedex-xy/"):
 			pokedex.append(female)
 		
 		elif i == 681: # Aegislash
-			pass
+			blade = copy.deepcopy(pokemon)
+			blade['name'] = pokemon['name'] + " Blade Form"
+			blade['base'] = [60, 150, 50, 150, 50, 60]
+			# Add Blade Form
+			pokedex.append(blade)
 		
 		else:
 			pass
+		
 		# Add another entry if this Pokemon has a Mega-Evolution
 		if soup.findAll(text = re.compile(r'Mega Evolution X$') ):
 			# print "mega X & Y"
@@ -276,7 +317,43 @@ def pkmn(base_url = "http://serebii.net/pokedex-xy/"):
 			print pokemon_y
 			# Add to list
 			pokedex.append(pokemon_y)
+		
+		# Manually input primal reversion, since there are only 2
+		elif pokemon['id'] == 382: # Kyogre
+			pokemon_primal = {}
+			pokemon_primal['name'] = "Primal Kyogre"
+			pokemon_primal['id'] = pokemon['id']
 			
+			pokemon_primal['moves'] = copy.deepcopy( pokemon['moves'] )
+			
+			pokemon_primal['type'] = copy.deepcopy( pokemon['type'] )
+			
+			pokemon_primal['abilities'] = [pokemon['abilities'].pop()]
+			
+			pokemon_primal['base'] = [100, 100, 90, 150, 140, 90]
+			
+			print pokemon_primal
+			# Add to list
+			pokedex.append(pokemon_primal)
+		
+		elif pokemon['id'] == 383: # Groudon
+			pokemon_primal = {}
+			pokemon_primal['name'] = "Primal Groudon"
+			pokemon_primal['id'] = pokemon['id']
+			
+			pokemon_primal['moves'] = copy.deepcopy( pokemon['moves'] )
+			
+			pokemon_primal['type'] = copy.deepcopy( pokemon['type'] )
+			pokemon_primal['type'].append( 'fire' )
+			
+			pokemon_primal['abilities'] = [pokemon['abilities'].pop()]
+			
+			pokemon_primal['base'] = [100, 180, 160, 150, 90, 90]
+			
+			print pokemon_primal
+			# Add to list
+			pokedex.append(pokemon_primal)
+		
 		elif soup.findAll(text = re.compile(r'Mega Evolution$') ):
 			pokemon_mega = {}
 			pokemon_mega['name'] = "Mega " + pokemon['name']
@@ -305,42 +382,6 @@ def pkmn(base_url = "http://serebii.net/pokedex-xy/"):
 			# Add to list
 			pokedex.append(pokemon_mega)
 		
-		# Manually input primal reversion, since there are only 2
-		elif pokemon['id'] == 382: # Kyogre
-			pokemon_primal = {}
-			pokemon_primal['name'] = "Primal Kyogre"
-			pokemon_primal['id'] = pokemon['id']
-			
-			pokemon_primal['moves'] = pokemon['moves']
-			
-			pokemon_primal['type1'] = pokemon['type1']
-			
-			pokemon_primal['abilities'] = [pokemon['abilities'].pop()]
-			
-			pokemon_primal['base'] = [100, 100, 90, 150, 140, 90]
-			
-			print pokemon_primal
-			# Add to list
-			pokedex.append(pokemon_primal)
-		
-		elif pokemon['id'] == 383: # Groudon
-			pokemon_primal = {}
-			pokemon_primal['name'] = "Primal Groudon"
-			pokemon_primal['id'] = pokemon['id']
-			
-			pokemon_primal['moves'] = pokemon['moves']
-			
-			pokemon_primal['type1'] = pokemon['type1']
-			pokemon_primal['type2'] = 'fire'
-			
-			pokemon_primal['abilities'] = [pokemon['abilities'].pop()]
-			
-			pokemon_primal['base'] = [100, 180, 160, 150, 90, 90]
-			
-			print pokemon_primal
-			# Add to list
-			pokedex.append(pokemon_primal)
-			
 		else:
 			pass
 		
