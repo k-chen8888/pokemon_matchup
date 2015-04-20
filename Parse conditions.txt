@@ -1,0 +1,64 @@
+
+
+
+while (not EOF)
+scan for 
+
+|player
+	|p1
+	|p2
+		|<playerName>
+		
+|tier
+	|<tier>
+	
+|poke
+	|p1
+	|p2
+		|<pkmnName>
+
+|switch
+	|p1a: <pknickname>|<pkmn>
+	|p2a: <pknickname>|<pkmn>
+	
+|-ability|p#a: <pknickname>|<ability>
+
+|-weather
+	|<weatherType>
+	
+|-mega
+	|p1a: <pknickname>|<pkmn>|<stone>
+	|p2a: <pknickname>|<pkmn>|<stone>
+	
+|detialschange
+	|p1a: <pknickname>|<pkmn>-Primal
+	|p2a: <pknickname>|<pkmn>-Mega
+	
+|move
+	|p#a: <(attacker)pknickname>|<move>|p#a: <(target)pknickname>
+	
+|-resisted
+	|p#a: <(target)pknickname>
+
+|-supereffective
+	|p#a: <(target)pknickname>
+
+|-crit
+	|p#a: <(target)pknickname>
+	
+|faint
+	|p#a: <(fainted)pknickname>
+	
+|-status
+	|p#a: <(target)pknickname>|<condition>
+	
+|-heal
+	|p#a: <pknickname> <Health info>
+		|[from] item: <itemname>
+		
+|-sidestart
+	|p#a: <(affected)playername>
+		|<entryHazard>
+
+|turn
+	|<turn#>
