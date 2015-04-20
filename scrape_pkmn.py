@@ -102,6 +102,27 @@ def pkmn(base_url = "http://serebii.net/pokedex-xy/"):
 			# Add snowy form
 			pokedex.append(snowy)
 		
+		elif i == 386: # Deoxys
+			pokemon['base'] = [50, 150, 50, 150, 50, 150]
+			
+			attack = copy.deepcopy(pokemon)
+			attack['name'] = pokemon['name'] + " Attack Form"
+			attack['base'] = [50, 180, 20, 180, 20, 150]
+			# Add attack form
+			pokedex.append(attack)
+			
+			defense = copy.deepcopy(pokemon)
+			defense['name'] = pokemon['name'] + " Defense Form"
+			defense['base'] = [50, 180, 20, 180, 20, 150]
+			# Add defense form
+			pokedex.append(defense)
+			
+			speed = copy.deepcopy(pokemon)
+			speed['name'] = pokemon['name'] + " Speed Form"
+			speed['base'] = [50, 180, 20, 180, 20, 150]
+			# Add speed form
+			pokedex.append(speed)
+		
 		elif i == 479: # Rotom
 			# Exclusive elemental moves
 			elem_moves = ['Blizzard', 'Overheat', 'Leaf Storm', 'Air Slash', 'Hydro Pump']
