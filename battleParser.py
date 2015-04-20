@@ -1,7 +1,8 @@
-battleData = {"tier":"-", "winner":"-", "turns":0}
+import json
 
+battle = {}
 p1a = Player()		
-p2a =Player()
+p2a = Player()
 
 #p1cur
 #p2cur
@@ -9,24 +10,22 @@ p2a =Player()
 class Player:
 	def __init__(self)
 		self.name = ""
-		#self.weather = 0
-		self.formchange = 0
-		self.status = 0
-		self.resisted = 0
-		self.supereffective = 0
-		self.heal = 0
 		self.pokemon = {}
-		self.hazard = 0
 		
 class Pokemon:
 	def __init__(self, pkname):
 		self.name = pkname
-			self.nickname = ""
-		self.move = []
+		self.nickname = ""
+		self.item = ""
 		self.ability = ""
+		self.move = []
+		
 		
 #This is the parsing function		
 def parse_line(input):
+	#Take the input
+	#Split it up
+	#switch/If it into proper function
 	data = input.split("|")
 		
 	
@@ -63,7 +62,6 @@ def ability(input):
 	else:
 		p2cur.ability = input[3]
 
-#def weather(input)
 	
 def transformation(input):
 	nick = input[2].split()
@@ -71,7 +69,8 @@ def transformation(input):
 		p1a.formchange += 1
 	else:
 		p2a.formchange += 1
-	
+
+#|move|p1a: Lopunny|Fake Out|p2a: Umbreon
 def move(input):
 	nick = input[2].split()
 	if("p1a:" in nick[0]):
@@ -81,17 +80,38 @@ def move(input):
 		if(input[3] not in p2cur.move):
 			p2cur.move.append(input[3])
 
-def entryhazard(input):
-	
-	
-def status(input):
 
+#|-heal|p1a: Pokemon|###\/###|[from] drain|[of] p2a: Pokemon
+#|-heal|p1a: Pokemon|###\/###|[from] item: Leftovers
 def heal(input):
+	nick = input[2].split(":")
+	if("p1a" in nick[0]):
+		
+	else:
+		
+#|-enditem|p2a: Umbreon|Red Card|[of] p1a: Lopunny
+def item(input):
+	
 
 def resisted(input):
-
-def super_eff(input):
 
 def faint(input):
 
 def turn(input):
+
+#Battle{
+#	Player1 :
+#		Name: 
+#		Pokemon1 : {
+#			Item : 
+#			Ability : 
+#			Move1 : 
+#			Move2 :
+#			Move3 :
+#			Move4 :
+#			}
+#		Pokemon2 : 
+#	Player2 :
+#	Winner : 0/1
+#}
+		

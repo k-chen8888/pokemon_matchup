@@ -1,0 +1,71 @@
+
+
+|player|p1|pansexual skitty|100
+|player|p2|Jibaku|162
+
+|tier|Ubers
+
+|poke|p1|Tyranitar, F
+|poke|p1|Excadrill, F
+|poke|p1|Arceus-*
+|poke|p1|Kyogre
+|poke|p1|Latias, F
+|poke|p1|Klefki, M
+
+|poke|p2|Arceus-*
+|poke|p2|Kyogre
+|poke|p2|Dialga
+|poke|p2|Klefki, M
+|poke|p2|Ho-Oh
+|poke|p2|Sableye, M
+
+|start
+|switch|p1a: amg|Tyranitar, F|403\/403
+|switch|p2a: steeljackal<3|Sableye, M|303\/303
+|-weather|Sandstorm
+|turn|1
+
+|switch|p1a: i built that.|Kyogre|394\/394
+|detailschange|p1a: i built that.|Kyogre-Primal
+|message|i built that.'s Primal Reversion! It reverted to its primal form!
+|-weather|PrimordialSea
+|detailschange|p2a: steeljackal<3|Sableye-Mega, M
+|-mega|p2a: steeljackal<3|Sableye|Sablenite
+|move|p2a: steeljackal<3|Toxic|p1a: i built that.
+|-status|p1a: i built that.|tox
+|
+|-weather|PrimordialSea|[upkeep]
+|-damage|p1a: i built that.|370\/394 tox|[from] psn
+
+|switch|p2a: LCS is on rn|Dialga|404\/404
+|-ability|p2a: LCS is on rn|Pressure
+|move|p1a: i built that.|Origin Pulse|p2a: LCS is on rn
+|-resisted|p2a: LCS is on rn
+|-damage|p2a: LCS is on rn|243\/404
+|
+|-weather|PrimordialSea|[upkeep]
+|-damage|p1a: i built that.|322\/394 tox|[from] psn
+|turn|3
+|switch|p1a: filthy APE|Arceus-Ghost|443\/443
+|move|p2a: LCS is on rn|Stealth Rock|p1a: filthy APE
+|-sidestart|p1: pansexual skitty|move: Stealth Rock
+|
+|turn|4
+|switch|p2a: LCS is on rn|Ho-Oh|415\/415
+|move|p1a: filthy APE|Judgment|p2a: LCS is on rn
+|-damage|p2a: LCS is on rn|294\/415
+|turn|5
+|
+|move|p1a: filthy APE|Stone Edge|p2a: LCS is on rn
+|-supereffective|p2a: LCS is on rn
+|-damage|p2a: LCS is on rn|0 fnt
+|faint|p2a: LCS is on rn
+|switch|p2a: LCS is on rn|Kyogre|404\/404
+|detailschange|p2a: LCS is on rn|Kyogre-Primal
+|message|LCS is on rn's Primal Reversion! It reverted to its primal form!
+|-weather|PrimordialSea
+
+|-damage|p1a: JIBBERS XD|71\/361|[from] item: Life Orb
+|-damage|p1a: JIBBERS XD|35\/361|[from] item: Life Orb
+
+|win|Jibaku
