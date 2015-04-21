@@ -149,7 +149,7 @@ class Pokemon(Base):
 	
 	# Pokemon type (up to 2)
 	type1 = Column(Integer, nullable = False)
-	type2 = Column(Integer)
+	type2 = Column(Integer, default = -1)
 	
 	# Base stats
 	base_hp = Column(Integer, nullable = False)
