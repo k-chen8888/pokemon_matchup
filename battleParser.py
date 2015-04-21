@@ -3,6 +3,7 @@ import json
 battle = {}
 p1a = Player()		
 p2a = Player()
+turn = ""
 
 #p1cur
 #p2cur
@@ -49,36 +50,35 @@ def pokemon(input):
 #|switch|p2a: LCS is on rn|Dialga|243\/404
 #|drag|p1a: Vaporeon|Vaporeon, F|379\/463
 def switch(input):
-	nick = input[2].split()
-	if("p1a:" in nick[0]):
-		p1cur = p1a.pokemon[input[3]]
-		p1cur.nickname = nick[1]
+	nick = input[2].split(":")
+	name = input[3].split("-") #done so megas keep same dictonary entry
+	if("p1a:" in input[2]):
+		p1cur = p1a.pokemon[name]
+		p1cur.nickname = nick[1].lstrip()
 
 	else:
-		p2cur = p2a.pokemon[input[3]]
+		p2cur = p2a.pokemon[name]
 		p2cur.nickname = nick[1]
 
 #|-ability|p2a: LCS is on rn|Pressure		
 def ability(input):
-	nick = input[2].split()
-	if("p1a:" in nick[0]):
+	if("p1a:" in input[2]):
 		p1cur.ability = input[3]
 	else:
 		p2cur.ability = input[3]
 
 #|detailschange|p1a: i built that.|Kyogre-Primal
-##|-mega|p2a: steeljackal<3|Sableye|Sablenite
+#|-mega|p2a: steeljackal<3|Sableye|Sablenite
 def transformation(input):
-	nick = input[2].split()
-	if "p1a:" in nick[0]:
-		
+	nick = input[2]
+	if "p1a:" in input[2]:
+		p1cur.name = input[3]
 	else:
-		
+		p2cur.name = input[3]
 
 #|move|p1a: Lopunny|Fake Out|p2a: Umbreon
 def move(input):
-	nick = input[2].split()
-	if("p1a:" in nick[0]):
+	if("p1a:" in input[2]):
 		if(input[3] not in p1cur.move):
 			p1cur.move.append(input[3])
 	else:
@@ -102,8 +102,9 @@ def item(input):
 def resisted(input):
 
 def faint(input):
-
+# |turn|1
 def turn(input):
+	turn = input[3]
 
 #Battle{
 #	Player1 :
