@@ -51,6 +51,12 @@ def pkmn(base_url = "http://serebii.net/pokedex-xy/"):
 		pokemon['id'] = i
 		# Name
 		pokemon['name'] = summary[1].renderContents().strip()
+		if i == 29: # Nidoran-F
+			pokemon['name'] = "Nidoran-F"
+		elif i == 32:
+			pokemon['name'] = "Nidoran-M"
+		else:
+			pass
 		pokemon['mega'] = False
 		# Types
 		pokemon['type'] = []
@@ -63,16 +69,43 @@ def pkmn(base_url = "http://serebii.net/pokedex-xy/"):
 		for link in BeautifulSoup( data, parse_only = SoupStrainer('a') ).findAll('a'):
 			# Moves
 			if link.has_attr('href'):
-				move = link.renderContents()
+				move = link.renderContents().strip()
+
 				if '/attackdex-xy/' in link['href'] and 'img' not in move and 'Attackdex XY' not in move and move not in pokemon['moves']:
-					pokemon['moves'].append( link.renderContents() )
+					# Handle some really weird parsing exceptions
+					tags = re.compile(r'<.*?>')
+					if '<br/>' in move:
+						move = move[0:move.index('<br/>')]
+					move = tags.sub('', move)
+					
+					# Fix dash capitalization
+					# Get list of dash locations
+					locs = [ i.start() for i in re.finditer('-', move) ]
+					fixcase = ""
+					current = 0
+					for l in locs:
+						fixcase += move[current:l+1] + move[l+1].upper()
+						current = l + 2
+					fixcase += move[current:len(move)]
+					# Special name exceptions
+					if fixcase == "Trick-Or-Treat":
+						fixcase = "Trick-or-Treat"
+					elif fixcase == "U-Turn":
+						fixcase = "U-turn"
+					elif fixcase == "V-Create":
+						fixcase = "V-create"
+					else:
+						pass
+					
+					if len(move) > 0 or len(fixcase) > 0:
+						pokemon['moves'].append( fixcase )
 			# Abilities
 			if link.has_attr('href'):
 				if '/abilitydex/' in link['href'] and len(link['href']) > 12:
 					for child in link.children:
 						try:
-							if child.renderContents() not in pokemon['abilities']:
-								pokemon['abilities'].append( child.renderContents() )
+							if child.renderContents().strip() not in pokemon['abilities']:
+								pokemon['abilities'].append( child.renderContents().strip() )
 						except:
 							pass
 		# Stats
@@ -84,26 +117,26 @@ def pkmn(base_url = "http://serebii.net/pokedex-xy/"):
 				print "Not an actual stat"
 		
 		# Certain special exceptions for certain Pokemon, by id value
-		if i == 351: # Castform
+		if pokemon['id'] == 351: # Castform
 			sunny = copy.deepcopy(pokemon)
-			sunny['name'] = pokemon['name'] + "Sunny Form"
-			sunny['type'] = 'fire'
+			sunny['name'] = pokemon['name'] + " Sunny Form"
+			sunny['type'] = ['fire']
 			# Add sunny form
 			pokedex.append(sunny)
 			
 			rainy = copy.deepcopy(pokemon)
-			rainy['name'] = pokemon['name'] + "Rainy Form"
-			rainy['type'] = 'water'
+			rainy['name'] = pokemon['name'] + " Rainy Form"
+			rainy['type'] = ['water']
 			# Add rainy form
 			pokedex.append(rainy)
 			
 			snowy = copy.deepcopy(pokemon)
-			snowy['name'] = pokemon['name'] + "Snowy Form"
-			snowy['type'] = 'ice'
+			snowy['name'] = pokemon['name'] + " Snowy Form"
+			snowy['type'] = ['ice']
 			# Add snowy form
 			pokedex.append(snowy)
 		
-		elif i == 386: # Deoxys
+		elif pokemon['id'] == 386: # Deoxys
 			pokemon['base'] = [50, 150, 50, 150, 50, 150]
 			
 			attack = copy.deepcopy(pokemon)
@@ -124,7 +157,7 @@ def pkmn(base_url = "http://serebii.net/pokedex-xy/"):
 			# Add speed form
 			pokedex.append(speed)
 		
-		elif i == 479: # Rotom
+		elif pokemon['id'] == 479: # Rotom
 			# Exclusive elemental moves
 			elem_moves = ['Blizzard', 'Overheat', 'Leaf Storm', 'Air Slash', 'Hydro Pump']
 			for e in elem_moves:
@@ -173,7 +206,15 @@ def pkmn(base_url = "http://serebii.net/pokedex-xy/"):
 			# Add Wash form
 			pokedex.append(wash)
 		
-		elif i == 555: # Darmanitan
+		elif pokemon['id'] == 487: # Giratina
+			print "hi"
+			origin = copy.deepcopy(pokemon)
+			origin['name'] = pokemon['name'] + " Origin Form"
+			origin['base'] = [150, 120, 100, 120, 100, 90]
+			# Add Origin Form
+			pokedex.append(origin)
+		
+		elif pokemon['id'] == 555: # Darmanitan
 			zen = copy.deepcopy(pokemon)
 			zen['name'] = "Zen " + pokemon['name']
 			zen['type'].append( 'psychic' )
@@ -181,7 +222,7 @@ def pkmn(base_url = "http://serebii.net/pokedex-xy/"):
 			# Add Zen mode
 			pokedex.append(zen)
 		
-		elif i == 641: # Tornadus
+		elif pokemon['id'] == 641: # Tornadus
 			# Remove exclusive ability
 			pokemon['abilities'].remove("Regenerator")
 			
@@ -192,7 +233,7 @@ def pkmn(base_url = "http://serebii.net/pokedex-xy/"):
 			# Add Therian Form
 			pokedex.append(therian_641)
 		
-		elif i == 642: # Thundurus
+		elif pokemon['id'] == 642: # Thundurus
 			# Remove exclusive ability
 			pokemon['abilities'].remove("Volt Absorb")
 			
@@ -203,7 +244,7 @@ def pkmn(base_url = "http://serebii.net/pokedex-xy/"):
 			# Add Therian Form
 			pokedex.append(therian_642)
 		
-		elif i == 645: # Landorus
+		elif pokemon['id'] == 645: # Landorus
 			# Remove exclusive ability
 			pokemon['abilities'].remove("Intimidate")
 			
@@ -214,7 +255,7 @@ def pkmn(base_url = "http://serebii.net/pokedex-xy/"):
 			# Add Therian Form
 			pokedex.append(therian_645)
 		
-		elif i == 646: # Kyurem
+		elif pokemon['id'] == 646: # Kyurem
 			# Remove exclusive abilities
 			pokemon['abilities'].remove("Teravolt")
 			pokemon['abilities'].remove("Turboblaze")
@@ -250,10 +291,10 @@ def pkmn(base_url = "http://serebii.net/pokedex-xy/"):
 			# Add white form
 			pokedex.append(white)
 		
-		elif i == 669: # Flabebe
+		elif pokemon['id'] == 669: # Flabebe
 			pokemon['name'] = "Flabebe"
 		
-		elif i == 678: # Meowstic
+		elif pokemon['id'] == 678: # Meowstic
 			# Remove female's abilities and moves
 			female_moves = ["Stored Power", "Me First", "Magical Leaf", "Extrasensory", "Future Sight"]
 			for fm in female_moves:
@@ -269,7 +310,7 @@ def pkmn(base_url = "http://serebii.net/pokedex-xy/"):
 			# Add female version
 			pokedex.append(female)
 		
-		elif i == 681: # Aegislash
+		elif pokemon['id'] == 681: # Aegislash
 			blade = copy.deepcopy(pokemon)
 			blade['name'] = pokemon['name'] + " Blade Form"
 			blade['base'] = [60, 150, 50, 150, 50, 60]
@@ -297,7 +338,10 @@ def pkmn(base_url = "http://serebii.net/pokedex-xy/"):
 				pokemon_x['type'].append( str(child)[38:-7] )
 			
 			# Abilities may change
-			pokemon_x['abilities'] = [ pokemon['abilities'].pop(-2) ]
+			if len(pokemon['abilities']) > 1:
+				pokemon_x['abilities'] = [pokemon['abilities'].pop()]
+			else:
+				pokemon_x['abilities'] = copy.deepcopy( pokemon['abilities'] )
 			
 			# Stats may change
 			pokemon_x['base'] = []
@@ -328,7 +372,10 @@ def pkmn(base_url = "http://serebii.net/pokedex-xy/"):
 				pokemon_y['type'].append( str(child)[38:-7] )
 			
 			# Abilities may change
-			pokemon_y['abilities'] = [pokemon['abilities'].pop()]
+			if len(pokemon['abilities']) > 1:
+				pokemon_y['abilities'] = [pokemon['abilities'].pop()]
+			else:
+				pokemon_y['abilities'] = copy.deepcopy( pokemon['abilities'] )
 			
 			# Stats may change
 			pokemon_y['base'] = []
@@ -347,6 +394,8 @@ def pkmn(base_url = "http://serebii.net/pokedex-xy/"):
 			pokemon_primal = {}
 			pokemon_primal['name'] = "Primal Kyogre"
 			pokemon_primal['id'] = pokemon['id']
+			# You can have a primal and a mega on the same team
+			pokemon_primal['mega'] = False
 			
 			pokemon_primal['moves'] = copy.deepcopy( pokemon['moves'] )
 			
@@ -364,6 +413,8 @@ def pkmn(base_url = "http://serebii.net/pokedex-xy/"):
 			pokemon_primal = {}
 			pokemon_primal['name'] = "Primal Groudon"
 			pokemon_primal['id'] = pokemon['id']
+			# You can have a primal and a mega on the same team
+			pokemon_primal['mega'] = False
 			
 			pokemon_primal['moves'] = copy.deepcopy( pokemon['moves'] )
 			
@@ -393,7 +444,10 @@ def pkmn(base_url = "http://serebii.net/pokedex-xy/"):
 				pokemon_mega['type'].append( str(child)[38:-7] )
 			
 			# Abilities may change
-			pokemon_mega['abilities'] = [pokemon['abilities'].pop()]
+			if len(pokemon['abilities']) > 1:
+				pokemon_mega['abilities'] = [pokemon['abilities'].pop()]
+			else:
+				pokemon_mega['abilities'] = copy.deepcopy( pokemon['abilities'] )
 			
 			# Stats may change
 			pokemon_mega['base'] = []

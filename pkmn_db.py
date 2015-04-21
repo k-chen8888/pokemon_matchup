@@ -188,9 +188,9 @@ class Pokemon(Base):
 		self.dex_id = stats['id']
 		
 		# Populate types
-		self.type1 = stats['type'][0]
+		self.type1 = pkmn_types.index( stats['type'][0] )
 		if len(stats['type']) > 1:
-			self.type2 = stats['type'][1]
+			self.type2 = pkmn_types.index( stats['type'][1] )
 		
 		# Populate base stats
 		self.base_hp = stats['base'][0]

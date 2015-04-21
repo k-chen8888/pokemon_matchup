@@ -32,9 +32,9 @@ from scrape_pkmn import *
 
 if __name__ == '__main__':
 	# Load all documented information, scraping from serebii.net
-	d_items = items()
-	d_moves = moves()
-	d_abilities = abilities()
+	#d_items = items()
+	#d_moves = moves()
+	#d_abilities = abilities()
 	d_pkmn = pkmn()
 	
 	'''
@@ -51,7 +51,7 @@ if __name__ == '__main__':
 	
 	# Work with this one
 	s = Session()
-	
+	'''
 	# For each item, make a new HoldItem and commit to database
 	# Only add if it doesn't exist
 	for i in d_items:
@@ -75,7 +75,7 @@ if __name__ == '__main__':
 			new_ability = Ability(a)
 			s.add(new_ability)
 		s.commit()
-	
+	'''
 	# For each Pokemon, make a new Pokemon and commit to database
 	# Only add if it doesn't exist
 	# Set up relationship between (moves, abilities) and the Pokemon that can possibly have them
@@ -85,19 +85,22 @@ if __name__ == '__main__':
 			new_pkmn = Pokemon(p)
 			
 			# Moves
-			for m in d_pkmn['moves']:
+			for m in p['moves']:
 				# Pull the Move object to add out of database
 				link_move = s.query(Move).filter_by(name = m).first()
 				# Actually add the move to the list of possible moves
 				new_pkmn.possible_moves.append(link_move)
 				
 			# Abilities
-			for a in d_pkmn['abilities']:
+			for a in p['abilities']:
 				# Pull the Ability object to add out of database
-				link_ability = s.query(Ability).filter_by(name = a).first()
+				link_ability = s.query(Ability).filter(Ability.name == a).first()
 				# Actually add the ability to the list of possible abilities
 				new_pkmn.possible_abilities.append(link_ability)
 			
 			s.add(new_pkmn)
 		
-		s.commit()
+		else:
+			print "Found"
+		
+	s.commit()

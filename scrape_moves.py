@@ -107,6 +107,6 @@ def moves(base_url = "http://serebii.net/attackdex-xy/"):
 				move['priority'] = 0
 			
 		print move
-	
+		
 	# Output finished movedex
 	return movedex
