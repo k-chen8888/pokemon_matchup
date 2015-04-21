@@ -32,9 +32,9 @@ from scrape_pkmn import *
 
 if __name__ == '__main__':
 	# Load all documented information, scraping from serebii.net
-	#d_items = items()
-	#d_moves = moves()
-	#d_abilities = abilities()
+	d_items = items()
+	d_moves = moves()
+	d_abilities = abilities()
 	d_pkmn = pkmn()
 	
 	'''
