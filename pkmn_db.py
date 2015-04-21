@@ -117,7 +117,6 @@ All abilities a pokemon may have
 abilityset = Table('abilityset', Base.metadata,
 	Column('ability_id', Integer, ForeignKey('ability.id')),
 	Column('pokemon_id', Integer, ForeignKey('pokemon.id')),
-	Column('mega_only', Boolean, default = False) # This ability is only available if the Pokemon is holding a Mega Stone
 )
 
 '''
@@ -169,8 +168,8 @@ class Pokemon(Base):
 	mega = Column(Boolean, default = False)
 	
 	# Move pool and ability pool(many to many)
-	possible_moves = relationship("Move", secondary = moveset)
-	possible_abilities = relationship("Ability", secondary = abilityset)
+	possible_moves = relationship('Move', secondary = moveset, backref='pokemon')
+	possible_abilities = relationship('Ability', secondary = abilityset, backref='pokemon')
 	
 	# Trained Pokemon created from this Pokemon
 	# Parent in relationship
