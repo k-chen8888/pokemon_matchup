@@ -1,7 +1,21 @@
 import json
 import re
 
-battle = {}
+
+
+'''
+These functions work on the following basis:
+	Above each parse function is a comment with examples
+	of the data that we expect to read in that function
+	the list input is passed in after the original string
+	is split with "|" as the delimiter
+	counting starts from 0, however, there is nothing before
+	the first "|" so counting words starts from 1
+'''
+
+
+teir = ""
+win = ""
 p1a = Player()		
 p2a = Player()
 turn = ""
@@ -36,10 +50,14 @@ def parse_line(input):
 	#Split it up
 	#switch/If it into proper function
 	data = input.split("|")
-		
+####		
 	
 def tier(input)
-	batale["tier"] = input[2]
+	tier = input[2]
+
+#|win|Anzle
+def win(input)
+	win = input[2]
 
 #input the players into the data table
 def player(input):
@@ -48,6 +66,13 @@ def player(input):
 	else:
 		p2a.name = input[3]
 
+		
+'''Pokemon name keys are inserted as the pokemon's name with
+	no extra markings for the time being. ie. "Togekiss, F" goes in as
+	""Togekiss" this is done because names will change as pokemon
+	forms change and I want an easy way to index the pokemon out
+	HOWEVER the name field of the pokemon will keep
+	the Pokemon's full name. ie. "Togekiss, F" '''
 #|poke|p1|Togekiss, F
 #|poke|p1|Arceus-*
 def pokemon(input):
@@ -63,7 +88,7 @@ def pokemon(input):
 #|switch|p1a: filthy APE|Arceus-Ghost|443\/443
 def switch(input):
 	nick = input[2].split(":")
-	name = re.split("\W", input[3])
+	name = re.split("\W", input[3]) #<--- using only "Vaporeon" to switch
 	if "p1a:" in input[2]:
 		p1cur = p1a.pokemon[name[0]]
 		p1cur.nickname = nick[1].lstrip()
@@ -79,6 +104,7 @@ def ability(input):
 	else:
 		p2cur.ability = input[3]
 
+'''This can be inproved to catch items'''
 #|detailschange|p1a: i built that.|Kyogre-Primal
 #|-mega|p2a: steeljackal<3|Sableye|Sablenite
 def transformation(input):
