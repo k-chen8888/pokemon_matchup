@@ -58,4 +58,17 @@ if __name__ == '__main__':
 	# Gather the data and fill up the database
 	#scrape_dex()
 	
+	# Take the json dictionaries and make a list of teams (split up all match pairs)
+	#teams = []
+	
+	# For each team, compare to each other team
+	# Generate an adjacency matrix by calculating similarity as the distance between each team and normalizing
+	#adj_mtrx = similarity(teams)
+	
+	# Generate labels (spectral clustering)
+	# Note that the adjacency matrix needs to be converted into a numpy array
+	#labels = spectral_clustering(np.asarray(sa), n_clusters = 2, eigen_solver = 'arpack', assign_labels = 'discretize')
+	
+	# Compute the purity of the clustering
+	
 	print "Done"
