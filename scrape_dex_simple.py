@@ -35,7 +35,7 @@ if __name__ == '__main__':
 	d_items = items()
 	d_moves = moves()
 	d_abilities = abilities()
-	#d_pkmn = pkmn()
+	d_pkmn = pkmn()
 	
 	'''
 	Load database
@@ -59,7 +59,7 @@ if __name__ == '__main__':
 			new_item = HoldItem(i)
 			s.add(new_item)
 		s.commit()
-	
+
 	# For each move, make a new Move and commit to database
 	# Only add if it doesn't exist
 	for m in d_moves:
@@ -67,7 +67,7 @@ if __name__ == '__main__':
 			new_move = Move(m)
 			s.add(new_move)
 		s.commit()
-	
+
 	# For each ability, make a new Ability and commit to database
 	# Only add if it doesn't exist
 	for a in d_abilities:
@@ -75,7 +75,7 @@ if __name__ == '__main__':
 			new_ability = Ability(a)
 			s.add(new_ability)
 		s.commit()
-	'''
+	
 	# For each Pokemon, make a new Pokemon and commit to database
 	# Only add if it doesn't exist
 	# Set up relationship between (moves, abilities) and the Pokemon that can possibly have them
@@ -103,4 +103,4 @@ if __name__ == '__main__':
 		else:
 			print "Found"
 	
-	s.commit()'''
+	s.commit()

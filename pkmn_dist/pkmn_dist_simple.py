@@ -92,7 +92,7 @@ def pkmn_dist(pkmn1, pkmn2):
 	# Output sum, taking the square root
 	return ( type_dist + base_dist + move_dist ) ** 0.5
 
-	
+
 '''
 Similarity between moves
 Moves given by name only and queried
