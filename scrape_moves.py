@@ -12,6 +12,12 @@ Information to get:
 	Base power
 	Type
 	Physical, Special, Other
+		Special parameters for Other
+			Weather
+			Entry hazards
+			Status effect (confuse, paralyze, etc.)
+			Healing
+			Buffing/Weakening stats
 	Accuracy
 	Priority
 '''
@@ -83,6 +89,23 @@ def moves(base_url = "http://serebii.net/attackdex-xy/"):
 				for cat in move_cats:
 					if cat in child["src"]:
 						move['move_cat'] = move_cats.index(cat)
+
+				# Special conditions for 'Other'
+				if move['move_cat'] == 2:
+					# Weather
+					move['weather'] == True
+					
+					# Entry hazard
+					move['entry'] = True
+					
+					# Status effect
+					move['status'] = True
+					
+					# Healing
+					move['heal'] = True
+					
+					# Buff/weaken
+					move['stat_change'] = True
 			
 			# Get accuracy rating; 0 = never misses
 			if i == 26:

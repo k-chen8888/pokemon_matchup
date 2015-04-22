@@ -59,6 +59,15 @@ techno_blast['water'] = "Douse Drive"
 move_cats = ['physical', 'special', 'other']
 
 
+# Use this to look up the special conditions for 'Other'
+other = {}
+other['weather'] = [' rain ', 'sandstorm', 'hail', 'sunny']
+other['entry'] = ['trap']
+other['status'] = ['burn ', 'paralysis', 'poison ', 'confuse', 'confusion', 'sleep', 'freeze', 'protect', 'Block']
+other['heal'] = ['cure', 'restore']
+other['stat_change'] = ['ups', 'raise', 'boost', 'reduce', 'lower']
+
+
 # Table of damage multipliers for type matchups (indices match the pkmn_types array)
 #	Row: Attacking type
 # 	Column: Defending type
@@ -210,6 +219,13 @@ class Move(Base):
 	# Accuracy rating
 	accuracy = Column(Integer, nullable = False)
 	
+	# Special parameters for 'Other' moves
+	weather = Column(Boolean, default = False)
+	entry = Column(Boolean, default = False)
+	status = Column(Boolean, default = False)
+	heal = Column(Boolean, default = False)
+	stat_change = Column(Boolean, default = False)
+	
 	# Add move to database
 	# Takes a dictionary that represents a move
 	def __init__(self, stats):
@@ -219,6 +235,14 @@ class Move(Base):
 		self.base_power = stats['base_power']
 		self.priority = stats['priority']
 		self.accuracy = stats['accuracy']
+		
+		# 'Other' only
+		if stats['move_cat'] == 2:
+			self.weather = stats['weather']
+			self.entry = stats['entry']
+			self.status = stats['status']
+			self.heal = stats['heal']
+			self.stat_change = stats['stat_change']
 
 
 '''
