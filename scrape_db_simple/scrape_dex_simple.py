@@ -30,7 +30,10 @@ from scrape_abilities import *
 from scrape_pkmn import *
 
 
-if __name__ == '__main__':
+'''
+Call all of the scrapers and get to work
+'''
+def scrape_dex():
 	# Load all documented information, scraping from serebii.net
 	d_items = items()
 	d_moves = moves()
@@ -104,3 +107,8 @@ if __name__ == '__main__':
 			print "Found"
 	
 	s.commit()
+	session.close()
+
+
+if __name__ == '__main__':
+	scrape_dex()

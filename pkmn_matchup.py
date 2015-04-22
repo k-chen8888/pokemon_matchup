@@ -1,0 +1,61 @@
+'''
+System tools and utilities
+'''
+import os, sys, math, re
+
+# JSON tool for reading parsed data file
+import json
+
+
+'''
+Data analysis tools
+'''
+import numpy as np
+from sklearn.cluster import spectral_clustering
+
+
+'''
+All scraper and db tools
+'''
+from scrape_db_simple.pkmn_db_simple import *
+from scrape_db_simple.scrape_abilities import *
+from scrape_db_simple.scrape_items import *
+from scrape_db_simple.scrape_moves import *
+from scrape_db_simple.scrape_pkmn import *
+
+# Runs the scraper
+from scrape_db_simple.scrape_dex_simple import *
+
+# SQLAlchemy
+from sqlalchemy.orm import sessionmaker
+from sqlalchemy import create_engine
+
+
+'''
+All parser and data cleaning tools
+'''
+# Parsing Pokemon Showdown data and generating data dictionaries
+
+# Distance measures and data evaluation
+from pkmn_dist_simple.mock_battle_simple import *
+from pkmn_dist_simple.pkmn_dist_simple import *
+
+
+'''
+Database session tools
+'''
+'''
+# Need to start up a database session first
+Session = sessionmaker()
+engine = create_engine('sqlite:///pkmn_db_simple.db', echo = True)
+Session.configure(bind=engine)
+
+# Work with this one
+s_global = Session()
+'''
+
+if __name__ == '__main__':
+	# Gather the data and fill up the database
+	#scrape_dex()
+	
+	print "Done"
