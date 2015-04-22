@@ -60,12 +60,13 @@ move_cats = ['physical', 'special', 'other']
 
 
 # Use this to look up the special conditions for 'Other'
+# Saved as regex components
 other = {}
-other['weather'] = [' rain ', 'sandstorm', 'hail', 'sunny']
-other['entry'] = ['trap']
-other['status'] = ['burn ', 'paralysis', 'poison ', 'confuse', 'confusion', 'sleep', 'freeze', 'protect', 'Block']
-other['heal'] = ['cure', 'restore']
-other['stat_change'] = ['ups', 'raise', 'boost', 'reduce', 'lower']
+other['weather'] = [r' rain ', r'sandstorm', r'hail', r'sunny']
+other['entry'] = [r'trap']
+other['status'] = [r'burn ', r'paralysis', r'poison ', r'confuse', r'confusion', r'sleep', r'freeze', r'protect', r'evade all']
+other['heal'] = [r'cure', r'restore']
+other['stat_change'] = [r'ups', r'raise', r'raising', r'boost', r'reduce', r'lower']
 
 
 # Table of damage multipliers for type matchups (indices match the pkmn_types array)

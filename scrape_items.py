@@ -44,6 +44,7 @@ def items(base_url = "http://serebii.net/itemdex/"):
 			new_item['mega_stone'] = False
 			new_item['fling'] = 0
 			r_itemdex.append(new_item)
+			print new_item
 	
 	# Scrape information for each item in the list
 	# For items, only need to get the Fling damage
@@ -80,6 +81,7 @@ def items(base_url = "http://serebii.net/itemdex/"):
 			new_item['mega_stone'] = True
 			new_item['fling'] = 0
 			r_itemdex.append(new_item)
+			print new_item
 	
 	# Sort itemdex
 	itemdex = sorted(r_itemdex, key=lambda k: k['name'])

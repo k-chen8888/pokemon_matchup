@@ -39,6 +39,7 @@ def abilities(base_url = "http://serebii.net/abilitydex/"):
 		# Dump abilities into list, ignore empty dictionaries
 		if bool(ability):
 			abilitydex.append(ability)
+			print ability
 	
 	# Output finished abilitydex
 	return abilitydex

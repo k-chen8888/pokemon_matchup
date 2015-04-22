@@ -207,12 +207,19 @@ def pkmn(base_url = "http://serebii.net/pokedex-xy/"):
 			pokedex.append(wash)
 		
 		elif pokemon['id'] == 487: # Giratina
-			print "hi"
 			origin = copy.deepcopy(pokemon)
 			origin['name'] = pokemon['name'] + " Origin Form"
 			origin['base'] = [150, 120, 100, 120, 100, 90]
 			# Add Origin Form
 			pokedex.append(origin)
+		
+		elif pokemon['id'] == 492: # Shaymin
+			sky_f = copy.deepcopy(pokemon)
+			sky_f['name'] = pokemon['name'] + " Sky Form"
+			sky_f['abilities'] = [ pokemon['abilities'].pop() ]
+			sky_f['base'] = [100, 103, 75, 120, 75, 127]
+			# Add Sky Form
+			pokemon.append(sky_f)
 		
 		elif pokemon['id'] == 555: # Darmanitan
 			zen = copy.deepcopy(pokemon)

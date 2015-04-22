@@ -31,7 +31,7 @@ from bs4 import BeautifulSoup, SoupStrainer
 import requests
 
 # Need the pkmn_types constant from the database
-from pkmn_db_simple import pkmn_types, move_cats
+from pkmn_db_simple import pkmn_types, move_cats, other
 
 
 def moves(base_url = "http://serebii.net/attackdex-xy/"):
@@ -92,20 +92,46 @@ def moves(base_url = "http://serebii.net/attackdex-xy/"):
 
 				# Special conditions for 'Other'
 				if move['move_cat'] == 2:
+					move['weather'] = False
+					move['entry'] = False
+					move['status'] = False
+					move['heal'] = False
+					move['stat_change'] = False
+					
 					# Weather
-					move['weather'] == True
+					for x in other['weather']:
+						if soup.findAll(text = re.compile(x)):
+							move['weather'] = True
+						else:
+							pass
 					
 					# Entry hazard
-					move['entry'] = True
+					for x in other['entry']:
+						if soup.findAll(text = re.compile(x)):
+							move['entry'] = True
+						else:
+							pass
 					
 					# Status effect
-					move['status'] = True
+					for x in other['status']:
+						if soup.findAll(text = re.compile(x)):
+							move['status'] = True
+						else:
+							pass
 					
 					# Healing
-					move['heal'] = True
+					for x in other['heal']:
+						if soup.findAll(text = re.compile(x)):
+							move['heal'] = True
+						else:
+							pass
 					
 					# Buff/weaken
-					move['stat_change'] = True
+					for x in other['stat_change']:
+						if soup.findAll(text = re.compile(x)):
+							move['stat_change'] = True
+						else:
+							pass
 			
 			# Get accuracy rating; 0 = never misses
 			if i == 26:
@@ -130,6 +156,21 @@ def moves(base_url = "http://serebii.net/attackdex-xy/"):
 				move['priority'] = 0
 			
 		print move
-		
+	
+	# Oops
+	hail = {}
+	hail['name'] = 'Hail'
+	hail['move_type'] = pkmn_types.index('ice')
+	hail['move_cat'] = 2
+	hail['priority'] = 0
+	hail['accuracy'] = 0
+	hail['weather'] = True
+	hail['entry'] = True
+	hail['status'] = False
+	hail['heal'] = False
+	hail['stat_change'] = False
+	# Append Hail
+	movedex.append(hail)
+	
 	# Output finished movedex
 	return movedex
