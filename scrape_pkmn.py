@@ -219,7 +219,7 @@ def pkmn(base_url = "http://serebii.net/pokedex-xy/"):
 			sky_f['abilities'] = [ pokemon['abilities'].pop() ]
 			sky_f['base'] = [100, 103, 75, 120, 75, 127]
 			# Add Sky Form
-			pokemon.append(sky_f)
+			pokedex.append(sky_f)
 		
 		elif pokemon['id'] == 555: # Darmanitan
 			zen = copy.deepcopy(pokemon)
