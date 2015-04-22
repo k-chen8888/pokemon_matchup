@@ -263,6 +263,12 @@ class HoldItem(Base):
 	# Is this a Mega Stone?
 	mega_stone = Column(Boolean, default = False)
 	
+	# Berries only
+	# -1 in all numerical fields indicates that this is not a berry
+	natural_gift_type = Column(Integer, default = -1) # Note that this type is the same as the type of the super-effective move that is blocked
+	natural_gift_power = Column(Integer, default = -1) # Amount of damage done by natural gift
+	se_dmg_down = Column(Boolean, default = -1) # Damage reduction from super-effective move, 0 if none and 1 if 50%
+	
 	# Pokemon holding this item
 	# Parent in relationship
 	held_by = relationship("TrainedPokemon")

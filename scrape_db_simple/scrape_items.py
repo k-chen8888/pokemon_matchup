@@ -23,6 +23,9 @@ from bs4 import BeautifulSoup, SoupStrainer
 # Uses requests to access pages
 import requests
 
+# Constants from database file
+from pkmn_db_simple import pkmn_types
+
 
 def items(base_url = "http://serebii.net/itemdex/"):
 	# Store items (in mostly alphabetical order) as a list of dictionaries
@@ -80,6 +83,55 @@ def items(base_url = "http://serebii.net/itemdex/"):
 		if len(new_item['name']) > 0:
 			new_item['mega_stone'] = True
 			new_item['fling'] = 0
+			r_itemdex.append(new_item)
+			print new_item
+	
+	# Get the berries off of the list "Berries"
+	# Access the page, take the text, and feed it to BeautifulSoup
+	r = requests.get(base_url + "list/berry.shtml")
+	data = r.text
+	
+	for item in BeautifulSoup( data, parse_only = SoupStrainer('tr') ).findAll('a'):
+		new_item = {}
+		try:
+			new_item['name'] = str(item.getText())
+		except:
+			new_item['name'] = ""
+		
+		if len(new_item['name']) > 0:
+			new_item['mega_stone'] = False
+			new_item['fling'] = 0
+			
+			# Natural Gift
+			new_item['natural_gift_type'] = 0
+			new_item['natural_gift_power'] = 0
+			
+			# Scrape information for each item in the list
+			# For berries, need to get the Fling damage, natural gift type, and natural gift damage
+			
+			# Build move url from name
+			condensed = item['name'].replace(" ", "")
+			url = base_url + condensed.lower() + ".shtml"
+			
+			# Access the page, take the text, and feed it to BeautifulSoup
+			berry_r = requests.get(url)
+			berry_data = item_r.text
+			soup = BeautifulSoup( berry_data, parse_only = SoupStrainer('tr') )
+			
+			# Fling and Natural Gift damage
+			damages = soup.findAll(text=re.compile(r'^[0-9]{2}$'))
+			try:
+				new_item['fling'] = int(damages[0])
+				new_item['natural_gift_power'] = int(damages[0])
+			except:
+				pass
+			
+			# Natural Gift type
+			ng = soup(text=re.compile(r'type.*gif'))
+			for t in pkmn_types:
+				if t in ng:
+					new_item['natural_gift_type'] = pkmn_types.index(t)
+			
 			r_itemdex.append(new_item)
 			print new_item
 	
