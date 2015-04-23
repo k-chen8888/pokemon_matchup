@@ -366,10 +366,6 @@ def inhaz(input):
 	else:
 		p1a.hazards[input[3].split(":")[1].lstrip()] = 1;
 
-		
-		
-		
-theParser("http://replay.pokemonshowdown.com/smogtours-ou-34915")
 
 
 

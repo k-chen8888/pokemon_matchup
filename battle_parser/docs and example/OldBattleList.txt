@@ -1,4 +1,3 @@
-Grab from week 7: http://www.smogon.com/forums/threads/spl-6-logs-replays.3526257/
 [ORAS OU]
 http://replay.pokemonshowdown.com/smogtours-ou-32702
 http://replay.pokemonshowdown.com/smogtours-ou-32899
@@ -71,6 +70,40 @@ http://replay.pokemonshowdown.com/smogtours-ou-37798
 http://replay.pokemonshowdown.com/smogtours-ou-37591
 http://replay.pokemonshowdown.com/smogtours-ou-37563
 http://replay.pokemonshowdown.com/smogtours-oususpecttest-37728
+http://replay.pokemonshowdown.com/smogtours-ou-37806
+http://replay.pokemonshowdown.com/smogtours-ou-37753
+http://replay.pokemonshowdown.com/smogtours-ou-37764
+http://replay.pokemonshowdown.com/smogtours-ou-37329
+http://replay.pokemonshowdown.com/smogtours-ou-37485
+http://replay.pokemonshowdown.com/smogtours-ou-37318
+http://replay.pokemonshowdown.com/smogtours-ou-37798
+http://replay.pokemonshowdown.com/smogtours-ou-37591
+http://replay.pokemonshowdown.com/smogtours-ou-37563
+http://replay.pokemonshowdown.com/smogtours-oususpecttest-37728
+http://replay.pokemonshowdown.com/smogtours-ou-38807
+http://replay.pokemonshowdown.com/smogtours-ou-38961
+http://replay.pokemonshowdown.com/smogtours-ou-38584
+http://replay.pokemonshowdown.com/smogtours-ou-38864
+http://replay.pokemonshowdown.com/smogtours-ou-38827
+http://replay.pokemonshowdown.com/smogtours-ou-38940
+http://replay.pokemonshowdown.com/smogtours-ou-38557
+http://replay.pokemonshowdown.com/smogtours-ou-38609
+http://replay.pokemonshowdown.com/smogtours-ou-38811
+http://replay.pokemonshowdown.com/smogtours-ou-40884
+http://replay.pokemonshowdown.com/smogtours-ou-41440
+http://replay.pokemonshowdown.com/smogtours-ou-39559
+http://replay.pokemonshowdown.com/smogtours-ou-39388
+http://replay.pokemonshowdown.com/smogtours-ou-39936
+http://replay.pokemonshowdown.com/smogtours-ou-40184
+http://replay.pokemonshowdown.com/smogtours-ou-41449
+http://replay.pokemonshowdown.com/smogtours-ou-39410
+http://replay.pokemonshowdown.com/smogtours-ou-43542
+http://replay.pokemonshowdown.com/smogtours-ou-43548
+http://replay.pokemonshowdown.com/smogtours-ou-42114
+http://replay.pokemonshowdown.com/smogtours-ou-42866
+http://replay.pokemonshowdown.com/smogtours-ou-45311
+http://replay.pokemonshowdown.com/smogtours-ou-45539
+
 
 [ORAS Uber]
 http://replay.pokemonshowdown.com/smogtours-ubers-32407
@@ -107,7 +140,23 @@ http://replay.pokemonshowdown.com/smogtours-ubers-37589
 http://replay.pokemonshowdown.com/smogtours-ubers-37473
 http://replay.pokemonshowdown.com/smogtours-ubers-37081
 http://replay.pokemonshowdown.com/smogtours-ubers-37739
-
+http://replay.pokemonshowdown.com/smogtours-ubers-37723
+http://replay.pokemonshowdown.com/smogtours-ubers-37589
+http://replay.pokemonshowdown.com/smogtours-ubers-37473
+http://replay.pokemonshowdown.com/smogtours-ubers-37081
+http://replay.pokemonshowdown.com/smogtours-ubers-37739
+http://replay.pokemonshowdown.com/smogtours-ubers-38579
+http://replay.pokemonshowdown.com/smogtours-ubers-38364
+http://replay.pokemonshowdown.com/smogtours-ubers-38159
+http://replay.pokemonshowdown.com/smogtours-ubers-38522
+http://replay.pokemonshowdown.com/smogtours-ubers-38538
+http://replay.pokemonshowdown.com/smogtours-ubers-39368
+http://replay.pokemonshowdown.com/smogtours-ubers-41461
+http://replay.pokemonshowdown.com/smogtours-ubers-39324
+http://replay.pokemonshowdown.com/smogtours-ubers-41125
+http://replay.pokemonshowdown.com/smogtours-ubers-43638
+http://replay.pokemonshowdown.com/smogtours-ubers-42302
+http://replay.pokemonshowdown.com/smogtours-ubers-45536
 
 [ORAS UU]
 http://replay.pokemonshowdown.com/smogtours-uu-32447
