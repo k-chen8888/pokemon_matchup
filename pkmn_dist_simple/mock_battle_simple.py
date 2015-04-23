@@ -284,4 +284,5 @@ def mock_dist(team1, team2):
 		team2_scores.append( sum(pkmn2['defense']) )
 	
 	# Final scores
-	return sum( [ ( team1_scores[i] - team2_scores[i] ) ** 2 for i in range(0, 5) ] )
+	# All possible squared differences
+	return sum( [ sum( [ ( team1_score - team2_score ) ** 2 for team1_score in team1_scores ] ) for team2_score in team2_scores ] )
