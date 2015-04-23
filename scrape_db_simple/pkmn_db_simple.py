@@ -62,11 +62,33 @@ move_cats = ['physical', 'special', 'other']
 # Use this to look up the special conditions for 'Other'
 # Saved as regex components
 other = {}
-other['weather'] = [r' rain ', r'sandstorm', r'hail', r'sunny']
-other['entry'] = [r'trap']
-other['status'] = [r'burn ', r'paralysis', r'poison ', r'confuse', r'confusion', r'sleep', r'freeze', r'protect', r'evade all']
-other['heal'] = [r'cure', r'restore']
-other['stat_change'] = [r'ups', r'raise', r'raising', r'boost', r'reduce', r'lower']
+other['weather'] = [' rain ', 'sandstorm', 'hail', 'sunny']
+other['entry'] = ['trap']
+other['status'] = ['burn ', 'paralysis', 'poison ', 'confuse', 'confusion', 'sleep', 'freeze', 'protect', 'evade all']
+other['heal'] = ['cure', 'restore', 'regains']
+other['stat_change'] = ['ups', 'raise', 'raising', 'boost', 'reduce', ' lower']
+
+
+# Berries that reduce damage dealt by super-effective moves by 50%
+se_reduce = []
+se_reduce.append("Occa Berry") # Fire
+se_reduce.append("Passho Berry") # Water
+se_reduce.append("Wacan Berry") # Electric
+se_reduce.append("Rindo Berry") # Grass
+se_reduce.append("Yache Berry") # Ice
+se_reduce.append("Chople Berry") # Fighting
+se_reduce.append("Kebia Berry") # Poison
+se_reduce.append("Shuca Berry") # Ground
+se_reduce.append("Coba Berry") # Flying
+se_reduce.append("Payapa Berry") # Psychic
+se_reduce.append("Tanga Berry") # Bug
+se_reduce.append("Charti Berry") # Rock
+se_reduce.append("Kasib Berry") # Ghost
+se_reduce.append("Haban Berry") # Dragon
+se_reduce.append("Colbur Berry") # Dark
+se_reduce.append("Babiri Berry") # Steel
+se_reduce.append("Chilan Berry") # Normal, any move
+se_reduce.append("Roseli Berry") # Fairy
 
 
 # Table of damage multipliers for type matchups (indices match the pkmn_types array)
@@ -280,6 +302,14 @@ class HoldItem(Base):
 		self.name = stats['name']
 		self.fling_dmg = stats['fling']
 		self.mega_stone = stats['mega_stone']
+		self.natural_gift_type = stats['natural_gift_type']
+		self.natural_gift_power = stats['natural_gift_power']
+		
+		# Check list
+		if stats['name'] in se_reduce:
+			self.se_dmg_down = 1
+		else:
+			self.se_dmg_down = 1
 
 
 '''

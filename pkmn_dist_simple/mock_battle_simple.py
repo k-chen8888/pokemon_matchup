@@ -32,3 +32,7 @@ For each Pokemon
 
 At the end of the mock battle, each move gets a score from 1-6
 '''
+import os, sys, re, math
+
+# Query Pokemon from database to get information
+from scrape_db_simple.pkmn_db_simple import *

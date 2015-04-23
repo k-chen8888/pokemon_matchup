@@ -20,7 +20,7 @@ Perform the measure with each possible pairing of Pokemon and output the average
 import os, sys, re, math
 
 # Query Pokemon from database to get information
-from pkmn_db_simple import *
+from scrape_db_simple.pkmn_db_simple import *
 
 
 '''
@@ -70,11 +70,11 @@ def team_dist(team1, team2):
 	
 	# Populate move type distribution lists
 	for p in team2:
-		for m in p['moves']
+		for m in p['moves']:
 			m1 = s.query(Move).filter(Move.name == m).first()
 			team1_move_types[m1.move_type] += 1
 	for p in team2:
-		for m in p['moves']
+		for m in p['moves']:
 			m2 = s.query(Move).filter(Move.name == m).first()
 			team1_move_types[m2.move_type] += 1
 			

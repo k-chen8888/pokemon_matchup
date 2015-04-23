@@ -35,9 +35,9 @@ Call all of the scrapers and get to work
 '''
 def scrape_dex():
 	# Load all documented information, scraping from serebii.net
-	d_items = items()
-	d_moves = moves()
-	d_abilities = abilities()
+	#d_items = items()
+	#d_moves = moves()
+	#d_abilities = abilities()
 	d_pkmn = pkmn()
 	
 	'''
@@ -62,7 +62,7 @@ def scrape_dex():
 			new_item = HoldItem(i)
 			s.add(new_item)
 		s.commit()
-
+	
 	# For each move, make a new Move and commit to database
 	# Only add if it doesn't exist
 	for m in d_moves:
@@ -70,7 +70,7 @@ def scrape_dex():
 			new_move = Move(m)
 			s.add(new_move)
 		s.commit()
-
+	
 	# For each ability, make a new Ability and commit to database
 	# Only add if it doesn't exist
 	for a in d_abilities:
@@ -106,8 +106,10 @@ def scrape_dex():
 		else:
 			print "Found"
 	
-	s.commit()
-	session.close()
+		s.commit()
+	
+	# Done
+	s.close()
 
 
 if __name__ == '__main__':

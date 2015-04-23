@@ -92,6 +92,9 @@ def moves(base_url = "http://serebii.net/attackdex-xy/"):
 
 				# Special conditions for 'Other'
 				if move['move_cat'] == 2:
+					search_in = BeautifulSoup( move_data, parse_only = SoupStrainer('table') ).findAll("table", { "class" : "dextable" })[0].findAll("tr")[5].renderContents()[33:-6].strip()
+					print search_in
+					
 					move['weather'] = False
 					move['entry'] = False
 					move['status'] = False
@@ -99,36 +102,36 @@ def moves(base_url = "http://serebii.net/attackdex-xy/"):
 					move['stat_change'] = False
 					
 					# Weather
-					for x in other['weather']:
-						if soup.findAll(text = re.compile(x)):
+					for w in other['weather']:
+						if w in search_in:
 							move['weather'] = True
 						else:
 							pass
 					
 					# Entry hazard
-					for x in other['entry']:
-						if soup.findAll(text = re.compile(x)):
+					for e in other['entry']:
+						if e in search_in:
 							move['entry'] = True
 						else:
 							pass
 					
 					# Status effect
-					for x in other['status']:
-						if soup.findAll(text = re.compile(x)):
+					for s in other['status']:
+						if s in search_in:
 							move['status'] = True
 						else:
 							pass
 					
 					# Healing
-					for x in other['heal']:
-						if soup.findAll(text = re.compile(x)):
+					for h in other['heal']:
+						if h in search_in:
 							move['heal'] = True
 						else:
 							pass
 					
 					# Buff/weaken
-					for x in other['stat_change']:
-						if soup.findAll(text = re.compile(x)):
+					for c in other['stat_change']:
+						if c in search_in:
 							move['stat_change'] = True
 						else:
 							pass
