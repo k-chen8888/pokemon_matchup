@@ -24,7 +24,7 @@ For each Pokemon on the team
 		
 		+1 point for each "victory"
 			That is, +1 for winning with critical and +1 for winning without critical
-			Define "victory" as reducing the enemy's HP by more than 75%
+			Define "victory" as reducing the enemy's HP by more than some percentage
 		+1 point for higher priority or speed
 		+1 point for hitting an opponent when they don't have a reduction item or Leftovers/Focus Sash and do not have the move Substitute
 		+1 point for STAB
@@ -83,6 +83,12 @@ Session.configure(bind=engine)
 
 # Work with this one
 s_mock = Session()
+
+
+'''
+The percentage of HP that needs to be knocked off in order to declare "victory"
+'''
+VICTORY_BOUND = 0.75
 
 
 '''
@@ -251,10 +257,10 @@ def mock_calculate(pkmn, p_item, opponent, opp, o_item, move, special):
 		no_crit = (0.84 * atk_de_ratio * move_power + 2) * stab * type_eff * reduce
 		crit = (0.84 * atk_de_ratio * move_power + 2) * stab * type_eff * reduce * 1.5
 		
-		score += 1 if no_crit / opp.base_hp > 0.75 else 0
-		score += 1 if crit / opp.base_hp > 0.75 else 0
+		score += 1 if no_crit / opp.base_hp > VICTORY_BOUND else 0
+		score += 1 if crit / opp.base_hp > VICTORY_BOUND else 0
 	
-	else: # Very often going to be only 25% of health in damage; don't add anything
+	else: # Very often going to be only VICTORY_BOUND% of health in damage; don't add anything
 		pass
 	
 	return score

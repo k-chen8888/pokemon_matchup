@@ -54,3 +54,7 @@ def purity(labels, teams, results):
 	# Display test results
 	print "The winners cluster contained", win[0], "% wins and", win[1], "% losses"
 	print "The losers cluster contained", loss[0], "% wins and", loss[1], "% losses"
+
+
+def silhouette():
+	pass
