@@ -39,7 +39,7 @@ engine = create_engine('sqlite:///pkmn_db_simple.db', echo = True)
 Session.configure(bind=engine)
 
 # Work with this one
-s = Session()
+s_dist = Session()
 
 
 '''
@@ -54,12 +54,12 @@ def team_dist(team1, team2):
 	
 	# Populate type distribution lists
 	for p in team1:
-		p1 = s.query(Pokemon).filter(Pokemon.name == p['name']).first()
+		p1 = s_dist.query(Pokemon).filter(Pokemon.name == p['name']).first()
 		team1_types[p1.type1] += 1
 		if p1.type1 > -1:
 			team1_types[p1.type2] += 1
 	for p in team2:
-		p2 = s.query(Pokemon).filter(Pokemon.name == p['name']).first()
+		p2 = s_dist.query(Pokemon).filter(Pokemon.name == p['name']).first()
 		team1_types[p2.type1] += 1
 		if p2.type1 > -1:
 			team1_types[p2.type2] += 1
@@ -74,11 +74,11 @@ def team_dist(team1, team2):
 	# Populate move type distribution lists
 	for p in team2:
 		for m in p['moves']:
-			m1 = s.query(Move).filter(Move.name == m).first()
+			m1 = s_dist.query(Move).filter(Move.name == m).first()
 			team1_move_types[m1.move_type] += 1
 	for p in team2:
 		for m in p['moves']:
-			m2 = s.query(Move).filter(Move.name == m).first()
+			m2 = s_dist.query(Move).filter(Move.name == m).first()
 			team1_move_types[m2.move_type] += 1
 			
 	# Squared distance of type distribution
@@ -89,8 +89,7 @@ def team_dist(team1, team2):
 		
 	# Squared "distance" between base strengths of Pokemon
 	# Use mock_battle_simple
-	#mock_results = mock_battle(team1, team2)
-	#mock_results_inv = mock_battle(team2, team1)
+	mock_results = mock_battle(team1, team2)
 	
 	# Output square root of sum
 	return ( type_dist + move_type_dist + avg_dist ) ** 0.5
@@ -105,8 +104,8 @@ Define each Pokemon in the team as a dictionary
 '''
 def pkmn_dist(pkmn1, pkmn2):
 	# Query each Pokemon from the database
-	p1 = s.query(Pokemon).filter(Pokemon.name == pkmn1['name']).first()
-	p2 = s.query(Pokemon).filter(Pokemon.name == pkmn2['name']).first()
+	p1 = s_dist.query(Pokemon).filter(Pokemon.name == pkmn1['name']).first()
+	p2 = s_dist.query(Pokemon).filter(Pokemon.name == pkmn2['name']).first()
 	
 	# Type Similarity
 	type_dist = 0
@@ -136,10 +135,13 @@ def pkmn_dist(pkmn1, pkmn2):
 	base_dist = sum( [ ( pkmn1['base'][i] - pkmn2['base'][i] ) ** 2 for i in range(0, 6) ] )
 	
 	# Pairwise distance between each move, averaged using the number of moves it was compared to
-	move_dist = sum( [ ( sum( [ move_dist(move1, move2) for move1 in pkmn1['moves'] ] ) / float( len(pkmn2['moves']) ) ) for move2 in pkmn2['moves'] ] )
+	m_dist = sum( [ ( sum( [ move_dist(move1, move2) for move1 in pkmn1['moves'] ] ) / float( len(pkmn2['moves']) ) ) for move2 in pkmn2['moves'] ] )
+	
+	# Distance between hold items
+	i_dist = item_dist(pkmn1, pkmn2)
 	
 	# Output sum
-	return type_dist + base_dist + move_dist
+	return type_dist + base_dist + m_dist + i_dist
 
 
 '''
@@ -151,19 +153,42 @@ def move_dist(move1, move2):
 		return 0 # No distance if they're the same
 	
 	else:
-		m1 = s.query(Move).filter(Move.name == move1).first()
-		m2 = s.query(Move).filter(Move.name == move2).first()
+		m1 = s_dist.query(Move).filter(Move.name == move1).first()
+		m2 = s_dist.query(Move).filter(Move.name == move2).first()
 		
-		# Take the Euclidean distance
-		sq_dist = 0
+		# Take the Euclidean distance (squared)
+		sq_dist_m = 0
 		
-		sq_dist += (m1.move_cat - m2.move_cat) ** 2 # Category
-		sq_dist += (m1.base_power - m2.base_power) ** 2 # Base Power
-		sq_dist += (m1.priority - m2.priority) ** 2 # Accuracy
-		sq_dist += (m1.accuracy - m2.accuracy) ** 2 # Priority
+		sq_dist_m += (m1.move_cat - m2.move_cat) ** 2 # Category
+		sq_dist_m += (m1.base_power - m2.base_power) ** 2 # Base Power
+		sq_dist_m += (m1.priority - m2.priority) ** 2 # Accuracy
+		sq_dist_m += (m1.accuracy - m2.accuracy) ** 2 # Priority
 		
 		# Output sum
-		return sq_dist
+		return sq_dist_m
+
+
+'''
+Distance between hold items
+Items given by name only and queried
+'''
+def item_dist(pkmn1, pkmn2):
+	# Find the item
+	# If no hold item, give it a useless Soothe Bell
+	i1 = s_dist.query(HoldItem).filter(HoldItem.name == pkmn1['item']).first() if pkmn1['item'] != None else s_dist.query(HoldItem).filter(HoldItem.name == "Soothe Bell").first()
+	i2 = s_dist.query(HoldItem).filter(HoldItem.name == pkmn2['item']).first() if pkmn2['item'] != None else s_dist.query(HoldItem).filter(HoldItem.name == "Soothe Bell").first()
+	
+	# Take the Euclidean distance (squared)
+	sq_dist_i = 0
+	
+	sq_dist_i += (i1.fling_dmg - i2.fling_dmg) ** 2 # Fling
+	sq_dist_i += 1 if not i1.mega_stone == i2.mega_stone else 0 # Is it a Mega Stone (take XOR)?
+	sq_dist_i += (i1.natural_gift_type - i2.natural_gift_type) ** 2 # Type for Natural Gift
+	sq_dist_i += (i1.natural_gift_power - i2.natural_gift_power) ** 2 # Power of Natural Gift
+	sq_dist_i += (i1.se_dmg_down - i2.se_dmg_down) ** 2 # Does it reduce super-effective damage?
+	
+	# Output squared distance
+	return sq_dist_i
 
 
 '''
