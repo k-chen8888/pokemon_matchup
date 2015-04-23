@@ -39,6 +39,7 @@ All parser and data cleaning tools
 # Distance measures and data evaluation
 from pkmn_dist_simple.mock_battle_simple import *
 from pkmn_dist_simple.pkmn_dist_simple import *
+from pkmn_dist_simple.clustering_tools import *
 
 
 '''
@@ -57,9 +58,17 @@ s_global = Session()
 if __name__ == '__main__':
 	# Gather the data and fill up the database
 	#scrape_dex()
-	
-	# Take the json dictionaries and make a list of teams (split up all match pairs)
+
+	'''
+	Take the json dictionaries and make a list of teams (split up all match pairs) and a list of results
+	Results is boolean list
+		True = win
+		False = loss
+	Index of a given result is equal to the index of the team it is associated with
+	'''
 	#teams = []
+	#results = []
+	#json_data = sys.argv[1]
 	
 	# For each team, compare to each other team
 	# Generate an adjacency matrix by calculating similarity as the distance between each team and normalizing
@@ -70,6 +79,6 @@ if __name__ == '__main__':
 	#labels = spectral_clustering(np.asarray(adj_mtrx), n_clusters = 2, eigen_solver = 'arpack', assign_labels = 'discretize')
 	
 	# Compute the purity of the clustering
-	#purity(teams, labels)
+	#purity(teams, labels, results)
 	
 	print "Done"
