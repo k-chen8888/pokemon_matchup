@@ -6,6 +6,20 @@ import os, sys, math, re
 # JSON tool for reading parsed data file
 import json
 
+# Parsed data file is formatted with newlines
+# Convert to no newlines, populate and output...
+#	Array of teams
+# 	Array of results
+def populate(json_file):
+	# Build json string, without newlines
+	json_str = ""
+	for line in json_file:
+		json_str += line.rstrip()
+	
+	# Interpret string and populate lists
+	data = json.loads(json_str)
+	print data
+
 
 '''
 Data analysis tools
@@ -66,9 +80,9 @@ if __name__ == '__main__':
 		False = loss
 	Index of a given result is equal to the index of the team it is associated with
 	'''
-	#teams = []
-	#results = []
-	#json_data = sys.argv[1]
+	json_data = open(sys.argv[1], "r")
+	
+	populate(json_data)
 	
 	# For each team, compare to each other team
 	# Generate an adjacency matrix by calculating similarity as the distance between each team and normalizing

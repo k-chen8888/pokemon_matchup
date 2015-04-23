@@ -14,7 +14,7 @@ def purity(labels, teams, results):
 	
 	# Sort by cluster
 	for i in range(0, len(labels)):
-		if labels[i] = 0:
+		if labels[i] == 0:
 			zero.append(teams[i])
 		else:
 			one.append(teams[i])
