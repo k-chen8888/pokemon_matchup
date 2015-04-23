@@ -13,48 +13,6 @@ import requests
 # for reading the log
 import StringIO
 
-#sys.setdefaultencoding('utf-8')
-
-
-def theParser(webpage):
-	
-	#scrape the data from the webpage url
-	r = requests.get(webpage)
-	page_source = r.text
-	
-	#feed the source into beautiful soup
-	soup = BeautifulSoup(page_source)
-	soup.prettify()
-	
-	log = soup.find("script", {"class" : "log"})
-	
-	blog = StringIO.StringIO(log)
-	line = blog.readline()
-	while line is not "":
-		print line
-		parse_line(line)
-		line = blog.readline()
-		
-	
-	#create a jSon
-	toJson()
-	print "done"
-	
-'''
-These functions work on the following basis:
-	Above each parse function is a comment with examples
-	of the data that we expect to read in that function
-	the list input is passed in after the original string
-	is split with "|" as the delimiter
-	counting starts from 0, however, there is nothing before
-	the first "|" so counting words starts from 1
-'''
-
-weather = { "RainDance":0, "PrimordialSea":0, "SunnyDay":0, "DesolateLand":0, "Sandstorm":0, "Hail":0, "DeltaStream":0, "none":1}
-
-
-
-
 class Player:
 	def __init__(self):
 		self.cur = None
@@ -73,18 +31,174 @@ class Pokemon:
 		self.status = {"brn":0, "par":0, "slp":0, "frz":0, "psn":0, "tox":0, "confusion":0, "trapped":0}
 		self.crit = 0
 
-tier = ""
-win = ""
+class Battle:
+	def __init__(self):
+		self.tier = ""
+		self.turn = ""
+		self.win = ""
+		self.weather = { "RainDance":0, "PrimordialSea":0, "SunnyDay":0, "DesolateLand":0, "Sandstorm":0, "Hail":0, "DeltaStream":0, "none":1}
+		
+		
+def theParser(webpage):
+	
+	print "Parsing: " + webpage
+	
+	#scrape the data from the webpage url
+	r = requests.get(webpage)
+	page_source = r.text
+	
+	#feed the source into beautiful soup
+	soup = BeautifulSoup(page_source)
+	soup.prettify()
+	
+	log = soup.find("script", {"class" : "log"})
+	
+	blog = StringIO.StringIO(log)
+	line = blog.readline()
+	while line is not "":
+		#print line
+		parse_line(line)
+		line = blog.readline()
+		
+	
+	#create a jSon
+	toJson()
+	#print "finished Parsing: " + webpage
+	
+
+'''This is the parsing function	that splits up the input we get
+from the webpage It runs in O(n) time by doing a single pass'''	
+def parse_line(input):
+	#Take the input
+	#Split it up
+	#switch/If it into proper function
+	
+	
+	#if the final character is the newline, get rid of it
+	if input[-1:] == '\n':
+		input = input[:-1]
+		
+	data = input.split("|")
+	
+	if data[1] == "move":	move(data)
+	elif data[1] == "-damage": 	damage(data)
+	elif data[1] == "turn":	turnf(data)
+	elif data[1] == "-sidestart":	inhaz(data)
+	elif data[1] == "switch" or data[1] == "drag":	switch(data)
+	elif data[1] == "-heal": heal(data)
+	elif data[1] == "-status": status(data)
+	elif data[1] == "-activate": activate(data)
+	elif data[1] == "-weather":	 weatherf(data)
+	elif data[1] == "-boost": boost(data)
+	elif data[1] == "detailschange": transformation(data)
+	elif data[1] == "-mega":	mega(data)
+	elif data[1] == "-ability":	ability(data)
+	elif data[1] == "-enditem":	item(data)
+	elif data[1] == "-crit": crit(data)
+	elif data[1] == "poke":	pokemon(data)
+	elif data[1] == "player": player(data)
+	elif data[1] == "tier":	tierf(data)
+	elif data[1] == "win":	winf(data)
+		
+
+'''This function takes the information that we retive from the Parse function and converts it into a Json object. It then outputs that to a file'''
+def toJson():
+	match = {}
+	'''For each player, build their dictionary
+		filling in their name, the entry hazards they used
+		the pokemon they used and the number of heals they did'''
+	player1 = {}
+	player1["name"] = p1a.name #str
+	player1["hazards"] = p1a.hazards #dict
+	player1["heals"] = p1a.heals #int
+
+	i = 1
+	'''for each pokemon the player has, 
+		create a dictionary with the pokemon's information, 
+		then pass that dictionary to the player dictionary'''
+	pokemon = p1a.pokemon
+	for k in pokemon :
+		poke = {}
+		poke["name"] = pokemon[k].name #str
+		poke["item"] = pokemon[k].item #str
+		poke["ability"] = pokemon[k].ability #str
+		poke["moves"] = pokemon[k].move #this is a list
+		poke["status"] = pokemon[k].status #this is a dict
+		poke["critical"] = pokemon[k].crit #int
+		player1["pokemon"+str(i)] = poke
+		i += 1
+
+	'''Do this for player 2'''
+	
+	player2 = {}
+	player2["name"] = p2a.name #str
+	player2["hazards"] = p2a.hazards #dict
+	player2["heals"] = p2a.heals #int	
+
+	i=1
+	pokemon = p2a.pokemon
+	for k in pokemon :
+		poke = {}
+		poke["name"] = pokemon[k].name #str
+		poke["item"] = pokemon[k].item #str
+		poke["ability"] = pokemon[k].ability #str
+		poke["moves"] = pokemon[k].move #this is a list
+		poke["status"] = pokemon[k].status #this is a dict
+		poke["critical"] = pokemon[k].crit #int
+		player2["pokemon"+str(i)] = poke
+		i += 1
+		
+	match["player1"] = player1
+	match["player2"] = player2
+	match["winner"] = bat.win
+	match["tier"] = bat.tier
+	match["turn"] = bat.turn
+	match["weather"] = bat.weather
+	
+	name = player1["name"]
+	name2 = player2["name"]
+	#print match
+	filename = bat.tier + "2" + name + "VS" + name2 + ".txt"
+	file = open(filename, 'w')
+	son = json.dumps(match, sort_keys=True, indent=5)
+	file.write(son)
+	#file.write(str(match))
+	file.close	
+	
+'''
+These functions work on the following basis:
+	Above each parse function is a comment with examples
+	of the data that we expect to read in that function
+	the list input is passed in after the original string
+	is split with "|" as the delimiter
+	counting starts from 0, however, there is nothing before
+	the first "|" so counting words starts from 1
+'''
+
+bat = Battle()
 p1a = Player()		
 p2a = Player()
-turn = ""
 	
 def tierf(input):
-	tier = input[2]
+	bat.tier = input[2]
 
 #|win|Anzle
 def winf(input):
-	win = input[2]
+    bat.win = input[2]
+
+#|-weather|RainDance
+def weatherf(input):
+	if input[2][-1] == '\n':
+			index = input[2][:-1]
+	else:
+			index = input[2]
+	wea = bat.weather[index]
+	wea += 1
+	bat.weather[index] = wea
+	
+# |turn|1
+def turnf(input):
+	bat.turn = input[2]
 
 #|player|p1|pansexual skitty|100
 def player(input):
@@ -208,32 +322,19 @@ def damage(input):
 			elif "ability" in input[4]:
 				p2a.cur.ability = input[4].split(":")[1].lstrip()
 			
-#|-weather|RainDance
-def weatherf(input):
-        if input[2][-1] == '\n':
-                index = input[2][:-1]
-        else:
-                index = input[2]
-        wea = weather[index]
-        wea += 1
-        weather[index] = wea
-	
-# |turn|1
-def turnf(input):
-	turn = input[2]
 	
 #|-status|p1a: i built that.|tox
 #|-status
 #|brn, par, slp, frz, psn, tox, 
 def status(input):	
 	if "p1a:" in input[2]:
-		stus = p1a.cur.status[input[3][:-1]]
+		stus = p1a.cur.status[input[3]]
 		stus += 1
 		p1a.cur.status[input[3][:-1]] = stus
 	else:
-		stus = p2a.cur.status[input[3][:-1]]
+		stus = p2a.cur.status[input[3]]
 		stus += 1
-		p2a.cur.status[input[3][:-1]] = stus
+		p2a.cur.status[input[3]] = stus
 
 
 #|confusion, trapped
@@ -241,13 +342,13 @@ def status(input):
 def activate(input):
 	if "confusion" in input[3]:
 		if "p1a" in input[2]:
-			conf = p1a.cur.status[input[3][:-1]]
+			conf = p1a.cur.status[input[3]]
 			conf += 1
 			p1a.cur.status[input[3][:-1]] = conf
 		else:
-			conf = p2a.cur.status[input[3][:-1]]
+			conf = p2a.cur.status[input[3]]
 			conf += 1
-			p2a.cur.status[input[3][:-1]] = conf
+			p2a.cur.status[input[3]] = conf
 		
 		
 		
@@ -265,104 +366,9 @@ def inhaz(input):
 	else:
 		p1a.hazards[input[3].split(":")[1].lstrip()] = 1;
 
-
-#This is the parsing function		
-def parse_line(input):
-	#Take the input
-	#Split it up
-	#switch/If it into proper function
-	
-	data = input.split("|")
-	if data[1] == "move":	move(data)
-	elif data[1] == "-damage": 	damage(data)
-	elif data[1] == "turn":	turnf(data)
-	elif data[1] == "-sidestart":	inhaz(data)
-	elif data[1] == "switch" or data[1] == "drag":	switch(data)
-	elif data[1] == "-heal": heal(data)
-	elif data[1] == "-status": status(data)
-	elif data[1] == "-activate": activate(data)
-	elif data[1] == "-weather":	 weatherf(data)
-	elif data[1] == "-boost": boost(data)
-	elif data[1] == "detailschange": transformation(data)
-	elif data[1] == "-mega":	mega(data)
-	elif data[1] == "-ability":	ability(data)
-	elif data[1] == "-enditem":	item(data)
-	elif data[1] == "-crit": crit(data)
-	elif data[1] == "poke":	pokemon(data)
-	elif data[1] == "player": player(data)
-	elif data[1] == "tier":	tierf(data)
-	elif data[1] == "win":	winf(data)
 		
-
-	
-def toJson():
-	match = {}
-	'''For each player, build their dictionary
-		filling in their name, the entry hazards they used
-		the pokemon they used and the number of heals they did'''
-	player1 = {}
-	player1["name"] = p1a.name #str
-	player1["hazards"] = p1a.hazards #dict
-	player1["heals"] = p1a.heals #int
-
-	i = 1
-	'''for each pokemon the player has, 
-		create a dictionary with the pokemon's information, 
-		then pass that dictionary to the player dictionary'''
-	pokemon = p1a.pokemon
-	for k in pokemon :
-		poke = {}
-		poke["name"] = pokemon[k].name #str
-		poke["item"] = pokemon[k].item #str
-		poke["ability"] = pokemon[k].ability #str
-		poke["moves"] = pokemon[k].move #this is a list
-		poke["status"] = pokemon[k].status #this is a dict
-		poke["critical"] = pokemon[k].crit #int
-		player1["pokemon"+str(i)] = poke
-		i += 1
-
-	'''Do this for player 2'''
-	
-	player2 = {}
-	player2["name"] = p2a.name #str
-	player2["hazards"] = p2a.hazards #dict
-	player2["heals"] = p2a.heals #int	
-
-	i=1
-	pokemon = p2a.pokemon
-	for k in pokemon :
-		poke = {}
-		poke["name"] = pokemon[k].name #str
-		poke["item"] = pokemon[k].item #str
-		poke["ability"] = pokemon[k].ability #str
-		poke["moves"] = pokemon[k].move #this is a list
-		poke["status"] = pokemon[k].status #this is a dict
-		poke["critical"] = pokemon[k].crit #int
-		player2["pokemon"+str(i)] = poke
-		i += 1
 		
-	match["player1"] = player1
-	match["player2"] = player2
-	match["winner"] = win
-	match["tier"] = tier
-	match["weather"] = weather
-	
-	name = player1["name"]
-	name2 = player2["name"]
-	#print match
-	filename = tier + "2" + name + "VS" + name2 + ".txt"
-	file = open(filename, 'w')
-	son = json.dumps(match, indent=2)
-	file.write(son)
-	#file.write(str(match))
-	file.close
-	
-
-
-
-
-
-
+		
 theParser("http://replay.pokemonshowdown.com/smogtours-ou-34915")
 
 

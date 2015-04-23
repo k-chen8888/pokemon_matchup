@@ -128,7 +128,7 @@
     }, 
     "heals": 14
   }, 
-  "winner": "", 
+  "winner": null, 
   "player1": {
     "name": "the pdc show", 
     "pokemon1": {
