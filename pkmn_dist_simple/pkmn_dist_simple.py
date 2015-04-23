@@ -22,6 +22,9 @@ import os, sys, re, math
 # Query Pokemon from database to get information
 from scrape_db_simple.pkmn_db_simple import *
 
+# Use to get a distance measure for each Pokemon based on mock battles
+from mock_battle_simple import *
+
 
 '''
 Load database
@@ -40,8 +43,8 @@ s = Session()
 
 
 '''
-Similarity between teams
- 
+Distance between teams
+
 Define a team as a list of Pokemon
 '''
 def team_dist(team1, team2):
@@ -83,13 +86,18 @@ def team_dist(team1, team2):
 	
 	# Average pairwise squared distances between each Pokemon (if full teams of 6 Pokemon, there are 36 calculations made)
 	avg_dist = sum( [ sum( [ pkmn_dist(pkmn1, pkmn2) for pkmn1 in team1 ] ) for pkmn2 in team2 ] ) / float( len(team1) * len(team2) )
+		
+	# Squared "distance" between base strengths of Pokemon
+	# Use mock_battle_simple
+	#mock_results = mock_battle(team1, team2)
+	#mock_results_inv = mock_battle(team2, team1)
 	
 	# Output square root of sum
 	return ( type_dist + move_type_dist + avg_dist ) ** 0.5
 
 
 '''
-Similarity between Pokemon
+Distance between Pokemon
 
 Define each Pokemon in the team as a dictionary
 	'name' -> String, Pokemon official name
@@ -135,7 +143,7 @@ def pkmn_dist(pkmn1, pkmn2):
 
 
 '''
-Similarity between moves
+Distance between moves
 Moves given by name only and queried
 '''
 def move_dist(move1, move2):
@@ -156,3 +164,55 @@ def move_dist(move1, move2):
 		
 		# Output sum
 		return sq_dist
+
+
+'''
+Similarity between teams
+
+Builds and normalizes distance matrix to create adjacency matrix
+'''
+def similarity(teams):
+	adj = []
+	
+	# Get distance between each team
+	for team1 in teams:
+		adj_row = []
+		
+		for team2 in teams:
+			adj_row.append( team_dist(team1, team2) )
+		
+		adj.append(adj_row)
+	
+	# Normalize
+	adj_n = normalize(adj)
+	
+	return adj_n
+
+
+'''
+Normalize an adjacency matrix
+'''
+def normalize(adj):
+	adj_norm = []
+	
+	min_val = sys.maxint
+	max_val = 0
+	
+	# Get min and max values
+	for row in adj:
+		for value in row:
+			if value < min_val:
+				min_val = value
+			if value > max_val:
+				max_val = value
+	
+	# Use the equation 
+	for row in adj:
+		adj_norm_row = []
+		
+		for i in range(0, len(row)):
+			adj_norm_row.append( (row[i] - min_val) / (max_val - min_val) )
+		
+		adj_norm.append(adj_norm_row)
+	
+	return adj_norm
