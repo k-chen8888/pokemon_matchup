@@ -53,8 +53,8 @@ def purity(labels, teams, results):
 	loss = [zero_win_purity, zero_loss_purity] if zero_win_purity < one_win_purity else [one_win_purity, one_loss_purity]
 	
 	# Display test results
-	print "The winners cluster contained", win[0], "% wins and", win[1], "% losses"
-	print "The losers cluster contained", loss[0], "% wins and", loss[1], "% losses"
+	print "The winners cluster contained", win[0] * 100, "% wins and", win[1] * 100, "% losses"
+	print "The losers cluster contained", loss[0] * 100, "% wins and", loss[1] * 100, "% losses"
 
 
 def silhouette():
