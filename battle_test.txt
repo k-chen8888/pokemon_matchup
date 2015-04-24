@@ -24,6 +24,140 @@
 				{
 					"name": "Giratina Origin Form",
 					"item": "Griseous Orb",
+					"moves": ["Draco Meteor", "Outrage", "Hidden Power Fire", "Shadow Sneak"]
+				},
+				{
+					"name": "Jirachi",
+					"item": "Choice Scarf",
+					"moves": ["Iron Head", "Ice Punch", "U-turn", "Trick"]
+				}
+			 ],
+		"team2": [
+				{
+					"name": "Groudon",
+					"item": "Leftovers",
+					"moves": ["Earthquake", "Stealth Rock", "Roar", "Stone Edge"]
+				},
+				{
+					"name": "Blissey",
+					"item": "Leftovers",
+					"moves": ["Wish", "Seismic Toss", "Toxic", "Protect"]
+				},
+				{
+					"name": "Kyogre",
+					"item": "Leftovers",
+					"moves": ["Calm Mind", "Surf", "Rest", "Sleep Talk"]
+				},
+				{
+					"name": "Forretress",
+					"item": "Leftovers",
+					"moves": ["Rapid Spin", "Toxic Spikes", "Spikes", "Payback"]
+				},
+				{
+					"name": "Palkia",
+					"item": "Choice Scarf",
+					"moves": ["Spacial Rend", "Surf", "Thunder", "Outrage"]
+				},
+				{
+					"name": "Giratina Origin Form",
+					"item": "Griseous Orb",
+					"moves": ["Draco Meteor", "Outrage", "Hidden Power Fire", "Shadow Sneak"]
+				}
+			 ],
+		"winner": "team1"
+	},
+	{
+		"team1": [
+				{
+					"name": "Mega Gardevoir",
+					"item": "Gardevoirite",
+					"moves": ["Hyper Voice", "Psyshock", "Focus Blast", "Taunt"]
+				},
+				{
+					"name": "Keldeo",
+					"item": "Choice Specs",
+					"moves": ["Scald", "Hydro Pump", "Secret Sword", "Hidden Power Electric"]
+				},
+				{
+					"name": "Tyranitar",
+					"item": "Smooth Rock",
+					"moves": ["Ice Beam", "Stone Edge", "Pursuit", "Stealth Rock"]
+				},
+				{
+					"name": "Excadrill",
+					"item": "Air Balloon",
+					"moves": ["Earthquake", "Rapid Spin", "Rock Slide", "Iron Head"]
+				},
+				{
+					"name": "Ferrothorn",
+					"item": "Leftovers",
+					"moves": ["Leech Seed", "Protect", "Power Whip", "Gyro Ball"]
+				},
+				{
+					"name": "Latios",
+					"item": "Life Orb",
+					"moves": ["Roost", "Psyshock", "Draco Meteor", "Hidden Power Fire"]
+				}
+			 ],
+		"team2": [
+				{
+					"name": "Groudon",
+					"item": "Leftovers",
+					"moves": ["Earthquake", "Stealth Rock", "Roar", "Stone Edge"]
+				},
+				{
+					"name": "Blissey",
+					"item": "Leftovers",
+					"moves": ["Wish", "Seismic Toss", "Toxic", "Protect"]
+				},
+				{
+					"name": "Kyogre",
+					"item": "Leftovers",
+					"moves": ["Calm Mind", "Surf", "Rest", "Sleep Talk"]
+				},
+				{
+					"name": "Forretress",
+					"item": "Leftovers",
+					"moves": ["Rapid Spin", "Toxic Spikes", "Spikes", "Payback"]
+				},
+				{
+					"name": "Palkia",
+					"item": "Choice Scarf",
+					"moves": ["Spacial Rend", "Surf", "Thunder", "Outrage"]
+				},
+				{
+					"name": "Giratina Origin Form",
+					"item": "Griseous Orb",
+					"moves": ["Draco Meteor", "Outrage", "Hidden Power", "Shadow Sneak"]
+				}
+			 ],
+		"winner": "team1"
+	},
+	{
+		"team1": [
+				{
+					"name": "Deoxys Speed Form",
+					"item": "Leftovers",
+					"moves": ["Stealth Rock", "Spikes", "Taunt", "Superpower"]
+				},
+				{
+					"name": "Latias",
+					"item": "Soul Dew",
+					"moves": ["Dragon Pulse", "Calm Mind", "Recover", "Thunder"]
+				},
+				{
+					"name": "Wobbuffet",
+					"item": "Leftovers",
+					"moves": ["Counter", "Mirror Coat", "Encore", "Safeguard"]
+				},
+				{
+					"name": "Kyogre",
+					"item": "Leftovers",
+					"moves": ["Calm Mind", "Surf", "Rest", "Sleep Talk"]
+				},
+				{
+					"name": "Giratina Origin Form",
+					"item": "Griseous Orb",
 					"moves": ["Draco Meteor", "Outrage", "Hidden Power", "Shadow Sneak"]
 				},
 				{

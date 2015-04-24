@@ -91,6 +91,12 @@ se_reduce.append("Chilan Berry") # Normal, any move
 se_reduce.append("Roseli Berry") # Fairy
 
 
+# Mapping for all Hidden Power Types
+# Corresponds to type locations in pkmn_types
+# Note: No Normal or Fairy Hidden Power
+hp_type = ["", "Hidden Power Fire", "Hidden Power Water", "Hidden Power Electric", "Hidden Power Grass", "Hidden Power Ice", "Hidden Power Fighting", "Hidden Power Poison", "Hidden Power Ground", "Hidden Power Flying", "Hidden Power Psychic", "Hidden Power Bug", "Hidden Power Rock", "Hidden Power Ghost", "Hidden Power Dragon", "Hidden Power Dark", "Hidden Power Steel"]
+
+
 # Table of damage multipliers for type matchups (indices match the pkmn_types array)
 #	Row: Attacking type
 # 	Column: Defending type

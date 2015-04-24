@@ -179,13 +179,30 @@ def move_dist(move1, move2):
 		return 0 # No distance if they're the same
 	
 	else:
-		m1 = s_dist.query(Move).filter(Move.name == move1).first()
-		m2 = s_dist.query(Move).filter(Move.name == move2).first()
+		m1 = None
+		m1_type = -1
+		if "Hidden Power" not in move1:
+			m1 = s_dist.query(Move).filter(Move.name == move1).first()
+			m1_type = m1.move_type
+		else:
+			m1 = s_dist.query(Move).filter(Move.name == "Hidden Power").first()
+			m1_type = hp_type.index(move1)
+		
+		m2 = None
+		m2_type = -1
+		if "Hidden Power" not in move2:
+			m2 = s_dist.query(Move).filter(Move.name == move2).first()
+			m2_type = m2.move_type
+		else:
+			m2 = s_dist.query(Move).filter(Move.name == "Hidden Power").first()
+			m2_type = hp_type.index(move2)	
+			m2 = s_dist.query(Move).filter(Move.name == move2).first()
 		
 		# Take the Euclidean distance (squared)
 		sq_dist_m = 0
 		
-		sq_dist_m += (m1.move_cat - m2.move_cat) ** 2 # Category
+		sq_dist_m += 1 if m1_type == m2_type else 0 # Types match
+		sq_dist_m += 1 if m1.move_cat == m2.move_cat else 0 # Category
 		sq_dist_m += (m1.base_power - m2.base_power) ** 2 # Base Power
 		sq_dist_m += (m1.priority - m2.priority) ** 2 # Accuracy
 		sq_dist_m += (m1.accuracy - m2.accuracy) ** 2 # Priority

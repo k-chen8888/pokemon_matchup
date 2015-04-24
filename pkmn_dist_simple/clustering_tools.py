@@ -9,6 +9,7 @@ Calculate percentage of winners/losers in zero
 Calculate percentage of winners/losers in one
 '''
 def purity(labels, teams, results):
+	print labels
 	zero = []
 	one = []
 	
@@ -30,8 +31,8 @@ def purity(labels, teams, results):
 			zero_losses += 1
 	
 	# Purity for zero array
-	zero_win_purity = float(zero_wins) / len(zero)
-	zero_loss_purity = float(zero_losses) / len(zero)
+	zero_win_purity = float(zero_wins) / len(zero) if len(zero) > 0 else 0
+	zero_loss_purity = float(zero_losses) / len(zero) if len(zero) > 0 else 0
 	
 	# Calculate percentage of wins and losses in 1 list
 	one_wins = 0
@@ -44,8 +45,8 @@ def purity(labels, teams, results):
 			one_losses += 1
 	
 	# Purity for one array
-	one_win_purity = float(one_wins) / len(one)
-	one_loss_purity = float(one_losses) / len(one)
+	one_win_purity = float(one_wins) / len(one) if len(one) > 0 else 0
+	one_loss_purity = float(one_losses) / len(one) if len(one) > 0 else 0
 	
 	# Which cluster had more winners?
 	win = [zero_win_purity, zero_loss_purity] if zero_win_purity > one_win_purity else [one_win_purity, one_loss_purity]
