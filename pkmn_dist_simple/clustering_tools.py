@@ -9,7 +9,6 @@ Calculate percentage of winners/losers in zero
 Calculate percentage of winners/losers in one
 '''
 def purity(labels, teams, results):
-	print labels
 	zero = []
 	one = []
 	
@@ -49,13 +48,31 @@ def purity(labels, teams, results):
 	one_loss_purity = float(one_losses) / len(one) if len(one) > 0 else 0
 	
 	# Which cluster had more winners?
-	win = [zero_win_purity, zero_loss_purity] if zero_win_purity > one_win_purity else [one_win_purity, one_loss_purity]
-	loss = [zero_win_purity, zero_loss_purity] if zero_win_purity < one_win_purity else [one_win_purity, one_loss_purity]
+	# Store purity values and silhouette coefficients
+	win = [zero_win_purity, zero_loss_purity, silhouette(zero, one)] if zero_win_purity > one_win_purity else [one_win_purity, one_loss_purity, silhouette(one, zero)]
+	loss = [zero_win_purity, zero_loss_purity, silhouette(zero, one)] if zero_win_purity < one_win_purity else [one_win_purity, one_loss_purity, silhouette(one, zero)]
 	
 	# Display test results
-	print "The winners cluster contained", win[0] * 100, "% wins and", win[1] * 100, "% losses"
-	print "The losers cluster contained", loss[0] * 100, "% wins and", loss[1] * 100, "% losses"
+	print "The winners cluster contained", win[0] * 100, "% wins and", win[1] * 100, "% losses. The silhouette coefficient for this cluster is", win[2]
+	print "The losers cluster contained", loss[0] * 100, "% wins and", loss[1] * 100, "% losses. The silhouette coefficient for this cluster is", loss[2]
 
+'''
+Silhouette coefficient
 
-def silhouette():
-	pass
+a = Average distance between each point 
+'''
+def silhouette(winners, losers):
+	# Get a list of coefficients
+	coefficients = []
+	
+	for team1 in winners:
+		# Distance to points in same cluster
+		a = sum( [ team_dist(team1, team2) for team2 in winners if not team1 == team2 ] ) / len(winners)
+		
+		# Distance to points in different cluster
+		b = sum( [ team_dist(team1, team2) for team2 in losers ] ) / len(losers)
+		
+		coefficients.append(1 - a / b)
+	
+	# Output average of all coefficients to get cluster coefficient
+	return sum( coefficients ) / len(coefficients)
