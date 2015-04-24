@@ -1,4 +1,4 @@
-import battleParser
+import parserV2
 import json
 from copy import deepcopy
 
@@ -7,7 +7,7 @@ def battleData(filename):
 	battles = []
 	for battle in file:
 		#print battle
-		match = battleParser.parse(battle)
+		match = parserV2.parse(battle)
 		battles.append(deepcopy(match))
 	
 	file.close()
@@ -16,4 +16,5 @@ def battleData(filename):
 	file = open("battleData.txt", 'w')
 	file.write(son)
 	file.close()
-	
+
+battleData("OU.txt")

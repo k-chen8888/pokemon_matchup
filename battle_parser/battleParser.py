@@ -45,9 +45,10 @@ p1a = Player()
 p2a = Player()
 	
 def parse(webpage):
-	
 
-	
+	bat = Battle()
+	p1a = Player()		
+	p2a = Player()
 	print "Parsing: " + webpage
 	
 	#scrape the data from the webpage url
@@ -155,7 +156,7 @@ def toJson():
 		poke["moves"] = deepcopy(pokemon[k].move) #this is a list
 		#poke["status"] = pokemon[k].status #this is a dict
 		#poke["critical"] = pokemon[k].crit #int
-		player2["pokemon"+str(i)] = depcopy(poke)
+		player2["pokemon"+str(i)] = deepcopy(poke)
 		i += 1
 		
 	match["team1"] = deepcopy(player1)
@@ -168,6 +169,7 @@ def toJson():
 	
 	match["winner"] = deepcopy(victor)
 	print match
+
 	return match
 	#match["tier"] = bat.tier
 	#match["turn"] = bat.turn
@@ -376,7 +378,6 @@ def crit(input):
 
 #|-sidestart|p2: Jibaku|move: Stealth Rock
 #|-sidestart|p2: Henry|Spikes
-
 def inhaz(input):
 	if "p1" in input[2]:
 		if ":" in input[3]:
