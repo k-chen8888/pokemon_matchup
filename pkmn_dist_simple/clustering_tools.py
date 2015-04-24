@@ -59,7 +59,14 @@ def purity(labels, teams, results):
 '''
 Silhouette coefficient
 
-a = Average distance between each point 
+Assume that the winners cluster is the first argument
+
+a = Average distance between each point and points in the same cluster
+b = Average distance between each point and points in a different cluster
+Store a list of coefficients 1 - a / b
+
+Output the average of the list as the coefficent of the cluster
+	Coefficients close to 1 are better
 '''
 def silhouette(winners, losers):
 	# Get a list of coefficients
