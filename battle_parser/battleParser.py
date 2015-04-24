@@ -3,6 +3,7 @@ import json
 #use REs for indexing
 import re
 
+from copy import deepcopy
 
 # Uses beautifulsoup to scrape
 from bs4 import BeautifulSoup, SoupStrainer
@@ -25,8 +26,8 @@ class Pokemon:
 	def __init__(self, pkname):
 		self.name = pkname
 		self.nickname = ""
-		self.item = ""
-		self.ability = ""
+		self.item = None
+		self.ability = None
 		self.move = []
 		self.status = {"brn":0, "par":0, "slp":0, "frz":0, "psn":0, "tox":0, "confusion":0, "trapped":0}
 		self.crit = 0
@@ -130,12 +131,13 @@ def toJson():
 		poke["name"] = pokemon[k].name #str
 		poke["item"] = pokemon[k].item #str
 		#poke["ability"] = pokemon[k].ability #str
-		poke["moves"] = pokemon[k].move #this is a list
+		poke["moves"] = deepcopy(pokemon[k].move) #this is a list
 		#poke["status"] = pokemon[k].status #this is a dict
 		#poke["critical"] = pokemon[k].crit #int
-		player1["pokemon"+str(i)] = poke
+		player1["pokemon"+str(i)] = deepcopy(poke)
 		i += 1
-
+		
+	poke = None 
 	'''Do this for player 2'''
 	
 	player2 = {}
@@ -150,22 +152,22 @@ def toJson():
 		poke["name"] = pokemon[k].name #str
 		poke["item"] = pokemon[k].item #str
 		#poke["ability"] = pokemon[k].ability #str
-		poke["moves"] = pokemon[k].move #this is a list
+		poke["moves"] = deepcopy(pokemon[k].move) #this is a list
 		#poke["status"] = pokemon[k].status #this is a dict
 		#poke["critical"] = pokemon[k].crit #int
-		player2["pokemon"+str(i)] = poke
+		player2["pokemon"+str(i)] = depcopy(poke)
 		i += 1
 		
-	match["team1"] = player1
-	match["team2"] = player2
+	match["team1"] = deepcopy(player1)
+	match["team2"] = deepcopy(player2)
 	
 	if bat.win == p1a.name:
 		victor = 'team1'
 	else:
 		victor = 'team2'
 	
-	match["winner"] = victor
-	
+	match["winner"] = deepcopy(victor)
+	print match
 	return match
 	#match["tier"] = bat.tier
 	#match["turn"] = bat.turn
