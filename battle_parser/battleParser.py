@@ -38,8 +38,14 @@ class Battle:
 		self.win = ""
 		self.weather = { "RainDance":0, "PrimordialSea":0, "SunnyDay":0, "DesolateLand":0, "Sandstorm":0, "Hail":0, "DeltaStream":0, "none":1}
 		
-		
-def theParser(webpage):
+
+bat = Battle()
+p1a = Player()		
+p2a = Player()
+	
+def parse(webpage):
+	
+
 	
 	print "Parsing: " + webpage
 	
@@ -62,7 +68,7 @@ def theParser(webpage):
 		
 	
 	#create a jSon
-	toJson()
+	return toJson()
 	#print "finished Parsing: " + webpage
 	
 
@@ -80,25 +86,26 @@ def parse_line(input):
 		
 	data = input.split("|")
 	
-	if data[1] == "move":	move(data)
-	elif data[1] == "-damage": 	damage(data)
-	elif data[1] == "turn":	turnf(data)
-	elif data[1] == "-sidestart":	inhaz(data)
-	elif data[1] == "switch" or data[1] == "drag":	switch(data)
-	elif data[1] == "-heal": heal(data)
-	elif data[1] == "-status": status(data)
-	elif data[1] == "-activate": activate(data)
-	elif data[1] == "-weather":	 weatherf(data)
-	elif data[1] == "-boost": boost(data)
-	elif data[1] == "detailschange": transformation(data)
-	elif data[1] == "-mega":	mega(data)
-	elif data[1] == "-ability":	ability(data)
-	elif data[1] == "-enditem":	item(data)
-	elif data[1] == "-crit": crit(data)
-	elif data[1] == "poke":	pokemon(data)
-	elif data[1] == "player": player(data)
-	elif data[1] == "tier":	tierf(data)
-	elif data[1] == "win":	winf(data)
+	if len(data) > 1:
+		if data[1] == "move":	move(data)
+		elif data[1] == "-damage": 	damage(data)
+		elif data[1] == "turn":	turnf(data)
+		elif data[1] == "-sidestart":	inhaz(data)
+		elif data[1] == "switch" or data[1] == "drag":	switch(data)
+		elif data[1] == "-heal": heal(data)
+		elif data[1] == "-status": status(data)
+		elif data[1] == "-activate": activate(data)
+		elif data[1] == "-weather":	 weatherf(data)
+		elif data[1] == "-boost": boost(data)
+		elif data[1] == "detailschange": transformation(data)
+		elif data[1] == "-mega":	mega(data)
+		elif data[1] == "-ability":	ability(data)
+		elif data[1] == "-enditem":	item(data)
+		elif data[1] == "-crit": crit(data)
+		elif data[1] == "poke":	pokemon(data)
+		elif data[1] == "player": player(data)
+		elif data[1] == "tier":	tierf(data)
+		elif data[1] == "win":	winf(data)
 		
 
 '''This function takes the information that we retive from the Parse function and converts it into a Json object. It then outputs that to a file'''
@@ -108,9 +115,10 @@ def toJson():
 		filling in their name, the entry hazards they used
 		the pokemon they used and the number of heals they did'''
 	player1 = {}
-	player1["name"] = p1a.name #str
-	player1["hazards"] = p1a.hazards #dict
-	player1["heals"] = p1a.heals #int
+	'''The commented things are taken out of the final Json as per Kevin's instruction'''
+	#player1["name"] = p1a.name #str
+	#player1["hazards"] = p1a.hazards #dict
+	#player1["heals"] = p1a.heals #int
 
 	i = 1
 	'''for each pokemon the player has, 
@@ -121,19 +129,19 @@ def toJson():
 		poke = {}
 		poke["name"] = pokemon[k].name #str
 		poke["item"] = pokemon[k].item #str
-		poke["ability"] = pokemon[k].ability #str
+		#poke["ability"] = pokemon[k].ability #str
 		poke["moves"] = pokemon[k].move #this is a list
-		poke["status"] = pokemon[k].status #this is a dict
-		poke["critical"] = pokemon[k].crit #int
+		#poke["status"] = pokemon[k].status #this is a dict
+		#poke["critical"] = pokemon[k].crit #int
 		player1["pokemon"+str(i)] = poke
 		i += 1
 
 	'''Do this for player 2'''
 	
 	player2 = {}
-	player2["name"] = p2a.name #str
-	player2["hazards"] = p2a.hazards #dict
-	player2["heals"] = p2a.heals #int	
+	#player2["name"] = p2a.name #str
+	#player2["hazards"] = p2a.hazards #dict
+	#player2["heals"] = p2a.heals #int	
 
 	i=1
 	pokemon = p2a.pokemon
@@ -141,29 +149,38 @@ def toJson():
 		poke = {}
 		poke["name"] = pokemon[k].name #str
 		poke["item"] = pokemon[k].item #str
-		poke["ability"] = pokemon[k].ability #str
+		#poke["ability"] = pokemon[k].ability #str
 		poke["moves"] = pokemon[k].move #this is a list
-		poke["status"] = pokemon[k].status #this is a dict
-		poke["critical"] = pokemon[k].crit #int
+		#poke["status"] = pokemon[k].status #this is a dict
+		#poke["critical"] = pokemon[k].crit #int
 		player2["pokemon"+str(i)] = poke
 		i += 1
 		
-	match["player1"] = player1
-	match["player2"] = player2
-	match["winner"] = bat.win
-	match["tier"] = bat.tier
-	match["turn"] = bat.turn
-	match["weather"] = bat.weather
+	match["team1"] = player1
+	match["team2"] = player2
 	
-	name = player1["name"]
-	name2 = player2["name"]
+	if bat.win == p1a.name:
+		victor = 'team1'
+	else:
+		victor = 'team2'
+	
+	match["winner"] = victor
+	
+	return match
+	#match["tier"] = bat.tier
+	#match["turn"] = bat.turn
+	#match["weather"] = bat.weather
+	
+	#name = player1["name"]
+	#name2 = player2["name"]
 	#print match
-	filename = bat.tier + "2" + name + "VS" + name2 + ".txt"
-	file = open(filename, 'w')
-	son = json.dumps(match, sort_keys=True, indent=5)
-	file.write(son)
+	#filename = bat.tier + "2" + name + "VS" + name2 + ".txt"
+	#file = open(filename, 'a')
+	#son = json.dumps(match, sort_keys=True, indent = 2)
+	#file.write(son)
 	#file.write(str(match))
-	file.close	
+	#file.close	
+	#return son
 	
 '''
 These functions work on the following basis:
@@ -174,10 +191,6 @@ These functions work on the following basis:
 	counting starts from 0, however, there is nothing before
 	the first "|" so counting words starts from 1
 '''
-
-bat = Battle()
-p1a = Player()		
-p2a = Player()
 	
 def tierf(input):
 	bat.tier = input[2]
@@ -360,11 +373,19 @@ def crit(input):
 		p1a.cur.crit += 1
 
 #|-sidestart|p2: Jibaku|move: Stealth Rock
+#|-sidestart|p2: Henry|Spikes
+
 def inhaz(input):
 	if "p1" in input[2]:
-		p1a.hazards[input[3].split(":")[1].lstrip()] = 1;
+		if ":" in input[3]:
+			p1a.hazards[input[3].split(":")[1].lstrip()] = 1;
+		else:
+			p1a.hazards[input[3]] = 1;
 	else:
-		p1a.hazards[input[3].split(":")[1].lstrip()] = 1;
+		if ":" in input[3]:
+			p2a.hazards[input[3].split(":")[1].lstrip()] = 1;
+		else:
+			p2a.hazards[input[3]] = 1;
 
 
 

@@ -1,0 +1,755 @@
+[
+  {
+    "team1": {
+      "pokemon1": {
+        "item": "Rocky Helmet", 
+        "moves": [
+          "Fake Out", 
+          "High Jump Kick"
+        ], 
+        "name": "Lopunny-Mega, M"
+      }, 
+      "pokemon10": {
+        "item": "Leftovers", 
+        "moves": [
+          "Earthquake"
+        ], 
+        "name": "Landorus-Therian, M"
+      }, 
+      "pokemon11": {
+        "item": "Metagrossite", 
+        "moves": [
+          "Zen Headbutt", 
+          "Meteor Mash"
+        ], 
+        "name": "Metagross-Mega"
+      }, 
+      "pokemon12": {
+        "item": "Leftovers", 
+        "moves": [
+          "Stealth Rock", 
+          "Taunt", 
+          "Lava Plume", 
+          "Toxic"
+        ], 
+        "name": "Heatran, M"
+      }, 
+      "pokemon13": {
+        "item": "Leftovers", 
+        "moves": [
+          "Spikes"
+        ], 
+        "name": "Ferrothorn, F"
+      }, 
+      "pokemon14": {
+        "item": "Life Orb", 
+        "moves": [
+          "Gunk Shot", 
+          "Ice Beam"
+        ], 
+        "name": "Greninja, M"
+      }, 
+      "pokemon2": {
+        "item": "Sablenite", 
+        "moves": [
+          "Dark Pulse", 
+          "Calm Mind", 
+          "Recover"
+        ], 
+        "name": "Sableye-Mega, F"
+      }, 
+      "pokemon3": {
+        "item": "", 
+        "moves": [
+          "Earthquake", 
+          "Roost", 
+          "Swords Dance", 
+          "Facade"
+        ], 
+        "name": "Gliscor, M"
+      }, 
+      "pokemon4": {
+        "item": "Leftovers", 
+        "moves": [
+          "Scald"
+        ], 
+        "name": "Slowbro, F"
+      }, 
+      "pokemon5": {
+        "item": "Leftovers", 
+        "moves": [
+          "Foul Play"
+        ], 
+        "name": "Klefki, F"
+      }, 
+      "pokemon6": {
+        "item": "Leftovers", 
+        "moves": [
+          "Baton Pass", 
+          "Recover"
+        ], 
+        "name": "Celebi"
+      }, 
+      "pokemon7": {
+        "item": "Choice Specs", 
+        "moves": [
+          "Scald", 
+          "Hydro Pump"
+        ], 
+        "name": "Keldeo-Resolute"
+      }, 
+      "pokemon8": {
+        "item": "", 
+        "moves": [
+          "Pursuit"
+        ], 
+        "name": "Tyranitar, M"
+      }, 
+      "pokemon9": {
+        "item": "Life Orb", 
+        "moves": [
+          "Sucker Punch"
+        ], 
+        "name": "Bisharp, M"
+      }
+    }, 
+    "team2": {
+      "pokemon1": {
+        "item": "Life Orb", 
+        "moves": [
+          "Draco Meteor"
+        ], 
+        "name": "Latios, M"
+      }, 
+      "pokemon10": {
+        "item": "", 
+        "moves": [
+          "Crunch"
+        ], 
+        "name": "Tyranitar, M, shiny"
+      }, 
+      "pokemon11": {
+        "item": "", 
+        "moves": [
+          "Healing Wish"
+        ], 
+        "name": "Latias, F"
+      }, 
+      "pokemon12": {
+        "item": "", 
+        "moves": [
+          "Knock Off", 
+          "Stealth Rock", 
+          "Earthquake"
+        ], 
+        "name": "Landorus-Therian, M"
+      }, 
+      "pokemon13": {
+        "item": "Venusaurite", 
+        "moves": [
+          "Giga Drain", 
+          "Synthesis"
+        ], 
+        "name": "Venusaur-Mega, F"
+      }, 
+      "pokemon14": {
+        "item": "", 
+        "moves": [
+          "Magma Storm"
+        ], 
+        "name": "Heatran, M"
+      }, 
+      "pokemon15": {
+        "item": "", 
+        "moves": [
+          "Flash Cannon"
+        ], 
+        "name": "Magnezone"
+      }, 
+      "pokemon16": {
+        "item": "", 
+        "moves": [
+          "Secret Sword"
+        ], 
+        "name": "Keldeo-Resolute"
+      }, 
+      "pokemon17": {
+        "item": "", 
+        "moves": [
+          "Stealth Rock", 
+          "Fire Blast", 
+          "Earthquake", 
+          "Dragon Claw"
+        ], 
+        "name": "Garchomp, M"
+      }, 
+      "pokemon2": {
+        "item": "Gardevoirite", 
+        "moves": [
+          "Hyper Voice"
+        ], 
+        "name": "Gardevoir-Mega, F"
+      }, 
+      "pokemon3": {
+        "item": "Toxic Orb", 
+        "moves": [
+          "Protect", 
+          "Earthquake", 
+          "Fling", 
+          "Substitute"
+        ], 
+        "name": "Gliscor, F"
+      }, 
+      "pokemon4": {
+        "item": "", 
+        "moves": [
+          "Stealth Rock", 
+          "Seismic Toss"
+        ], 
+        "name": "Chansey, F"
+      }, 
+      "pokemon5": {
+        "item": "Life Orb", 
+        "moves": [
+          "Swords Dance", 
+          "Poison Jab"
+        ], 
+        "name": "Scolipede, M"
+      }, 
+      "pokemon6": {
+        "item": "Leftovers", 
+        "moves": [
+          "Dragon Dance", 
+          "Substitute", 
+          "Bounce", 
+          "Waterfall"
+        ], 
+        "name": "Gyarados, M, shiny"
+      }, 
+      "pokemon7": {
+        "item": "Leftovers", 
+        "moves": [
+          "Scald", 
+          "Flamethrower"
+        ], 
+        "name": "Slowbro, F, shiny"
+      }, 
+      "pokemon8": {
+        "item": "Diancite", 
+        "moves": [
+          "Moonblast"
+        ], 
+        "name": "Diancie-Mega"
+      }, 
+      "pokemon9": {
+        "item": "", 
+        "moves": [
+          "Defog"
+        ], 
+        "name": "Mew, shiny"
+      }
+    }, 
+    "winner": "team1"
+  }, 
+  {
+    "team1": {
+      "pokemon1": {
+        "item": "Rocky Helmet", 
+        "moves": [
+          "Fake Out", 
+          "High Jump Kick"
+        ], 
+        "name": "Lopunny-Mega, M"
+      }, 
+      "pokemon10": {
+        "item": "", 
+        "moves": [
+          "U-turn"
+        ], 
+        "name": "Landorus-Therian, M"
+      }, 
+      "pokemon11": {
+        "item": "Metagrossite", 
+        "moves": [
+          "Zen Headbutt", 
+          "Meteor Mash"
+        ], 
+        "name": "Metagross-Mega"
+      }, 
+      "pokemon12": {
+        "item": "Leftovers", 
+        "moves": [
+          "Stealth Rock"
+        ], 
+        "name": "Heatran, M"
+      }, 
+      "pokemon13": {
+        "item": "Leftovers", 
+        "moves": [
+          "Spikes"
+        ], 
+        "name": "Ferrothorn, F"
+      }, 
+      "pokemon14": {
+        "item": "Life Orb", 
+        "moves": [
+          "Gunk Shot", 
+          "Ice Beam"
+        ], 
+        "name": "Greninja, M"
+      }, 
+      "pokemon2": {
+        "item": "Sablenite", 
+        "moves": [
+          "Dark Pulse", 
+          "Calm Mind", 
+          "Recover"
+        ], 
+        "name": "Sableye-Mega, F"
+      }, 
+      "pokemon3": {
+        "item": "", 
+        "moves": [
+          "Earthquake", 
+          "Roost", 
+          "Swords Dance", 
+          "Facade"
+        ], 
+        "name": "Gliscor, M"
+      }, 
+      "pokemon4": {
+        "item": "Leftovers", 
+        "moves": [
+          "Scald"
+        ], 
+        "name": "Slowbro, F"
+      }, 
+      "pokemon5": {
+        "item": "Leftovers", 
+        "moves": [
+          "Foul Play"
+        ], 
+        "name": "Klefki, F"
+      }, 
+      "pokemon6": {
+        "item": "Leftovers", 
+        "moves": [
+          "Baton Pass", 
+          "Recover"
+        ], 
+        "name": "Celebi"
+      }, 
+      "pokemon7": {
+        "item": "Choice Specs", 
+        "moves": [
+          "Scald", 
+          "Hydro Pump"
+        ], 
+        "name": "Keldeo-Resolute"
+      }, 
+      "pokemon8": {
+        "item": "", 
+        "moves": [
+          "Pursuit"
+        ], 
+        "name": "Tyranitar, M"
+      }, 
+      "pokemon9": {
+        "item": "Life Orb", 
+        "moves": [
+          "Sucker Punch"
+        ], 
+        "name": "Bisharp, M"
+      }
+    }, 
+    "team2": {
+      "pokemon1": {
+        "item": "Life Orb", 
+        "moves": [
+          "Draco Meteor"
+        ], 
+        "name": "Latios, M"
+      }, 
+      "pokemon10": {
+        "item": "", 
+        "moves": [
+          "Crunch"
+        ], 
+        "name": "Tyranitar, M, shiny"
+      }, 
+      "pokemon11": {
+        "item": "", 
+        "moves": [
+          "Healing Wish"
+        ], 
+        "name": "Latias, F"
+      }, 
+      "pokemon12": {
+        "item": "", 
+        "moves": [
+          "Knock Off", 
+          "Stealth Rock", 
+          "Earthquake"
+        ], 
+        "name": "Landorus-Therian, M"
+      }, 
+      "pokemon13": {
+        "item": "Venusaurite", 
+        "moves": [
+          "Giga Drain", 
+          "Synthesis"
+        ], 
+        "name": "Venusaur-Mega, F"
+      }, 
+      "pokemon14": {
+        "item": "", 
+        "moves": [
+          "Magma Storm"
+        ], 
+        "name": "Heatran, M"
+      }, 
+      "pokemon15": {
+        "item": "", 
+        "moves": [
+          "Flash Cannon"
+        ], 
+        "name": "Magnezone"
+      }, 
+      "pokemon16": {
+        "item": "", 
+        "moves": [
+          "Secret Sword", 
+          "Scald"
+        ], 
+        "name": "Keldeo-Resolute"
+      }, 
+      "pokemon17": {
+        "item": "", 
+        "moves": [
+          "Stealth Rock", 
+          "Fire Blast", 
+          "Earthquake", 
+          "Dragon Claw"
+        ], 
+        "name": "Garchomp, M"
+      }, 
+      "pokemon2": {
+        "item": "Gardevoirite", 
+        "moves": [
+          "Hyper Voice"
+        ], 
+        "name": "Gardevoir-Mega, F"
+      }, 
+      "pokemon3": {
+        "item": "Toxic Orb", 
+        "moves": [
+          "Protect", 
+          "Earthquake", 
+          "Fling", 
+          "Substitute"
+        ], 
+        "name": "Gliscor, F"
+      }, 
+      "pokemon4": {
+        "item": "", 
+        "moves": [
+          "Stealth Rock", 
+          "Seismic Toss"
+        ], 
+        "name": "Chansey, F"
+      }, 
+      "pokemon5": {
+        "item": "Life Orb", 
+        "moves": [
+          "Swords Dance", 
+          "Poison Jab"
+        ], 
+        "name": "Scolipede, M"
+      }, 
+      "pokemon6": {
+        "item": "Leftovers", 
+        "moves": [
+          "Dragon Dance", 
+          "Substitute", 
+          "Bounce", 
+          "Waterfall"
+        ], 
+        "name": "Gyarados, M, shiny"
+      }, 
+      "pokemon7": {
+        "item": "Leftovers", 
+        "moves": [
+          "Scald", 
+          "Flamethrower"
+        ], 
+        "name": "Slowbro, F, shiny"
+      }, 
+      "pokemon8": {
+        "item": "Diancite", 
+        "moves": [
+          "Moonblast"
+        ], 
+        "name": "Diancie-Mega"
+      }, 
+      "pokemon9": {
+        "item": "", 
+        "moves": [
+          "Defog"
+        ], 
+        "name": "Mew, shiny"
+      }
+    }, 
+    "winner": "team1"
+  }, 
+  {
+    "team1": {
+      "pokemon1": {
+        "item": "Rocky Helmet", 
+        "moves": [
+          "Fake Out", 
+          "High Jump Kick"
+        ], 
+        "name": "Lopunny-Mega, M"
+      }, 
+      "pokemon10": {
+        "item": "Leftovers", 
+        "moves": [
+          "Earthquake"
+        ], 
+        "name": "Landorus-Therian, M"
+      }, 
+      "pokemon11": {
+        "item": "Metagrossite", 
+        "moves": [
+          "Zen Headbutt", 
+          "Meteor Mash"
+        ], 
+        "name": "Metagross-Mega"
+      }, 
+      "pokemon12": {
+        "item": "Leftovers", 
+        "moves": [
+          "Stealth Rock"
+        ], 
+        "name": "Heatran, M"
+      }, 
+      "pokemon13": {
+        "item": "Leftovers", 
+        "moves": [
+          "Stealth Rock"
+        ], 
+        "name": "Ferrothorn, M"
+      }, 
+      "pokemon14": {
+        "item": "Life Orb", 
+        "moves": [
+          "Gunk Shot", 
+          "Ice Beam"
+        ], 
+        "name": "Greninja, M"
+      }, 
+      "pokemon2": {
+        "item": "Sablenite", 
+        "moves": [
+          "Dark Pulse", 
+          "Calm Mind", 
+          "Recover"
+        ], 
+        "name": "Sableye-Mega, F"
+      }, 
+      "pokemon3": {
+        "item": "", 
+        "moves": [
+          "Earthquake", 
+          "Roost", 
+          "Swords Dance", 
+          "Facade"
+        ], 
+        "name": "Gliscor, M"
+      }, 
+      "pokemon4": {
+        "item": "Leftovers", 
+        "moves": [
+          "Scald", 
+          "Thunder Wave", 
+          "Slack Off"
+        ], 
+        "name": "Slowbro, M"
+      }, 
+      "pokemon5": {
+        "item": "Leftovers", 
+        "moves": [
+          "Foul Play"
+        ], 
+        "name": "Klefki, F"
+      }, 
+      "pokemon6": {
+        "item": "Leftovers", 
+        "moves": [
+          "Baton Pass", 
+          "Recover"
+        ], 
+        "name": "Celebi"
+      }, 
+      "pokemon7": {
+        "item": "Choice Specs", 
+        "moves": [
+          "Scald", 
+          "Hydro Pump"
+        ], 
+        "name": "Keldeo-Resolute"
+      }, 
+      "pokemon8": {
+        "item": "", 
+        "moves": [
+          "Pursuit"
+        ], 
+        "name": "Tyranitar, M"
+      }, 
+      "pokemon9": {
+        "item": "Life Orb", 
+        "moves": [
+          "Sucker Punch"
+        ], 
+        "name": "Bisharp, M"
+      }
+    }, 
+    "team2": {
+      "pokemon1": {
+        "item": "Life Orb", 
+        "moves": [
+          "Draco Meteor"
+        ], 
+        "name": "Latios, M"
+      }, 
+      "pokemon10": {
+        "item": "", 
+        "moves": [
+          "Crunch"
+        ], 
+        "name": "Tyranitar, M, shiny"
+      }, 
+      "pokemon11": {
+        "item": "", 
+        "moves": [
+          "Healing Wish"
+        ], 
+        "name": "Latias, F"
+      }, 
+      "pokemon12": {
+        "item": "", 
+        "moves": [
+          "Knock Off", 
+          "Stealth Rock", 
+          "Earthquake"
+        ], 
+        "name": "Landorus-Therian, M"
+      }, 
+      "pokemon13": {
+        "item": "Venusaurite", 
+        "moves": [
+          "Giga Drain", 
+          "Synthesis"
+        ], 
+        "name": "Venusaur-Mega, F"
+      }, 
+      "pokemon14": {
+        "item": "", 
+        "moves": [
+          "Magma Storm"
+        ], 
+        "name": "Heatran, M"
+      }, 
+      "pokemon15": {
+        "item": "", 
+        "moves": [
+          "Flash Cannon"
+        ], 
+        "name": "Magnezone"
+      }, 
+      "pokemon16": {
+        "item": "", 
+        "moves": [
+          "Secret Sword"
+        ], 
+        "name": "Keldeo-Resolute"
+      }, 
+      "pokemon17": {
+        "item": "", 
+        "moves": [
+          "Stealth Rock", 
+          "Fire Blast", 
+          "Earthquake", 
+          "Dragon Claw"
+        ], 
+        "name": "Garchomp, M"
+      }, 
+      "pokemon2": {
+        "item": "Gardevoirite", 
+        "moves": [
+          "Hyper Voice"
+        ], 
+        "name": "Gardevoir-Mega, F"
+      }, 
+      "pokemon3": {
+        "item": "Toxic Orb", 
+        "moves": [
+          "Protect", 
+          "Earthquake", 
+          "Fling", 
+          "Substitute"
+        ], 
+        "name": "Gliscor, F"
+      }, 
+      "pokemon4": {
+        "item": "", 
+        "moves": [
+          "Stealth Rock", 
+          "Seismic Toss"
+        ], 
+        "name": "Chansey, F"
+      }, 
+      "pokemon5": {
+        "item": "Life Orb", 
+        "moves": [
+          "Swords Dance", 
+          "Poison Jab"
+        ], 
+        "name": "Scolipede, M"
+      }, 
+      "pokemon6": {
+        "item": "Leftovers", 
+        "moves": [
+          "Dragon Dance", 
+          "Substitute", 
+          "Bounce", 
+          "Waterfall"
+        ], 
+        "name": "Gyarados, M, shiny"
+      }, 
+      "pokemon7": {
+        "item": "Leftovers", 
+        "moves": [
+          "Scald", 
+          "Flamethrower"
+        ], 
+        "name": "Slowbro, F, shiny"
+      }, 
+      "pokemon8": {
+        "item": "Diancite", 
+        "moves": [
+          "Moonblast"
+        ], 
+        "name": "Diancie-Mega"
+      }, 
+      "pokemon9": {
+        "item": "", 
+        "moves": [
+          "Defog"
+        ], 
+        "name": "Mew, shiny"
+      }
+    }, 
+    "winner": "team2"
+  }
+]
