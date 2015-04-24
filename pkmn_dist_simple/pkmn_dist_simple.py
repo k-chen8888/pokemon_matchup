@@ -35,7 +35,7 @@ from sqlalchemy.orm import sessionmaker
 from sqlalchemy import create_engine
 
 Session = sessionmaker()
-engine = create_engine('sqlite:///pkmn_db_simple.db', echo = False)
+engine = create_engine('sqlite:///pkmn_db_simple.db', echo = True)
 Session.configure(bind=engine)
 
 # Work with this one
@@ -48,6 +48,9 @@ Distance between teams
 Define a team as a list of Pokemon
 '''
 def team_dist(team1, team2):
+	if team1 == team2: # Identical teams means distance = 0
+		return 0.0
+	
 	# Type distributions for each team
 	team1_types = [0] * 18
 	team2_types = [0] * 18
@@ -111,11 +114,10 @@ def team_dist(team1, team2):
 	
 	# Squared "distance" between base strengths of Pokemon
 	# Use mock_battle_simple
-	mock_results = mock_battle(team1, team2) # OOPS!!! FIX THIS!!!
+	mock_results = mock_battle(team1, team2)
 	
 	# Output square root of sum
 	return ( type_dist + move_type_dist + avg_dist + mock_results ) ** 0.5
-
 
 
 '''

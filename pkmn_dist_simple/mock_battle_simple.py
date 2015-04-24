@@ -24,7 +24,7 @@ For each Pokemon on the team
 		
 		+1 point for each "victory"
 			That is, +1 for winning with critical and +1 for winning without critical
-			Define "victory" as reducing the enemy's HP by more than some percentage
+			Define "victory" as reducing the enemy's HP by more than some percentage (different for slow and fast attackers)
 		+1 point for higher priority or speed
 		+1 point for hitting an opponent when they don't have a reduction item or Leftovers/Focus Sash and do not have the move Substitute
 		+1 point for STAB
@@ -44,15 +44,16 @@ For each Pokemon on the team
 
 At the end of the mock battle, each move gets a score from 1-6
 	Store like so for each Pokemon:
-		move1_score: [ _, _, _, _, _, _ ]
+		move0_score: [ _, _, _, _, _, _ ]
 			Each blank represents the "score" against the Pokemon in the corresponding slot
+		move1_score: [ _, _, _, _, _, _ ]
 		move2_score: [ _, _, _, _, _, _ ]
 		move3_score: [ _, _, _, _, _, _ ]
-		move4_score: [ _, _, _, _, _, _ ]
-		defense: [ [ _, _, _, _ ], [ _, _, _, _ ], [ _, _, _, _ ], [ _, _, _, _ ], [ _, _, _, _ ], [ _, _, _, _ ], ]
+		defense: [ [ _, _, _, _ ], [ _, _, _, _ ], [ _, _, _, _ ], [ _, _, _, _ ], [ _, _, _, _ ], [ _, _, _, _ ] ]
 			Each sublist represents a corresponding attacking Pokemon on the opponent's side
 			Each blank in the sublist represents the defensive score against a particular move used by attacking Pokemon
 				Calculate this defensive score by subtracting the opponent's offensive score from 6
+			Each opponent Pokemon has a defense list
 
 Output the squared distance between teams based on battle results
 
@@ -63,7 +64,7 @@ Note:
 	Take the distance by comparing the lists like so:
 		Squared Euclidean distance between the move arrays
 '''
-import os, sys, re, math
+import os, sys, re, math, json
 
 # Query Pokemon from database to get information
 from scrape_db_simple.pkmn_db_simple import *
@@ -87,8 +88,19 @@ s_mock = Session()
 
 '''
 The percentage of HP that needs to be knocked off in order to declare "victory"
+SLOW if the attacker is slower, FAST otherwise
 '''
-VICTORY_BOUND = 0.75
+VICTORY_BOUND_SLOW = 0.75
+VICTORY_BOUND_FAST = 0.55
+
+
+'''
+Dummy Pokemon to fill up space
+'''
+MAGIKARP = {}
+MAGIKARP['name'] = 'Magikarp'
+MAGIKARP['item'] = None
+MAGIKARP['moves'] = ['Splash', 'Splash', 'Splash', 'Splash']
 
 
 '''
@@ -105,11 +117,20 @@ Round 2
 Take distance and output
 '''
 def mock_battle(team1, team2):
+	# Cleaning house
+	while len(team1) < 6:
+		team1.append(MAGIKARP)
+	while len(team2) < 6:
+		team2.append(MAGIKARP)
+	
 	# Offence evaluation for team1
 	# Defence evaluation for team2
 	for opponent in team2:
 		opponent['defense'] = []
 	for pkmn in team1:
+		for i in range(0, len(pkmn['moves'])):
+			label = 'move' + str(i) + '_score'
+			pkmn[label] = []
 		partial_mock(pkmn, team2)
 	
 	# Offence evaluation for team2
@@ -117,6 +138,9 @@ def mock_battle(team1, team2):
 	for opponent in team1:
 		opponent['defense'] = []
 	for pkmn in team2:
+		for i in range(0, len(pkmn['moves'])):
+			label = 'move' + str(i) + '_score'
+			pkmn[label] = []
 		partial_mock(pkmn, team1)
 	
 	# Calculate the distances
@@ -127,6 +151,10 @@ def mock_battle(team1, team2):
 Partial mock battle pitting a single Pokemon from one team against each Pokemon from the other team
 '''
 def partial_mock(pkmn, team):
+	# Cleaning house
+	while len(pkmn['moves']) < 4:
+		pkmn['moves'].append("Splash")
+	
 	# Need current Pokemon's data from database
 	p = s_mock.query(Pokemon).filter(Pokemon.name == pkmn['name']).first()
 	
@@ -140,8 +168,7 @@ def partial_mock(pkmn, team):
 		defend = []
 		for i in range(0, len(pkmn['moves'])):
 			move = pkmn['moves'][i]
-			label = 'move' + str(i+1) + '_score'
-			pkmn[label] = []
+			label = 'move' + str(i) + '_score'
 			
 			# Need current move's data from database
 			m = s_mock.query(Move).filter(Move.name == move).first()
@@ -152,11 +179,11 @@ def partial_mock(pkmn, team):
 			# Non-damaging move
 			if m.move_cat == 2:
 				score += 1 if m.priority > 0 or p.base_spd > o.base_spd or ( pkmn['item'] == "Quick Claw" and m.priority > 0 ) else 0
-				score += 1 if m.weather else 0
-				score += 1 if m.entry else 0
-				score += 1 if m.status else 0
-				score += 1 if m.heal else 0
-				score += 1 if m.stat_change else 0
+				score += 1 if m.weather == True else 0
+				score += 1 if m.entry == True else 0
+				score += 1 if m.status == True else 0
+				score += 1 if m.heal == True else 0
+				score += 1 if m.stat_change == True else 0
 				
 				pkmn[label].append(score)
 				defend.append(6 - score)
@@ -209,8 +236,10 @@ def partial_mock(pkmn, team):
 					pkmn[label].append(score)
 					defend.append(6 - score)
 		
-		# Save defensive scores
-		opponent['defense'].append(defend)
+			#print pkmn[label]
+		
+		# Save aggregate defensive score against this Pokemon
+		opponent['defense'].append( sum(defend) )
 
 
 '''
@@ -259,10 +288,15 @@ def mock_calculate(pkmn, p_item, opponent, opp, o_item, move, special):
 		no_crit = (0.84 * atk_de_ratio * move_power + 2) * stab * type_eff * reduce
 		crit = (0.84 * atk_de_ratio * move_power + 2) * stab * type_eff * reduce * 1.5
 		
-		score += 1 if no_crit / opp.base_hp > VICTORY_BOUND else 0
-		score += 1 if crit / opp.base_hp > VICTORY_BOUND else 0
+		# Use different VICTORY_BOUND depending on attacker's speed/attack priority
+		if pkmn.base_spd > opp.base_spd or move.priority > 0:
+			score += 1 if no_crit / opp.base_hp > VICTORY_BOUND_FAST else 0
+			score += 1 if crit / opp.base_hp > VICTORY_BOUND_FAST else 0
+		else:
+			score += 1 if no_crit / opp.base_hp > VICTORY_BOUND_SLOW else 0
+			score += 1 if crit / opp.base_hp > VICTORY_BOUND_SLOW else 0
 	
-	else: # Very often going to be only VICTORY_BOUND% of health in damage; don't add anything
+	else: # Very often going to be only 25% of health in damage; don't add anything
 		pass
 	
 	return score
@@ -273,24 +307,52 @@ Calculate the squared distance between two teams based on mock battle results
 Larger distance -> greater strength difference
 '''
 def mock_dist(team1, team2):
-	# For each Pokemon on team1, sum up scores
+	'''
+	avg_sq_dist = []
+	
+	# Find distances between scores for pkmn1's moves and each pkmn2's corresponding defense values
+	for k in range(0, 6):
+		# 1x4 list of sum of square distances, one for each move
+		sq_dist = []
+		
+		# Check strength difference for each move that pkmn1 has
+		for i in range(0, 4):
+			# Start with a 1x6 list of strength ratings
+			str_ratings = team1[k]['move' + str(i) + '_score']
+			
+			# Subtract out opponent's defense ratings and square
+			for j in range(0, 6):
+				str_ratings[j] = (str_ratings[j] - team2[j]['defense'][k][i]) ** 2.0
+			
+			sq_dist.append( sum(str_ratings) )
+		
+		# Average square distances and append to output array
+		avg_sq_dist.append( sum(sq_dist) / len(sq_dist) )
+	'''
+	
+		# For each Pokemon on team1, sum up scores
 	team1_scores = []
 	for pkmn1 in team1:
+		team1_scores.append( sum(pkmn1['move0_score']) )
 		team1_scores.append( sum(pkmn1['move1_score']) )
 		team1_scores.append( sum(pkmn1['move2_score']) )
 		team1_scores.append( sum(pkmn1['move3_score']) )
-		team1_scores.append( sum(pkmn1['move4_score']) )
-		team1_scores.append( sum( sum(pkmn1['defense'][i]) for i in range(0, len(pkmn1['defense'])) ) )
+		team1_scores.append( sum(pkmn1['defense']) )
+		#team1_scores.append( sum( [ sum( pkmn1['defense'][i] ) for i in range(0, len(pkmn1['defense'])) ] ) )
 	
 	# For each Pokemon on team2, sum up scores
 	team2_scores = []
-	for pkmn2 in team1:
+	for pkmn2 in team2:
+		team2_scores.append( sum(pkmn2['move0_score']) )
 		team2_scores.append( sum(pkmn2['move1_score']) )
 		team2_scores.append( sum(pkmn2['move2_score']) )
 		team2_scores.append( sum(pkmn2['move3_score']) )
-		team2_scores.append( sum(pkmn2['move4_score']) )
-		team2_scores.append( sum( sum(pkmn2['defense'][i]) for i in range(0, len(pkmn2['defense'])) ) )
+		team2_scores.append( sum(pkmn2['defense']) )
+		#team2_scores.append( sum( [ sum( pkmn2['defense'][i] ) for i in range(0, len(pkmn2['defense'])) ] ) )
 	
-	# Final scores
-	# All possible squared differences
-	return sum( [ sum( [ ( team1_score - team2_score ) ** 2 for team1_score in team1_scores ] ) for team2_score in team2_scores ] )
+	# Find square difference and output it
+	diff = []
+	for i in range(0, len(team1_scores)):
+		diff.append( ( team1_scores[i] - team2_scores[i] ) ** 2 )
+	
+	return sum( diff )

@@ -238,7 +238,7 @@ class Move(Base):
 	
 	# The higher the speed priority, the faster it is; 0 means read from SPD staticmethod
 	priority = Column(Integer, nullable = False)
-		
+	
 	# Accuracy rating
 	accuracy = Column(Integer, nullable = False)
 	
