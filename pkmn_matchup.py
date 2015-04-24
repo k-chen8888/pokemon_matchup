@@ -16,9 +16,28 @@ def populate(json_file):
 	for line in json_file:
 		json_str += line.rstrip()
 	
-	# Interpret string and populate lists
+	# Interpret string
 	data = json.loads(json_str)
-	print data
+	
+	# Populate lists
+	teams = []
+	results = []
+	for match in data:
+		# team1 info
+		teams.append( match['team1'] )
+		if match['winner'] == 'team1':
+			results.append(True)
+		else:
+			results.append(False)
+		
+		# team2 info
+		teams.append( match['team2'] )
+		if match['winner'] == 'team2':
+			results.append(True)
+		else:
+			results.append(False)
+	
+	return teams, results
 
 
 '''
@@ -81,12 +100,12 @@ if __name__ == '__main__':
 	Index of a given result is equal to the index of the team it is associated with
 	'''
 	json_data = open(sys.argv[1], "r")
-	
-	populate(json_data)
+	teams, results = populate(json_data)
 	
 	# For each team, compare to each other team
 	# Generate an adjacency matrix by calculating similarity as the distance between each team and normalizing
-	#adj_mtrx = similarity(teams)
+	adj_mtrx = similarity(teams)
+	print adj_mtrx
 	
 	# Generate labels (spectral clustering)
 	# Note that the adjacency matrix needs to be converted into a numpy array

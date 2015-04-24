@@ -35,7 +35,7 @@ from sqlalchemy.orm import sessionmaker
 from sqlalchemy import create_engine
 
 Session = sessionmaker()
-engine = create_engine('sqlite:///pkmn_db_simple.db', echo = True)
+engine = create_engine('sqlite:///pkmn_db_simple.db', echo = False)
 Session.configure(bind=engine)
 
 # Work with this one
@@ -60,9 +60,9 @@ def team_dist(team1, team2):
 			team1_types[p1.type2] += 1
 	for p in team2:
 		p2 = s_dist.query(Pokemon).filter(Pokemon.name == p['name']).first()
-		team1_types[p2.type1] += 1
+		team2_types[p2.type1] += 1
 		if p2.type1 > -1:
-			team1_types[p2.type2] += 1
+			team2_types[p2.type2] += 1
 	
 	# Squared distance of type distribution
 	type_dist = sum( [ (team1_types[i] - team2_types[i]) ** 2 for i in range(0, 18) ] )
@@ -79,20 +79,43 @@ def team_dist(team1, team2):
 	for p in team2:
 		for m in p['moves']:
 			m2 = s_dist.query(Move).filter(Move.name == m).first()
-			team1_move_types[m2.move_type] += 1
-			
+			team2_move_types[m2.move_type] += 1
+	
 	# Squared distance of type distribution
 	move_type_dist = sum( [ (team1_move_types[i] - team2_move_types[i]) ** 2 for i in range(0, 18) ] )
 	
-	# Average pairwise squared distances between each Pokemon (if full teams of 6 Pokemon, there are 36 calculations made)
-	avg_dist = sum( [ sum( [ pkmn_dist(pkmn1, pkmn2) for pkmn1 in team1 ] ) for pkmn2 in team2 ] ) / float( len(team1) * len(team2) )
-		
+	# Pairwise squared distances between each Pokemon (if full teams of 6 Pokemon, there are 36 calculations made)
+	# Get a list of distances for each Pokemon on the team
+	# Each entry in team#_distances is the average distance between a Pokemon on team# and every other Pokemon on the opposite team
+	team1_distances = []
+	team2_distances = []
+	for pkmn1 in team1:
+		for pkmn2 in team2:
+			# Distances between pkmn1 and each opponent
+			pkmn1_distances = []
+			pkmn1_distances.append( pkmn_dist(pkmn1, pkmn2) )
+			
+			# Append the average distance
+			team1_distances.append( sum(pkmn1_distances) / len(pkmn1_distances) )
+	
+	for pkmn1 in team2:
+		for pkmn2 in team1:
+			# Distances between pkmn1 and each opponent
+			pkmn1_distances = []
+			pkmn1_distances.append( pkmn_dist(pkmn1, pkmn2) )
+			
+			# Append the average distance
+			team2_distances.append( sum(pkmn1_distances) / len(pkmn1_distances) )
+	
+	avg_dist = sum( [ (team1_distances[i] - team2_distances[i]) ** 2 for i in range(0, len(team1_distances)) ] )
+	
 	# Squared "distance" between base strengths of Pokemon
 	# Use mock_battle_simple
-	mock_results = mock_battle(team1, team2)
+	mock_results = mock_battle(team1, team2) # OOPS!!! FIX THIS!!!
 	
 	# Output square root of sum
 	return ( type_dist + move_type_dist + avg_dist + mock_results ) ** 0.5
+
 
 
 '''
@@ -129,6 +152,7 @@ def pkmn_dist(pkmn1, pkmn2):
 		# Euclidean Distance
 		type_dist = sum( [ ( adv_table_p1[i] - adv_table_p2[i] ) ** 2 for i in range(0, 18) ] )
 	
+	
 	# Distance between base stats
 	pkmn1['base'] = [ p1.base_hp, p1.base_atk, p1.base_def, p1.base_spatk, p1.base_spdef, p1.base_spd ]
 	pkmn2['base'] = [ p2.base_hp, p2.base_atk, p2.base_def, p2.base_spatk, p2.base_spdef, p2.base_spd ]
@@ -141,7 +165,7 @@ def pkmn_dist(pkmn1, pkmn2):
 	i_dist = item_dist(pkmn1, pkmn2)
 	
 	# Output sum
-	return type_dist + base_dist + m_dist + i_dist
+	return ( type_dist + base_dist + m_dist ) ** 0.5
 
 
 '''
@@ -208,6 +232,7 @@ def similarity(teams):
 		
 		adj.append(adj_row)
 	
+	print "adj", adj
 	# Normalize
 	adj_n = normalize(adj)
 	

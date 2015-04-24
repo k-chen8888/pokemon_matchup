@@ -128,7 +128,7 @@ Partial mock battle pitting a single Pokemon from one team against each Pokemon 
 '''
 def partial_mock(pkmn, team):
 	# Need current Pokemon's data from database
-	p = s_mock.query(Pokemon).filter(Pokemon.name == opponent['name']).first()
+	p = s_mock.query(Pokemon).filter(Pokemon.name == pkmn['name']).first()
 	
 	# Calculate for each opponent
 	for opponent in team:
@@ -140,7 +140,7 @@ def partial_mock(pkmn, team):
 		defend = []
 		for i in range(0, len(pkmn['moves'])):
 			move = pkmn['moves'][i]
-			label = 'move' + i + '_score'
+			label = 'move' + str(i+1) + '_score'
 			pkmn[label] = []
 			
 			# Need current move's data from database
@@ -202,6 +202,8 @@ def partial_mock(pkmn, team):
 				
 				# Just any old damaging move
 				else:
+					p_item = s_mock.query(HoldItem).filter(HoldItem.name == pkmn['item']).first()
+					
 					score = mock_calculate(p, p_item, opponent, o, o_item, m, 0)
 			
 					pkmn[label].append(score)
@@ -278,7 +280,7 @@ def mock_dist(team1, team2):
 		team1_scores.append( sum(pkmn1['move2_score']) )
 		team1_scores.append( sum(pkmn1['move3_score']) )
 		team1_scores.append( sum(pkmn1['move4_score']) )
-		team1_scores.append( sum(pkmn1['defense']) )
+		team1_scores.append( sum( sum(pkmn1['defense'][i]) for i in range(0, len(pkmn1['defense'])) ) )
 	
 	# For each Pokemon on team2, sum up scores
 	team2_scores = []
@@ -287,7 +289,7 @@ def mock_dist(team1, team2):
 		team2_scores.append( sum(pkmn2['move2_score']) )
 		team2_scores.append( sum(pkmn2['move3_score']) )
 		team2_scores.append( sum(pkmn2['move4_score']) )
-		team2_scores.append( sum(pkmn2['defense']) )
+		team2_scores.append( sum( sum(pkmn2['defense'][i]) for i in range(0, len(pkmn2['defense'])) ) )
 	
 	# Final scores
 	# All possible squared differences
