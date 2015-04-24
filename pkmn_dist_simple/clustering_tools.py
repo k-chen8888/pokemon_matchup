@@ -1,3 +1,8 @@
+# Distance measures and data evaluation
+from mock_battle_simple import *
+from pkmn_dist_simple import *
+
+
 '''
 Purity measure
 
