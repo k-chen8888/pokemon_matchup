@@ -34,7 +34,7 @@ Load database
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import create_engine
 
-Session = sessionmaker()
+Session = sessionmaker(autoflush=False)
 engine = create_engine('sqlite:///pkmn_db_simple.db', echo = True)
 Session.configure(bind=engine)
 
@@ -77,11 +77,11 @@ def team_dist(team1, team2):
 	# Populate move type distribution lists
 	for p in team2:
 		for m in p['moves']:
-			m1 = s_dist.query(Move).filter(Move.name == m).first()
+			m1 = get_move(m, s_dist)
 			team1_move_types[m1.move_type] += 1
 	for p in team2:
 		for m in p['moves']:
-			m2 = s_dist.query(Move).filter(Move.name == m).first()
+			m2 = get_move(m, s_dist)
 			team2_move_types[m2.move_type] += 1
 	
 	# Squared distance of type distribution
@@ -167,7 +167,7 @@ def pkmn_dist(pkmn1, pkmn2):
 	i_dist = item_dist(pkmn1, pkmn2)
 	
 	# Output sum
-	return ( type_dist + base_dist + m_dist ) ** 0.5
+	return ( type_dist + base_dist + m_dist + i_dist) ** 0.5
 
 
 '''
@@ -179,29 +179,13 @@ def move_dist(move1, move2):
 		return 0 # No distance if they're the same
 	
 	else:
-		m1 = None
-		m1_type = -1
-		if "Hidden Power" not in move1:
-			m1 = s_dist.query(Move).filter(Move.name == move1).first()
-			m1_type = m1.move_type
-		else:
-			m1 = s_dist.query(Move).filter(Move.name == "Hidden Power").first()
-			m1_type = hp_type.index(move1)
-		
-		m2 = None
-		m2_type = -1
-		if "Hidden Power" not in move2:
-			m2 = s_dist.query(Move).filter(Move.name == move2).first()
-			m2_type = m2.move_type
-		else:
-			m2 = s_dist.query(Move).filter(Move.name == "Hidden Power").first()
-			m2_type = hp_type.index(move2)	
-			m2 = s_dist.query(Move).filter(Move.name == move2).first()
+		m1 = get_move(move1, s_dist)
+		m2 = get_move(move2, s_dist)
 		
 		# Take the Euclidean distance (squared)
 		sq_dist_m = 0
 		
-		sq_dist_m += 1 if m1_type == m2_type else 0 # Types match
+		sq_dist_m += 1 if m1.move_type == m2.move_type else 0 # Types match
 		sq_dist_m += 1 if m1.move_cat == m2.move_cat else 0 # Category
 		sq_dist_m += (m1.base_power - m2.base_power) ** 2 # Base Power
 		sq_dist_m += (m1.priority - m2.priority) ** 2 # Accuracy

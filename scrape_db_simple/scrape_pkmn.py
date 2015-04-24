@@ -234,7 +234,7 @@ def pkmn(base_url = "http://serebii.net/pokedex-xy/"):
 			pokemon['abilities'].remove("Regenerator")
 			
 			therian_641 = copy.deepcopy(pokemon)
-			therian_641['name'] = pokemon['name'] + "Therian Form"
+			therian_641['name'] = pokemon['name'] + " Therian Form"
 			therian_641['base'] = [79, 100, 80, 110, 90, 121]
 			therian_641['abilities'] = ["Regenerator"]
 			# Add Therian Form
@@ -245,7 +245,7 @@ def pkmn(base_url = "http://serebii.net/pokedex-xy/"):
 			pokemon['abilities'].remove("Volt Absorb")
 			
 			therian_642 = copy.deepcopy(pokemon)
-			therian_642['name'] = pokemon['name'] + "Therian Form"
+			therian_642['name'] = pokemon['name'] + " Therian Form"
 			therian_642['base'] = [79, 105, 70, 145, 80, 101]
 			therian_642['abilities'] = ["Volt Absorb"]
 			# Add Therian Form
@@ -256,7 +256,7 @@ def pkmn(base_url = "http://serebii.net/pokedex-xy/"):
 			pokemon['abilities'].remove("Intimidate")
 			
 			therian_645 = copy.deepcopy(pokemon)
-			therian_645['name'] = pokemon['name'] + "Therian Form"
+			therian_645['name'] = pokemon['name'] + " Therian Form"
 			therian_645['base'] = [89, 145, 90, 105, 80, 91]
 			therian_645['abilities'] = ["Intimidate"]
 			# Add Therian Form

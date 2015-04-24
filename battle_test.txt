@@ -101,103 +101,103 @@
 			 ],
 		"team2": [
 				{
-					"name": "Groudon",
+					"name": "Mega Latias",
+					"item": "Latiasite",
+					"moves": ["Calm Mind", "Substitute", "Roost", "Stored Power"]
+				},
+				{
+					"name": "Chesnaught",
 					"item": "Leftovers",
-					"moves": ["Earthquake", "Stealth Rock", "Roar", "Stone Edge"]
+					"moves": ["Leech Seed", "Drain Punch", "Spikes", "Spiky Shield"]
 				},
 				{
-					"name": "Blissey",
+					"name": "Tentacruel",
 					"item": "Leftovers",
-					"moves": ["Wish", "Seismic Toss", "Toxic", "Protect"]
+					"moves": ["Rapid Spin", "Rapid Spin", "Acid Spray", "Knock Off"]
 				},
 				{
-					"name": "Kyogre",
+					"name": "Hippowdon",
 					"item": "Leftovers",
-					"moves": ["Calm Mind", "Surf", "Rest", "Sleep Talk"]
+					"moves": ["Slack Off", "Earthquake", "Stone Edge", "Stealth Rock"]
 				},
 				{
-					"name": "Forretress",
+					"name": "Clefable",
 					"item": "Leftovers",
-					"moves": ["Rapid Spin", "Toxic Spikes", "Spikes", "Payback"]
+					"moves": ["Calm Mind", "Heal Bell", "Moonblast", "Moonlight"]
 				},
 				{
-					"name": "Palkia",
-					"item": "Choice Scarf",
-					"moves": ["Spacial Rend", "Surf", "Thunder", "Outrage"]
-				},
-				{
-					"name": "Giratina Origin Form",
-					"item": "Griseous Orb",
-					"moves": ["Draco Meteor", "Outrage", "Hidden Power", "Shadow Sneak"]
+					"name": "Jirachi",
+					"item": "Leftovers",
+					"moves": ["Body Slam", "Iron Head", "Wish", "Protect"]
 				}
 			 ],
-		"winner": "team1"
+		"winner": "team2"
 	},
 	{
 		"team1": [
 				{
-					"name": "Deoxys Speed Form",
+					"name": "Mega Metagross",
+					"item": "Metagrossite",
+					"moves": ["Meteor Mash", "Ice Punch", "Hammer Arm", "Zen Headbutt"]
+				},
+				{
+					"name": "Ferrothorn",
 					"item": "Leftovers",
-					"moves": ["Stealth Rock", "Spikes", "Taunt", "Superpower"]
+					"moves": ["Spikes", "Leech Seed", "Protect", "Power Whip"]
+				},
+				{
+					"name": "Landorus Therian Form",
+					"item": "Leftovers",
+					"moves": ["U-turn", "Earthquake", "Stone Edge", "Stealth Rock"]
+				},
+				{
+					"name": "Manaphy",
+					"item": "Leftovers",
+					"moves": ["Rain Dance", "Surf", "Tail Glow", "Energy Ball"]
 				},
 				{
 					"name": "Latias",
-					"item": "Soul Dew",
-					"moves": ["Dragon Pulse", "Calm Mind", "Recover", "Thunder"]
+					"item": "Life Orb",
+					"moves": ["Draco Meteor", "Healing Wish", "Psyshock", "Roost"]
 				},
 				{
-					"name": "Wobbuffet",
-					"item": "Leftovers",
-					"moves": ["Counter", "Mirror Coat", "Encore", "Safeguard"]
-				},
-				{
-					"name": "Kyogre",
-					"item": "Leftovers",
-					"moves": ["Calm Mind", "Surf", "Rest", "Sleep Talk"]
-				},
-				{
-					"name": "Giratina Origin Form",
-					"item": "Griseous Orb",
-					"moves": ["Draco Meteor", "Outrage", "Hidden Power", "Shadow Sneak"]
-				},
-				{
-					"name": "Jirachi",
+					"name": "Heatran",
 					"item": "Choice Scarf",
-					"moves": ["Iron Head", "Ice Punch", "U-turn", "Trick"]
+					"moves": ["Overheat", "Flash Cannon", "Ancient Power", "Earth Power"]
 				}
 			 ],
 		"team2": [
 				{
-					"name": "Groudon",
+					"name": "Mega Lopunny",
+					"item": "Lopunnite",
+					"moves": ["Fake Out", "High Jump Kick", "Baton Pass", "Frustration"]
+				},
+				{
+					"name": "Landorus Therian Form",
 					"item": "Leftovers",
-					"moves": ["Earthquake", "Stealth Rock", "Roar", "Stone Edge"]
+					"moves": ["U-turn", "Stealth Rock", "Earthquake", "Stone Edge"]
 				},
 				{
-					"name": "Blissey",
+					"name": "Gothitelle",
+					"item": "Choice Specs",
+					"moves": ["Thunderbolt", "Trick", "Psyshock", "Hidden Power Fire"]
+				},
+				{
+					"name": "Klefki",
 					"item": "Leftovers",
-					"moves": ["Wish", "Seismic Toss", "Toxic", "Protect"]
+					"moves": ["Thunder Wave", "Toxic", "Spikes", "Foul Play"]
 				},
 				{
-					"name": "Kyogre",
-					"item": "Leftovers",
-					"moves": ["Calm Mind", "Surf", "Rest", "Sleep Talk"]
+					"name": "Greninja",
+					"item": "Life Orb",
+					"moves": ["Gunk Shot", "Hydro Pump", "Ice Beam", "Dark Pulse"]
 				},
 				{
-					"name": "Forretress",
-					"item": "Leftovers",
-					"moves": ["Rapid Spin", "Toxic Spikes", "Spikes", "Payback"]
-				},
-				{
-					"name": "Palkia",
-					"item": "Choice Scarf",
-					"moves": ["Spacial Rend", "Surf", "Thunder", "Outrage"]
-				},
-				{
-					"name": "Giratina Origin Form",
-					"item": "Griseous Orb",
-					"moves": ["Draco Meteor", "Outrage", "Hidden Power", "Shadow Sneak"]
+					"name": "Latios",
+					"item": "Life Orb",
+					"moves": ["Draco Meteor", "Psyshock", "Defog", "Earthquake"]
 				}
 			 ],
-		"winner": "team1"
+		"winner": "team2"
 	}
 ]

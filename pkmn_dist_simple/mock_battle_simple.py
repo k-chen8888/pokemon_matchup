@@ -78,12 +78,30 @@ Load database
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import create_engine
 
-Session = sessionmaker()
+Session = sessionmaker(autoflush=False)
 engine = create_engine('sqlite:///pkmn_db_simple.db', echo = True)
 Session.configure(bind=engine)
 
 # Work with this one
 s_mock = Session()
+
+
+'''
+A Hidden Power fix for digging up moves by name
+'''
+def get_move(move, session):
+	if "Hidden Power" not in move:
+		return session.query(Move).filter(Move.name == move).first()
+	else:
+		m = session.query(Move).filter(Move.name == "Hidden Power").first()
+		
+		# Adjust Hidden Power type
+		if len(move) > len("Hidden Power"):
+			m.move_type = hp_type.index(move)
+		else:
+			m.move_type = 0
+		
+		return m
 
 
 '''
@@ -171,7 +189,7 @@ def partial_mock(pkmn, team):
 			label = 'move' + str(i) + '_score'
 			
 			# Need current move's data from database
-			m = s_mock.query(Move).filter(Move.name == move).first()
+			m = get_move(move, s_mock)
 			
 			# Accumulator for score
 			score = 0

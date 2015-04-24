@@ -43,8 +43,8 @@ def populate(json_file):
 '''
 Data analysis tools
 '''
-import numpy as np
-from sklearn.cluster import spectral_clustering
+#import numpy as np
+#from sklearn.cluster import spectral_clustering
 
 
 '''
