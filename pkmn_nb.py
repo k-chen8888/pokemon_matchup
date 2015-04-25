@@ -71,6 +71,7 @@ def pack(team):
 		while len(pkmn['moves']) < 4:
 			pkmn['moves'].append("Splash")
 		
+		# Cleaning house, removing moves if there are too many
 		while len(pkmn['moves']) > 4:
 			pkmn['moves'].pop()
 			
@@ -353,7 +354,7 @@ if __name__ == '__main__':
 				else:
 					fp += 1
 		except:
-			pass
+			print "error"
 	
 	# Output results
 	print "tp =", tp
