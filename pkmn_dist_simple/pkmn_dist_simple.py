@@ -93,12 +93,11 @@ def team_dist(team1, team2, mode):
 	elif mode == 1: # Pokemon difference
 		# Simple distance between each pkmn1 on team1 and each other pkmn2 on team2
 		pkmn_distance = 0
-		team2_distance = 0
 		for pkmn1 in team1:
 			for pkmn2 in team2:
 				# Distances between pkmn1 and each opponent
 				# Add to total
-				team1_distance += pkmn_dist(pkmn1, pkmn2)
+				pkmn_distance += pkmn_dist(pkmn1, pkmn2)
 		
 		# Output square root
 		return pkmn_distance ** 0.5
