@@ -285,7 +285,7 @@ def mock_calculate(pokemon, move, opponent, special):
 	reduce = 1.0
 	if o_item:
 		reduce = 0.5 if o_item.name in se_reduce and move.move_type == o_item.natural_gift_type else 1 # 50% reduction from super-effective reducing Berry, if any
-	
+	'''
 	# Calculate the other parts of the score first
 	score += 1 if pkmn.base_spd > opp.base_spd else 0 # Higher speed?
 	if o_item:
@@ -294,22 +294,18 @@ def mock_calculate(pokemon, move, opponent, special):
 		score += 1 if not opp_sub else 0 # Any damage-disrupting moves?
 	score += 1 if stab > 1 else 0 # STAB?
 	score += 1 if type_eff > 1 else 0 # Super effective?
-	
+	'''
 	# Calculate damage-based score
 	if not opp_sub:
 		no_crit = (0.84 * atk_de_ratio * move_power + 2) * stab * type_eff * reduce
 		crit = (0.84 * atk_de_ratio * move_power + 2) * stab * type_eff * reduce * 1.5
 		
-		# Use different VICTORY_BOUND depending on attacker's speed/attack priority
-		if pkmn.base_spd > opp.base_spd or move.priority > 0:
-			score += 1 if no_crit / opp.base_hp > VICTORY_BOUND_FAST else 0
-			score += 1 if crit / opp.base_hp > VICTORY_BOUND_FAST else 0
-		else:
-			score += 1 if no_crit / opp.base_hp > VICTORY_BOUND_SLOW else 0
-			score += 1 if crit / opp.base_hp > VICTORY_BOUND_SLOW else 0
+		# Add percentage of health taken away to score
+		score += min( no_crit / opp.base_hp, 1.0 ) * 3
+		score += min( crit / opp.base_hp, 1.0 ) * 3
 	
-	else: # Very often going to be only 25% of health in damage; don't add anything
-		pass
+	else: # Very often going to be only 25% of health in damage
+		score += 0.25 * 6
 	
 	return score
 

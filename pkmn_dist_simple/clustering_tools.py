@@ -57,7 +57,7 @@ def purity(k, labels, teams, results, sim_mtrx, out = None):
 		cluster_win_purity = float(cluster_wins) / len(cluster) if len(cluster) > 0 else 0
 		cluster_loss_purity = float(cluster_losses) / len(cluster) if len(cluster) > 0 else 0
 		
-		report0 = "Cluster label " + str(i) + ", size " + str( len(cluster) + "\n" )
+		report0 = "Cluster label " + str(i) + ", size " + str( len(cluster) ) + "\n"
 		report1 = str(cluster_wins) + "W " + str(cluster_losses) + "L\n"
 		report2 = str(cluster_win_purity * 100) + "% wins and " + str(cluster_loss_purity * 100) + "% losses\n"
 		
@@ -66,11 +66,13 @@ def purity(k, labels, teams, results, sim_mtrx, out = None):
 			# Display test results
 			print report0
 			print report1
+			print report2
 			print "\n"
 			
 		else:
 			f.write( report0 )
 			f.write( report1 )
+			f.write( report2 )
 			f.write("\n")
 	
 	# Close file
