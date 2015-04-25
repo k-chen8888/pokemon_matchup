@@ -21,7 +21,7 @@
         "name": "Gliscor"
       }, 
       {
-        "item": "[from] item", 
+        "item": "Leftovers", 
         "moves": [
           "Scald"
         ], 
@@ -35,7 +35,7 @@
         "name": "Tyranitar"
       }, 
       {
-        "item": "[from] item", 
+        "item": "Leftovers", 
         "moves": [
           "Stealth Rock", 
           "Taunt", 
@@ -45,12 +45,14 @@
         "name": "Heatran"
       }, 
       {
-        "item": "[from] item", 
+        "item": "Leftovers", 
         "moves": [
           "Spikes"
         ], 
         "name": "Ferrothorn"
-      }, 
+      }
+    ], 
+    "team2": [
       {
         "item": "Toxic Orb", 
         "moves": [
@@ -70,7 +72,7 @@
         "name": "Chansey"
       }, 
       {
-        "item": "[from] item", 
+        "item": "Leftovers", 
         "moves": [
           "Scald", 
           "Flamethrower"
@@ -100,13 +102,12 @@
         "name": "Venusaur-Mega"
       }
     ], 
-    "team2": [], 
     "winner": "team1"
   }, 
   {
     "team1": [
       {
-        "item": "[from] item", 
+        "item": "Life Orb", 
         "moves": [
           "Gunk Shot", 
           "Ice Beam"
@@ -114,7 +115,7 @@
         "name": "Greninja"
       }, 
       {
-        "item": "[from] item", 
+        "item": "Leftovers", 
         "moves": [
           "Baton Pass", 
           "Recover"
@@ -145,14 +146,16 @@
         "name": "Metagross-Mega"
       }, 
       {
-        "item": "[from] item", 
+        "item": "Leftovers", 
         "moves": [
           "Stealth Rock"
         ], 
         "name": "Heatran"
-      }, 
+      }
+    ], 
+    "team2": [
       {
-        "item": "[from] item", 
+        "item": "Life Orb", 
         "moves": [
           "Draco Meteor"
         ], 
@@ -166,7 +169,7 @@
         "name": "Gardevoir-Mega"
       }, 
       {
-        "item": "[from] item", 
+        "item": "Life Orb", 
         "moves": [
           "Swords Dance", 
           "Poison Jab"
@@ -198,13 +201,12 @@
         "name": "Heatran"
       }
     ], 
-    "team2": [], 
     "winner": "team1"
   }, 
   {
     "team1": [
       {
-        "item": "[from] item", 
+        "item": "Leftovers", 
         "moves": [
           "Scald", 
           "Thunder Wave", 
@@ -213,14 +215,14 @@
         "name": "Slowbro"
       }, 
       {
-        "item": "[from] item", 
+        "item": "Leftovers", 
         "moves": [
           "Foul Play"
         ], 
         "name": "Klefki"
       }, 
       {
-        "item": "[from] item", 
+        "item": "Rocky Helmet", 
         "moves": [
           "Fake Out", 
           "High Jump Kick"
@@ -228,28 +230,30 @@
         "name": "Lopunny-Mega"
       }, 
       {
-        "item": "[from] item", 
+        "item": "Life Orb", 
         "moves": [
           "Sucker Punch"
         ], 
         "name": "Bisharp"
       }, 
       {
-        "item": "[from] item", 
+        "item": "Leftovers", 
         "moves": [
           "Earthquake"
         ], 
         "name": "Landorus-Therian"
       }, 
       {
-        "item": "[from] item", 
+        "item": "Leftovers", 
         "moves": [
           "Stealth Rock"
         ], 
         "name": "Ferrothorn"
-      }, 
+      }
+    ], 
+    "team2": [
       {
-        "item": "[from] item", 
+        "item": "Leftovers", 
         "moves": [
           "Dragon Dance", 
           "Substitute", 
@@ -297,7 +301,6 @@
         "name": "Garchomp"
       }
     ], 
-    "team2": [], 
     "winner": "team2"
   }
 ]

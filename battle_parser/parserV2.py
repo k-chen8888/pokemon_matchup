@@ -22,6 +22,14 @@ class Pokemon:
     self.item = None
     self.moves = []
 
+#Arceus's Plates
+plate = {"Bug":"Insect Plate", "Dark":"Dread Plate", "Dragon":"Draco Plate", "Electric":"Zap Plate", "Fairy":"Pixie Plate" ,"Fighting":"Fist Plate", "Fire":"Flame Plate", "Flying":"Sky Plate", "Ghost":"Spooky Plate", "Grass":"Meadow Plate", "Ground":"Earth Plate", "Ice":"Icicle Plate", "Poison":"Toxic Plate", "Psychic":"Mind Plate", "Rock":"Stone Plate", "Steel":"Iron Plate", "Water":"Splash Plate", }
+
+#Genesect's Drives
+drive = {"Shock":"Shock Drive", "Burn":"Burn Drive", "Chill":"Chill Drive", "Douse":"Douse Drive"}
+
+#Primal Reversion Stones
+primal = ["Blue Orb", "Red Orb"]
     
 #Take the webpage and parse it into a Battle
 def parse(webpage):    
@@ -85,6 +93,9 @@ def makedic(bat):
   p1 = bat.players['p1a']
   p2 = bat.players['p2a']
   
+  #print p2.name
+  #print p2.pokemon
+  
   #declare which team won
   if p1.name == bat.winner:
     victor = "team1"
@@ -99,22 +110,38 @@ def makedic(bat):
   pokemon = p1.pokemon
   for k in pokemon:
     poke = {}
+      
     poke['name'] = pokemon[k].name
-    poke['item'] = pokemon[k].item
-    poke['moves'] = pokemon[k].moves
-    team1.append(deepcopy(poke))
-  
-  #fill in team 2
-  pokemon = p2.pokemon
-  for k in pokemon:
-    poke = {}
-    poke['name'] = pokemon[k].name
-    poke['item'] = pokemon[k].item
-    poke['moves'] = pokemon[k].moves
-    team1.append(deepcopy(poke))
+     
+    if 'Arceus' in pokemon[k].name:
+      t = pokemon[k].name.split('-')
+      if len(t) > 1:
+        poke['item'] = plate[t[1]]
+    elif 'Genesect' in pokemon[k].name:
+      t = pokemon[k].name.split('-')
+      if len(t) > 1:
+        poke['item'] = drive[t[1]]
+    else:    
+      poke['item'] = pokemon[k].item
     
+    poke['moves'] = pokemon[k].moves
+    team1.append(deepcopy(poke))
+
+  #fill in team 2
+  #used name Pikachu because why not?
+  pikachu = p2.pokemon
+  for k in pikachu:
+    poke = {}
+    poke['name'] = pikachu[k].name
+    poke['item'] = pikachu[k].item
+    poke['moves'] = pikachu[k].moves
+    team2.append(deepcopy(poke))
+  
+  #print team2
+ 
   #Craft the Dictionary
   battleDic = {'team1' : team1, 'team2' : team2, 'winner' : victor}
+#  print battleDic
   return battleDic
   
     
@@ -145,6 +172,10 @@ def switch(plyr, line):
   index = re.split("\W", name )[0]
   plyr.cur = plyr.pokemon[index]
   plyr.cur.name = name #set in the event of a form change or added typing
+  if 'Arceus' in name:
+    type = name.split('-')
+    if len(type) > 1:
+      plyr.cur.item = plate[type[1]]
 
 #|move|p1a: Lopunny|Fake Out|p2a: Umbreon
 def move(plyr, line):
@@ -167,13 +198,75 @@ def enditem(plyr, line):
 #|-heal|p1a: Pokemon|###\/###|[from] item: Leftovers
 def healitem(plyr, line):
   if len(line) > 4 and 'item' in line[4]:
-    plyr.cur.item = line[4].split(':')[0].lstrip()
+    plyr.cur.item = line[4].split(':')[1].lstrip()
   
 #|-damage|p1a: Foxheart|244\/271|[from] item: Life Orb
 def dmgitem(plyr, line):
   if len(line) > 4 and 'item' in line[4]:
-    plyr.cur.item = line[4].split(':')[0].lstrip()
+    plyr.cur.item = line[4].split(':')[1].lstrip()
   
-
+#if the name has a -SOMETHING at the end. Move it to the front
+#if it is Keldo or Meloetta, just return their base name  
+def nameSwap(name):
+  parts = name.split('-')
+  if len(parts) < 2:
+    return name
+    
+  #move the mega to the front
+  elif 'Mega' in parts[1]:
+    #Charizard and Mewtwo
+    if len(parts) > 2: 
+      return parts[1] + ' ' + parts[2] + ' ' + parts[0]
+    else:
+      return parts[1] + ' ' + parts[0]  
   
+  #Groudon and Kyogre
+  elif 'Primal' in parts[1]:
+    return parts[1] + ' ' + parts[0]
   
+    #Pokemon Specific Cases
+  elif 'Nidoran' in parts[0]:
+    return name
+  elif 'Porygon' in parts[0]:
+    return name
+  elif 'Castform' in parts[0]:
+    return parts[0] + ' ' + parts[1] + ' ' + 'Form'
+  elif 'Deoxys' in parts[0]:
+    return parts[0] + ' ' + parts[1] + ' ' + 'Form'
+  
+  #Gen IV Exceptions 
+  elif 'Rotom' in parts[0]:
+    return parts[1] + ' ' + parts[0]
+  elif 'Giratina' in parts[0]:
+    return parts[0] + ' ' + parts[1]
+  elif 'Shaymin' in parts[0]:
+    return parts[0] + ' ' + parts[1] + 'Form'
+  elif 'Arceus' in parts[0]:
+    return parts[0]
+  
+  #Gen V Exceptions
+  elif 'Darmanitan' in parts[0]:
+    return parts[1] + ' ' + parts[0]
+  elif 'Therian' in parts[1]:
+    return parts[0] + ' ' + parts[1] + ' ' + 'Form'
+  elif 'Keldeo' in parts[0]:
+    return parts[0]
+  elif 'Kyurem' in parts[0]:
+    return parts[1] + ' ' + parts[0]
+  elif 'Meloetta' in parts[0] :
+    print 'Using: ' + name
+    return parts[0]
+  elif 'Genesect' in parts[0]:
+    return parts[0]
+  
+  #Gen VI Exceptions
+  elif 'Floette' in parts[0]:
+    return parts[0]
+  elif 'Meowstic' in parts[0]:
+    return parts[0] + ' ' + parts[1]
+  elif 'Aegislash' in parts[0]:
+    return parts[0] + ' ' + parts[1] + ' ' + 'Form'
+  elif 'Pumpkaboo' in parts[0]:
+    return parts[0] + ' ' + parts[1]
+  elif 'Gourgeist' in parts[0]:
+    return parts[0] + ' ' + parts[1]
