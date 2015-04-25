@@ -376,7 +376,7 @@ if __name__ == '__main__':
 	# Run some predictions and get [ [tp, fn], [fp, tn] ]
 	for i in range(0, len(valid)):
 		try:
-			predict = clf.predict( valid[i] )
+			predict = l.predict( valid[i] )
 			print predict, str( predict[0] == valid_res[i] )
 			
 			if predict[0] == 0:
