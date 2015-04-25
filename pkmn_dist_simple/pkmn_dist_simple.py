@@ -143,12 +143,12 @@ def pkmn_dist(pkmn1, pkmn2):
 		# Euclidean Distance
 		type_dist = sum( [ ( adv_table_pkmn1[i] - adv_table_pkmn2[i] ) ** 2 for i in range(0, 18) ] )
 	
-	
+	'''
 	# Distance between base stats
 	pkmn1_base = [ pkmn1['pkmn'].base_hp, pkmn1['pkmn'].base_atk, pkmn1['pkmn'].base_def, pkmn1['pkmn'].base_spatk, pkmn1['pkmn'].base_spdef, pkmn1['pkmn'].base_spd ]
 	pkmn2_base = [ pkmn2['pkmn'].base_hp, pkmn2['pkmn'].base_atk, pkmn2['pkmn'].base_def, pkmn2['pkmn'].base_spatk, pkmn2['pkmn'].base_spdef, pkmn2['pkmn'].base_spd ]
 	base_dist = sum( [ ( pkmn1_base[i] - pkmn2_base[i] ) ** 2 for i in range(0, 6) ] )
-	
+	'''
 	# Pairwise distance between each move, averaged using the number of moves it was compared to
 	m_dist = 0
 	if float( pkmn2['move_count'] ) > 0:
