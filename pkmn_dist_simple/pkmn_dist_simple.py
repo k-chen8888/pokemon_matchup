@@ -220,6 +220,7 @@ def similarity(teams):
 		
 		sim.append(row)
 	
+	# Populate with actual values
 	for i in range(0, len(sim)):
 		for j in range(0, i + 1):
 			if i == j: # Same team means distance of 0
@@ -227,7 +228,9 @@ def similarity(teams):
 			else:
 				sim[i][j] = team_dist(teams[i], teams[j])
 				sim[j][i] = sim[i][j]
-	
+		
+		print "Next row"
+		
 	#adj_n = normalize(sim)
 	
 	return sim
