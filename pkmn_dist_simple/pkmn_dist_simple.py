@@ -88,7 +88,7 @@ def team_dist(team1, team2):
 	# Pairwise squared distances between each Pokemon (if full teams of 6 Pokemon, there are 36 calculations made)
 	# Get a list of distances for each Pokemon on the team
 	# Each entry in team#_distances is the average distance between a Pokemon on team# and every other Pokemon on the opposite team
-	team1_distances = []
+	'''team1_distances = []
 	team2_distances = []
 	for pkmn1 in team1:
 		for pkmn2 in team2:
@@ -107,8 +107,8 @@ def team_dist(team1, team2):
 			
 			# Append the average distance
 			team2_distances.append( sum(pkmn1_distances) / len(pkmn1_distances) )
-	
-	avg_dist = sum( [ (team1_distances[i] - team2_distances[i]) ** 2 for i in range(0, len(team1_distances)) ] )
+	'''
+	avg_dist = 0#sum( [ (team1_distances[i] - team2_distances[i]) ** 2 for i in range(0, len(team1_distances)) ] )
 	
 	# Squared "distance" between base strengths of Pokemon
 	# Use mock_battle_simple
