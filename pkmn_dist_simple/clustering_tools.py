@@ -19,74 +19,58 @@ Given labels, sort into two lists
 Calculate percentage of winners/losers in zero
 Calculate percentage of winners/losers in one
 '''
-def purity(labels, teams, results, sim_mtrx, out = None):
-	zero = []
-	zero_res = []
-	one = []
-	one_res = []
-	
-	# Sort by cluster
-	for i in range(0, len(labels)):
-		if labels[i] == 0:
-			zero.append(teams[i])
-			zero_res.append( results[i] )
-		else:
-			one.append(teams[i])
-			one_res.append( results[i] )
-	
-	# Calculate percentage of wins and losses in 0 list
-	zero_wins = 0
-	zero_losses = 0
-	
-	for team in zero:
-		if results[teams.index(team)] == True: # Winner
-			zero_wins += 1
-		else:
-			zero_losses += 1
-	
-	# Purity for zero array
-	zero_win_purity = float(zero_wins) / len(zero) if len(zero) > 0 else 0
-	zero_loss_purity = float(zero_losses) / len(zero) if len(zero) > 0 else 0
-	
-	# Calculate percentage of wins and losses in 1 list
-	one_wins = 0
-	one_losses = 0
-	
-	for team in one:
-		if results[teams.index(team)] == True: # Winner
-			one_wins += 1
-		else:
-			one_losses += 1
-	
-	# Purity for one array
-	one_win_purity = float(one_wins) / len(one) if len(one) > 0 else 0
-	one_loss_purity = float(one_losses) / len(one) if len(one) > 0 else 0
-	
-	# Which cluster had more winners?
-	# Store purity values and silhouette coefficients
-	win = []
-	loss = []
-	if zero_win_purity > one_win_purity:
-		win = [zero_win_purity, zero_loss_purity, silhouette(zero, one, teams, sim_mtrx), "zero", len(zero)]
-		loss = [one_win_purity, one_loss_purity, silhouette(one, zero, teams, sim_mtrx), "one", len(one)]
-	else:
-		win = [one_win_purity, one_loss_purity, silhouette(one, zero, teams, sim_mtrx), "one", len(one)]
-		loss = [zero_win_purity, zero_loss_purity, silhouette(zero, one, teams, sim_mtrx), "zero", len(zero)]
-	
-	# If there is an output file specified, use it
+def purity(k, labels, teams, results, sim_mtrx, out = None):
+	f = None
 	if out == None:
-		# Display test results
-		print "The winners cluster", win[3] , "contained", win[0] * 100, "% wins and", win[1] * 100, "% losses. The silhouette coefficient for this cluster is", win[2]
-		print "The losers cluster", loss[3] , "contained", loss[0] * 100, "% wins and", loss[1] * 100, "% losses. The silhouette coefficient for this cluster is", loss[2]
+		pass
 	else:
 		# Store test results in file
 		f = open(out, "w")
+	
+	# The number k represents the number of unique labels
+	# In scikit, this is [0, k - 1]
+	for i in range(0, k):
+		# Look for i in labels
+		cluster = []
+		cluster_res = []
 		
-		win_txt = "The winners cluster " + win[3] + str(win[4]) + " contained " + str( win[0] * 100 ) + "% wins and " + str( win[1] * 100 ) + "% losses. The silhouette coefficient for this cluster is " + str( win[2] ) + "\n"
-		loss_txt = "The losers cluster " + loss[3] + str(loss[4]) + " contained " + str( loss[0] * 100 ) + "% wins and " + str( loss[1] * 100 ) + "% losses. The silhouette coefficient for this cluster is " + str( loss[2] ) + "\n"
+		for j in range(0, len(labels)):
+			# Process all data points labeled i
+			if labels[j] == i:
+				cluster.append( teams[i] )
+				cluster_res.append( results[i] )
+					
+			else:
+				pass
 		
-		f.write(win_txt)
-		f.write(loss_txt)
+		# Calculate percentage of wins and losses in cluster
+		cluster_wins = 0
+		cluster_losses = 0
+		
+		for i in range(0, len(cluster)):
+			if results[i] == True: # Winner
+				cluster_wins += 1
+			else:
+				cluster_losses += 1
+		
+		# Purity for cluster
+		cluster_win_purity = float(cluster_wins) / len(cluster) if len(cluster) > 0 else 0
+		cluster_loss_purity = float(cluster_losses) / len(cluster) if len(cluster) > 0 else 0
+		
+		# If there is an output file specified, use it
+		if out == None:
+			# Display test results
+			print "Cluster label", i, ", size ", str( len(cluster) )
+			print cluster_win_purity * 100, "% wins and", cluster_loss_purity * 100, "% losses"
+			print "\n"
+			
+		else:
+			f.write( "Cluster label " + str(i) + ", size " + str( len(cluster) ) )
+			f.write( str(cluster_win_purity * 100) + "% wins and " + str(cluster_loss_purity * 100) + "% losses" )
+			f.write("\n")
+	
+	# Close file
+	f.close()
 	
 	print "Test done"
 

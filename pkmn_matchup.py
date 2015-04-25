@@ -12,7 +12,7 @@ Data analysis tools
 '''
 import numpy as np
 from sklearn.cluster import spectral_clustering
-
+k = 4
 
 '''
 All scraper and db tools
@@ -220,13 +220,13 @@ if __name__ == '__main__':
 		while i < 6:
 			# Generate labels (spectral clustering)
 			# Note that the adjacency matrix needs to be converted into a numpy array
-			labels = spectral_clustering(np.asarray(adj_mtrx), n_clusters = 2, eigen_solver = 'arpack', assign_labels = sys.argv[3])
+			labels = spectral_clustering(np.asarray(adj_mtrx), n_clusters = k, eigen_solver = 'arpack', assign_labels = sys.argv[3])
 			
 			# Name of file to output test results
 			outfile_name = 'test' + str(i) + '_results.txt'
 			
 			# Compute the purity of the clustering
-			purity(labels, teams, results, sim_mtrx, outfile_name)
+			purity(k, labels, teams, results, sim_mtrx, outfile_name)
 			
 			# Next test
 			i += 1
@@ -245,13 +245,13 @@ if __name__ == '__main__':
 			
 			# Generate labels (spectral clustering)
 			# Note that the adjacency matrix needs to be converted into a numpy array
-			labels = spectral_clustering(np.asarray(adj_mtrx), n_clusters = 2, eigen_solver = 'arpack', assign_labels = sys.argv[3])
+			labels = spectral_clustering(np.asarray(adj_mtrx), n_clusters = k, eigen_solver = 'arpack', assign_labels = sys.argv[3])
 			
 			# Name of file to output test results
 			outfile_name = 'randtest' + str(i) + '_results.txt'
 			
 			# Compute the purity of the clustering
-			purity(labels, rand_teams, rand_results, sim_mtrx, outfile_name)
+			purity(k, labels, rand_teams, rand_results, sim_mtrx, outfile_name)
 			
 			# Next test
 			i += 1
