@@ -293,11 +293,16 @@ def mock_calculate(pkmn, p_item, opponent, opp, o_item, move, special):
 	# Modifier
 	stab = 1.5 if move.move_type == pkmn.type1 or move.move_type == pkmn.type2 else 1 # Same-type attack bonus
 	type_eff = typing[move.move_type][opp.type1] if opp.type2 == -1 else typing[move.move_type][opp.type1] * typing[pkmn.type1][opp.type2] # Type effectiveness
-	reduce = 0.5 if o_item.name in se_reduce and move.move_type == o_item.natural_gift_type else 1 # 50% reduction from super-effective reducing Berry, if any
+	reduce = 1.0
+	if o_item:
+		reduce = 0.5 if o_item.name in se_reduce and move.move_type == o_item.natural_gift_type else 1 # 50% reduction from super-effective reducing Berry, if any
 	
 	# Calculate the other parts of the score first
 	score += 1 if pkmn.base_spd > opp.base_spd else 0 # Higher speed?
-	score += 1 if not o_item.name in se_reduce and not o_item.name == "Leftovers" and not o_item.name == "Focus Sash" and not "Substitute" in opponent['moves'] else 0 # Any damage-disrupting items/moves?
+	if o_item:
+		score += 1 if not o_item.name in se_reduce and not o_item.name == "Leftovers" and not o_item.name == "Focus Sash" and not "Substitute" in opponent['moves'] else 0 # Any damage-disrupting items/moves?
+	else:
+		score += 1 if not "Substitute" in opponent['moves'] else 0 # Any damage-disrupting moves?
 	score += 1 if stab > 1 else 0 # STAB?
 	score += 1 if type_eff > 1 else 0 # Super effective?
 	
@@ -325,30 +330,7 @@ Calculate the squared distance between two teams based on mock battle results
 Larger distance -> greater strength difference
 '''
 def mock_dist(team1, team2):
-	'''
-	avg_sq_dist = []
-	
-	# Find distances between scores for pkmn1's moves and each pkmn2's corresponding defense values
-	for k in range(0, 6):
-		# 1x4 list of sum of square distances, one for each move
-		sq_dist = []
-		
-		# Check strength difference for each move that pkmn1 has
-		for i in range(0, 4):
-			# Start with a 1x6 list of strength ratings
-			str_ratings = team1[k]['move' + str(i) + '_score']
-			
-			# Subtract out opponent's defense ratings and square
-			for j in range(0, 6):
-				str_ratings[j] = (str_ratings[j] - team2[j]['defense'][k][i]) ** 2.0
-			
-			sq_dist.append( sum(str_ratings) )
-		
-		# Average square distances and append to output array
-		avg_sq_dist.append( sum(sq_dist) / len(sq_dist) )
-	'''
-	
-		# For each Pokemon on team1, sum up scores
+	# For each Pokemon on team1, sum up scores
 	team1_scores = []
 	for pkmn1 in team1:
 		team1_scores.append( sum(pkmn1['move0_score']) )
