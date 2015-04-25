@@ -51,7 +51,7 @@ def team_dist(team1, team2, mode):
 	if team1 == team2: # Identical teams means distance = 0
 		return 0.0
 	
-	if mode = 0:
+	if mode == 0:
 		# Type distributions for each team
 		team1_types = [0] * 18
 		team2_types = [0] * 18
