@@ -167,7 +167,7 @@ def pkmn_dist(pkmn1, pkmn2):
 	m_dist = 0
 	i_dist = 0
 	# Output sum
-	return ( type_dist + base_dist + m_dist + i_dist) ** 0.5
+	return type_dist + base_dist + m_dist + i_dist
 
 
 '''
