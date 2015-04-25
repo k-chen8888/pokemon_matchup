@@ -65,8 +65,8 @@ def purity(labels, teams, results, sim_mtrx, out = None):
 	else:
 		# Store test results in file
 		f = open(out, "w")
-		f.write("The winners cluster contained " + str( win[0] * 100 ) "% wins and " + str( win[1] * 100 ) "% losses. The silhouette coefficient for this cluster is " + str( win[2] ) + "\n")
-		f.write("The losers cluster contained " + str( loss[0] * 100 ) "% wins and " + str( loss[1] * 100 ) "% losses. The silhouette coefficient for this cluster is " + str( loss[2] ) + "\n")
+		f.write("The winners cluster contained " + str( win[0] * 100 ) + "% wins and " + str( win[1] * 100 ) "% losses. The silhouette coefficient for this cluster is " + str( win[2] ) + "\n")
+		f.write("The losers cluster contained " + str( loss[0] * 100 ) + "% wins and " + str( loss[1] * 100 ) "% losses. The silhouette coefficient for this cluster is " + str( loss[2] ) + "\n")
 	
 	print "Test done"
 
