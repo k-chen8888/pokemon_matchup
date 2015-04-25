@@ -324,6 +324,44 @@ def pkmn(base_url = "http://serebii.net/pokedex-xy/"):
 			# Add Blade Form
 			pokedex.append(blade)
 		
+		elif pokemon['id'] == 710: # Pumpkaboo
+			small = copy.deepcopy(pokemon)
+			small['name'] += " Small"
+			small['base'] = [44, 66, 70, 44, 55, 56]
+			# Add small Pumpkaboo
+			pokedex.append(small)
+			
+			large = copy.deepcopy(pokemon)
+			large['name'] += " Large"
+			large['base'] = [54, 66, 70, 44, 55, 46]
+			# Add large Pumpkaboo
+			pokedex.append(large)
+			
+			super = copy.deepcopy(pokemon)
+			super['name'] += " Super"
+			super['base'] = [59, 66, 70, 44, 55, 41]
+			# Add super Pumpkaboo
+			pokedex.append(super)
+		
+		elif pokemon['id'] == 711: # Gourgeist
+			small = copy.deepcopy(pokemon)
+			small['name'] += " Small"
+			small['base'] = [55, 85, 122, 58, 75, 99]
+			# Add small Gourgeist
+			pokedex.append(small)
+			
+			large = copy.deepcopy(pokemon)
+			large['name'] += " Large"
+			large['base'] = [75, 95, 122, 58, 75, 69]
+			# Add large Gourgeist
+			pokedex.append(large)
+			
+			super = copy.deepcopy(pokemon)
+			super['name'] += " Super"
+			super['base'] = [85, 100, 122, 58, 75, 54]
+			# Add super Gourgeist
+			pokedex.append(super)
+		
 		else:
 			pass
 		

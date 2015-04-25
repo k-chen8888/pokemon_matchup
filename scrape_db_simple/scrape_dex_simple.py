@@ -35,9 +35,9 @@ Call all of the scrapers and get to work
 '''
 def scrape_dex():
 	# Load all documented information, scraping from serebii.net
-	#d_items = items()
-	#d_moves = moves()
-	#d_abilities = abilities()
+	d_items = items()
+	d_moves = moves()
+	d_abilities = abilities()
 	d_pkmn = pkmn()
 	
 	'''
