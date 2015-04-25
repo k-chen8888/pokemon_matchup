@@ -56,58 +56,52 @@ s_global = Session()
 
 
 '''
-For each team in the list, pack it into a 
+For a single team, pack it into a dictionary of database objects
 '''
-def pack(teams):
-	# New list of teams
-	all_teams = []
+def pack(team):
+	queried_team = []
 	
-	for team in teams:
-		queried_team = []
+	# Cleaning house, adding dummy Pokemon to fill space
+	while len(team) < 6:
+		team.append(MAGIKARP)
 		
-		# Cleaning house, adding dummy Pokemon to fill space
-		while len(team) < 6:
-			team.append(MAGIKARP)
+	for pkmn in team:
+		packed_pkmn = {}
 		
-		for pkmn in team:
-			packed_pkmn = {}
+		# Extract Pokemon by name
+		packed_pkmn['pkmn'] = s_global.query(Pokemon).filter(Pokemon.name == pkmn['name']).first()
+		
+		# Save actual number of moves
+		packed_pkmn['move_count'] = len( pkmn['moves'] )
 			
-			# Extract Pokemon by name
-			packed_pkmn['pkmn'] = s_global.query(Pokemon).filter(Pokemon.name == pkmn['name']).first()
+		# Cleaning house, adding dummy moves to fill space
+		while len(pkmn['moves']) < 4:
+			pkmn['moves'].append("Splash")
 			
-			# Save actual number of moves
-			packed_pkmn['move_count'] = len( pkmn['moves'] )
+		packed_pkmn['moves'] = []
+		# Extract moves by name
+		for move in pkmn['moves']:
+			packed_pkmn['moves'].append( get_move(move, s_global) )
 			
-			# Cleaning house, adding dummy moves to fill space
-			while len(pkmn['moves']) < 4:
-				pkmn['moves'].append("Splash")
-			
-			packed_pkmn['moves'] = []
-			# Extract moves by name
-			for move in pkmn['moves']:
-				packed_pkmn['moves'].append( get_move(move, s_global) )
-			
-			# Extract items; give it a useless Soothe Bell if it has no item
-			if 'item' in pkmn:
-				if pkmn['item'] == None:
-					packed_pkmn['item'] = s_global.query(HoldItem).filter(HoldItem.name == "Soothe Bell").first()
-				else:
-					packed_pkmn['item'] = s_global.query(HoldItem).filter(HoldItem.name == pkmn['item']).first()
-			
+		# Extract items; give it a useless Soothe Bell if it has no item
+		if 'item' in pkmn:
+			if pkmn['item'] == None:
+				packed_pkmn['item'] = s_global.query(HoldItem).filter(HoldItem.name == "Soothe Bell").first()
 			else:
-				packed_pkmn['item'] = s_global.query(HoldItem).filter(HoldItem.name == "Soothe Bell").first()
-			
-			# Just in case
-			if packed_pkmn['item'] == None:
-				packed_pkmn['item'] = s_global.query(HoldItem).filter(HoldItem.name == "Soothe Bell").first()
-			
-			# Add to packed list
-			queried_team.append( packed_pkmn )
+				packed_pkmn['item'] = s_global.query(HoldItem).filter(HoldItem.name == pkmn['item']).first()
 		
-		all_teams.append( queried_team )
-	
-	# Output pre-processed list
-	return all_teams
+		else:
+			packed_pkmn['item'] = s_global.query(HoldItem).filter(HoldItem.name == "Soothe Bell").first()
+		
+		# Just in case
+		if packed_pkmn['item'] == None:
+			packed_pkmn['item'] = s_global.query(HoldItem).filter(HoldItem.name == "Soothe Bell").first()
+		
+		# Add to packed list
+		queried_team.append( packed_pkmn )
+		
+	# Output pre-processed team
+	return queried_team
 
 
 '''
@@ -130,22 +124,19 @@ def populate(json_file):
 	teams = []
 	results = []
 	for match in data:
-		# team1 info
-		teams.append( match['team1'] )
+		# team1 info, queried
+		teams.append( pack( match['team1'] ) )
 		if match['winner'] == 'team1':
 			results.append(True)
 		else:
 			results.append(False)
 		
-		# team2 info
-		teams.append( match['team2'] )
+		# team2 info, queried
+		teams.append( pack( match['team2'] ) )
 		if match['winner'] == 'team2':
 			results.append(True)
 		else:
 			results.append(False)
-	
-	# Query now, or forever hold your silence
-	teams = pack(teams)
 	
 	return teams, results
 
