@@ -64,8 +64,14 @@ def purity(labels, teams, results, sim_mtrx, out = None):
 	
 	# Which cluster had more winners?
 	# Store purity values and silhouette coefficients
-	win = [zero_win_purity, zero_loss_purity, silhouette(zero, one, teams, sim_mtrx), "zero"] if zero_win_purity > one_win_purity else [one_win_purity, one_loss_purity, silhouette(one, zero, teams, sim_mtrx), "one"]
-	loss = [zero_win_purity, zero_loss_purity, silhouette(zero, one, teams, sim_mtrx), "zero"] if zero_win_purity < one_win_purity else [one_win_purity, one_loss_purity, silhouette(one, zero, teams, sim_mtrx), "one"]
+	win = []
+	loss = []
+	if zero_win_purity > one_win_purity:
+		win = [zero_win_purity, zero_loss_purity, silhouette(zero, one, teams, sim_mtrx), "zero"]
+		loss = [one_win_purity, one_loss_purity, silhouette(one, zero, teams, sim_mtrx), "one"]
+	else:
+		win = [one_win_purity, one_loss_purity, silhouette(one, zero, teams, sim_mtrx), "one"]
+		loss = [zero_win_purity, zero_loss_purity, silhouette(zero, one, teams, sim_mtrx), "zero"]
 	
 	# If there is an output file specified, use it
 	if out == None:
@@ -81,7 +87,7 @@ def purity(labels, teams, results, sim_mtrx, out = None):
 		
 		f.write(win_txt)
 		f.write(loss_txt)
-	
+	'''
 	# Try to re-cluster the winners' set if something weird happens
 	if win[0] < 0.6 and not win[1] == 1.0:
 		sim = []
@@ -125,7 +131,7 @@ def purity(labels, teams, results, sim_mtrx, out = None):
 			purity(labels, zero, zero_res, sim, outfile_name)
 		else:
 			purity(labels, one, one_res, sim, outfile_name)
-	
+	'''
 	print "Test done"
 
 '''
