@@ -262,7 +262,7 @@ def mock_calculate(pokemon, move, opponent, special):
 	# Does the opponent have Substitute?
 	opp_sub = False
 	for move in opponent['moves']:
-		if move.name == "Substitute"
+		if move.name == "Substitute":
 			opp_sub = True
 	
 	# Move power
