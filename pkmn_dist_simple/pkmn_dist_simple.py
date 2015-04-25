@@ -90,7 +90,7 @@ def team_dist(team1, team2, mode):
 		# Output square root
 		return ( type_dist + move_type_dist ) ** 0.5
 	
-	elif mode == 1: # Pokemon difference
+		#elif mode == 1: # Pokemon difference
 		# Simple distance between each pkmn1 on team1 and each other pkmn2 on team2
 		pkmn_distance = 0
 		for pkmn1 in team1:
@@ -227,7 +227,7 @@ def similarity(teams):
 		sim.append(row)
 	
 	# Populate with actual values
-	'''
+	
 	# mode = 0, basic team similarity
 	sim0 = copy.deepcopy(sim)
 	for i in range(0, len(sim0)):
@@ -241,7 +241,7 @@ def similarity(teams):
 			print "Calculation", i, j, "complete; go to next entry"
 		
 		print "Calculation", i, "complete; go to next row"
-	
+	'''
 	# mode = 1, pkmn_dist
 	sim1 = copy.deepcopy(sim)
 	for i in range(0, len(sim1)):
@@ -255,7 +255,7 @@ def similarity(teams):
 			print "Calculation", i, j, "complete; go to next entry"
 		
 		print "Calculation", i, "complete; go to next row"
-	'''
+	
 	# mode = 2, mock_battle
 	sim2 = copy.deepcopy(sim)
 	for i in range(0, len(sim2)):
@@ -271,9 +271,9 @@ def similarity(teams):
 		print "Calculation", i, "complete; go to next row"
 	
 	# Normalize and sum all 3 measures
-	#sim0_n = normalize(sim0)
+	sim0_n = normalize(sim0)
 	#sim1_n = normalize(sim1)
-	sim2_n = normalize(sim2)
+	#sim2_n = normalize(sim2)
 	
 	for i in range(0, len(sim)):
 		for j in range(0, i + 1):
@@ -282,8 +282,8 @@ def similarity(teams):
 			else:
 				sim[i][j] = sim2_n[i][j]#sim0_n[i][j] + sim1_n[i][j] + 
 				sim[j][i] = sim[i][j]
-	
-	return sim
+	'''
+	return sim0
 
 
 '''
