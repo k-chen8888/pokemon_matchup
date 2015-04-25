@@ -230,13 +230,13 @@ def similarity(teams):
 	
 	# mode = 0, basic team similarity
 	sim0 = copy.deepcopy(sim)
-	
+	'''
 	# mode = 1, pkmn_dist
 	sim1 = copy.deepcopy(sim)
 	
 	# mode = 2, mock_battle
 	sim2 = copy.deepcopy(sim)
-	
+	'''
 	for i in range(0, len(sim)):
 		for j in range(0, i + 1):
 			if i == j: # Same team means distance of 0
@@ -245,7 +245,7 @@ def similarity(teams):
 				# mode = 0, basic team similarity
 				sim0[i][j] = team_dist(teams[i], teams[j], 1)
 				sim0[j][i] = sim0[i][j]
-				
+				'''
 				# mode = 1, pkmn_dist
 				sim1[i][j] = team_dist(teams[i], teams[j], 1)
 				sim1[j][i] = sim1[i][j]
@@ -253,22 +253,22 @@ def similarity(teams):
 				# mode = 2, mock_battle
 				sim2[i][j] = team_dist(teams[i], teams[j], 2)
 				sim2[j][i] = sim2[i][j]
-				
-			print "M0 Calculation", i, j, "complete; go to next entry"
+				'''
+			print "Calculation", i, j, "complete; go to next entry"
 		
-		print "M0 Calculation", i, "complete; go to next row"
+		print "Calculation", i, "complete; go to next row"
 	
 	# Normalize and sum all 3 measures
 	sim0_n = normalize(sim0)
-	sim1_n = normalize(sim1)
-	sim2_n = normalize(sim2)
+	#sim1_n = normalize(sim1)
+	#sim2_n = normalize(sim2)
 	
 	for i in range(0, len(sim)):
 		for j in range(0, i + 1):
 			if i == j: # Same team means distance of 0
 				sim[i][j] = 0.0
 			else:
-				sim[i][j] = sim0_n[i][j] + sim1_n[i][j] + sim2_n[i][j]
+				sim[i][j] = sim0_n[i][j] #+ sim1_n[i][j] + sim2_n[i][j]
 				sim[j][i] = sim[i][j]
 	
 	return sim
