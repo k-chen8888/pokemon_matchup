@@ -328,7 +328,32 @@ if __name__ == '__main__':
 	clf = GaussianNB()
 	clf.fit( np.array(test), np.array(test_res) )
 	
+	tp = 0
+	fn = 0
+	fp = 0
+	tn = 0
+	
 	# Run some predictions and get [ [tp, fn], [fp, tn] ]
 	for i in range(0, len(valid)):
-		predict = clf.predict( valid[i] )
-		print predict, str( predict[0] == valid_res[i] )
+		try:
+			predict = clf.predict( valid[i] )
+			print predict, str( predict[0] == valid_res[i] )
+			
+			if predict[0] == 0:
+				if predict[0] == valid_res[i]:
+					tn += 1
+				else:
+					fn += 1
+			else:
+				if predict[0] == valid_res[i]:
+					tp += 1
+				else:
+					fp += 1
+		except:
+			pass
+	
+	# Output results
+	print "tp =", tp
+	print "fn =", fn
+	print "fp =", fp
+	print "tn =", tn
