@@ -162,7 +162,7 @@ def pkmn_dist(pkmn1, pkmn2):
 		pass
 	'''
 	# Distance between hold items
-	i_dist = item_dist(pkmn1, pkmn2)
+	i_dist = item_dist(pkmn1['item'], pkmn2['item'])
 	
 	m_dist = 0
 	# Output sum
@@ -178,7 +178,7 @@ def move_dist(move1, move2):
 		return 0 # No distance if they're the same
 	
 	elif move1.name == "Splash" or move2.name == "Splash":
-		return 0 # Ignore splash
+		return 0 # Ignore Splash
 	
 	else:
 		# Take the Euclidean distance (squared)
@@ -196,20 +196,27 @@ def move_dist(move1, move2):
 
 '''
 Distance between hold items
-Items given by name only and queried
+Items objects are given
 '''
-def item_dist(pkmn1, pkmn2):
-	# Take the Euclidean distance (squared)
-	sq_dist_i = 0
+def item_dist(item1, item2):
+	if item1 == item2:
+		return 0 # No distance if they're the same
 	
-	sq_dist_i += (pkmn1['item'].fling_dmg - pkmn2['item'].fling_dmg) ** 2 # Fling
-	sq_dist_i += 1 if not pkmn1['item'].mega_stone == pkmn2['item'].mega_stone else 0 # Is it a Mega Stone (take XOR)?
-	sq_dist_i += (pkmn1['item'].natural_gift_type - pkmn2['item'].natural_gift_type) ** 2 # Type for Natural Gift
-	sq_dist_i += (pkmn1['item'].natural_gift_power - pkmn2['item'].natural_gift_power) ** 2 # Power of Natural Gift
-	sq_dist_i += (pkmn1['item'].se_dmg_down - pkmn2['item'].se_dmg_down) ** 2 # Does it reduce super-effective damage?
+	elif move1.name == "Soothe Bell" or move2.name == "Soothe Bell":
+		return 0 # Ignore Soothe Bell
 	
-	# Output squared distance
-	return sq_dist_i
+	else:
+		# Take the Euclidean distance (squared)
+		sq_dist_i = 0
+		
+		sq_dist_i += (item1.fling_dmg - item2.fling_dmg) ** 2 # Fling
+		sq_dist_i += 1 if not item1.mega_stone == item2.mega_stone else 0 # Is it a Mega Stone (take XOR)?
+		sq_dist_i += (item1.natural_gift_type - item2.natural_gift_type) ** 2 # Type for Natural Gift
+		sq_dist_i += (item1.natural_gift_power - item2.natural_gift_power) ** 2 # Power of Natural Gift
+		sq_dist_i += (item1.se_dmg_down - item2.se_dmg_down) ** 2 # Does it reduce super-effective damage?
+	
+		# Output squared distance
+		return sq_dist_i
 
 
 '''
