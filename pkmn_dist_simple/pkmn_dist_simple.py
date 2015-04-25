@@ -146,18 +146,18 @@ def pkmn_dist(pkmn1, pkmn2):
 	pkmn1_base = sum([ pkmn1['pkmn'].base_hp, pkmn1['pkmn'].base_atk, pkmn1['pkmn'].base_def, pkmn1['pkmn'].base_spatk, pkmn1['pkmn'].base_spdef, pkmn1['pkmn'].base_spd ])
 	pkmn2_base = sum([ pkmn2['pkmn'].base_hp, pkmn2['pkmn'].base_atk, pkmn2['pkmn'].base_def, pkmn2['pkmn'].base_spatk, pkmn2['pkmn'].base_spdef, pkmn2['pkmn'].base_spd ])
 	base_dist = (pkmn1_base - pkmn2_base) ** 2
-	
+	'''
 	# Pairwise distance between each move, averaged using the number of moves it was compared to
-	'''m_dist = 0 + m_dist
+	m_dist = 0
 	for move1 in pkmn1['moves']:
 		for move2 in pkmn2['moves']:
 			m_dist += move_dist(move1, move2)
-	'''
+	
 	# Distance between hold items
 	i_dist = item_dist(pkmn1['item'], pkmn2['item'])
-	
+	'''
 	# Output sum
-	return type_dist + base_dist + i_dist
+	return type_dist + base_dist# + m_dist + i_dist
 
 
 '''
@@ -227,19 +227,47 @@ def similarity(teams):
 		sim.append(row)
 	
 	# Populate with actual values
+	
+	# mode = 0, basic team similarity
+	
+	# mode = 1, pkmn_dist
+	sim0 = copy.deepcopy(sim)
+	for i in range(0, len(sim0)):
+		for j in range(0, i + 1):
+			if i == j: # Same team means distance of 0
+				sim0[i][j] = 0.0
+			else:
+				sim0[i][j] = team_dist(teams[i], teams[j], 1)
+				sim0[j][i] = sim0[i][j]
+		
+			print "Calculation", i, j, "complete; go to next entry"
+		
+		print "Calculation", i, "complete; go to next row"
+	
+	sim1 = copy.deepcopy(sim)
+	for i in range(0, len(sim1)):
+		for j in range(0, i + 1):
+			if i == j: # Same team means distance of 0
+				sim1[i][j] = 0.0
+			else:
+				sim1[i][j] = team_dist(teams[i], teams[j], 1)
+				sim1[j][i] = sim1[i][j]
+		
+			print "Calculation", i, j, "complete; go to next entry"
+		
+		print "Calculation", i, "complete; go to next row"
+	
+	# Normalize and sum all 3 measures
+	sim0_n = normalize(sim0)
+	sim1_n = normalize(sim1)
+	
 	for i in range(0, len(sim)):
 		for j in range(0, i + 1):
 			if i == j: # Same team means distance of 0
 				sim[i][j] = 0.0
 			else:
-				sim[i][j] = team_dist(teams[i], teams[j], 1)
+				sim[i][j] = sim0_n[i][j] + sim1_n[i][j]
 				sim[j][i] = sim[i][j]
-		
-			print "Calculation", i, j, "complete; go to next entry"
-		
-		print "Calculation", i, "complete; go to next row"
-		
-	#adj_n = normalize(sim)
 	
 	return sim
 
