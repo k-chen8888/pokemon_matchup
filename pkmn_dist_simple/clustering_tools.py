@@ -54,8 +54,8 @@ def purity(labels, teams, results, sim_mtrx, out = None):
 	
 	# Which cluster had more winners?
 	# Store purity values and silhouette coefficients
-	win = [zero_win_purity, zero_loss_purity, silhouette(zero, one)] if zero_win_purity > one_win_purity else [one_win_purity, one_loss_purity, silhouette(one, zero)]
-	loss = [zero_win_purity, zero_loss_purity, silhouette(zero, one)] if zero_win_purity < one_win_purity else [one_win_purity, one_loss_purity, silhouette(one, zero)]
+	win = [zero_win_purity, zero_loss_purity, silhouette(zero, one, teams, sim_mtrx)] if zero_win_purity > one_win_purity else [one_win_purity, one_loss_purity, silhouette(one, zero, teams, sim_mtrx)]
+	loss = [zero_win_purity, zero_loss_purity, silhouette(zero, one, teams, sim_mtrx)] if zero_win_purity < one_win_purity else [one_win_purity, one_loss_purity, silhouette(one, zero, teams, sim_mtrx)]
 	
 	# If there is an output file specified, use it
 	if out == None:
@@ -73,7 +73,7 @@ def purity(labels, teams, results, sim_mtrx, out = None):
 '''
 Silhouette coefficient
 
-Assume that the winners cluster is the first argument
+Assume that the cluster to get the coefficient for is the first argument
 Queries the distances out of the original similarity matrix 
 
 a = Average distance between each point and points in the same cluster
