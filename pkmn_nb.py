@@ -299,9 +299,6 @@ def partition(data_table, results):
 	
 	for i in range(0, len(data_table)):
 		print i, len(data_table[i])
-		if i == 22:
-			print data_table[i-1]
-			print data_table{i]
 		# Append to validation set
 		if i in rand_inst:
 			valid.append( copy.deepcopy(data_table[i]) )
