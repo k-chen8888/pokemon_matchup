@@ -75,10 +75,12 @@ def team_dist(team1, team2):
 	# Populate move type distribution lists
 	for p in team2:
 		for m in p['moves']:
-			team1_move_types[m.move_type] += 1 if not m.name == "Splash"
+			if not m.name == "Splash":
+				team1_move_types[m.move_type] += 1
 	for p in team2:
 		for m in p['moves']:
-			team2_move_types[m.move_type] += 1 if not m.name == "Splash"
+			if not m.name == "Splash":
+				team2_move_types[m.move_type] += 1 
 	
 	# Squared distance of type distribution
 	move_type_dist = sum( [ (team1_move_types[i] - team2_move_types[i]) ** 2 for i in range(0, 18) ] )
