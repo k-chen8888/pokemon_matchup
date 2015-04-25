@@ -160,7 +160,7 @@ def pkmn_dist(pkmn1, pkmn2):
 	i_dist = item_dist(pkmn1['item'], pkmn2['item'])
 	
 	# Output sum
-	return type_dist + base_dist + m_dist + i_dist
+	return type_dist + m_dist + i_dist
 
 
 '''
