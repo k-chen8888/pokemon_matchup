@@ -6,39 +6,6 @@ import os, sys, math, re
 # JSON tool for reading parsed data file
 import json
 
-# Parsed data file is formatted with newlines
-# Convert to no newlines, populate and output...
-#	Array of teams
-# 	Array of results
-def populate(json_file):
-	# Build json string, without newlines
-	json_str = ""
-	for line in json_file:
-		json_str += line.rstrip()
-	
-	# Interpret string
-	data = json.loads(json_str)
-	
-	# Populate lists
-	teams = []
-	results = []
-	for match in data:
-		# team1 info
-		teams.append( match['team1'] )
-		if match['winner'] == 'team1':
-			results.append(True)
-		else:
-			results.append(False)
-		
-		# team2 info
-		teams.append( match['team2'] )
-		if match['winner'] == 'team2':
-			results.append(True)
-		else:
-			results.append(False)
-	
-	return teams, results
-
 
 '''
 Data analysis tools
@@ -78,7 +45,7 @@ from pkmn_dist_simple.clustering_tools import *
 '''
 Database session tools
 '''
-'''
+
 # Need to start up a database session first
 Session = sessionmaker()
 engine = create_engine('sqlite:///pkmn_db_simple.db', echo = True)
@@ -86,7 +53,88 @@ Session.configure(bind=engine)
 
 # Work with this one
 s_global = Session()
+
+
 '''
+For each team in the list, pack it into a 
+'''
+def pack(teams):
+	# New list of teams
+	all_teams = []
+	
+	for team in teams:
+		queried_team = []
+		
+		# Cleaning house, adding dummy Pokemon to fill space
+		while len(team) < 6:
+			team.append(MAGIKARP)
+		
+		for pkmn in team:
+			packed_pkmn = {}
+			
+			# Extract Pokemon by name
+			packed_pkmn['pkmn'] = s_global.query(Pokemon).filter(Pokemon.name == pkmn['name']).first()
+			
+			# Save actual number of moves
+			packed_pkmn['move_count'] = len( pkmn['moves'] )
+			
+			# Cleaning house, adding dummy moves to fill space
+			while len(pkmn['moves']) < 4:
+				pkmn['moves'].append("Splash")
+			
+			packed_pkmn['moves'] = []
+			# Extract moves by name
+			for move in pkmn['moves']:
+				packed_pkmn['moves'].append( get_move(move, s_global) )
+			
+			# Extract items, give it a useless Soothe Bell if it has no item
+			packed_pkmn['item'] = s_global.query(HoldItem).filter(HoldItem.name == pkmn['item']).first() if pkmn['item'] != None else s_global.query(HoldItem).filter(HoldItem.name == "Soothe Bell").first()
+			
+			# Add to packed list
+			queried_team.append( packed_pkmn )
+		
+		all_teams.append(queried_team)
+	
+	# Output pre-processed list
+	return all_teams
+
+
+'''
+Parsed data file is formatted with newlines
+Convert to no newlines, populate and output...
+	Array of teams
+		Pack each team by pre-querying everything
+	Array of results
+'''
+def populate(json_file):
+	# Build json string, without newlines
+	json_str = ""
+	for line in json_file:
+		json_str += line.rstrip()
+	
+	# Interpret string
+	data = json.loads(json_str)
+	
+	# Populate lists
+	teams = []
+	results = []
+	for match in data:
+		# team1 info
+		teams.append( match['team1'] )
+		if match['winner'] == 'team1':
+			results.append(True)
+		else:
+			results.append(False)
+		
+		# team2 info
+		teams.append( match['team2'] )
+		if match['winner'] == 'team2':
+			results.append(True)
+		else:
+			results.append(False)
+	
+	return teams, results
+
 
 if __name__ == '__main__':
 	# Gather the data and fill up the database
@@ -124,7 +172,7 @@ if __name__ == '__main__':
 		i += 1
 	
 	# Close out all sessions
-	stop_dist()
-	stop_mock()
+	#stop_dist()
+	#stop_mock()
 	
 	print "Done"

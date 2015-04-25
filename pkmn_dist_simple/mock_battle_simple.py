@@ -73,7 +73,7 @@ from scrape_db_simple.pkmn_db_simple import *
 '''
 Load database
 '''
-
+'''
 # Need to start up a database session first
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import create_engine
@@ -84,7 +84,7 @@ Session.configure(bind=engine)
 
 # Work with this one
 s_mock = Session()
-
+'''
 
 '''
 A Hidden Power fix for digging up moves by name
@@ -135,22 +135,12 @@ Round 2
 Take distance and output
 '''
 def mock_battle(team1, team2):
-	# Cleaning house
-	while len(team1) < 6:
-		team1.append(MAGIKARP)
-	while len(team2) < 6:
-		team2.append(MAGIKARP)
-	
 	# Offence evaluation for team1
 	# Defence evaluation for team2
 	for opponent in team2:
 		opponent['defense'] = []
 	
 	for pkmn in team1:
-		# Cleaning house
-		while len(pkmn['moves']) < 4:
-			pkmn['moves'].append("Splash")
-		
 		# Make labels
 		for i in range(0, len(pkmn['moves'])):
 			label = 'move' + str(i) + '_score'
@@ -165,10 +155,6 @@ def mock_battle(team1, team2):
 		opponent['defense'] = []
 	
 	for pkmn in team2:
-		# Cleaning house
-		while len(pkmn['moves']) < 4:
-			pkmn['moves'].append("Splash")
-		
 		# Make labels
 		for i in range(0, len(pkmn['moves'])):
 			label = 'move' + str(i) + '_score'
@@ -185,41 +171,31 @@ def mock_battle(team1, team2):
 Partial mock battle pitting a single Pokemon from one team against each Pokemon from the other team
 '''
 def partial_mock(pkmn, team):
-	# Need current Pokemon's data from database
-	p = s_mock.query(Pokemon).filter(Pokemon.name == pkmn['name']).first()
-	
 	# Calculate for each opponent
 	for opponent in team:
-		# Need opponent's data from database
-		o = s_mock.query(Pokemon).filter(Pokemon.name == opponent['name']).first()
-		o_item = s_mock.query(HoldItem).filter(HoldItem.name == opponent['item']).first()
-		
 		# Use this array to store opponent's defensive scores for each move faced
 		defend = []
 		for i in range(0, len(pkmn['moves'])):
 			move = pkmn['moves'][i]
 			label = 'move' + str(i) + '_score'
 			
-			# Need current move's data from database
-			m = get_move(move, s_mock)
-			
 			# Accumulator for score
 			score = 0
 			
 			# Non-damaging move
-			if m.move_cat == 2:
-				score += 1 if m.priority > 0 or p.base_spd > o.base_spd or ( pkmn['item'] == "Quick Claw" and m.priority > 0 ) else 0
-				score += 1 if m.weather == True else 0
-				score += 1 if m.entry == True else 0
-				score += 1 if m.status == True else 0
-				score += 1 if m.heal == True else 0
-				score += 1 if m.stat_change == True else 0
+			if move.move_cat == 2:
+				score += 1 if move.priority > 0 or p.base_spd > opponent.base_spd or ( pkmn['item'].name == "Quick Claw" and move.priority > 0 ) else 0
+				score += 1 if move.weather == True else 0
+				score += 1 if move.entry == True else 0
+				score += 1 if move.status == True else 0
+				score += 1 if move.heal == True else 0
+				score += 1 if move.stat_change == True else 0
 				
 				pkmn[label].append(score)
 				defend.append(6 - score)
 			
 			# Useless placeholder move; assume equality
-			elif move == "Splash":
+			elif move.name == "Splash":
 				pkmn[label].append(3)
 				defend.append(3)
 			
@@ -227,41 +203,35 @@ def partial_mock(pkmn, team):
 			else:
 				# Special moves
 				if move == "Fling":
-					if pkmn['item'] == None: # Useless if no hold item
+					if pkmn['item'].name == "Soothe Bell": # Useless if dummy hold item
 						pkmn[label].append(0)
 						defend.append(6)
 					
 					else: # Normal calculations
-						p_item = s_mock.query(HoldItem).filter(HoldItem.name == pkmn['item']).first()
-						
-						score = mock_calculate(p, p_item, opponent, o, o_item, m, 1)
+						score = mock_calculate(pkmn, opponent, 1)
 						
 						pkmn[label].append(score)
 						defend.append(6 - score)
 				
 				elif move == "Natural Gift":
-					if pkmn['item'] == None: # Useless if no hold item
+					if pkmn['item'].name == "Soothe Bell": # Useless if dummy hold item
 						pkmn[label].append(0)
 						defend.append(6)
 					
 					else:
-						p_item = s_mock.query(HoldItem).filter(HoldItem.name == pkmn['item']).first()
-						
-						if p_item.natural_gift_type == -1: # Useless if not berry
+						if pkmn['item'].natural_gift_type == -1: # Useless if not berry
 							pkmn[label].append(0)
 							defend.append(6)
 						
 						else: # Normal calculations
-							score = mock_calculate(p, p_item, opponent, o, o_item, m, 2)
+							score = mock_calculate(pkmn, opponent, 2)
 							
 							pkmn[label].append(score)
 							defend.append(6 - score)
 				
 				# Just any old damaging move
 				else:
-					p_item = s_mock.query(HoldItem).filter(HoldItem.name == pkmn['item']).first()
-					
-					score = mock_calculate(p, p_item, opponent, o, o_item, m, 0)
+					score = mock_calculate(pkmn, move, opponent, 0)
 			
 					pkmn[label].append(score)
 					defend.append(6 - score)
@@ -275,18 +245,25 @@ def partial_mock(pkmn, team):
 '''
 Equation for calculating damaging moves, loaded into one convenient function
 
-@pkmn = attacking Pokemon (database object)
-@p_item = attacking Pokemon's hold item
-@opponent = defending Pokemon (dictionary)
-@opp = defending Pokemon (database object)
-@o_item = defending Pokemon's hold item
-@move = the move (database object)
+@pokemon = attacking Pokemon (dictionary of database objects)
+@move = the move in question (database object)
+@opponent = defending Pokemon (dictionary of database objects)
 @special = (0, normal), (1, Fling), (2, Natural Gift)
 '''
-def mock_calculate(pkmn, p_item, opponent, opp, o_item, move, special):
+def mock_calculate(pokemon, move, opponent, special):
 	score = 0
 	
 	# Pre-load all variables for damage equation
+	pkmn = pokemon['pkmn']
+	p_item = pokemon['item']
+	opp = opponent['pkmn']
+	o_item = opponent['item']
+	
+	# Does the opponent have Substitute?
+	opp_sub = False
+	for move in opponent['moves']:
+		if move.name == "Substitute"
+			opp_sub = True
 	
 	# Move power
 	move_power = 0
@@ -312,14 +289,14 @@ def mock_calculate(pkmn, p_item, opponent, opp, o_item, move, special):
 	# Calculate the other parts of the score first
 	score += 1 if pkmn.base_spd > opp.base_spd else 0 # Higher speed?
 	if o_item:
-		score += 1 if not o_item.name in se_reduce and not o_item.name == "Leftovers" and not o_item.name == "Focus Sash" and not "Substitute" in opponent['moves'] else 0 # Any damage-disrupting items/moves?
+		score += 1 if not o_item.name in se_reduce and not o_item.name == "Leftovers" and not o_item.name == "Focus Sash" and not opp_sub else 0 # Any damage-disrupting items/moves?
 	else:
-		score += 1 if not "Substitute" in opponent['moves'] else 0 # Any damage-disrupting moves?
+		score += 1 if not opp_sub else 0 # Any damage-disrupting moves?
 	score += 1 if stab > 1 else 0 # STAB?
 	score += 1 if type_eff > 1 else 0 # Super effective?
 	
 	# Calculate damage-based score
-	if "Substitute" not in opponent['moves']:
+	if not opp_sub:
 		no_crit = (0.84 * atk_de_ratio * move_power + 2) * stab * type_eff * reduce
 		crit = (0.84 * atk_de_ratio * move_power + 2) * stab * type_eff * reduce * 1.5
 		
