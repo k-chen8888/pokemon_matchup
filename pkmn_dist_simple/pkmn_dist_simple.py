@@ -17,7 +17,7 @@ Evaluate distance for two Pokemon in terms of...
 	
 Perform the measure with each possible pairing of Pokemon and output the average
 '''
-import os, sys, re, math
+import os, sys, re, math, copy
 
 # Query Pokemon from database to get information
 from scrape_db_simple.pkmn_db_simple import *
@@ -224,27 +224,27 @@ Similarity between teams
 Builds and normalizes distance matrix to create adjacency matrix
 '''
 def similarity(teams):
-	# Start off with array of 0s
-	# Dimensions are len(teams) * len(teams)
-	adj = [ [0] * len(teams) ] * len(teams)
-	
-	# Populate array with distances
-	# Takes advantage of symmetry
+	# Start off with empty array
+	sim = []
 	for i in range(0, len(teams)):
+		row = []
+		
+		for j in range(0, len(teams)):
+			row.append(-1)
+		
+		sim.append(row)
+	
+	for i in range(0, len(sim)):
 		for j in range(0, i + 1):
-			if not i == j:
-				adj[i][j] = team_dist(teams[i], teams[j])
-				
-				# Symmetry
-				adj[j][i] = adj[i][j]
-				
-			else: # Same team means distance of 0
-				pass
+			if i == j: # Same team means distance of 0
+				sim[i][j] = 0.0
+			else:
+				sim[i][j] = team_dist(teams[i], teams[j])
+				sim[j][i] = sim[i][j]
 	
-	# Normalize
-	#adj_n = normalize(adj)
+	#adj_n = normalize(sim)
 	
-	return adj
+	return sim
 
 
 '''
