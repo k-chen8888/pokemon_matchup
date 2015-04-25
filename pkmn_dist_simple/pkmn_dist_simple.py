@@ -108,7 +108,7 @@ def team_dist(team1, team2):
 			# Append the average distance
 			team2_distances.append( sum(pkmn1_distances) / len(pkmn1_distances) )
 	
-	avg_dist = sum(team1_distances) - sum(team2_distances)#sum( [ (team1_distances[i] - team2_distances[i]) ** 2 for i in range(0, len(team1_distances)) ] )
+	avg_dist = 0#sum( [ (team1_distances[i] - team2_distances[i]) ** 2 for i in range(0, len(team1_distances)) ] )
 	
 	# Squared "distance" between base strengths of Pokemon
 	# Use mock_battle_simple
@@ -160,12 +160,11 @@ def pkmn_dist(pkmn1, pkmn2):
 		m_dist = sum( [ ( sum( [ move_dist(move1, move2) for move1 in pkmn1['moves'] ] ) / float( pkmn2['move_count'] ) ) for move2 in pkmn2['moves'] ] )
 	else:
 		pass
-	
+	'''
 	# Distance between hold items
 	i_dist = item_dist(pkmn1, pkmn2)
-	'''
+	
 	m_dist = 0
-	i_dist = 0
 	# Output sum
 	return type_dist + base_dist + m_dist + i_dist
 
