@@ -11,6 +11,7 @@ Data analysis tools
 '''
 import numpy as np
 from sklearn.naive_bayes import GaussianNB
+from sklearn import svm
 
 # Distance measures and data evaluation
 from pkmn_dist_simple.mock_battle_simple import *
@@ -302,7 +303,6 @@ def partition(data_table, results):
 	rand_inst = random.sample( range(0, len(data_table)), len(data_table) / 10 )
 	
 	for i in range(0, len(data_table)):
-		print i, len(data_table[i])
 		# Append to validation set
 		if i in rand_inst:
 			valid.append( copy.deepcopy(data_table[i]) )
@@ -327,15 +327,16 @@ if __name__ == '__main__':
 	# Create test and validation sets randomly
 	test, test_res, valid, valid_res = partition(data, results)
 	
+	
 	# Run Naive Bayes (Gaussian)
 	# Note that numpy arrays are needed
 	clf = GaussianNB()
 	clf.fit( np.array(test), np.array(test_res) )
 	
-	tp = 0
-	fn = 0
-	fp = 0
-	tn = 0
+	tp_nb = 0
+	fn_nb = 0
+	fp_nb = 0
+	tn_nb = 0
 	
 	# Run some predictions and get [ [tp, fn], [fp, tn] ]
 	for i in range(0, len(valid)):
@@ -345,19 +346,54 @@ if __name__ == '__main__':
 			
 			if predict[0] == 0:
 				if predict[0] == valid_res[i]:
-					tn += 1
+					tn_nb += 1
 				else:
-					fn += 1
+					fn_nb += 1
 			else:
 				if predict[0] == valid_res[i]:
-					tp += 1
+					tp_nb += 1
 				else:
-					fp += 1
+					fp_nb += 1
 		except:
 			print "error"
 	
 	# Output results
-	print "tp =", tp
-	print "fn =", fn
-	print "fp =", fp
-	print "tn =", tn
+	print "tp_nb =", tp_nb
+	print "fn_nb =", fn_nb
+	print "fp_nb =", fp_nb
+	print "tn_nb =", tn_nb
+	
+	
+	# SVM
+	l = svm.SVC()
+	l.fit( np.array(test), np.array(test_res) )
+	
+	tp_svm = 0
+	fn_svm = 0
+	fp_svm = 0
+	tn_svm = 0
+	
+	# Run some predictions and get [ [tp, fn], [fp, tn] ]
+	for i in range(0, len(valid)):
+		try:
+			predict = clf.predict( valid[i] )
+			print predict, str( predict[0] == valid_res[i] )
+			
+			if predict[0] == 0:
+				if predict[0] == valid_res[i]:
+					tn_svm += 1
+				else:
+					fn_svm += 1
+			else:
+				if predict[0] == valid_res[i]:
+					tp_svm += 1
+				else:
+					fp_svm += 1
+		except:
+			print "error"
+	
+	# Output results
+	print "tp_svm =", tp_svm
+	print "fn_svm =", fn_svm
+	print "fp_svm =", fp_svm
+	print "tn_svm =", tn_svm
