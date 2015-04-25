@@ -108,7 +108,7 @@ def team_dist(team1, team2):
 			# Append the average distance
 			team2_distances.append( sum(pkmn1_distances) / len(pkmn1_distances) )
 	
-	avg_dist = sum( [ (team1_distances[i] - team2_distances[i]) ** 2 for i in range(0, len(team1_distances)) ] )
+	avg_dist = sum(team1_distances) - sum(team2_distances)#sum( [ (team1_distances[i] - team2_distances[i]) ** 2 for i in range(0, len(team1_distances)) ] )
 	
 	# Squared "distance" between base strengths of Pokemon
 	# Use mock_battle_simple
