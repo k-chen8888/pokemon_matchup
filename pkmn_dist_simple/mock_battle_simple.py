@@ -184,7 +184,7 @@ def partial_mock(pkmn, team):
 			
 			# Non-damaging move
 			if move.move_cat == 2:
-				score += 1 if move.priority > 0 or p.base_spd > opponent.base_spd or ( pkmn['item'].name == "Quick Claw" and move.priority > 0 ) else 0
+				score += 1 if move.priority > 0 or pkmn['pkmn'].base_spd > opponent['pkmn'].base_spd or ( pkmn['item'].name == "Quick Claw" and move.priority > 0 ) else 0
 				score += 1 if move.weather == True else 0
 				score += 1 if move.entry == True else 0
 				score += 1 if move.status == True else 0

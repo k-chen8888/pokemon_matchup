@@ -133,6 +133,9 @@ def populate(json_file):
 		else:
 			results.append(False)
 	
+	# Query now, or forever hold your silence
+	teams = pack(teams)
+	
 	return teams, results
 
 

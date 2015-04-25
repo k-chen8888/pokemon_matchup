@@ -146,7 +146,7 @@ def pkmn_dist(pkmn1, pkmn2):
 				adv_table_pkmn2.append( typing[i][pkmn2['pkmn'].type1] * typing[i][pkmn2['pkmn'].type2] )
 		
 		# Euclidean Distance
-		type_dist = sum( [ ( adv_table_p1[i] - adv_table_p2[i] ) ** 2 for i in range(0, 18) ] )
+		type_dist = sum( [ ( adv_table_pkmn1[i] - adv_table_pkmn2[i] ) ** 2 for i in range(0, 18) ] )
 	
 	
 	# Distance between base stats
