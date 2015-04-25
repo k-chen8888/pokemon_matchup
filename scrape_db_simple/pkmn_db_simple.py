@@ -315,7 +315,7 @@ class HoldItem(Base):
 		if stats['name'] in se_reduce:
 			self.se_dmg_down = 1
 		else:
-			self.se_dmg_down = 1
+			self.se_dmg_down = 0
 
 
 '''

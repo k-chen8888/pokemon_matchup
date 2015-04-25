@@ -145,7 +145,7 @@ def select(matches, rand):
 	# Using randomness
 	if rand:
 		# Build a list of random battles
-		rand_battles = random.sample( range(0, len(matches) - 1, 2), len(matches) / 2 )
+		rand_battles = random.sample( range(0, len(matches) - 1, 2), 2 * len(matches) / 3 )
 		
 		# Create output
 		teams = []
