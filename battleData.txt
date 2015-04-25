@@ -3682,7 +3682,7 @@
         "moves": [
           "Electro Ball"
         ], 
-        "name": null
+        "name": "Pikachu"
       }, 
       {
         "item": "Gyaradosite", 

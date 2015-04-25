@@ -218,10 +218,10 @@ def partial_mock(pkmn, team):
 				pkmn[label].append(score)
 				defend.append(6 - score)
 			
-			# Useless placeholder move
+			# Useless placeholder move; assume equality
 			elif move == "Splash":
-				pkmn[label].append(0)
-				defend.append(6)
+				pkmn[label].append(3)
+				defend.append(3)
 			
 			# Damaging move
 			else:

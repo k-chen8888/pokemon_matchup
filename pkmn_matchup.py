@@ -104,8 +104,8 @@ if __name__ == '__main__':
 	
 	# For each team, compare to each other team
 	# Generate an adjacency matrix by calculating similarity as the distance between each team and normalizing
-	adj_mtrx = similarity(teams)
-	print adj_mtrx
+	sim_mtrx = similarity(teams)
+	adj_mtrx = normalize(sim_mtrx)
 	
 	# Generate labels (spectral clustering)
 	# Note that the adjacency matrix needs to be converted into a numpy array
@@ -118,7 +118,7 @@ if __name__ == '__main__':
 		outfile_name = 'test' + str(i) + '_results.txt'
 		
 		# Compute the purity of the clustering
-		purity(labels, teams, results, outfile_name)
+		purity(labels, teams, results, sim_mtrx, outfile_name)
 		
 		# Next test
 		i += 1

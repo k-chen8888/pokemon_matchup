@@ -235,9 +235,8 @@ def similarity(teams):
 		
 		adj.append(adj_row)
 	
-	print "adj", adj
 	# Normalize
-	adj_n = normalize(adj)
+	#adj_n = normalize(adj)
 	
 	return adj_n
 

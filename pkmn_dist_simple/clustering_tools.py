@@ -13,7 +13,7 @@ Given labels, sort into two lists
 Calculate percentage of winners/losers in zero
 Calculate percentage of winners/losers in one
 '''
-def purity(labels, teams, results, out = None):
+def purity(labels, teams, results, sim_mtrx, out = None):
 	zero = []
 	one = []
 	
@@ -74,6 +74,7 @@ def purity(labels, teams, results, out = None):
 Silhouette coefficient
 
 Assume that the winners cluster is the first argument
+Queries the distances out of the original similarity matrix 
 
 a = Average distance between each point and points in the same cluster
 b = Average distance between each point and points in a different cluster
@@ -82,16 +83,18 @@ Store a list of coefficients 1 - a / b
 Output the average of the list as the coefficent of the cluster
 	Coefficients close to 1 are better
 '''
-def silhouette(winners, losers):
+def silhouette(winners, losers, teams, sim_mtrx):
 	# Get a list of coefficients
 	coefficients = []
 	
 	for team1 in winners:
 		# Distance to points in same cluster
-		a = sum( [ team_dist(team1, team2) for team2 in winners if not team1 == team2 ] ) / len(winners)
+		#a = sum( [ team_dist(team1, team2) for team2 in winners if not team1 == team2 ] ) / len(winners)
+		a = sum( [ sim_mtrx[teams.index(team1)][teams.index(team2)] for team2 in winners if not team1 == team2 ] ) / len(winners)
 		
 		# Distance to points in different cluster
-		b = sum( [ team_dist(team1, team2) for team2 in losers ] ) / len(losers)
+		#b = sum( [ team_dist(team1, team2) for team2 in losers ] ) / len(losers)
+		b = sum( [ sim_mtrx[teams.index(team1)][teams.index(team2)] for team2 in losers ] ) / len(losers)
 		
 		coefficients.append(1 - a / b)
 	
