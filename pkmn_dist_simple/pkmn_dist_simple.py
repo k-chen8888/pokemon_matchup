@@ -229,7 +229,7 @@ def similarity(teams):
 				sim[i][j] = team_dist(teams[i], teams[j])
 				sim[j][i] = sim[i][j]
 		
-		print "Next row"
+		print "Calculation", i, j, " complete; go to next row"
 		
 	#adj_n = normalize(sim)
 	
