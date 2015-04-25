@@ -91,7 +91,7 @@ s_global = Session()
 if __name__ == '__main__':
 	# Gather the data and fill up the database
 	#scrape_dex()
-
+	
 	'''
 	Take the json dictionaries and make a list of teams (split up all match pairs) and a list of results
 	Results is boolean list

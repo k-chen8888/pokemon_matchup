@@ -46,12 +46,12 @@ plate_types['electric'] = 'Zap Plate'
 
 
 # Use this to look up the type granted to Techno Blast
-# Key = type
+# Key = hold item
 techno_blast = {}
-techno_blast['electric'] = "Shock Drive"
-techno_blast['fire'] = "Burn Drive"
-techno_blast['ice'] = "Chill Drive"
-techno_blast['water'] = "Douse Drive"
+techno_blast["Shock Drive"] = 'electric'
+techno_blast["Burn Drive"] = 'fire'
+techno_blast["Chill Drive"] = 'ice'
+techno_blast["Douse Drive"] = 'water'
 
 
 # Use this to look up move categories
