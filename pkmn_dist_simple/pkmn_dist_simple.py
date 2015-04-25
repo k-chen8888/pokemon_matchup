@@ -102,8 +102,8 @@ def team_dist(team1, team2):
 			# Add to total
 			team2_distance += pkmn_dist(pkmn1, pkmn2)
 	
-	# Compute distance between teams
-	team_dist = team1_distance - team2_distance
+	# Compute distance between teams, absolute value
+	team_dist = abs( team1_distance - team2_distance )
 	
 	# Squared "distance" between base strengths of Pokemon
 	# Use mock_battle_simple
