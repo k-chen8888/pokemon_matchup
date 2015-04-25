@@ -176,7 +176,7 @@ def move_dist(move1, move2):
 	if move1 == move2:
 		return 0 # No distance if they're the same
 	
-	elif move1.name == "Splash" or move2.name == "Splash"
+	elif move1.name == "Splash" or move2.name == "Splash":
 		return 0 # Ignore splash
 	
 	else:
