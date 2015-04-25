@@ -97,6 +97,10 @@ def pack(teams):
 			else:
 				packed_pkmn['item'] = s_global.query(HoldItem).filter(HoldItem.name == "Soothe Bell").first()
 			
+			# Just in case
+			if packed_pkmn['item'] == None:
+				packed_pkmn['item'] = s_global.query(HoldItem).filter(HoldItem.name == "Soothe Bell").first()
+			
 			# Add to packed list
 			queried_team.append( packed_pkmn )
 		
