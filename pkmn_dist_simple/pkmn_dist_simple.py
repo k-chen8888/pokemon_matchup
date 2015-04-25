@@ -253,24 +253,6 @@ Normalize an adjacency matrix
 def normalize(adj):
 	adj_norm = []
 	
-	# Increase spread using global average
-	avg = 0
-	num_entries = 0
-	for row in adj:
-		for val in row:
-			avg += val
-		
-		num_entries += len(row)
-	
-	avg = avg / num_entries
-	for row in adj:
-		for val in row:
-			if val <= avg:
-				val = val * 0.5
-			else:
-				val = val * 1.5
-	
-	
 	min_val = sys.maxint
 	max_val = 0
 	
