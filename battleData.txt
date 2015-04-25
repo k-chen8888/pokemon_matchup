@@ -613,7 +613,7 @@
           "Flamethrower", 
           "Solar Beam"
         ], 
-        "name": "Mega Y Charizard"
+        "name": "Mega Charizard Y"
       }, 
       {
         "item": "Black Sludge", 
@@ -1754,7 +1754,7 @@
           "Flamethrower", 
           "Focus Blast"
         ], 
-        "name": "Mega Y Charizard"
+        "name": "Mega Charizard Y"
       }, 
       {
         "item": "Black Sludge", 
@@ -1950,7 +1950,7 @@
           "Solar Beam", 
           "Fire Blast"
         ], 
-        "name": "Mega Y Charizard"
+        "name": "Mega Charizard Y"
       }, 
       {
         "item": "Life Orb", 
@@ -2051,7 +2051,7 @@
           "Flare Blitz", 
           "Earthquake"
         ], 
-        "name": "Mega Y Charizard"
+        "name": "Mega Charizard Y"
       }, 
       {
         "item": null, 
@@ -2331,7 +2331,7 @@
           "Dragon Claw", 
           "Flare Blitz"
         ], 
-        "name": "Mega X Charizard"
+        "name": "Mega Charizard X"
       }, 
       {
         "item": "Leftovers", 
@@ -2487,7 +2487,7 @@
           "Earthquake", 
           "Roost"
         ], 
-        "name": "Mega Y Charizard"
+        "name": "Mega Charizard Y"
       }, 
       {
         "item": "Black Sludge", 
@@ -2871,7 +2871,7 @@
       {
         "item": "Charizardite X", 
         "moves": [], 
-        "name": "Mega X Charizard"
+        "name": "Mega Charizard X"
       }, 
       {
         "item": "Leftovers", 
@@ -3586,7 +3586,7 @@
           "Dragon Dance", 
           "Dragon Claw"
         ], 
-        "name": "Mega X Charizard"
+        "name": "Mega Charizard X"
       }, 
       {
         "item": "Leftovers", 
@@ -4159,7 +4159,7 @@
           "Solar Beam", 
           "Fire Blast"
         ], 
-        "name": "Mega Y Charizard"
+        "name": "Mega Charizard Y"
       }, 
       {
         "item": null, 
@@ -4989,7 +4989,7 @@
         "moves": [
           "Dragon Claw"
         ], 
-        "name": "Mega X Charizard"
+        "name": "Mega Charizard X"
       }, 
       {
         "item": "Leftovers", 
@@ -5410,7 +5410,7 @@
         "moves": [
           "Flamethrower"
         ], 
-        "name": "Mega Y Charizard"
+        "name": "Mega Charizard Y"
       }, 
       {
         "item": null, 
@@ -5650,7 +5650,7 @@
           "Flare Blitz", 
           "Dragon Dance"
         ], 
-        "name": "Mega X Charizard"
+        "name": "Mega Charizard X"
       }, 
       {
         "item": null, 
@@ -6343,7 +6343,7 @@
         "moves": [
           "Flare Blitz"
         ], 
-        "name": "Mega X Charizard"
+        "name": "Mega Charizard X"
       }, 
       {
         "item": "Leftovers", 
@@ -6609,7 +6609,7 @@
         "moves": [
           "Dragon Dance"
         ], 
-        "name": "Mega X Charizard"
+        "name": "Mega Charizard X"
       }, 
       {
         "item": null, 
@@ -6987,7 +6987,7 @@
         "moves": [
           "Flare Blitz"
         ], 
-        "name": "Mega X Charizard"
+        "name": "Mega Charizard X"
       }, 
       {
         "item": null, 
@@ -7141,7 +7141,7 @@
         "moves": [
           "Flare Blitz"
         ], 
-        "name": "Mega X Charizard"
+        "name": "Mega Charizard X"
       }, 
       {
         "item": null, 
@@ -7335,7 +7335,7 @@
           "Roost", 
           "Flare Blitz"
         ], 
-        "name": "Mega X Charizard"
+        "name": "Mega Charizard X"
       }, 
       {
         "item": "Leftovers", 
@@ -7847,7 +7847,7 @@
           "Roost", 
           "Flamethrower"
         ], 
-        "name": "Mega Y Charizard"
+        "name": "Mega Charizard Y"
       }, 
       {
         "item": "Leftovers", 
@@ -7961,7 +7961,7 @@
       {
         "item": "Charizardite X", 
         "moves": [], 
-        "name": "Mega X Charizard"
+        "name": "Mega Charizard X"
       }, 
       {
         "item": "Leftovers", 
@@ -9182,7 +9182,7 @@
         "moves": [
           "Roost"
         ], 
-        "name": "Mega Y Charizard"
+        "name": "Mega Charizard Y"
       }, 
       {
         "item": "Leftovers", 
@@ -9249,7 +9249,7 @@
           "Focus Blast", 
           "Roost"
         ], 
-        "name": "Mega Y Charizard"
+        "name": "Mega Charizard Y"
       }, 
       {
         "item": "Life Orb", 
@@ -9342,7 +9342,7 @@
           "Roost", 
           "Focus Blast"
         ], 
-        "name": "Mega Y Charizard"
+        "name": "Mega Charizard Y"
       }, 
       {
         "item": "Leftovers", 
@@ -9395,7 +9395,7 @@
           "Solar Beam", 
           "Fire Blast"
         ], 
-        "name": "Mega Y Charizard"
+        "name": "Mega Charizard Y"
       }, 
       {
         "item": "Leftovers", 
@@ -9572,7 +9572,7 @@
           "Will-O-Wisp", 
           "Earthquake"
         ], 
-        "name": "Mega X Charizard"
+        "name": "Mega Charizard X"
       }, 
       {
         "item": "Leftovers", 
@@ -9697,7 +9697,7 @@
           "Roost", 
           "Dragon Tail"
         ], 
-        "name": "Mega X Charizard"
+        "name": "Mega Charizard X"
       }, 
       {
         "item": null, 
@@ -9786,7 +9786,7 @@
           "Fire Blast", 
           "Roost"
         ], 
-        "name": "Mega Y Charizard"
+        "name": "Mega Charizard Y"
       }, 
       {
         "item": "Leftovers", 
@@ -10143,7 +10143,7 @@
           "Flare Blitz", 
           "Dragon Dance"
         ], 
-        "name": "Mega X Charizard"
+        "name": "Mega Charizard X"
       }, 
       {
         "item": "Leftovers", 
@@ -10704,7 +10704,7 @@
           "Dragon Claw", 
           "Flare Blitz"
         ], 
-        "name": "Mega X Charizard"
+        "name": "Mega Charizard X"
       }, 
       {
         "item": "Focus Sash", 
@@ -10949,7 +10949,7 @@
           "Roost", 
           "Flare Blitz"
         ], 
-        "name": "Mega X Charizard"
+        "name": "Mega Charizard X"
       }, 
       {
         "item": "Leftovers", 
@@ -11454,7 +11454,7 @@
         "moves": [
           "Earthquake"
         ], 
-        "name": "Mega X Charizard"
+        "name": "Mega Charizard X"
       }, 
       {
         "item": null, 
@@ -11999,7 +11999,7 @@
           "Dragon Claw", 
           "Roost"
         ], 
-        "name": "Mega X Charizard"
+        "name": "Mega Charizard X"
       }, 
       {
         "item": "Life Orb", 
@@ -12307,7 +12307,7 @@
           "Roost", 
           "Will-O-Wisp"
         ], 
-        "name": "Mega X Charizard"
+        "name": "Mega Charizard X"
       }, 
       {
         "item": "Leftovers", 
@@ -12359,7 +12359,7 @@
           "Fire Blast", 
           "Solar Beam"
         ], 
-        "name": "Mega Y Charizard"
+        "name": "Mega Charizard Y"
       }, 
       {
         "item": null, 
@@ -15708,7 +15708,7 @@
         "moves": [
           "Fire Blast"
         ], 
-        "name": "Mega Y Charizard"
+        "name": "Mega Charizard Y"
       }, 
       {
         "item": null, 
@@ -15766,7 +15766,7 @@
           "Dragon Claw", 
           "Roost"
         ], 
-        "name": "Mega X Charizard"
+        "name": "Mega Charizard X"
       }, 
       {
         "item": null, 
@@ -16412,7 +16412,7 @@
           "Roost", 
           "Will-O-Wisp"
         ], 
-        "name": "Mega X Charizard"
+        "name": "Mega Charizard X"
       }
     ], 
     "team2": [
@@ -16687,7 +16687,7 @@
         "moves": [
           "Fire Blast"
         ], 
-        "name": "Mega Y Charizard"
+        "name": "Mega Charizard Y"
       }, 
       {
         "item": null, 
@@ -17240,7 +17240,7 @@
           "Roost", 
           "Dragon Claw"
         ], 
-        "name": "Mega X Charizard"
+        "name": "Mega Charizard X"
       }, 
       {
         "item": "Leftovers", 
@@ -17667,7 +17667,7 @@
           "Solar Beam", 
           "Roost"
         ], 
-        "name": "Mega Y Charizard"
+        "name": "Mega Charizard Y"
       }, 
       {
         "item": null, 
@@ -18026,7 +18026,7 @@
           "Flare Blitz", 
           "Dragon Claw"
         ], 
-        "name": "Mega X Charizard"
+        "name": "Mega Charizard X"
       }, 
       {
         "item": null, 
@@ -19531,7 +19531,7 @@
           "Roost", 
           "Earthquake"
         ], 
-        "name": "Mega X Charizard"
+        "name": "Mega Charizard X"
       }, 
       {
         "item": null, 
@@ -19668,7 +19668,7 @@
         "moves": [
           "Flamethrower"
         ], 
-        "name": "Mega Y Charizard"
+        "name": "Mega Charizard Y"
       }, 
       {
         "item": "Life Orb", 
@@ -19982,7 +19982,7 @@
           "Dragon Claw", 
           "Earthquake"
         ], 
-        "name": "Mega X Charizard"
+        "name": "Mega Charizard X"
       }, 
       {
         "item": "Leftovers", 
@@ -20286,7 +20286,7 @@
           "Roost", 
           "Dragon Claw"
         ], 
-        "name": "Mega X Charizard"
+        "name": "Mega Charizard X"
       }, 
       {
         "item": "Life Orb", 
@@ -20636,7 +20636,7 @@
         "moves": [
           "Fire Blast"
         ], 
-        "name": "Mega Y Charizard"
+        "name": "Mega Charizard Y"
       }, 
       {
         "item": null, 
@@ -20759,7 +20759,7 @@
           "Will-O-Wisp", 
           "Dragon Claw"
         ], 
-        "name": "Mega X Charizard"
+        "name": "Mega Charizard X"
       }, 
       {
         "item": "Leftovers", 
@@ -21016,7 +21016,7 @@
           "Fire Blast", 
           "Solar Beam"
         ], 
-        "name": "Mega Y Charizard"
+        "name": "Mega Charizard Y"
       }, 
       {
         "item": "Focus Sash", 
@@ -21326,7 +21326,7 @@
         "moves": [
           "Solar Beam"
         ], 
-        "name": "Mega Y Charizard"
+        "name": "Mega Charizard Y"
       }, 
       {
         "item": null, 
@@ -21477,7 +21477,7 @@
           "Focus Blast", 
           "Solar Beam"
         ], 
-        "name": "Mega Y Charizard"
+        "name": "Mega Charizard Y"
       }, 
       {
         "item": null, 
@@ -21596,7 +21596,7 @@
           "Fire Punch", 
           "Dragon Claw"
         ], 
-        "name": "Mega X Charizard"
+        "name": "Mega Charizard X"
       }, 
       {
         "item": null, 
@@ -22150,7 +22150,7 @@
           "Flare Blitz", 
           "Roost"
         ], 
-        "name": "Mega X Charizard"
+        "name": "Mega Charizard X"
       }, 
       {
         "item": null, 
@@ -22277,7 +22277,7 @@
         "moves": [
           "Outrage"
         ], 
-        "name": "Mega X Charizard"
+        "name": "Mega Charizard X"
       }, 
       {
         "item": "Leftovers", 
@@ -22380,7 +22380,7 @@
           "Swords Dance", 
           "Outrage"
         ], 
-        "name": "Mega X Charizard"
+        "name": "Mega Charizard X"
       }, 
       {
         "item": "Leftovers", 
@@ -22854,7 +22854,7 @@
         "moves": [
           "Will-O-Wisp"
         ], 
-        "name": "Mega X Charizard"
+        "name": "Mega Charizard X"
       }, 
       {
         "item": "Leftovers", 
@@ -23121,7 +23121,7 @@
           "Tailwind", 
           "Outrage"
         ], 
-        "name": "Mega X Charizard"
+        "name": "Mega Charizard X"
       }, 
       {
         "item": null, 
@@ -23164,7 +23164,7 @@
           "Swords Dance", 
           "Outrage"
         ], 
-        "name": "Mega X Charizard"
+        "name": "Mega Charizard X"
       }, 
       {
         "item": "Life Orb", 
@@ -23210,7 +23210,7 @@
           "Solar Beam", 
           "Fire Blast"
         ], 
-        "name": "Mega Y Charizard"
+        "name": "Mega Charizard Y"
       }, 
       {
         "item": null, 
@@ -24203,7 +24203,7 @@
         "moves": [
           "Fire Blast"
         ], 
-        "name": "Mega Y Charizard"
+        "name": "Mega Charizard Y"
       }, 
       {
         "item": "Leftovers", 
@@ -24526,7 +24526,7 @@
           "Earthquake", 
           "Will-O-Wisp"
         ], 
-        "name": "Mega X Charizard"
+        "name": "Mega Charizard X"
       }, 
       {
         "item": "Life Orb", 
@@ -24614,7 +24614,7 @@
         "moves": [
           "Roost"
         ], 
-        "name": "Mega Y Charizard"
+        "name": "Mega Charizard Y"
       }, 
       {
         "item": null, 
@@ -24759,7 +24759,7 @@
         "moves": [
           "Roost"
         ], 
-        "name": "Mega X Charizard"
+        "name": "Mega Charizard X"
       }, 
       {
         "item": "Leftovers", 
@@ -24861,7 +24861,7 @@
           "Roost", 
           "Fire Blast"
         ], 
-        "name": "Mega Y Charizard"
+        "name": "Mega Charizard Y"
       }, 
       {
         "item": "Leftovers", 
@@ -25106,7 +25106,7 @@
           "Dragon Dance", 
           "Earthquake"
         ], 
-        "name": "Mega X Charizard"
+        "name": "Mega Charizard X"
       }, 
       {
         "item": "Life Orb", 
@@ -25365,7 +25365,7 @@
           "Dragon Claw", 
           "Earthquake"
         ], 
-        "name": "Mega X Charizard"
+        "name": "Mega Charizard X"
       }, 
       {
         "item": "Leftovers", 
@@ -25618,7 +25618,7 @@
           "Fire Punch", 
           "Dragon Claw"
         ], 
-        "name": "Mega X Charizard"
+        "name": "Mega Charizard X"
       }, 
       {
         "item": null, 
@@ -25858,7 +25858,7 @@
         "moves": [
           "Fire Blast"
         ], 
-        "name": "Mega Y Charizard"
+        "name": "Mega Charizard Y"
       }, 
       {
         "item": null, 
@@ -25956,7 +25956,7 @@
         "moves": [
           "Flare Blitz"
         ], 
-        "name": "Mega X Charizard"
+        "name": "Mega Charizard X"
       }, 
       {
         "item": null, 
@@ -26153,7 +26153,7 @@
           "Fire Blast", 
           "Focus Blast"
         ], 
-        "name": "Mega Y Charizard"
+        "name": "Mega Charizard Y"
       }, 
       {
         "item": null, 
@@ -26990,7 +26990,7 @@
           "Dragon Claw", 
           "Dragon Dance"
         ], 
-        "name": "Mega X Charizard"
+        "name": "Mega Charizard X"
       }, 
       {
         "item": null, 
@@ -27549,7 +27549,7 @@
         "moves": [
           "Flare Blitz"
         ], 
-        "name": "Mega Y Charizard"
+        "name": "Mega Charizard Y"
       }, 
       {
         "item": null, 
@@ -27996,7 +27996,7 @@
           "Dragon Claw", 
           "Earthquake"
         ], 
-        "name": "Mega X Charizard"
+        "name": "Mega Charizard X"
       }, 
       {
         "item": null, 
@@ -28048,7 +28048,7 @@
           "Roost", 
           "Solar Beam"
         ], 
-        "name": "Mega Y Charizard"
+        "name": "Mega Charizard Y"
       }, 
       {
         "item": null, 
@@ -28193,7 +28193,7 @@
       {
         "item": null, 
         "moves": [], 
-        "name": "Mega X Charizard"
+        "name": "Mega Charizard X"
       }, 
       {
         "item": null, 
@@ -28436,7 +28436,7 @@
           "Fire Blast", 
           "Roost"
         ], 
-        "name": "Mega Y Charizard"
+        "name": "Mega Charizard Y"
       }, 
       {
         "item": "Leftovers", 
@@ -29150,7 +29150,7 @@
           "Fire Blast", 
           "Solar Beam"
         ], 
-        "name": "Mega Y Charizard"
+        "name": "Mega Charizard Y"
       }, 
       {
         "item": null, 
@@ -29959,7 +29959,7 @@
           "Will-O-Wisp", 
           "Dragon Claw"
         ], 
-        "name": "Mega X Charizard"
+        "name": "Mega Charizard X"
       }, 
       {
         "item": null, 
@@ -29999,7 +29999,7 @@
           "Roost", 
           "Focus Blast"
         ], 
-        "name": "Mega Y Charizard"
+        "name": "Mega Charizard Y"
       }, 
       {
         "item": "Life Orb", 
@@ -30055,7 +30055,7 @@
         "moves": [
           "Roost"
         ], 
-        "name": "Mega Y Charizard"
+        "name": "Mega Charizard Y"
       }, 
       {
         "item": "Leftovers", 
@@ -30210,7 +30210,7 @@
         "moves": [
           "Dragon Claw"
         ], 
-        "name": "Mega X Charizard"
+        "name": "Mega Charizard X"
       }, 
       {
         "item": "Leftovers", 
@@ -30312,7 +30312,7 @@
         "moves": [
           "Dragon Claw"
         ], 
-        "name": "Mega X Charizard"
+        "name": "Mega Charizard X"
       }, 
       {
         "item": null, 
@@ -31097,7 +31097,7 @@
         "moves": [
           "Dragon Dance"
         ], 
-        "name": "Mega X Charizard"
+        "name": "Mega Charizard X"
       }, 
       {
         "item": "Life Orb", 
@@ -31209,7 +31209,7 @@
           "Flare Blitz", 
           "Dragon Dance"
         ], 
-        "name": "Mega X Charizard"
+        "name": "Mega Charizard X"
       }, 
       {
         "item": "Life Orb", 
@@ -32179,7 +32179,7 @@
           "Roost", 
           "Dragon Dance"
         ], 
-        "name": "Mega X Charizard"
+        "name": "Mega Charizard X"
       }, 
       {
         "item": "Life Orb", 
