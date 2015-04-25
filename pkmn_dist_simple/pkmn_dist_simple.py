@@ -110,7 +110,7 @@ def team_dist(team1, team2):
 	mock_results = 0#mock_battle(team1, team2)
 	
 	# Output square root of sum
-	return ( type_dist + move_type_dist + avg_dist + mock_results ) ** 0.5
+	return ( type_dist + move_type_dist + team_dist + mock_results ) ** 0.5
 
 
 '''
