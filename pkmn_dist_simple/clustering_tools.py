@@ -37,8 +37,8 @@ def purity(k, labels, teams, results, sim_mtrx, out = None):
 		for j in range(0, len(labels)):
 			# Process all data points labeled i
 			if labels[j] == i:
-				cluster.append( teams[i] )
-				cluster_res.append( results[i] )
+				cluster.append( teams[j] )
+				cluster_res.append( results[j] )
 					
 			else:
 				pass
@@ -47,8 +47,8 @@ def purity(k, labels, teams, results, sim_mtrx, out = None):
 		cluster_wins = 0
 		cluster_losses = 0
 		
-		for i in range(0, len(cluster)):
-			if results[i] == True: # Winner
+		for j in range(0, len(cluster)):
+			if results[j] == True: # Winner
 				cluster_wins += 1
 			else:
 				cluster_losses += 1
@@ -57,16 +57,19 @@ def purity(k, labels, teams, results, sim_mtrx, out = None):
 		cluster_win_purity = float(cluster_wins) / len(cluster) if len(cluster) > 0 else 0
 		cluster_loss_purity = float(cluster_losses) / len(cluster) if len(cluster) > 0 else 0
 		
+		report0 = "Cluster label " + str(i) + ", size " + str( len(cluster) )
+		report1 = str(cluster_win_purity * 100) + "% wins and " + str(cluster_loss_purity * 100) + "% losses"
+		
 		# If there is an output file specified, use it
 		if out == None:
 			# Display test results
-			print "Cluster label", i, ", size ", str( len(cluster) )
-			print cluster_win_purity * 100, "% wins and", cluster_loss_purity * 100, "% losses"
+			print report0
+			print report1
 			print "\n"
 			
 		else:
-			f.write( "Cluster label " + str(i) + ", size " + str( len(cluster) ) )
-			f.write( str(cluster_win_purity * 100) + "% wins and " + str(cluster_loss_purity * 100) + "% losses" )
+			f.write( report0 )
+			f.write( report1 )
 			f.write("\n")
 	
 	# Close file
