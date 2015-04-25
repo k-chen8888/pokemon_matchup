@@ -148,16 +148,16 @@ def pkmn_dist(pkmn1, pkmn2):
 	base_dist = (pkmn1_base - pkmn2_base) ** 2
 	
 	# Pairwise distance between each move, averaged using the number of moves it was compared to
-	m_dist = 0
+	'''m_dist = 0 + m_dist
 	for move1 in pkmn1['moves']:
 		for move2 in pkmn2['moves']:
 			m_dist += move_dist(move1, move2)
 	'''
 	# Distance between hold items
 	i_dist = item_dist(pkmn1['item'], pkmn2['item'])
-	'''
+	
 	# Output sum
-	return type_dist + base_dist + m_dist #+ i_dist
+	return type_dist + base_dist + i_dist
 
 
 '''
