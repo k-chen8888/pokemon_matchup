@@ -87,13 +87,17 @@ def pack(teams):
 			for move in pkmn['moves']:
 				packed_pkmn['moves'].append( get_move(move, s_global) )
 			
-			# Extract items, give it a useless Soothe Bell if it has no item
-			packed_pkmn['item'] = s_global.query(HoldItem).filter(HoldItem.name == pkmn['item']).first() if pkmn['item'] != None else s_global.query(HoldItem).filter(HoldItem.name == "Soothe Bell").first()
-			
-			# Add to packed list
-			queried_team.append( packed_pkmn )
+			# Extract items; give it a useless Soothe Bell if it has no item
+			if 'item' in pkmn:
+				if pkmn['item'] == None:
+					packed_pkmn['item'] = s_global.query(HoldItem).filter(HoldItem.name == "Soothe Bell").first()
+				else:
+					packed_pkmn['item'] = s_global.query(HoldItem).filter(HoldItem.name == pkmn['item']).first()
+				
+				# Add to packed list
+				queried_team.append( packed_pkmn )
 		
-		all_teams.append(queried_team)
+		all_teams.append( queried_team )
 	
 	# Output pre-processed list
 	return all_teams
