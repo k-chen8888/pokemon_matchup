@@ -70,6 +70,9 @@ def pack(team):
 		# Cleaning house, adding dummy moves to fill space
 		while len(pkmn['moves']) < 4:
 			pkmn['moves'].append("Splash")
+		
+		while len(pkmn['moves']) > 4:
+			pkmn['moves'].pop()
 			
 		packed_pkmn['moves'] = []
 		# Extract moves by name
