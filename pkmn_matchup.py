@@ -10,9 +10,9 @@ import json
 '''
 Data analysis tools
 '''
-import numpy as np
+'''import numpy as np
 from sklearn.cluster import spectral_clustering
-
+'''
 
 '''
 All scraper and db tools
@@ -159,7 +159,7 @@ if __name__ == '__main__':
 	# Generate an adjacency matrix by calculating similarity as the distance between each team and normalizing
 	sim_mtrx = similarity(teams)
 	adj_mtrx = normalize(sim_mtrx) # Similarity matrix needs to be normalized for spectral clustering
-	
+	'''
 	# Generate labels (spectral clustering)
 	# Note that the adjacency matrix needs to be converted into a numpy array
 	# Run the clustering 5 times
@@ -175,7 +175,7 @@ if __name__ == '__main__':
 		
 		# Next test
 		i += 1
-	
+	'''
 	# Close out all sessions
 	#stop_dist()
 	#stop_mock()

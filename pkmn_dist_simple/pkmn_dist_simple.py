@@ -51,7 +51,8 @@ def team_dist(team1, team2, mode):
 	if team1 == team2: # Identical teams means distance = 0
 		return 0.0
 	
-	if mode == 0:
+	# Use a different metric based on mode
+	if mode == 0: # Basic team difference
 		# Type distributions for each team
 		team1_types = [0] * 18
 		team2_types = [0] * 18
@@ -88,12 +89,10 @@ def team_dist(team1, team2, mode):
 		
 		# Output square root
 		return ( type_dist + move_type_dist ) ** 0.5
-		
-	elif mode == 1:
-		# Pairwise squared distances between each Pokemon (if full teams of 6 Pokemon, there are 36 calculations made)
-		# Get a list of distances for each Pokemon on the team
-		# Each entry in team#_distances is the average distance between a Pokemon on team# and every other Pokemon on the opposite team
-		team1_distance = 0
+	
+	elif mode == 1: # Pokemon difference
+		# Simple distance between each pkmn1 on team1 and each other pkmn2 on team2
+		pkmn_distance = 0
 		team2_distance = 0
 		for pkmn1 in team1:
 			for pkmn2 in team2:
@@ -101,20 +100,10 @@ def team_dist(team1, team2, mode):
 				# Add to total
 				team1_distance += pkmn_dist(pkmn1, pkmn2)
 		
-		for pkmn1 in team2:
-			for pkmn2 in team1:
-				# Distances between pkmn1 and each opponent
-				# Add to total
-				team2_distance += pkmn_dist(pkmn1, pkmn2)
-		
-		# Compute distance between teams, absolute value
-		# Averaged by number of comparisons
-		team_dist = abs( team1_distance - team2_distance ) / (len(team1) * len(team2))
-		
 		# Output square root
-		return team_dist ** 0.5
+		return pkmn_distance ** 0.5
 		
-	else:
+	else: # Mock battle difference
 		# Squared "distance" between base strengths of Pokemon
 		# Use mock_battle_simple
 		mock_results = mock_battle(team1, team2)
@@ -153,26 +142,23 @@ def pkmn_dist(pkmn1, pkmn2):
 		# Euclidean Distance
 		type_dist = sum( [ ( adv_table_pkmn1[i] - adv_table_pkmn2[i] ) ** 2 for i in range(0, 18) ] )
 	
-	'''
+	
 	# Distance between base stats
-	pkmn1_base = [ pkmn1['pkmn'].base_hp, pkmn1['pkmn'].base_atk, pkmn1['pkmn'].base_def, pkmn1['pkmn'].base_spatk, pkmn1['pkmn'].base_spdef, pkmn1['pkmn'].base_spd ]
-	pkmn2_base = [ pkmn2['pkmn'].base_hp, pkmn2['pkmn'].base_atk, pkmn2['pkmn'].base_def, pkmn2['pkmn'].base_spatk, pkmn2['pkmn'].base_spdef, pkmn2['pkmn'].base_spd ]
-	base_dist = sum( [ ( pkmn1_base[i] - pkmn2_base[i] ) ** 2 for i in range(0, 6) ] )
+	pkmn1_base = sum([ pkmn1['pkmn'].base_hp, pkmn1['pkmn'].base_atk, pkmn1['pkmn'].base_def, pkmn1['pkmn'].base_spatk, pkmn1['pkmn'].base_spdef, pkmn1['pkmn'].base_spd ])
+	pkmn2_base = sum([ pkmn2['pkmn'].base_hp, pkmn2['pkmn'].base_atk, pkmn2['pkmn'].base_def, pkmn2['pkmn'].base_spatk, pkmn2['pkmn'].base_spdef, pkmn2['pkmn'].base_spd ])
+	base_dist = (pkmn1_base - pkmn2_base) ** 2 #sum( [ ( pkmn1_base[i] - pkmn2_base[i] ) ** 2 for i in range(0, 6) ] )
 	
 	# Pairwise distance between each move, averaged using the number of moves it was compared to
 	m_dist = 0
-	if float( pkmn2['move_count'] ) > 0:
-		m_dist = sum( [ ( sum( [ move_dist(move1, move2) for move1 in pkmn1['moves'] ] ) / float( pkmn2['move_count'] ) ) for move2 in pkmn2['moves'] ] )
-	else:
-		pass
+	for move1 in pkmn1['moves']:
+		for move2 in pkmn2['moves']:
+			m_dist += move_dist(move1, move2)
 	
 	# Distance between hold items
 	i_dist = item_dist(pkmn1['item'], pkmn2['item'])
-	 + m_dist + i_dist
-	'''
 	
 	# Output sum
-	return type_dist
+	return type_dist + base_dist + m_dist + i_dist
 
 
 '''
@@ -208,14 +194,14 @@ def item_dist(item1, item2):
 	if item1 == item2:
 		return 0 # No distance if they're the same
 	
-	elif item1.name == "Soothe Bell" or item1.name == "Soothe Bell":
+	elif item1.name == "Soothe Bell" or item2.name == "Soothe Bell":
 		return 0 # Ignore Soothe Bell
 	
 	else:
 		# Take the Euclidean distance (squared)
 		sq_dist_i = 0
 		
-		sq_dist_i += (item1.fling_dmg - item2.fling_dmg) ** 2 # Fling
+		sq_dist_i += (item1.fling_dmg - item2.fling_dmg) ** 2 # Power of Fling
 		sq_dist_i += 1 if not item1.mega_stone == item2.mega_stone else 0 # Is it a Mega Stone (take XOR)?
 		sq_dist_i += 1 if item1.natural_gift_type == item2.natural_gift_type else 0 # Type for Natural Gift
 		sq_dist_i += (item1.natural_gift_power - item2.natural_gift_power) ** 2 # Power of Natural Gift
