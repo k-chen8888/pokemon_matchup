@@ -238,9 +238,9 @@ def similarity(teams):
 				sim0[i][j] = team_dist(teams[i], teams[j], 1)
 				sim0[j][i] = sim0[i][j]
 		
-			print "Calculation", i, j, "complete; go to next entry"
+			print "M0 Calculation", i, j, "complete; go to next entry"
 		
-		print "Calculation", i, "complete; go to next row"
+		print "M0 Calculation", i, "complete; go to next row"
 	
 	# mode = 1, pkmn_dist
 	sim1 = copy.deepcopy(sim)
@@ -252,9 +252,9 @@ def similarity(teams):
 				sim1[i][j] = team_dist(teams[i], teams[j], 1)
 				sim1[j][i] = sim1[i][j]
 		
-			print "Calculation", i, j, "complete; go to next entry"
+			print "M1 Calculation", i, j, "complete; go to next entry"
 		
-		print "Calculation", i, "complete; go to next row"
+		print "M1 Calculation", i, "complete; go to next row"
 	'''
 	# mode = 2, mock_battle
 	sim2 = copy.deepcopy(sim)
@@ -266,9 +266,9 @@ def similarity(teams):
 				sim2[i][j] = team_dist(teams[i], teams[j], 2)
 				sim2[j][i] = sim2[i][j]
 		
-			print "Calculation", i, j, "complete; go to next entry"
+			print "M2 Calculation", i, j, "complete; go to next entry"
 		
-		print "Calculation", i, "complete; go to next row"
+		print "M2 Calculation", i, "complete; go to next row"
 	'''
 	# Normalize and sum all 3 measures
 	sim0_n = normalize(sim0)

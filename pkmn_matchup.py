@@ -181,7 +181,7 @@ if __name__ == '__main__':
 	# Randomized version that tests a random subset of 50% of the data
 	else:
 		# Run tests on 5 different random samples
-		i = 0
+		i = 1
 		while i < 6:
 			# Build a list of random battles
 			rand_battles = random.sample( range(0, len(teams) - 1, 2), len(teams) / 4 )

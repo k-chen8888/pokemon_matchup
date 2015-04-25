@@ -2,6 +2,12 @@
 from mock_battle_simple import *
 from pkmn_dist_simple import *
 
+'''
+Data analysis tools
+'''
+import numpy as np
+from sklearn.cluster import spectral_clustering
+
 
 '''
 Purity measure
@@ -15,14 +21,18 @@ Calculate percentage of winners/losers in one
 '''
 def purity(labels, teams, results, sim_mtrx, out = None):
 	zero = []
+	zero_res = []
 	one = []
+	one_res = []
 	
 	# Sort by cluster
 	for i in range(0, len(labels)):
 		if labels[i] == 0:
 			zero.append(teams[i])
+			zero_res.append( results[i] )
 		else:
 			one.append(teams[i])
+			one_res.append( results[i] )
 	
 	# Calculate percentage of wins and losses in 0 list
 	zero_wins = 0
@@ -54,23 +64,67 @@ def purity(labels, teams, results, sim_mtrx, out = None):
 	
 	# Which cluster had more winners?
 	# Store purity values and silhouette coefficients
-	win = [zero_win_purity, zero_loss_purity, silhouette(zero, one, teams, sim_mtrx)] if zero_win_purity > one_win_purity else [one_win_purity, one_loss_purity, silhouette(one, zero, teams, sim_mtrx)]
-	loss = [zero_win_purity, zero_loss_purity, silhouette(zero, one, teams, sim_mtrx)] if zero_win_purity < one_win_purity else [one_win_purity, one_loss_purity, silhouette(one, zero, teams, sim_mtrx)]
+	win = [zero_win_purity, zero_loss_purity, silhouette(zero, one, teams, sim_mtrx), "zero"] if zero_win_purity > one_win_purity else [one_win_purity, one_loss_purity, silhouette(one, zero, teams, sim_mtrx), "one"]
+	loss = [zero_win_purity, zero_loss_purity, silhouette(zero, one, teams, sim_mtrx), "zero"] if zero_win_purity < one_win_purity else [one_win_purity, one_loss_purity, silhouette(one, zero, teams, sim_mtrx), "one"]
 	
 	# If there is an output file specified, use it
 	if out == None:
 		# Display test results
-		print "The winners cluster contained", win[0] * 100, "% wins and", win[1] * 100, "% losses. The silhouette coefficient for this cluster is", win[2]
-		print "The losers cluster contained", loss[0] * 100, "% wins and", loss[1] * 100, "% losses. The silhouette coefficient for this cluster is", loss[2]
+		print "The winners cluster", win[3] , "contained", win[0] * 100, "% wins and", win[1] * 100, "% losses. The silhouette coefficient for this cluster is", win[2]
+		print "The losers cluster", loss[3] , "contained", loss[0] * 100, "% wins and", loss[1] * 100, "% losses. The silhouette coefficient for this cluster is", loss[2]
 	else:
 		# Store test results in file
 		f = open(out, "w")
 		
-		win_txt = "The winners cluster contained " + str( win[0] * 100 ) + "% wins and " + str( win[1] * 100 ) + "% losses. The silhouette coefficient for this cluster is " + str( win[2] ) + "\n"
-		loss_txt = "The losers cluster contained " + str( loss[0] * 100 ) + "% wins and " + str( loss[1] * 100 ) + "% losses. The silhouette coefficient for this cluster is " + str( loss[2] ) + "\n"
+		win_txt = "The winners cluster " + win[3] + " contained " + str( win[0] * 100 ) + "% wins and " + str( win[1] * 100 ) + "% losses. The silhouette coefficient for this cluster is " + str( win[2] ) + "\n"
+		loss_txt = "The losers cluster " + loss[3] + " contained " + str( loss[0] * 100 ) + "% wins and " + str( loss[1] * 100 ) + "% losses. The silhouette coefficient for this cluster is " + str( loss[2] ) + "\n"
 		
 		f.write(win_txt)
 		f.write(loss_txt)
+	
+	# Try to re-cluster the winners' set if something weird happens
+	if win[0] < 0.6 and not win[1] == 1.0:
+		sim = []
+		if win[3] == "zero":
+			sim = similarity(zero)
+		else:
+			sim = similarity(one)
+		adj_mtrx = normalize(sim_mtrx) # Similarity matrix needs to be normalized for spectral clustering
+		
+		# Generate labels (spectral clustering)
+		# Note that the adjacency matrix needs to be converted into a numpy array
+		labels = spectral_clustering(np.asarray(adj_mtrx), n_clusters = 2, eigen_solver = 'arpack', assign_labels = 'discretize')
+		
+		# Name of file to output test results
+		outfile_name = "re-" + out
+		
+		# Compute the purity of the clustering
+		if win[3] == "zero":
+			purity(labels, zero, zero_res, sim, outfile_name)
+		else:
+			purity(labels, one, one_res, sim, outfile_name)
+	
+	# Try to re-cluster the losers' set if something weird happens
+	if loss[0] < 0.6 and not loss[1] == 1.0:
+		sim = []
+		if loss[3] == "zero":
+			sim = similarity(zero)
+		else:
+			sim = similarity(one)
+		adj_mtrx = normalize(sim_mtrx) # Similarity matrix needs to be normalized for spectral clustering
+		
+		# Generate labels (spectral clustering)
+		# Note that the adjacency matrix needs to be converted into a numpy array
+		labels = spectral_clustering(np.asarray(adj_mtrx), n_clusters = 2, eigen_solver = 'arpack', assign_labels = 'discretize')
+		
+		# Name of file to output test results
+		outfile_name = "re-" + out
+		
+		# Compute the purity of the clustering
+		if loss[3] == "zero":
+			purity(labels, zero, zero_res, sim, outfile_name)
+		else:
+			purity(labels, one, one_res, sim, outfile_name)
 	
 	print "Test done"
 
