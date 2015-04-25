@@ -88,27 +88,22 @@ def team_dist(team1, team2):
 	# Pairwise squared distances between each Pokemon (if full teams of 6 Pokemon, there are 36 calculations made)
 	# Get a list of distances for each Pokemon on the team
 	# Each entry in team#_distances is the average distance between a Pokemon on team# and every other Pokemon on the opposite team
-	team1_distances = []
-	team2_distances = []
+	team1_distance = 0
+	team2_distance = 0
 	for pkmn1 in team1:
 		for pkmn2 in team2:
 			# Distances between pkmn1 and each opponent
-			pkmn1_distances = []
-			pkmn1_distances.append( pkmn_dist(pkmn1, pkmn2) )
-			
-			# Append the average distance
-			team1_distances.append( sum(pkmn1_distances) / len(pkmn1_distances) )
+			# Add to total
+			team1_distance += pkmn_dist(pkmn1, pkmn2)
 	
 	for pkmn1 in team2:
 		for pkmn2 in team1:
 			# Distances between pkmn1 and each opponent
-			pkmn1_distances = []
-			pkmn1_distances.append( pkmn_dist(pkmn1, pkmn2) )
-			
-			# Append the average distance
-			team2_distances.append( sum(pkmn1_distances) / len(pkmn1_distances) )
+			# Add to total
+			team2_distance += pkmn_dist(pkmn1, pkmn2)
 	
-	avg_dist = 0#sum( [ (team1_distances[i] - team2_distances[i]) ** 2 for i in range(0, len(team1_distances)) ] )
+	# Compute distance between teams
+	team_dist = team1_distance - team2_distance
 	
 	# Squared "distance" between base strengths of Pokemon
 	# Use mock_battle_simple
@@ -153,18 +148,17 @@ def pkmn_dist(pkmn1, pkmn2):
 	pkmn1_base = [ pkmn1['pkmn'].base_hp, pkmn1['pkmn'].base_atk, pkmn1['pkmn'].base_def, pkmn1['pkmn'].base_spatk, pkmn1['pkmn'].base_spdef, pkmn1['pkmn'].base_spd ]
 	pkmn2_base = [ pkmn2['pkmn'].base_hp, pkmn2['pkmn'].base_atk, pkmn2['pkmn'].base_def, pkmn2['pkmn'].base_spatk, pkmn2['pkmn'].base_spdef, pkmn2['pkmn'].base_spd ]
 	base_dist = sum( [ ( pkmn1_base[i] - pkmn2_base[i] ) ** 2 for i in range(0, 6) ] )
-	'''
+	
 	# Pairwise distance between each move, averaged using the number of moves it was compared to
 	m_dist = 0
 	if float( pkmn2['move_count'] ) > 0:
 		m_dist = sum( [ ( sum( [ move_dist(move1, move2) for move1 in pkmn1['moves'] ] ) / float( pkmn2['move_count'] ) ) for move2 in pkmn2['moves'] ] )
 	else:
 		pass
-	'''
+	
 	# Distance between hold items
 	i_dist = item_dist(pkmn1['item'], pkmn2['item'])
 	
-	m_dist = 0
 	# Output sum
 	return type_dist + base_dist + m_dist + i_dist
 
@@ -214,7 +208,7 @@ def item_dist(item1, item2):
 		sq_dist_i += 1 if item1.natural_gift_type == item2.natural_gift_type else 0 # Type for Natural Gift
 		sq_dist_i += (item1.natural_gift_power - item2.natural_gift_power) ** 2 # Power of Natural Gift
 		sq_dist_i += (item1.se_dmg_down - item2.se_dmg_down) ** 2 # Does it reduce super-effective damage?
-	
+		
 		# Output squared distance
 		return sq_dist_i
 
