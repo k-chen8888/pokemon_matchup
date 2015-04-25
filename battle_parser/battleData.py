@@ -16,5 +16,3 @@ def battleData(filename):
 	file = open("battleData.txt", 'w')
 	file.write(son)
 	file.close()
-
-battleData("OU.txt")

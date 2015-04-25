@@ -51,7 +51,6 @@ def parse(webpage):
   blog = StringIO.StringIO(log)
   line = blog.readline()
   while line is not "":
-    print line
     parse_line(bat, line)
     line = blog.readline()
     
@@ -70,7 +69,7 @@ def parse_line(bat, line):
   
   if len(raw) > 2:
     #set the player it if effecting
-    if 'p1' in raw[2]:
+    if '1' in raw[2]:
       plyr = bat.players['p1a']
     else:
       plyr = bat.players['p2a']
@@ -112,9 +111,8 @@ def makedic(bat):
   for k in pokemon:
     poke = {}
       
-    poke['name'] = nameSwap(pokemon[k].name)
+    poke['name'] = pokemon[k].name
      
-    #Set items for Arceus and Genesect
     if 'Arceus' in pokemon[k].name:
       t = pokemon[k].name.split('-')
       if len(t) > 1:
@@ -129,26 +127,13 @@ def makedic(bat):
     poke['moves'] = pokemon[k].moves
     team1.append(deepcopy(poke))
 
-    
   #fill in team 2
   #used name Pikachu because why not?
   pikachu = p2.pokemon
   for k in pikachu:
     poke = {}
-    poke['name'] = nameSwap(pikachu[k].name)
-    
-    #Set items for Arceus and Genesect
-    if 'Arceus' in pikachu[k].name:
-      t = pikachu[k].name.split('-')
-      if len(t) > 1:
-        poke['item'] = plate[t[1]]
-    elif 'Genesect' in pikachu[k].name:
-      t = pikachu[k].name.split('-')
-      if len(t) > 1:
-        poke['item'] = drive[t[1]]
-    else:    
-      poke['item'] = pikachu[k].item
-      
+    poke['name'] = pikachu[k].name
+    poke['item'] = pikachu[k].item
     poke['moves'] = pikachu[k].moves
     team2.append(deepcopy(poke))
   
@@ -187,7 +172,10 @@ def switch(plyr, line):
   index = re.split("\W", name )[0]
   plyr.cur = plyr.pokemon[index]
   plyr.cur.name = name #set in the event of a form change or added typing
-
+  if 'Arceus' in name:
+    type = name.split('-')
+    if len(type) > 1:
+      plyr.cur.item = plate[type[1]]
 
 #|move|p1a: Lopunny|Fake Out|p2a: Umbreon
 def move(plyr, line):
@@ -196,10 +184,7 @@ def move(plyr, line):
 
 #|detailschange|p1a: i built that.|Kyogre-Primal
 def transform(plyr, line):
-  name = line[3].split(',')[0] #remove the gender and shiny tags
-  if 'Kyogre' in name:    plyr.cur.item = primal[0]
-  elif 'Groudon' in name: plyr.cur.item = primal[1]
-
+  name = line[3]
   plyr.cur.name = name
 
 #|-mega|p2a: steeljackal<3|Sableye|Sablenite
@@ -285,5 +270,3 @@ def nameSwap(name):
     return parts[0] + ' ' + parts[1]
   elif 'Gourgeist' in parts[0]:
     return parts[0] + ' ' + parts[1]
-    
-#End Of File
