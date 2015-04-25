@@ -109,9 +109,18 @@ if __name__ == '__main__':
 	
 	# Generate labels (spectral clustering)
 	# Note that the adjacency matrix needs to be converted into a numpy array
-	#labels = spectral_clustering(np.asarray(adj_mtrx), n_clusters = 2, eigen_solver = 'arpack', assign_labels = 'discretize')
-	
-	# Compute the purity of the clustering
-	#purity(labels, teams, results)
+	# Run the clustering 5 times
+	i = 1
+	while i < 6:
+		labels = spectral_clustering(np.asarray(adj_mtrx), n_clusters = 2, eigen_solver = 'arpack', assign_labels = 'discretize')
+		
+		# Name of file to output test results
+		outfile_name = 'test' + str(i) + '_results.txt'
+		
+		# Compute the purity of the clustering
+		purity(labels, teams, results, outfile_name)
+		
+		# Next test
+		i += 1
 	
 	print "Done"

@@ -13,7 +13,7 @@ Given labels, sort into two lists
 Calculate percentage of winners/losers in zero
 Calculate percentage of winners/losers in one
 '''
-def purity(labels, teams, results):
+def purity(labels, teams, results, out = None):
 	zero = []
 	one = []
 	
@@ -57,9 +57,18 @@ def purity(labels, teams, results):
 	win = [zero_win_purity, zero_loss_purity, silhouette(zero, one)] if zero_win_purity > one_win_purity else [one_win_purity, one_loss_purity, silhouette(one, zero)]
 	loss = [zero_win_purity, zero_loss_purity, silhouette(zero, one)] if zero_win_purity < one_win_purity else [one_win_purity, one_loss_purity, silhouette(one, zero)]
 	
-	# Display test results
-	print "The winners cluster contained", win[0] * 100, "% wins and", win[1] * 100, "% losses. The silhouette coefficient for this cluster is", win[2]
-	print "The losers cluster contained", loss[0] * 100, "% wins and", loss[1] * 100, "% losses. The silhouette coefficient for this cluster is", loss[2]
+	# If there is an output file specified, use it
+	if out == None:
+		# Display test results
+		print "The winners cluster contained", win[0] * 100, "% wins and", win[1] * 100, "% losses. The silhouette coefficient for this cluster is", win[2]
+		print "The losers cluster contained", loss[0] * 100, "% wins and", loss[1] * 100, "% losses. The silhouette coefficient for this cluster is", loss[2]
+	else:
+		# Store test results in file
+		f = open(out, "w")
+		f.write("The winners cluster contained", win[0] * 100, "% wins and", win[1] * 100, "% losses. The silhouette coefficient for this cluster is", win[2], "\n")
+		f.write("The losers cluster contained", loss[0] * 100, "% wins and", loss[1] * 100, "% losses. The silhouette coefficient for this cluster is", loss[2], "\n")
+	
+	print "Test done"
 
 '''
 Silhouette coefficient
