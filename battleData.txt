@@ -2202,10 +2202,8 @@
         "moves": [
           "Knock Off", 
           "Recover", 
-          "Stealth Rock", 
           "Metal Burst", 
-          "Will-O-Wisp", 
-          "Toxic Spikes"
+          "Will-O-Wisp"
         ], 
         "name": "Mega Sableye"
       }, 

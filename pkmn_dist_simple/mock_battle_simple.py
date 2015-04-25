@@ -86,6 +86,7 @@ Session.configure(bind=engine)
 s_mock = Session()
 '''
 
+
 '''
 A Hidden Power fix for digging up moves by name
 '''

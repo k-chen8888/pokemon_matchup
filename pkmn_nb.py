@@ -144,7 +144,7 @@ def expand(matches):
 	results = []
 	
 	for match in matches:
-		pokemon_instance = []
+		team_instance1 = []
 		
 		# Let 1 = win, 0 = loss
 		if match['winner'] == 'team1':
@@ -156,58 +156,127 @@ def expand(matches):
 		
 		for pkmn in match['team1']:
 			# Types
-			pokemon_instance.append(pkmn['pkmn'].type1)
-			pokemon_instance.append(pkmn['pkmn'].type2)
+			team_instance1.append(pkmn['pkmn'].type1)
+			team_instance1.append(pkmn['pkmn'].type2)
 			
 			# Base stats
-			pokemon_instance.append(pkmn['pkmn'].base_hp)
-			pokemon_instance.append(pkmn['pkmn'].base_atk)
-			pokemon_instance.append(pkmn['pkmn'].base_def)
-			pokemon_instance.append(pkmn['pkmn'].base_spatk)
-			pokemon_instance.append(pkmn['pkmn'].base_spdef)
-			pokemon_instance.append(pkmn['pkmn'].base_spd)
+			team_instance1.append(pkmn['pkmn'].base_hp)
+			team_instance1.append(pkmn['pkmn'].base_atk)
+			team_instance1.append(pkmn['pkmn'].base_def)
+			team_instance1.append(pkmn['pkmn'].base_spatk)
+			team_instance1.append(pkmn['pkmn'].base_spdef)
+			team_instance1.append(pkmn['pkmn'].base_spd)
 			
 			# Moves
 			for move in pkmn['moves']:
 				# Basic information
-				pokemon_instance.append(move.move_type)
-				pokemon_instance.append(move.move_cat)
-				pokemon_instance.append(move.base_power)
-				pokemon_instance.append(move.priority)
-				pokemon_instance.append(move.accuracy)
+				team_instance1.append(move.move_type)
+				team_instance1.append(move.move_cat)
+				team_instance1.append(move.base_power)
+				team_instance1.append(move.priority)
+				team_instance1.append(move.accuracy)
 				
 				# Special information
 				if move.weather:
-					pokemon_instance.append(1)
+					team_instance1.append(1)
 				else:
-					pokemon_instance.append(0)
+					team_instance1.append(0)
+				
 				if move.entry:
-					pokemon_instance.append(1)
+					team_instance1.append(1)
 				else:
-					pokemon_instance.append(0)
+					team_instance1.append(0)
+				
 				if move.status:
-					pokemon_instance.append(1)
+					team_instance1.append(1)
 				else:
-					pokemon_instance.append(0)
+					team_instance1.append(0)
+				
 				if move.heal:
-					pokemon_instance.append(1)
+					team_instance1.append(1)
 				else:
-					pokemon_instance.append(0)
+					team_instance1.append(0)
+				
 				if move.stat_change:
-					pokemon_instance.append(1)
+					team_instance1.append(1)
 				else:
-					pokemon_instance.append(0)
+					team_instance1.append(0)
 			
 			# Hold item
-			pokemon_instance.append(pkmn['item'].fling_dmg)
+			team_instance1.append(pkmn['item'].fling_dmg)
+			
 			if pkmn['item'].mega_stone:
-				pokemon_instance.append(1)
+				team_instance1.append(1)
 			else:
-				pokemon_instance.append(0)
-			pokemon_instance.append(pkmn['item'].natural_gift_type)
-			pokemon_instance.append(pkmn['item'].natural_gift_power)
+				team_instance1.append(0)
+			
+			team_instance1.append(pkmn['item'].natural_gift_type)
+			team_instance1.append(pkmn['item'].natural_gift_power)
 		
-		data_table.append(pokemon_instance)
+		data_table.append(team_instance1)
+		
+		team_instance2 = []
+		
+		for pkmn in match['team2']:
+			# Types
+			team_instance2.append(pkmn['pkmn'].type1)
+			team_instance2.append(pkmn['pkmn'].type2)
+			
+			# Base stats
+			team_instance2.append(pkmn['pkmn'].base_hp)
+			team_instance2.append(pkmn['pkmn'].base_atk)
+			team_instance2.append(pkmn['pkmn'].base_def)
+			team_instance2.append(pkmn['pkmn'].base_spatk)
+			team_instance2.append(pkmn['pkmn'].base_spdef)
+			team_instance2.append(pkmn['pkmn'].base_spd)
+			
+			# Moves
+			for move in pkmn['moves']:
+				# Basic information
+				team_instance2.append(move.move_type)
+				team_instance2.append(move.move_cat)
+				team_instance2.append(move.base_power)
+				team_instance2.append(move.priority)
+				team_instance2.append(move.accuracy)
+				
+				# Special information
+				if move.weather:
+					team_instance2.append(1)
+				else:
+					team_instance2.append(0)
+				
+				if move.entry:
+					team_instance2.append(1)
+				else:
+					team_instance2.append(0)
+				
+				if move.status:
+					team_instance2.append(1)
+				else:
+					team_instance2.append(0)
+				
+				if move.heal:
+					team_instance2.append(1)
+				else:
+					team_instance2.append(0)
+				
+				if move.stat_change:
+					team_instance2.append(1)
+				else:
+					team_instance2.append(0)
+			
+			# Hold item
+			team_instance2.append(pkmn['item'].fling_dmg)
+			
+			if pkmn['item'].mega_stone:
+				team_instance2.append(1)
+			else:
+				team_instance2.append(0)
+			
+			team_instance2.append(pkmn['item'].natural_gift_type)
+			team_instance2.append(pkmn['item'].natural_gift_power)
+		
+		data_table.append(team_instance2)
 	
 	return data_table, results
 
