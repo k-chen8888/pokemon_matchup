@@ -153,7 +153,7 @@ def pkmn_dist(pkmn1, pkmn2):
 		# Euclidean Distance
 		type_dist = sum( [ ( adv_table_pkmn1[i] - adv_table_pkmn2[i] ) ** 2 for i in range(0, 18) ] )
 	
-	
+	'''
 	# Distance between base stats
 	pkmn1_base = [ pkmn1['pkmn'].base_hp, pkmn1['pkmn'].base_atk, pkmn1['pkmn'].base_def, pkmn1['pkmn'].base_spatk, pkmn1['pkmn'].base_spdef, pkmn1['pkmn'].base_spd ]
 	pkmn2_base = [ pkmn2['pkmn'].base_hp, pkmn2['pkmn'].base_atk, pkmn2['pkmn'].base_def, pkmn2['pkmn'].base_spatk, pkmn2['pkmn'].base_spdef, pkmn2['pkmn'].base_spd ]
@@ -168,9 +168,11 @@ def pkmn_dist(pkmn1, pkmn2):
 	
 	# Distance between hold items
 	i_dist = item_dist(pkmn1['item'], pkmn2['item'])
+	 + m_dist + i_dist
+	'''
 	
 	# Output sum
-	return type_dist + m_dist + i_dist
+	return type_dist
 
 
 '''
