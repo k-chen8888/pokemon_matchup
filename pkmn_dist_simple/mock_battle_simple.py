@@ -234,7 +234,7 @@ def partial_mock(pkmn, team):
 					else: # Normal calculations
 						p_item = s_mock.query(HoldItem).filter(HoldItem.name == pkmn['item']).first()
 						
-						score = mock_calculate(p, p_item, o, opponent, o_item, m, 1)
+						score = mock_calculate(p, p_item, opponent, o, o_item, m, 1)
 						
 						pkmn[label].append(score)
 						defend.append(6 - score)
