@@ -67,11 +67,11 @@ def purity(labels, teams, results, sim_mtrx, out = None):
 	win = []
 	loss = []
 	if zero_win_purity > one_win_purity:
-		win = [zero_win_purity, zero_loss_purity, silhouette(zero, one, teams, sim_mtrx), "zero"]
-		loss = [one_win_purity, one_loss_purity, silhouette(one, zero, teams, sim_mtrx), "one"]
+		win = [zero_win_purity, zero_loss_purity, silhouette(zero, one, teams, sim_mtrx), "zero", len(zero)]
+		loss = [one_win_purity, one_loss_purity, silhouette(one, zero, teams, sim_mtrx), "one", len(one)]
 	else:
-		win = [one_win_purity, one_loss_purity, silhouette(one, zero, teams, sim_mtrx), "one"]
-		loss = [zero_win_purity, zero_loss_purity, silhouette(zero, one, teams, sim_mtrx), "zero"]
+		win = [one_win_purity, one_loss_purity, silhouette(one, zero, teams, sim_mtrx), "one", len(one)]
+		loss = [zero_win_purity, zero_loss_purity, silhouette(zero, one, teams, sim_mtrx), "zero", len(zero)]
 	
 	# If there is an output file specified, use it
 	if out == None:
@@ -82,8 +82,8 @@ def purity(labels, teams, results, sim_mtrx, out = None):
 		# Store test results in file
 		f = open(out, "w")
 		
-		win_txt = "The winners cluster " + win[3] + " contained " + str( win[0] * 100 ) + "% wins and " + str( win[1] * 100 ) + "% losses. The silhouette coefficient for this cluster is " + str( win[2] ) + "\n"
-		loss_txt = "The losers cluster " + loss[3] + " contained " + str( loss[0] * 100 ) + "% wins and " + str( loss[1] * 100 ) + "% losses. The silhouette coefficient for this cluster is " + str( loss[2] ) + "\n"
+		win_txt = "The winners cluster " + win[3] + str(win[4]) + " contained " + str( win[0] * 100 ) + "% wins and " + str( win[1] * 100 ) + "% losses. The silhouette coefficient for this cluster is " + str( win[2] ) + "\n"
+		loss_txt = "The losers cluster " + loss[3] + str(loss[4]) + " contained " + str( loss[0] * 100 ) + "% wins and " + str( loss[1] * 100 ) + "% losses. The silhouette coefficient for this cluster is " + str( loss[2] ) + "\n"
 		
 		f.write(win_txt)
 		f.write(loss_txt)

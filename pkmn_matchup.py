@@ -141,6 +141,12 @@ def populate(json_file):
 	return teams, results
 
 
+'''
+sys.argv
+	1 -> JSON file
+	2 -> rand (or some other string)
+	3 -> kmeans or discretize
+'''
 if __name__ == '__main__':
 	# Gather the data and fill up the database
 	#scrape_dex()
@@ -167,7 +173,7 @@ if __name__ == '__main__':
 		while i < 6:
 			# Generate labels (spectral clustering)
 			# Note that the adjacency matrix needs to be converted into a numpy array
-			labels = spectral_clustering(np.asarray(adj_mtrx), n_clusters = 2, eigen_solver = 'arpack', assign_labels = 'discretize')
+			labels = spectral_clustering(np.asarray(adj_mtrx), n_clusters = 2, eigen_solver = 'arpack', assign_labels = sys.argv[3])
 			
 			# Name of file to output test results
 			outfile_name = 'test' + str(i) + '_results.txt'
@@ -202,7 +208,7 @@ if __name__ == '__main__':
 			
 			# Generate labels (spectral clustering)
 			# Note that the adjacency matrix needs to be converted into a numpy array
-			labels = spectral_clustering(np.asarray(adj_mtrx), n_clusters = 2, eigen_solver = 'arpack', assign_labels = 'discretize')
+			labels = spectral_clustering(np.asarray(adj_mtrx), n_clusters = 2, eigen_solver = 'arpack', assign_labels = sys.argv[3])
 			
 			# Name of file to output test results
 			outfile_name = 'randtest' + str(i) + '_results.txt'
