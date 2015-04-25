@@ -103,7 +103,8 @@ def team_dist(team1, team2):
 			team2_distance += pkmn_dist(pkmn1, pkmn2)
 	
 	# Compute distance between teams, absolute value
-	team_dist = abs( team1_distance - team2_distance )
+	# Averaged by number of comparisons
+	team_dist = abs( team1_distance - team2_distance ) / (len(team1) * len(team2))
 	
 	print type_dist + move_type_dist, "team", team_dist
 	
