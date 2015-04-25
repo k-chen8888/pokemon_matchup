@@ -105,7 +105,7 @@ if __name__ == '__main__':
 	# For each team, compare to each other team
 	# Generate an adjacency matrix by calculating similarity as the distance between each team and normalizing
 	sim_mtrx = similarity(teams)
-	adj_mtrx = normalize(sim_mtrx)
+	adj_mtrx = normalize(sim_mtrx) # Similarity matrix needs to be normalized for spectral clustering
 	
 	# Generate labels (spectral clustering)
 	# Note that the adjacency matrix needs to be converted into a numpy array
