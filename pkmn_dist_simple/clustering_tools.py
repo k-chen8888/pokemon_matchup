@@ -87,51 +87,7 @@ def purity(labels, teams, results, sim_mtrx, out = None):
 		
 		f.write(win_txt)
 		f.write(loss_txt)
-	'''
-	# Try to re-cluster the winners' set if something weird happens
-	if win[0] < 0.6 and not win[1] == 1.0:
-		sim = []
-		if win[3] == "zero":
-			sim = similarity(zero)
-		else:
-			sim = similarity(one)
-		adj_mtrx = normalize(sim_mtrx) # Similarity matrix needs to be normalized for spectral clustering
-		
-		# Generate labels (spectral clustering)
-		# Note that the adjacency matrix needs to be converted into a numpy array
-		labels = spectral_clustering(np.asarray(adj_mtrx), n_clusters = 2, eigen_solver = 'arpack', assign_labels = 'discretize')
-		
-		# Name of file to output test results
-		outfile_name = "re-" + out
-		
-		# Compute the purity of the clustering
-		if win[3] == "zero":
-			purity(labels, zero, zero_res, sim, outfile_name)
-		else:
-			purity(labels, one, one_res, sim, outfile_name)
 	
-	# Try to re-cluster the losers' set if something weird happens
-	if loss[0] < 0.6 and not loss[1] == 1.0:
-		sim = []
-		if loss[3] == "zero":
-			sim = similarity(zero)
-		else:
-			sim = similarity(one)
-		adj_mtrx = normalize(sim_mtrx) # Similarity matrix needs to be normalized for spectral clustering
-		
-		# Generate labels (spectral clustering)
-		# Note that the adjacency matrix needs to be converted into a numpy array
-		labels = spectral_clustering(np.asarray(adj_mtrx), n_clusters = 2, eigen_solver = 'arpack', assign_labels = 'discretize')
-		
-		# Name of file to output test results
-		outfile_name = "re-" + out
-		
-		# Compute the purity of the clustering
-		if loss[3] == "zero":
-			purity(labels, zero, zero_res, sim, outfile_name)
-		else:
-			purity(labels, one, one_res, sim, outfile_name)
-	'''
 	print "Test done"
 
 '''

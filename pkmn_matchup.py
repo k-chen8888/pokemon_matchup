@@ -120,25 +120,70 @@ def populate(json_file):
 	# Interpret string
 	data = json.loads(json_str)
 	
-	# Populate lists
-	teams = []
-	results = []
+	# Populate a list of matches with everything queried
+	queried_matches = []
 	for match in data:
+		q = {}
+		
 		# team1 info, queried
-		teams.append( pack( match['team1'] ) )
-		if match['winner'] == 'team1':
-			results.append(True)
-		else:
-			results.append(False)
+		q['team1'] = pack( match['team1'] )
 		
 		# team2 info, queried
-		teams.append( pack( match['team2'] ) )
-		if match['winner'] == 'team2':
-			results.append(True)
-		else:
-			results.append(False)
+		q['team2'] = pack( match['team2'] )
+		
+		q['winner'] = match['winner']
+		
+		queried_matches.append(q)
 	
-	return teams, results
+	return queried_matches
+
+	
+'''
+Selects matches to use in the clustering
+'''
+def select(matches, rand):
+	# Using randomness
+	if rand:
+		# Build a list of random battles
+		rand_battles = random.sample( range(0, len(matches) - 1, 2), len(matches) / 2 )
+		
+		# Create output
+		teams = []
+		results = []
+		for i in range(0, len(rand_battles)):
+			if matches[i]['winner'] == "team1":
+				teams.append( matches[i]["team1"] )
+				teams.append( matches[i]["team2"] )
+				results.append(True)
+				results.append(False)
+			
+			else:
+				teams.append( matches[i]["team1"] )
+				teams.append( matches[i]["team2"] )
+				results.append(False)
+				results.append(True)
+		
+		return teams, results
+		
+	else:
+		# Dump all teams into output
+		teams = []
+		results = []
+		
+		for match in matches:
+			if match['winner'] == "team1":
+				teams.append( match["team1"] )
+				teams.append( match["team2"] )
+				results.append(True)
+				results.append(False)
+			
+			else:
+				teams.append( match["team1"] )
+				teams.append( match["team2"] )
+				results.append(False)
+				results.append(True)
+		
+		return teams, results
 
 
 '''
@@ -159,10 +204,12 @@ if __name__ == '__main__':
 	Index of a given result is equal to the index of the team it is associated with
 	'''
 	json_data = open(sys.argv[1], "r")
-	teams, results = populate(json_data)
+	matches = populate(json_data)
 	
 	# Simple version that uses all of the data to test
 	if not sys.argv[2] == 'rand':
+		teams, results = select(matches, False)
+		
 		# For each team, compare to each other team
 		# Generate an adjacency matrix by calculating similarity as the distance between each team and normalizing
 		sim_mtrx = similarity(teams)
@@ -189,18 +236,8 @@ if __name__ == '__main__':
 		# Run tests on 5 different random samples
 		i = 1
 		while i < 6:
-			# Build a list of random battles
-			rand_battles = random.sample( range(0, len(teams) - 1, 2), len(teams) / 4 )
+			rand_teams, rand_results = select(matches, True)
 			
-			rand_teams = []
-			rand_results = []
-			for index in rand_battles:
-				rand_teams.append( copy.deepcopy( teams[index] ) )
-				rand_teams.append( copy.deepcopy( teams[index + 1] ) )
-				
-				rand_results.append( results[i] )
-				rand_results.append( results[i + 1] )
-				
 			# For each team, compare to each other team
 			# Generate an adjacency matrix by calculating similarity as the distance between each team and normalizing
 			sim_mtrx = similarity(rand_teams)
