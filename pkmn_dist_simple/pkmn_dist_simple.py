@@ -112,7 +112,7 @@ def team_dist(team1, team2):
 	
 	# Squared "distance" between base strengths of Pokemon
 	# Use mock_battle_simple
-	mock_results = mock_battle(team1, team2)
+	mock_results = 0#mock_battle(team1, team2)
 	
 	# Output square root of sum
 	return ( type_dist + move_type_dist + avg_dist + mock_results ) ** 0.5
@@ -155,7 +155,11 @@ def pkmn_dist(pkmn1, pkmn2):
 	base_dist = sum( [ ( pkmn1_base[i] - pkmn2_base[i] ) ** 2 for i in range(0, 6) ] )
 	
 	# Pairwise distance between each move, averaged using the number of moves it was compared to
-	m_dist = sum( [ ( sum( [ move_dist(move1, move2) for move1 in pkmn1['moves'] ] ) / float( len(pkmn2['moves']) ) ) for move2 in pkmn2['moves'] ] )
+	m_dist = 0
+	if float( pkmn2['move_count'] ) > 0:
+		m_dist = sum( [ ( sum( [ move_dist(move1, move2) for move1 in pkmn1['moves'] ] ) / float( pkmn2['move_count'] ) ) for move2 in pkmn2['moves'] ] )
+	else:
+		pass
 	
 	# Distance between hold items
 	i_dist = item_dist(pkmn1, pkmn2)
@@ -171,6 +175,9 @@ Moves given by name only and queried
 def move_dist(move1, move2):
 	if move1 == move2:
 		return 0 # No distance if they're the same
+	
+	elif move1.name == "Splash" or move2.name == "Splash"
+		return 0 # Ignore splash
 	
 	else:
 		# Take the Euclidean distance (squared)
