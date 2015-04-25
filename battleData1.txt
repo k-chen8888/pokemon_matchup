@@ -1,0 +1,8291 @@
+[
+  {
+    "team1": [
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Psyshock", 
+          "Roost", 
+          "Draco Meteor"
+        ], 
+        "name": "Latios"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "U-turn"
+        ], 
+        "name": "Talonflame"
+      }, 
+      {
+        "item": null, 
+        "moves": [], 
+        "name": "Keldeo"
+      }, 
+      {
+        "item": "Diancite", 
+        "moves": [
+          "Protect", 
+          "Whirlwind", 
+          "Diamond Storm", 
+          "Moonblast"
+        ], 
+        "name": "Mega Diancie"
+      }, 
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Knock Off"
+        ], 
+        "name": "Bisharp"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Earth Power", 
+          "Stealth Rock", 
+          "Focus Blast", 
+          "Sludge Wave"
+        ], 
+        "name": "Landorus"
+      }
+    ], 
+    "team2": [
+      {
+        "item": null, 
+        "moves": [
+          "Scald"
+        ], 
+        "name": "Slowbro"
+      }, 
+      {
+        "item": "Black Sludge", 
+        "moves": [], 
+        "name": "Tentacruel"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Recover", 
+          "Giga Drain"
+        ], 
+        "name": "Celebi"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Scald", 
+          "Secret Sword"
+        ], 
+        "name": "Keldeo"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Whirlwind", 
+          "Brave Bird"
+        ], 
+        "name": "Skarmory"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Earthquake", 
+          "Outrage", 
+          "Stealth Rock"
+        ], 
+        "name": "Garchomp"
+      }
+    ], 
+    "winner": "team1"
+  }, 
+  {
+    "team1": [
+      {
+        "item": "Metagrossite", 
+        "moves": [
+          "Meteor Mash"
+        ], 
+        "name": "Mega Metagross"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Heal Bell", 
+          "Calm Mind", 
+          "Moonblast"
+        ], 
+        "name": "Clefable"
+      }, 
+      {
+        "item": "Lum Berry", 
+        "moves": [
+          "Scald", 
+          "Taunt"
+        ], 
+        "name": "Keldeo"
+      }, 
+      {
+        "item": "Black Sludge", 
+        "moves": [
+          "Spore", 
+          "Giga Drain"
+        ], 
+        "name": "Amoonguss"
+      }, 
+      {
+        "item": "Salac Berry", 
+        "moves": [
+          "Substitute", 
+          "Swords Dance", 
+          "Knock Off"
+        ], 
+        "name": "Landorus Therian Form"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Stealth Rock", 
+          "Toxic"
+        ], 
+        "name": "Heatran"
+      }
+    ], 
+    "team2": [
+      {
+        "item": "Toxic Orb", 
+        "moves": [
+          "Knock Off", 
+          "Earthquake", 
+          "Swords Dance"
+        ], 
+        "name": "Gliscor"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Rapid Spin", 
+          "Reflect Type", 
+          "Scald", 
+          "Recover"
+        ], 
+        "name": "Starmie"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Earth Power"
+        ], 
+        "name": "Landorus"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Soft-Boiled", 
+          "Calm Mind"
+        ], 
+        "name": "Clefable"
+      }, 
+      {
+        "item": "Venusaurite", 
+        "moves": [
+          "Giga Drain", 
+          "Synthesis", 
+          "Sludge Bomb"
+        ], 
+        "name": "Mega Venusaur"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Stealth Rock", 
+          "Toxic", 
+          "Taunt", 
+          "Lava Plume"
+        ], 
+        "name": "Heatran"
+      }
+    ], 
+    "winner": "team2"
+  }, 
+  {
+    "team1": [
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Spore", 
+          "Bullet Seed", 
+          "Mach Punch"
+        ], 
+        "name": "Breloom"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Scald"
+        ], 
+        "name": "Suicune"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Fire Blast"
+        ], 
+        "name": "Tyranitar"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Psyshock", 
+          "Recover", 
+          "Focus Blast"
+        ], 
+        "name": "Reuniclus"
+      }, 
+      {
+        "item": "Manectite", 
+        "moves": [
+          "Overheat", 
+          "Volt Switch", 
+          "Thunderbolt"
+        ], 
+        "name": "Mega Manectric"
+      }, 
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Earthquake", 
+          "Rock Slide"
+        ], 
+        "name": "Excadrill"
+      }
+    ], 
+    "team2": [
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Gunk Shot", 
+          "Drain Punch", 
+          "Sucker Punch"
+        ], 
+        "name": "Toxicroak"
+      }, 
+      {
+        "item": null, 
+        "moves": [], 
+        "name": "Volcarona"
+      }, 
+      {
+        "item": "Diancite", 
+        "moves": [
+          "Moonblast", 
+          "Earth Power"
+        ], 
+        "name": "Mega Diancie"
+      }, 
+      {
+        "item": "Chople Berry", 
+        "moves": [
+          "Stealth Rock", 
+          "Roar", 
+          "Scald"
+        ], 
+        "name": "Empoleon"
+      }, 
+      {
+        "item": null, 
+        "moves": [], 
+        "name": "Raikou"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "U-turn", 
+          "Earthquake"
+        ], 
+        "name": "Landorus Therian Form"
+      }
+    ], 
+    "winner": "team1"
+  }, 
+  {
+    "team1": [
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Draco Meteor", 
+          "Heal Block"
+        ], 
+        "name": "Latios"
+      }, 
+      {
+        "item": "Metagrossite", 
+        "moves": [
+          "Meteor Mash"
+        ], 
+        "name": "Mega Metagross"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Scald"
+        ], 
+        "name": "Keldeo"
+      }, 
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Thunderbolt"
+        ], 
+        "name": "Thundurus"
+      }, 
+      {
+        "item": null, 
+        "moves": [], 
+        "name": "Landorus"
+      }, 
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Spikes", 
+          "Hidden Power", 
+          "Grass Knot", 
+          "Ice Beam"
+        ], 
+        "name": "Greninja"
+      }
+    ], 
+    "team2": [
+      {
+        "item": null, 
+        "moves": [], 
+        "name": "Gliscor"
+      }, 
+      {
+        "item": "Slowbronite", 
+        "moves": [
+          "Scald", 
+          "Slack Off", 
+          "Calm Mind"
+        ], 
+        "name": "Mega Slowbro"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Healing Wish"
+        ], 
+        "name": "Latias"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "U-turn", 
+          "Stone Edge", 
+          "Earthquake"
+        ], 
+        "name": "Landorus Therian Form"
+      }, 
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Ice Beam"
+        ], 
+        "name": "Greninja"
+      }, 
+      {
+        "item": null, 
+        "moves": [], 
+        "name": "Ferrothorn"
+      }
+    ], 
+    "winner": "team1"
+  }, 
+  {
+    "team1": [
+      {
+        "item": "Metagrossite", 
+        "moves": [
+          "Zen Headbutt", 
+          "Meteor Mash"
+        ], 
+        "name": "Mega Metagross"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Hyper Voice"
+        ], 
+        "name": "Sylveon"
+      }, 
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Defog", 
+          "Psyshock"
+        ], 
+        "name": "Latias"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Scald"
+        ], 
+        "name": "Keldeo"
+      }, 
+      {
+        "item": "Rocky Helmet", 
+        "moves": [
+          "U-turn", 
+          "Knock Off"
+        ], 
+        "name": "Landorus Therian Form"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Stealth Rock", 
+          "Lava Plume"
+        ], 
+        "name": "Heatran"
+      }
+    ], 
+    "team2": [
+      {
+        "item": "Sablenite", 
+        "moves": [
+          "Will-O-Wisp", 
+          "Shadow Ball"
+        ], 
+        "name": "Mega Sableye"
+      }, 
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Low Kick", 
+          "Gunk Shot", 
+          "Ice Beam"
+        ], 
+        "name": "Greninja"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Flash Cannon", 
+          "Spikes"
+        ], 
+        "name": "Klefki"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Stealth Rock", 
+          "Dragon Tail", 
+          "Earthquake"
+        ], 
+        "name": "Garchomp"
+      }, 
+      {
+        "item": null, 
+        "moves": [], 
+        "name": "Clefable"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Volt Switch", 
+          "Will-O-Wisp"
+        ], 
+        "name": "Wash Rotom"
+      }
+    ], 
+    "winner": "team2"
+  }, 
+  {
+    "team1": [
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Calm Mind", 
+          "Roost"
+        ], 
+        "name": "Latios"
+      }, 
+      {
+        "item": null, 
+        "moves": [], 
+        "name": "Sableye"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Toxic Spikes", 
+          "Scald", 
+          "Rapid Spin"
+        ], 
+        "name": "Tentacruel"
+      }, 
+      {
+        "item": null, 
+        "moves": [], 
+        "name": "Landorus Therian Form"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Stealth Rock", 
+          "Moonblast", 
+          "Heal Bell"
+        ], 
+        "name": "Clefable"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Magma Storm", 
+          "Taunt"
+        ], 
+        "name": "Heatran"
+      }
+    ], 
+    "team2": [
+      {
+        "item": "Sablenite", 
+        "moves": [
+          "Will-O-Wisp", 
+          "Recover"
+        ], 
+        "name": "Mega Sableye"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Earthquake", 
+          "Roost", 
+          "Knock Off"
+        ], 
+        "name": "Gliscor"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Scald"
+        ], 
+        "name": "Alomomola"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Stealth Rock", 
+          "Seismic Toss"
+        ], 
+        "name": "Chansey"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [], 
+        "name": "Clefable"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Gyro Ball", 
+          "Spikes"
+        ], 
+        "name": "Ferrothorn"
+      }
+    ], 
+    "winner": "team1"
+  }, 
+  {
+    "team1": [
+      {
+        "item": null, 
+        "moves": [
+          "Stealth Rock", 
+          "Knock Off"
+        ], 
+        "name": "Gliscor"
+      }, 
+      {
+        "item": "Charizardite Y", 
+        "moves": [
+          "Flamethrower", 
+          "Solar Beam"
+        ], 
+        "name": "Mega Charizard Y"
+      }, 
+      {
+        "item": "Black Sludge", 
+        "moves": [
+          "Hydro Pump", 
+          "Rapid Spin", 
+          "Acid Spray"
+        ], 
+        "name": "Tentacruel"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Pursuit"
+        ], 
+        "name": "Tyranitar"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Nasty Plot", 
+          "Hidden Power", 
+          "Thunderbolt"
+        ], 
+        "name": "Thundurus"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Soft-Boiled"
+        ], 
+        "name": "Clefable"
+      }
+    ], 
+    "team2": [
+      {
+        "item": "Altarianite", 
+        "moves": [
+          "Hyper Voice"
+        ], 
+        "name": "Mega Altaria"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Wish", 
+          "Protect", 
+          "Toxic", 
+          "Scald"
+        ], 
+        "name": "Alomomola"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Baton Pass", 
+          "Recover"
+        ], 
+        "name": "Celebi"
+      }, 
+      {
+        "item": "Choice Specs", 
+        "moves": [
+          "Hydro Pump", 
+          "Scald"
+        ], 
+        "name": "Keldeo"
+      }, 
+      {
+        "item": "Choice Scarf", 
+        "moves": [
+          "Stone Edge", 
+          "U-turn", 
+          "Earthquake"
+        ], 
+        "name": "Landorus Therian Form"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Stealth Rock", 
+          "Roar", 
+          "Lava Plume"
+        ], 
+        "name": "Heatran"
+      }
+    ], 
+    "winner": "team1"
+  }, 
+  {
+    "team1": [
+      {
+        "item": "Sablenite", 
+        "moves": [
+          "Dark Pulse", 
+          "Calm Mind", 
+          "Recover"
+        ], 
+        "name": "Mega Sableye"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Earthquake", 
+          "Roost", 
+          "Swords Dance", 
+          "Facade"
+        ], 
+        "name": "Gliscor"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Scald"
+        ], 
+        "name": "Slowbro"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Pursuit"
+        ], 
+        "name": "Tyranitar"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Stealth Rock", 
+          "Taunt", 
+          "Lava Plume", 
+          "Toxic"
+        ], 
+        "name": "Heatran"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Spikes"
+        ], 
+        "name": "Ferrothorn"
+      }
+    ], 
+    "team2": [
+      {
+        "item": "Toxic Orb", 
+        "moves": [
+          "Protect", 
+          "Earthquake", 
+          "Fling", 
+          "Substitute"
+        ], 
+        "name": "Gliscor"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Stealth Rock", 
+          "Seismic Toss"
+        ], 
+        "name": "Chansey"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Scald", 
+          "Flamethrower"
+        ], 
+        "name": "Slowbro"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Defog"
+        ], 
+        "name": "Mew"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Crunch"
+        ], 
+        "name": "Tyranitar"
+      }, 
+      {
+        "item": "Venusaurite", 
+        "moves": [
+          "Giga Drain", 
+          "Synthesis"
+        ], 
+        "name": "Mega Venusaur"
+      }
+    ], 
+    "winner": "team1"
+  }, 
+  {
+    "team1": [
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Gunk Shot", 
+          "Ice Beam"
+        ], 
+        "name": "Greninja"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Baton Pass", 
+          "Recover"
+        ], 
+        "name": "Celebi"
+      }, 
+      {
+        "item": "Choice Specs", 
+        "moves": [
+          "Scald", 
+          "Hydro Pump"
+        ], 
+        "name": "Keldeo"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "U-turn"
+        ], 
+        "name": "Landorus Therian Form"
+      }, 
+      {
+        "item": "Metagrossite", 
+        "moves": [
+          "Zen Headbutt", 
+          "Meteor Mash"
+        ], 
+        "name": "Mega Metagross"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Stealth Rock"
+        ], 
+        "name": "Heatran"
+      }
+    ], 
+    "team2": [
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Draco Meteor"
+        ], 
+        "name": "Latios"
+      }, 
+      {
+        "item": "Gardevoirite", 
+        "moves": [
+          "Hyper Voice"
+        ], 
+        "name": "Mega Gardevoir"
+      }, 
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Swords Dance", 
+          "Poison Jab"
+        ], 
+        "name": "Scolipede"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Secret Sword", 
+          "Scald"
+        ], 
+        "name": "Keldeo"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Knock Off", 
+          "Stealth Rock", 
+          "Earthquake"
+        ], 
+        "name": "Landorus Therian Form"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Magma Storm"
+        ], 
+        "name": "Heatran"
+      }
+    ], 
+    "winner": "team1"
+  }, 
+  {
+    "team1": [
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Scald", 
+          "Thunder Wave", 
+          "Slack Off"
+        ], 
+        "name": "Slowbro"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Foul Play"
+        ], 
+        "name": "Klefki"
+      }, 
+      {
+        "item": "Rocky Helmet", 
+        "moves": [
+          "Fake Out", 
+          "High Jump Kick"
+        ], 
+        "name": "Mega Lopunny"
+      }, 
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Sucker Punch"
+        ], 
+        "name": "Bisharp"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Earthquake"
+        ], 
+        "name": "Landorus Therian Form"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Stealth Rock"
+        ], 
+        "name": "Ferrothorn"
+      }
+    ], 
+    "team2": [
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Dragon Dance", 
+          "Substitute", 
+          "Bounce", 
+          "Waterfall"
+        ], 
+        "name": "Gyarados"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Healing Wish"
+        ], 
+        "name": "Latias"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Secret Sword"
+        ], 
+        "name": "Keldeo"
+      }, 
+      {
+        "item": "Diancite", 
+        "moves": [
+          "Moonblast"
+        ], 
+        "name": "Mega Diancie"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Flash Cannon"
+        ], 
+        "name": "Magnezone"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Stealth Rock", 
+          "Fire Blast", 
+          "Earthquake", 
+          "Dragon Claw"
+        ], 
+        "name": "Garchomp"
+      }
+    ], 
+    "winner": "team2"
+  }, 
+  {
+    "team1": [
+      {
+        "item": "Rocky Helmet", 
+        "moves": [
+          "Zen Headbutt"
+        ], 
+        "name": "Mega Metagross"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Earthquake"
+        ], 
+        "name": "Dragonite"
+      }, 
+      {
+        "item": "Focus Sash", 
+        "moves": [
+          "Stealth Rock", 
+          "Fire Blast", 
+          "Endeavor"
+        ], 
+        "name": "Infernape"
+      }, 
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Knock Off", 
+          "Iron Head"
+        ], 
+        "name": "Bisharp"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Scald", 
+          "Secret Sword"
+        ], 
+        "name": "Keldeo"
+      }, 
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Thunderbolt"
+        ], 
+        "name": "Thundurus"
+      }
+    ], 
+    "team2": [
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Knock Off", 
+          "Roost", 
+          "Foul Play"
+        ], 
+        "name": "Mandibuzz"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Scald", 
+          "Rest"
+        ], 
+        "name": "Suicune"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Dragon Tail", 
+          "Stealth Rock"
+        ], 
+        "name": "Garchomp"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [], 
+        "name": "Clefable"
+      }, 
+      {
+        "item": "Venusaurite", 
+        "moves": [
+          "Sludge Bomb"
+        ], 
+        "name": "Mega Venusaur"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Lava Plume"
+        ], 
+        "name": "Heatran"
+      }
+    ], 
+    "winner": "team1"
+  }, 
+  {
+    "team1": [
+      {
+        "item": null, 
+        "moves": [
+          "Outrage"
+        ], 
+        "name": "Dragonite"
+      }, 
+      {
+        "item": "Focus Sash", 
+        "moves": [
+          "Stealth Rock", 
+          "Overheat", 
+          "Endeavor"
+        ], 
+        "name": "Infernape"
+      }, 
+      {
+        "item": "Lopunnite", 
+        "moves": [
+          "Frustration", 
+          "High Jump Kick"
+        ], 
+        "name": "Mega Lopunny"
+      }, 
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Sucker Punch"
+        ], 
+        "name": "Bisharp"
+      }, 
+      {
+        "item": null, 
+        "moves": [], 
+        "name": "Thundurus"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Aqua Jet"
+        ], 
+        "name": "Azumarill"
+      }
+    ], 
+    "team2": [
+      {
+        "item": null, 
+        "moves": [], 
+        "name": "Latios"
+      }, 
+      {
+        "item": "Swampertite", 
+        "moves": [
+          "Power-Up Punch", 
+          "Earthquake", 
+          "Waterfall"
+        ], 
+        "name": "Mega Swampert"
+      }, 
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Stealth Rock", 
+          "Aqua Tail", 
+          "Earthquake"
+        ], 
+        "name": "Garchomp"
+      }, 
+      {
+        "item": null, 
+        "moves": [], 
+        "name": "Lucario"
+      }, 
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Thunder"
+        ], 
+        "name": "Thundurus"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Scald"
+        ], 
+        "name": "Politoed"
+      }
+    ], 
+    "winner": "team2"
+  }, 
+  {
+    "team1": [
+      {
+        "item": "Metagrossite", 
+        "moves": [
+          "Pursuit", 
+          "Meteor Mash", 
+          "Zen Headbutt"
+        ], 
+        "name": "Mega Metagross"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Scald", 
+          "Secret Sword", 
+          "Substitute"
+        ], 
+        "name": "Keldeo"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Stealth Rock", 
+          "Toxic", 
+          "Fire Blast"
+        ], 
+        "name": "Garchomp"
+      }, 
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Sludge Wave", 
+          "Shadow Ball"
+        ], 
+        "name": "Gengar"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Moonblast", 
+          "Calm Mind", 
+          "Soft-Boiled"
+        ], 
+        "name": "Clefable"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Extrasensory", 
+          "Thunderbolt"
+        ], 
+        "name": "Raikou"
+      }
+    ], 
+    "team2": [
+      {
+        "item": null, 
+        "moves": [
+          "Heat Wave"
+        ], 
+        "name": "Tornadus Therian Form"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Secret Sword"
+        ], 
+        "name": "Keldeo"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Stealth Rock", 
+          "Slack Off", 
+          "Earthquake"
+        ], 
+        "name": "Hippowdon"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Calm Mind", 
+          "Soft-Boiled", 
+          "Stored Power"
+        ], 
+        "name": "Clefable"
+      }, 
+      {
+        "item": "Metagrossite", 
+        "moves": [
+          "Zen Headbutt", 
+          "Meteor Mash"
+        ], 
+        "name": "Mega Metagross"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Will-O-Wisp", 
+          "Volt Switch", 
+          "Hydro Pump"
+        ], 
+        "name": "Wash Rotom"
+      }
+    ], 
+    "winner": "team1"
+  }, 
+  {
+    "team1": [
+      {
+        "item": "Diancite", 
+        "moves": [
+          "Rock Polish", 
+          "Moonblast", 
+          "Earth Power"
+        ], 
+        "name": "Mega Diancie"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Nasty Plot", 
+          "Baton Pass"
+        ], 
+        "name": "Celebi"
+      }, 
+      {
+        "item": null, 
+        "moves": [], 
+        "name": "Keldeo"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "U-turn"
+        ], 
+        "name": "Landorus Therian Form"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Stealth Rock"
+        ], 
+        "name": "Heatran"
+      }, 
+      {
+        "item": null, 
+        "moves": [], 
+        "name": "Wash Rotom"
+      }
+    ], 
+    "team2": [
+      {
+        "item": null, 
+        "moves": [
+          "Knock Off"
+        ], 
+        "name": "Bisharp"
+      }, 
+      {
+        "item": null, 
+        "moves": [], 
+        "name": "Diggersby"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Stealth Rock"
+        ], 
+        "name": "Celebi"
+      }, 
+      {
+        "item": null, 
+        "moves": [], 
+        "name": "Keldeo"
+      }, 
+      {
+        "item": "Manectite", 
+        "moves": [
+          "Hidden Power", 
+          "Volt Switch"
+        ], 
+        "name": "Mega Manectric"
+      }, 
+      {
+        "item": null, 
+        "moves": [], 
+        "name": "Landorus"
+      }
+    ], 
+    "winner": "team1"
+  }, 
+  {
+    "team1": [
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Stone Edge"
+        ], 
+        "name": "Terrakion"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Toxic"
+        ], 
+        "name": "Jirachi"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Rain Dance", 
+          "Scald"
+        ], 
+        "name": "Manaphy"
+      }, 
+      {
+        "item": null, 
+        "moves": [], 
+        "name": "Latios"
+      }, 
+      {
+        "item": "Heracronite", 
+        "moves": [
+          "Close Combat"
+        ], 
+        "name": "Mega Heracross"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "U-turn", 
+          "Stone Edge"
+        ], 
+        "name": "Landorus Therian Form"
+      }
+    ], 
+    "team2": [
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Psyshock"
+        ], 
+        "name": "Latios"
+      }, 
+      {
+        "item": "Pinsirite", 
+        "moves": [
+          "Return", 
+          "Quick Attack"
+        ], 
+        "name": "Mega Pinsir"
+      }, 
+      {
+        "item": "Lum Berry", 
+        "moves": [
+          "Quiver Dance", 
+          "Fire Blast", 
+          "Giga Drain"
+        ], 
+        "name": "Volcarona"
+      }, 
+      {
+        "item": null, 
+        "moves": [], 
+        "name": "Slowbro"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Hidden Power"
+        ], 
+        "name": "Raikou"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Stealth Rock"
+        ], 
+        "name": "Cobalion"
+      }
+    ], 
+    "winner": "team2"
+  }, 
+  {
+    "team1": [
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Psyshock", 
+          "Draco Meteor"
+        ], 
+        "name": "Latios"
+      }, 
+      {
+        "item": "Metagrossite", 
+        "moves": [
+          "Agility", 
+          "Hammer Arm", 
+          "Meteor Mash", 
+          "Zen Headbutt"
+        ], 
+        "name": "Mega Metagross"
+      }, 
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Focus Blast", 
+          "Hidden Power", 
+          "Thunder Wave"
+        ], 
+        "name": "Thundurus"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Swords Dance"
+        ], 
+        "name": "Gliscor"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Superpower", 
+          "Aqua Jet"
+        ], 
+        "name": "Azumarill"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Stealth Rock", 
+          "Leech Seed"
+        ], 
+        "name": "Ferrothorn"
+      }
+    ], 
+    "team2": [
+      {
+        "item": "Altarianite", 
+        "moves": [
+          "Roost", 
+          "Hyper Voice"
+        ], 
+        "name": "Mega Altaria"
+      }, 
+      {
+        "item": null, 
+        "moves": [], 
+        "name": "Keldeo"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Stone Edge", 
+          "Pursuit", 
+          "Crunch"
+        ], 
+        "name": "Tyranitar"
+      }, 
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Hidden Power", 
+          "Earth Power"
+        ], 
+        "name": "Landorus"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Stealth Rock", 
+          "Leech Seed", 
+          "Protect"
+        ], 
+        "name": "Ferrothorn"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Pain Split"
+        ], 
+        "name": "Wash Rotom"
+      }
+    ], 
+    "winner": "team1"
+  }, 
+  {
+    "team1": [
+      {
+        "item": "Gardevoirite", 
+        "moves": [
+          "Will-O-Wisp"
+        ], 
+        "name": "Mega Gardevoir"
+      }, 
+      {
+        "item": "Rocky Helmet", 
+        "moves": [
+          "Brave Bird"
+        ], 
+        "name": "Talonflame"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [], 
+        "name": "Empoleon"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Nasty Plot", 
+          "Recover"
+        ], 
+        "name": "Celebi"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Hidden Power", 
+          "Shadow Ball", 
+          "Thunderbolt"
+        ], 
+        "name": "Raikou"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Stealth Rock", 
+          "Earthquake", 
+          "Slack Off", 
+          "Rock Slide"
+        ], 
+        "name": "Hippowdon"
+      }
+    ], 
+    "team2": [
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Earthquake", 
+          "Roost", 
+          "Hidden Power", 
+          "Draco Meteor"
+        ], 
+        "name": "Latios"
+      }, 
+      {
+        "item": "Metagrossite", 
+        "moves": [
+          "Pursuit"
+        ], 
+        "name": "Mega Metagross"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Roost", 
+          "Air Slash", 
+          "Nasty Plot"
+        ], 
+        "name": "Togekiss"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Scald", 
+          "Secret Sword"
+        ], 
+        "name": "Keldeo"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Calm Mind", 
+          "Hidden Power"
+        ], 
+        "name": "Raikou"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Stealth Rock"
+        ], 
+        "name": "Garchomp"
+      }
+    ], 
+    "winner": "team2"
+  }, 
+  {
+    "team1": [
+      {
+        "item": "Lopunnite", 
+        "moves": [
+          "Fake Out", 
+          "Ice Punch"
+        ], 
+        "name": "Mega Lopunny"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Recover", 
+          "Baton Pass", 
+          "Healing Wish"
+        ], 
+        "name": "Celebi"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Scald", 
+          "Rain Dance", 
+          "Rest"
+        ], 
+        "name": "Manaphy"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Stealth Rock"
+        ], 
+        "name": "Tyranitar"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Toxic"
+        ], 
+        "name": "Heatran"
+      }, 
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Swords Dance", 
+          "Earthquake", 
+          "Iron Head"
+        ], 
+        "name": "Excadrill"
+      }
+    ], 
+    "team2": [
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Calm Mind", 
+          "Psyshock", 
+          "Draco Meteor"
+        ], 
+        "name": "Latios"
+      }, 
+      {
+        "item": "Charizardite Y", 
+        "moves": [
+          "Flamethrower", 
+          "Focus Blast"
+        ], 
+        "name": "Mega Charizard Y"
+      }, 
+      {
+        "item": "Black Sludge", 
+        "moves": [
+          "Toxic Spikes", 
+          "Scald", 
+          "Rapid Spin"
+        ], 
+        "name": "Tentacruel"
+      }, 
+      {
+        "item": null, 
+        "moves": [], 
+        "name": "Tyranitar"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Stealth Rock", 
+          "Earthquake", 
+          "Slack Off"
+        ], 
+        "name": "Hippowdon"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Spikes", 
+          "Power Whip"
+        ], 
+        "name": "Ferrothorn"
+      }
+    ], 
+    "winner": "team2"
+  }, 
+  {
+    "team1": [
+      {
+        "item": null, 
+        "moves": [], 
+        "name": "Latios"
+      }, 
+      {
+        "item": null, 
+        "moves": [], 
+        "name": "Jirachi"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Scald", 
+          "Calm Mind", 
+          "Rest", 
+          "Sleep Talk"
+        ], 
+        "name": "Suicune"
+      }, 
+      {
+        "item": null, 
+        "moves": [], 
+        "name": "Hawlucha"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Stone Edge", 
+          "Earthquake"
+        ], 
+        "name": "Hippowdon"
+      }, 
+      {
+        "item": "Venusaurite", 
+        "moves": [
+          "Giga Drain"
+        ], 
+        "name": "Mega Venusaur"
+      }
+    ], 
+    "team2": [
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Draco Meteor", 
+          "Psyshock"
+        ], 
+        "name": "Latios"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Bulk Up", 
+          "Taunt", 
+          "Brave Bird"
+        ], 
+        "name": "Talonflame"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Knock Off"
+        ], 
+        "name": "Bisharp"
+      }, 
+      {
+        "item": null, 
+        "moves": [], 
+        "name": "Diancie"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Substitute", 
+          "Calm Mind", 
+          "Scald", 
+          "Secret Sword"
+        ], 
+        "name": "Keldeo"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Outrage"
+        ], 
+        "name": "Garchomp"
+      }
+    ], 
+    "winner": "team1"
+  }, 
+  {
+    "team1": [
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Knock Off", 
+          "Hurricane", 
+          "Superpower"
+        ], 
+        "name": "Tornadus Therian Form"
+      }, 
+      {
+        "item": "Gyaradosite", 
+        "moves": [
+          "Dragon Dance", 
+          "Substitute", 
+          "Crunch", 
+          "Waterfall"
+        ], 
+        "name": "Mega Gyarados"
+      }, 
+      {
+        "item": null, 
+        "moves": [], 
+        "name": "Clefable"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Sludge Wave", 
+          "Rock Polish"
+        ], 
+        "name": "Landorus"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Toxic", 
+          "Stealth Rock"
+        ], 
+        "name": "Heatran"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Spikes", 
+          "Thunder Wave", 
+          "Leech Seed"
+        ], 
+        "name": "Ferrothorn"
+      }
+    ], 
+    "team2": [
+      {
+        "item": null, 
+        "moves": [
+          "Defog"
+        ], 
+        "name": "Latios"
+      }, 
+      {
+        "item": "Charizardite Y", 
+        "moves": [
+          "Focus Blast", 
+          "Solar Beam", 
+          "Fire Blast"
+        ], 
+        "name": "Mega Charizard Y"
+      }, 
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Shadow Ball"
+        ], 
+        "name": "Gengar"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Stealth Rock"
+        ], 
+        "name": "Hippowdon"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Knock Off", 
+          "Gyro Ball"
+        ], 
+        "name": "Ferrothorn"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Will-O-Wisp", 
+          "Volt Switch"
+        ], 
+        "name": "Wash Rotom"
+      }
+    ], 
+    "winner": "team1"
+  }, 
+  {
+    "team1": [
+      {
+        "item": null, 
+        "moves": [
+          "Knock Off", 
+          "Earthquake"
+        ], 
+        "name": "Gliscor"
+      }, 
+      {
+        "item": "Slowbronite", 
+        "moves": [
+          "Scald", 
+          "Slack Off"
+        ], 
+        "name": "Mega Slowbro"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Pursuit"
+        ], 
+        "name": "Tyranitar"
+      }, 
+      {
+        "item": null, 
+        "moves": [], 
+        "name": "Gengar"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Calm Mind", 
+          "Thunder Wave", 
+          "Soft-Boiled", 
+          "Moonblast"
+        ], 
+        "name": "Clefable"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Stealth Rock", 
+          "Protect", 
+          "Leech Seed"
+        ], 
+        "name": "Ferrothorn"
+      }
+    ], 
+    "team2": [
+      {
+        "item": null, 
+        "moves": [
+          "Knock Off", 
+          "Swords Dance", 
+          "Roost"
+        ], 
+        "name": "Gliscor"
+      }, 
+      {
+        "item": "Charizardite Y", 
+        "moves": [
+          "Flare Blitz", 
+          "Earthquake"
+        ], 
+        "name": "Mega Charizard Y"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Scald", 
+          "Thunder Wave", 
+          "Psyshock"
+        ], 
+        "name": "Slowbro"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Defog", 
+          "Healing Wish"
+        ], 
+        "name": "Latias"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Crunch", 
+          "Fire Blast", 
+          "Iron Head"
+        ], 
+        "name": "Tyranitar"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Stealth Rock", 
+          "Leech Seed", 
+          "Hidden Power", 
+          "Power Whip"
+        ], 
+        "name": "Ferrothorn"
+      }
+    ], 
+    "winner": "team1"
+  }, 
+  {
+    "team1": [
+      {
+        "item": "Gardevoirite", 
+        "moves": [
+          "Hyper Voice"
+        ], 
+        "name": "Mega Gardevoir"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Roost", 
+          "Earthquake"
+        ], 
+        "name": "Gliscor"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Taunt", 
+          "Brave Bird", 
+          "Will-O-Wisp"
+        ], 
+        "name": "Talonflame"
+      }, 
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Psyshock", 
+          "Roost", 
+          "Defog"
+        ], 
+        "name": "Latias"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Stealth Rock", 
+          "Knock Off"
+        ], 
+        "name": "Ferrothorn"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Volt Switch"
+        ], 
+        "name": "Wash Rotom"
+      }
+    ], 
+    "team2": [
+      {
+        "item": "Latiasite", 
+        "moves": [
+          "Calm Mind", 
+          "Stored Power"
+        ], 
+        "name": "Mega Latias"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Stealth Rock", 
+          "Scald"
+        ], 
+        "name": "Empoleon"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Hidden Power"
+        ], 
+        "name": "Celebi"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Ice Beam"
+        ], 
+        "name": "Black Kyurem"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Close Combat", 
+          "Swords Dance", 
+          "Facade"
+        ], 
+        "name": "Heracross"
+      }, 
+      {
+        "item": "Choice Scarf", 
+        "moves": [
+          "Flash Cannon", 
+          "Overheat", 
+          "Ancient Power"
+        ], 
+        "name": "Heatran"
+      }
+    ], 
+    "winner": "team1"
+  }, 
+  {
+    "team1": [
+      {
+        "item": "Sablenite", 
+        "moves": [
+          "Knock Off", 
+          "Recover", 
+          "Stealth Rock", 
+          "Metal Burst", 
+          "Will-O-Wisp", 
+          "Toxic Spikes"
+        ], 
+        "name": "Mega Sableye"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Will-O-Wisp", 
+          "Roost"
+        ], 
+        "name": "Talonflame"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Rapid Spin", 
+          "Recover", 
+          "Scald"
+        ], 
+        "name": "Starmie"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Stealth Rock", 
+          "Slack Off", 
+          "Earthquake", 
+          "Stone Edge"
+        ], 
+        "name": "Hippowdon"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Moonblast", 
+          "Soft-Boiled", 
+          "Calm Mind"
+        ], 
+        "name": "Clefable"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Spikes", 
+          "Leech Seed"
+        ], 
+        "name": "Ferrothorn"
+      }
+    ], 
+    "team2": [
+      {
+        "item": "Gyaradosite", 
+        "moves": [
+          "Substitute", 
+          "Dragon Dance", 
+          "Crunch", 
+          "Waterfall"
+        ], 
+        "name": "Mega Gyarados"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Knock Off", 
+          "Moonblast", 
+          "Stealth Rock", 
+          "Soft-Boiled"
+        ], 
+        "name": "Clefable"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Knock Off", 
+          "Swords Dance", 
+          "Roost", 
+          "Bullet Punch"
+        ], 
+        "name": "Scizor"
+      }, 
+      {
+        "item": "Black Sludge", 
+        "moves": [
+          "Toxic Spikes"
+        ], 
+        "name": "Dragalge"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Stone Edge", 
+          "U-turn", 
+          "Earthquake"
+        ], 
+        "name": "Landorus Therian Form"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Volt Switch", 
+          "Hydro Pump", 
+          "Pain Split"
+        ], 
+        "name": "Wash Rotom"
+      }
+    ], 
+    "winner": "team2"
+  }, 
+  {
+    "team1": [
+      {
+        "item": null, 
+        "moves": [
+          "Knock Off", 
+          "U-turn", 
+          "Hurricane"
+        ], 
+        "name": "Tornadus Therian Form"
+      }, 
+      {
+        "item": "Charizardite X", 
+        "moves": [
+          "Dragon Dance", 
+          "Dragon Claw", 
+          "Flare Blitz"
+        ], 
+        "name": "Mega Charizard X"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Rapid Spin"
+        ], 
+        "name": "Starmie"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [], 
+        "name": "Hippowdon"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Soft-Boiled", 
+          "Moonblast"
+        ], 
+        "name": "Clefable"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Gyro Ball"
+        ], 
+        "name": "Ferrothorn"
+      }
+    ], 
+    "team2": [
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Stealth Rock", 
+          "Explosion"
+        ], 
+        "name": "Mew"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Switcheroo", 
+          "Spikes"
+        ], 
+        "name": "Klefki"
+      }, 
+      {
+        "item": "Lopunnite", 
+        "moves": [
+          "Fake Out", 
+          "Return"
+        ], 
+        "name": "Mega Lopunny"
+      }, 
+      {
+        "item": "Choice Scarf", 
+        "moves": [
+          "Hydro Pump"
+        ], 
+        "name": "Keldeo"
+      }, 
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Leaf Storm", 
+          "Giga Drain"
+        ], 
+        "name": "Serperior"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Substitute", 
+          "Sludge Wave", 
+          "Earth Power"
+        ], 
+        "name": "Landorus"
+      }
+    ], 
+    "winner": "team1"
+  }, 
+  {
+    "team1": [
+      {
+        "item": "Metagrossite", 
+        "moves": [
+          "Pursuit", 
+          "Meteor Mash"
+        ], 
+        "name": "Mega Metagross"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Future Sight"
+        ], 
+        "name": "Slowking"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Scald"
+        ], 
+        "name": "Keldeo"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Hidden Power", 
+          "Thunderbolt"
+        ], 
+        "name": "Raikou"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "U-turn", 
+          "Stone Edge", 
+          "Explosion"
+        ], 
+        "name": "Landorus Therian Form"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Stealth Rock", 
+          "Will-O-Wisp"
+        ], 
+        "name": "Heatran"
+      }
+    ], 
+    "team2": [
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Protect", 
+          "Wish", 
+          "Iron Head"
+        ], 
+        "name": "Jirachi"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Wood Hammer", 
+          "Drain Punch"
+        ], 
+        "name": "Chesnaught"
+      }, 
+      {
+        "item": "Charizardite Y", 
+        "moves": [
+          "Earthquake", 
+          "Roost"
+        ], 
+        "name": "Mega Charizard Y"
+      }, 
+      {
+        "item": "Black Sludge", 
+        "moves": [
+          "Toxic Spikes", 
+          "Rapid Spin", 
+          "Scald"
+        ], 
+        "name": "Tentacruel"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Stealth Rock", 
+          "Earthquake"
+        ], 
+        "name": "Hippowdon"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Thunder Wave"
+        ], 
+        "name": "Clefable"
+      }
+    ], 
+    "winner": "team2"
+  }, 
+  {
+    "team1": [
+      {
+        "item": "Life Orb", 
+        "moves": [], 
+        "name": "Latios"
+      }, 
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Aqua Jet"
+        ], 
+        "name": "Crawdaunt"
+      }, 
+      {
+        "item": "Scizorite", 
+        "moves": [
+          "Superpower", 
+          "Swords Dance", 
+          "Bullet Punch", 
+          "Bug Bite"
+        ], 
+        "name": "Mega Scizor"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Outrage"
+        ], 
+        "name": "Garchomp"
+      }, 
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Focus Blast", 
+          "Shadow Ball"
+        ], 
+        "name": "Gengar"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Toxic", 
+          "Protect"
+        ], 
+        "name": "Heatran"
+      }
+    ], 
+    "team2": [
+      {
+        "item": "Altarianite", 
+        "moves": [
+          "Frustration"
+        ], 
+        "name": "Mega Altaria"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Knock Off", 
+          "Swords Dance", 
+          "Roost", 
+          "Earthquake"
+        ], 
+        "name": "Gliscor"
+      }, 
+      {
+        "item": null, 
+        "moves": [], 
+        "name": "Slowbro"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Scald"
+        ], 
+        "name": "Keldeo"
+      }, 
+      {
+        "item": null, 
+        "moves": [], 
+        "name": "Tyranitar"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Leech Seed"
+        ], 
+        "name": "Ferrothorn"
+      }
+    ], 
+    "winner": "team2"
+  }, 
+  {
+    "team1": [
+      {
+        "item": null, 
+        "moves": [], 
+        "name": "Talonflame"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Fire Blast", 
+          "Scald"
+        ], 
+        "name": "Slowbro"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Leaf Storm", 
+          "Hidden Power"
+        ], 
+        "name": "Serperior"
+      }, 
+      {
+        "item": "Lopunnite", 
+        "moves": [
+          "Fake Out", 
+          "High Jump Kick", 
+          "Healing Wish"
+        ], 
+        "name": "Mega Lopunny"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Stealth Rock", 
+          "Earthquake", 
+          "Pursuit", 
+          "Stone Edge"
+        ], 
+        "name": "Tyranitar"
+      }, 
+      {
+        "item": "Air Balloon", 
+        "moves": [
+          "Rapid Spin", 
+          "Earthquake"
+        ], 
+        "name": "Excadrill"
+      }
+    ], 
+    "team2": [
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Brave Bird", 
+          "Roost"
+        ], 
+        "name": "Talonflame"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Rapid Spin", 
+          "Scald", 
+          "Recover"
+        ], 
+        "name": "Starmie"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Spikes", 
+          "Toxic"
+        ], 
+        "name": "Klefki"
+      }, 
+      {
+        "item": "Manectite", 
+        "moves": [
+          "Volt Switch"
+        ], 
+        "name": "Mega Manectric"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Stealth Rock", 
+          "Slack Off"
+        ], 
+        "name": "Hippowdon"
+      }, 
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Sludge Wave", 
+          "Hidden Power", 
+          "Earth Power", 
+          "Rock Polish"
+        ], 
+        "name": "Landorus"
+      }
+    ], 
+    "winner": "team2"
+  }, 
+  {
+    "team1": [
+      {
+        "item": null, 
+        "moves": [
+          "Draco Meteor"
+        ], 
+        "name": "Latios"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Stealth Rock"
+        ], 
+        "name": "Terrakion"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Scald"
+        ], 
+        "name": "Suicune"
+      }, 
+      {
+        "item": "Scizorite", 
+        "moves": [
+          "Roost", 
+          "Swords Dance", 
+          "Bullet Punch"
+        ], 
+        "name": "Mega Scizor"
+      }, 
+      {
+        "item": "Black Sludge", 
+        "moves": [
+          "Toxic Spikes", 
+          "Focus Blast"
+        ], 
+        "name": "Dragalge"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "U-turn", 
+          "Stone Edge"
+        ], 
+        "name": "Landorus Therian Form"
+      }
+    ], 
+    "team2": [
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Psyshock", 
+          "Draco Meteor"
+        ], 
+        "name": "Latios"
+      }, 
+      {
+        "item": "Metagrossite", 
+        "moves": [
+          "Zen Headbutt", 
+          "Grass Knot"
+        ], 
+        "name": "Mega Metagross"
+      }, 
+      {
+        "item": null, 
+        "moves": [], 
+        "name": "Clefable"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Volt Switch"
+        ], 
+        "name": "Raikou"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Stealth Rock", 
+          "U-turn", 
+          "Earthquake"
+        ], 
+        "name": "Landorus Therian Form"
+      }, 
+      {
+        "item": "Sitrus Berry", 
+        "moves": [
+          "Acrobatics"
+        ], 
+        "name": "Hawlucha"
+      }
+    ], 
+    "winner": "team2"
+  }, 
+  {
+    "team1": [
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Iron Head", 
+          "Healing Wish"
+        ], 
+        "name": "Jirachi"
+      }, 
+      {
+        "item": null, 
+        "moves": [], 
+        "name": "Volcarona"
+      }, 
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Draco Meteor", 
+          "Healing Wish"
+        ], 
+        "name": "Latias"
+      }, 
+      {
+        "item": null, 
+        "moves": [], 
+        "name": "Lopunny"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Calm Mind", 
+          "Secret Sword", 
+          "Substitute", 
+          "Scald"
+        ], 
+        "name": "Keldeo"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "U-turn", 
+          "Stealth Rock", 
+          "Earthquake"
+        ], 
+        "name": "Landorus Therian Form"
+      }
+    ], 
+    "team2": [
+      {
+        "item": null, 
+        "moves": [
+          "Roost", 
+          "Earthquake"
+        ], 
+        "name": "Gliscor"
+      }, 
+      {
+        "item": "Charizardite X", 
+        "moves": [], 
+        "name": "Mega Charizard X"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Will-O-Wisp", 
+          "Psychic", 
+          "Roost"
+        ], 
+        "name": "Mew"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Superpower"
+        ], 
+        "name": "Tyranitar"
+      }, 
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Sludge Wave"
+        ], 
+        "name": "Gengar"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Stealth Rock"
+        ], 
+        "name": "Ferrothorn"
+      }
+    ], 
+    "winner": "team1"
+  }, 
+  {
+    "team1": [
+      {
+        "item": "Metagrossite", 
+        "moves": [
+          "Meteor Mash", 
+          "Earthquake"
+        ], 
+        "name": "Mega Metagross"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Dazzling Gleam", 
+          "Air Slash", 
+          "Aura Sphere", 
+          "Roost"
+        ], 
+        "name": "Togekiss"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Recover", 
+          "Calm Mind", 
+          "Surf"
+        ], 
+        "name": "Latias"
+      }, 
+      {
+        "item": null, 
+        "moves": [], 
+        "name": "Scizor"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Stealth Rock"
+        ], 
+        "name": "Garchomp"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Shadow Ball", 
+          "Thunderbolt", 
+          "Volt Switch"
+        ], 
+        "name": "Jolteon"
+      }
+    ], 
+    "team2": [
+      {
+        "item": null, 
+        "moves": [], 
+        "name": "Latios"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Calm Mind", 
+          "Recover", 
+          "Will-O-Wisp"
+        ], 
+        "name": "Sableye"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Rapid Spin"
+        ], 
+        "name": "Tentacruel"
+      }, 
+      {
+        "item": "Rocky Helmet", 
+        "moves": [
+          "U-turn", 
+          "Stone Edge"
+        ], 
+        "name": "Landorus Therian Form"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Stealth Rock", 
+          "Moonblast"
+        ], 
+        "name": "Clefable"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Magma Storm", 
+          "Earth Power"
+        ], 
+        "name": "Heatran"
+      }
+    ], 
+    "winner": "team1"
+  }, 
+  {
+    "team1": [
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Hidden Power", 
+          "Recover"
+        ], 
+        "name": "Latios"
+      }, 
+      {
+        "item": "Gardevoirite", 
+        "moves": [
+          "Hyper Voice"
+        ], 
+        "name": "Mega Gardevoir"
+      }, 
+      {
+        "item": "Expert Belt", 
+        "moves": [
+          "Secret Sword", 
+          "Scald", 
+          "Hydro Pump"
+        ], 
+        "name": "Keldeo"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Earthquake", 
+          "Slack Off", 
+          "Stealth Rock", 
+          "Stone Edge"
+        ], 
+        "name": "Hippowdon"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Knock Off"
+        ], 
+        "name": "Ferrothorn"
+      }, 
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Iron Head"
+        ], 
+        "name": "Excadrill"
+      }
+    ], 
+    "team2": [
+      {
+        "item": "Altarianite", 
+        "moves": [
+          "Dragon Dance", 
+          "Return"
+        ], 
+        "name": "Mega Altaria"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Swords Dance", 
+          "Knock Off", 
+          "Earthquake"
+        ], 
+        "name": "Gliscor"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Wish", 
+          "Protect", 
+          "Stealth Rock", 
+          "Iron Head"
+        ], 
+        "name": "Jirachi"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Defog", 
+          "Healing Wish"
+        ], 
+        "name": "Latias"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Scald", 
+          "Secret Sword", 
+          "Icy Wind"
+        ], 
+        "name": "Keldeo"
+      }, 
+      {
+        "item": "Choice Scarf", 
+        "moves": [
+          "Hidden Power", 
+          "Flash Cannon"
+        ], 
+        "name": "Magnezone"
+      }
+    ], 
+    "winner": "team1"
+  }, 
+  {
+    "team1": [
+      {
+        "item": null, 
+        "moves": [
+          "U-turn", 
+          "Hurricane", 
+          "Heat Wave", 
+          "Knock Off"
+        ], 
+        "name": "Tornadus Therian Form"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Substitute", 
+          "Calm Mind", 
+          "Scald", 
+          "Secret Sword"
+        ], 
+        "name": "Keldeo"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Draco Meteor"
+        ], 
+        "name": "Latias"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Hidden Power", 
+          "Knock Off", 
+          "Earthquake"
+        ], 
+        "name": "Tangrowth"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "U-turn", 
+          "Defog", 
+          "Roost"
+        ], 
+        "name": "Scizor"
+      }, 
+      {
+        "item": "Tyranitarite", 
+        "moves": [
+          "Stealth Rock", 
+          "Earthquake"
+        ], 
+        "name": "Mega Tyranitar"
+      }
+    ], 
+    "team2": [
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Thunder Wave", 
+          "Protect", 
+          "Wish", 
+          "Iron Head"
+        ], 
+        "name": "Jirachi"
+      }, 
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Psyshock", 
+          "Rain Dance"
+        ], 
+        "name": "Latias"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Surf", 
+          "Hydro Pump"
+        ], 
+        "name": "Omastar"
+      }, 
+      {
+        "item": "Heracronite", 
+        "moves": [
+          "Close Combat"
+        ], 
+        "name": "Mega Heracross"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Protect", 
+          "Power Whip", 
+          "Stealth Rock"
+        ], 
+        "name": "Ferrothorn"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Toxic", 
+          "Rest", 
+          "Sleep Talk"
+        ], 
+        "name": "Politoed"
+      }
+    ], 
+    "winner": "team2"
+  }, 
+  {
+    "team1": [
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Wish", 
+          "Body Slam"
+        ], 
+        "name": "Jirachi"
+      }, 
+      {
+        "item": null, 
+        "moves": [], 
+        "name": "Gliscor"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Scald"
+        ], 
+        "name": "Keldeo"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Crunch", 
+          "Pursuit"
+        ], 
+        "name": "Tyranitar"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Stealth Rock", 
+          "Knock Off", 
+          "Moonblast"
+        ], 
+        "name": "Clefable"
+      }, 
+      {
+        "item": "Venusaurite", 
+        "moves": [
+          "Hidden Power", 
+          "Giga Drain"
+        ], 
+        "name": "Mega Venusaur"
+      }
+    ], 
+    "team2": [
+      {
+        "item": "Metagrossite", 
+        "moves": [
+          "Meteor Mash"
+        ], 
+        "name": "Mega Metagross"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Earth Power", 
+          "Giga Drain", 
+          "Recover"
+        ], 
+        "name": "Celebi"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Thunder Wave", 
+          "Stealth Rock", 
+          "Pursuit"
+        ], 
+        "name": "Tyranitar"
+      }, 
+      {
+        "item": "Rocky Helmet", 
+        "moves": [
+          "Spikes"
+        ], 
+        "name": "Skarmory"
+      }, 
+      {
+        "item": null, 
+        "moves": [], 
+        "name": "Raikou"
+      }, 
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Substitute", 
+          "Sludge Wave", 
+          "Hidden Power", 
+          "Earth Power"
+        ], 
+        "name": "Landorus"
+      }
+    ], 
+    "winner": "team2"
+  }, 
+  {
+    "team1": [
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Draco Meteor", 
+          "Roost"
+        ], 
+        "name": "Latios"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Facade"
+        ], 
+        "name": "Gliscor"
+      }, 
+      {
+        "item": "Gyaradosite", 
+        "moves": [
+          "Waterfall", 
+          "Substitute", 
+          "Dragon Dance", 
+          "Crunch"
+        ], 
+        "name": "Mega Gyarados"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Pursuit", 
+          "Crunch"
+        ], 
+        "name": "Tyranitar"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Calm Mind", 
+          "Flamethrower", 
+          "Soft-Boiled"
+        ], 
+        "name": "Clefable"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Protect", 
+          "Power Whip", 
+          "Stealth Rock", 
+          "Leech Seed"
+        ], 
+        "name": "Ferrothorn"
+      }
+    ], 
+    "team2": [
+      {
+        "item": "Metagrossite", 
+        "moves": [
+          "Hammer Arm", 
+          "Pursuit"
+        ], 
+        "name": "Mega Metagross"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Hidden Power"
+        ], 
+        "name": "Starmie"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Scald", 
+          "Energy Ball"
+        ], 
+        "name": "Manaphy"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Stealth Rock", 
+          "Earthquake"
+        ], 
+        "name": "Hippowdon"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Superpower"
+        ], 
+        "name": "Landorus Therian Form"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Knock Off", 
+          "U-turn", 
+          "Heat Wave"
+        ], 
+        "name": "Tornadus Therian Form"
+      }
+    ], 
+    "winner": "team1"
+  }, 
+  {
+    "team1": [
+      {
+        "item": null, 
+        "moves": [], 
+        "name": "Talonflame"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Earthquake"
+        ], 
+        "name": "Tangrowth"
+      }, 
+      {
+        "item": null, 
+        "moves": [], 
+        "name": "Manectric"
+      }, 
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Earth Power", 
+          "Rock Polish", 
+          "Hidden Power"
+        ], 
+        "name": "Landorus"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Stone Edge", 
+          "Stealth Rock"
+        ], 
+        "name": "Tyranitar"
+      }, 
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Earthquake", 
+          "Rapid Spin"
+        ], 
+        "name": "Excadrill"
+      }
+    ], 
+    "team2": [
+      {
+        "item": "Metagrossite", 
+        "moves": [
+          "Meteor Mash"
+        ], 
+        "name": "Mega Metagross"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Brave Bird", 
+          "Will-O-Wisp", 
+          "Roost"
+        ], 
+        "name": "Talonflame"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Scald"
+        ], 
+        "name": "Starmie"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Stealth Rock", 
+          "Stone Edge"
+        ], 
+        "name": "Hippowdon"
+      }, 
+      {
+        "item": null, 
+        "moves": [], 
+        "name": "Landorus"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Power Whip"
+        ], 
+        "name": "Ferrothorn"
+      }
+    ], 
+    "winner": "team1"
+  }, 
+  {
+    "team1": [
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Gunk Shot", 
+          "Sucker Punch"
+        ], 
+        "name": "Toxicroak"
+      }, 
+      {
+        "item": "Latiasite", 
+        "moves": [
+          "Recover", 
+          "Calm Mind", 
+          "Stored Power"
+        ], 
+        "name": "Mega Latias"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Scald"
+        ], 
+        "name": "Omastar"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Stealth Rock"
+        ], 
+        "name": "Ferrothorn"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Scald", 
+          "Encore"
+        ], 
+        "name": "Politoed"
+      }, 
+      {
+        "item": null, 
+        "moves": [], 
+        "name": "Kingdra"
+      }
+    ], 
+    "team2": [
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Substitute", 
+          "Fire Punch", 
+          "Iron Head", 
+          "Toxic"
+        ], 
+        "name": "Jirachi"
+      }, 
+      {
+        "item": "Charizardite X", 
+        "moves": [
+          "Flare Blitz", 
+          "Dragon Dance", 
+          "Dragon Claw"
+        ], 
+        "name": "Mega Charizard X"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Rapid Spin"
+        ], 
+        "name": "Tentacruel"
+      }, 
+      {
+        "item": null, 
+        "moves": [], 
+        "name": "Thundurus"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Stealth Rock", 
+          "U-turn"
+        ], 
+        "name": "Landorus Therian Form"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Knock Off"
+        ], 
+        "name": "Azumarill"
+      }
+    ], 
+    "winner": "team2"
+  }, 
+  {
+    "team1": [
+      {
+        "item": "Metagrossite", 
+        "moves": [
+          "Zen Headbutt"
+        ], 
+        "name": "Mega Metagross"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Scald", 
+          "Slack Off", 
+          "Psyshock"
+        ], 
+        "name": "Slowbro"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Scald"
+        ], 
+        "name": "Keldeo"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Dragon Claw", 
+          "Earthquake"
+        ], 
+        "name": "Garchomp"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "U-turn"
+        ], 
+        "name": "Landorus Therian Form"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Calm Mind", 
+          "Thunderbolt", 
+          "Hidden Power"
+        ], 
+        "name": "Raikou"
+      }
+    ], 
+    "team2": [
+      {
+        "item": null, 
+        "moves": [
+          "Tailwind", 
+          "Encore"
+        ], 
+        "name": "Whimsicott"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Electro Ball"
+        ], 
+        "name": "Pikachu"
+      }, 
+      {
+        "item": "Gyaradosite", 
+        "moves": [
+          "Dragon Dance", 
+          "Earthquake", 
+          "Crunch", 
+          "Taunt"
+        ], 
+        "name": "Mega Gyarados"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Reflect", 
+          "Taunt", 
+          "Stealth Rock", 
+          "Light Screen"
+        ], 
+        "name": "Azelf"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Earth Power", 
+          "Rock Polish", 
+          "Sludge Wave"
+        ], 
+        "name": "Landorus"
+      }, 
+      {
+        "item": "White Herb", 
+        "moves": [
+          "Shell Smash", 
+          "Surf"
+        ], 
+        "name": "Gorebyss"
+      }
+    ], 
+    "winner": "team2"
+  }, 
+  {
+    "team1": [
+      {
+        "item": "Gardevoirite", 
+        "moves": [
+          "Hyper Voice", 
+          "Calm Mind", 
+          "Psyshock"
+        ], 
+        "name": "Mega Gardevoir"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Healing Wish"
+        ], 
+        "name": "Latias"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Calm Mind", 
+          "Secret Sword", 
+          "Hydro Pump", 
+          "Hidden Power"
+        ], 
+        "name": "Keldeo"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Stealth Rock"
+        ], 
+        "name": "Hippowdon"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Knock Off", 
+          "Power Whip"
+        ], 
+        "name": "Ferrothorn"
+      }, 
+      {
+        "item": null, 
+        "moves": [], 
+        "name": "Excadrill"
+      }
+    ], 
+    "team2": [
+      {
+        "item": "Sablenite", 
+        "moves": [
+          "Knock Off", 
+          "Will-O-Wisp", 
+          "Recover"
+        ], 
+        "name": "Mega Sableye"
+      }, 
+      {
+        "item": null, 
+        "moves": [], 
+        "name": "Gliscor"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Stealth Rock", 
+          "Earthquake"
+        ], 
+        "name": "Bronzong"
+      }, 
+      {
+        "item": "Black Sludge", 
+        "moves": [
+          "Rapid Spin", 
+          "Toxic Spikes"
+        ], 
+        "name": "Tentacruel"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Calm Mind", 
+          "Recover", 
+          "Stored Power"
+        ], 
+        "name": "Latias"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Wish"
+        ], 
+        "name": "Clefable"
+      }
+    ], 
+    "winner": "team1"
+  }, 
+  {
+    "team1": [
+      {
+        "item": "Altarianite", 
+        "moves": [
+          "Roost", 
+          "Facade"
+        ], 
+        "name": "Mega Altaria"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Swords Dance", 
+          "Facade", 
+          "Roost", 
+          "Earthquake"
+        ], 
+        "name": "Gliscor"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Scald"
+        ], 
+        "name": "Starmie"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Shadow Ball", 
+          "Recover", 
+          "Calm Mind", 
+          "Psyshock"
+        ], 
+        "name": "Reuniclus"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Stealth Rock"
+        ], 
+        "name": "Heatran"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Protect", 
+          "Spikes"
+        ], 
+        "name": "Ferrothorn"
+      }
+    ], 
+    "team2": [
+      {
+        "item": "Metagrossite", 
+        "moves": [
+          "Hammer Arm", 
+          "Grass Knot", 
+          "Meteor Mash"
+        ], 
+        "name": "Mega Metagross"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Scald", 
+          "Psyshock", 
+          "Slack Off"
+        ], 
+        "name": "Slowbro"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Stealth Rock", 
+          "Moonblast"
+        ], 
+        "name": "Clefable"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Hidden Power", 
+          "Secret Sword", 
+          "Scald", 
+          "Hydro Pump"
+        ], 
+        "name": "Keldeo"
+      }, 
+      {
+        "item": "Black Sludge", 
+        "moves": [
+          "Spore", 
+          "Hidden Power", 
+          "Giga Drain", 
+          "Clear Smog"
+        ], 
+        "name": "Amoonguss"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "U-turn", 
+          "Earthquake", 
+          "Stone Edge"
+        ], 
+        "name": "Landorus Therian Form"
+      }
+    ], 
+    "winner": "team1"
+  }, 
+  {
+    "team1": [
+      {
+        "item": null, 
+        "moves": [
+          "Swords Dance", 
+          "Earthquake"
+        ], 
+        "name": "Gliscor"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Trick Room", 
+          "Gyro Ball", 
+          "Explosion"
+        ], 
+        "name": "Bronzong"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Trick Room", 
+          "Scald"
+        ], 
+        "name": "Slowking"
+      }, 
+      {
+        "item": "Black Sludge", 
+        "moves": [
+          "Toxic Spikes", 
+          "Scald"
+        ], 
+        "name": "Tentacruel"
+      }, 
+      {
+        "item": "Abomasite", 
+        "moves": [
+          "Blizzard", 
+          "Ice Shard", 
+          "Earthquake"
+        ], 
+        "name": "Mega Abomasnow"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Stealth Rock", 
+          "Thunder Wave"
+        ], 
+        "name": "Clefable"
+      }
+    ], 
+    "team2": [
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Defog", 
+          "Roost", 
+          "Thunderbolt", 
+          "Draco Meteor"
+        ], 
+        "name": "Latios"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Swords Dance", 
+          "Facade", 
+          "Roost"
+        ], 
+        "name": "Gliscor"
+      }, 
+      {
+        "item": "Lum Berry", 
+        "moves": [
+          "Quiver Dance", 
+          "Fire Blast"
+        ], 
+        "name": "Volcarona"
+      }, 
+      {
+        "item": "Diancite", 
+        "moves": [
+          "Protect", 
+          "Moonblast"
+        ], 
+        "name": "Mega Diancie"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Volt Switch", 
+          "Thunderbolt"
+        ], 
+        "name": "Raikou"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Thunder Wave", 
+          "Stealth Rock", 
+          "Power Whip"
+        ], 
+        "name": "Ferrothorn"
+      }
+    ], 
+    "winner": "team2"
+  }, 
+  {
+    "team1": [
+      {
+        "item": null, 
+        "moves": [
+          "Stealth Rock"
+        ], 
+        "name": "Terrakion"
+      }, 
+      {
+        "item": null, 
+        "moves": [], 
+        "name": "Altaria"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Earthquake", 
+          "Swords Dance", 
+          "Facade"
+        ], 
+        "name": "Gliscor"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Fire Punch"
+        ], 
+        "name": "Jirachi"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Hurricane"
+        ], 
+        "name": "Tornadus Therian Form"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Will-O-Wisp", 
+          "Hydro Pump", 
+          "Volt Switch"
+        ], 
+        "name": "Wash Rotom"
+      }
+    ], 
+    "team2": [
+      {
+        "item": "Metagrossite", 
+        "moves": [
+          "Pursuit", 
+          "Zen Headbutt"
+        ], 
+        "name": "Mega Metagross"
+      }, 
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Hydro Pump", 
+          "Rapid Spin"
+        ], 
+        "name": "Starmie"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Earthquake", 
+          "Stealth Rock", 
+          "Dragon Tail", 
+          "Toxic"
+        ], 
+        "name": "Garchomp"
+      }, 
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Thunderbolt"
+        ], 
+        "name": "Thundurus Therian Form"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Thunder Wave"
+        ], 
+        "name": "Clefable"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Fusion Bolt", 
+          "Ice Beam"
+        ], 
+        "name": "Black Kyurem"
+      }
+    ], 
+    "winner": "team2"
+  }, 
+  {
+    "team1": [
+      {
+        "item": null, 
+        "moves": [
+          "Defog"
+        ], 
+        "name": "Latios"
+      }, 
+      {
+        "item": "Charizardite Y", 
+        "moves": [
+          "Roost", 
+          "Solar Beam", 
+          "Fire Blast"
+        ], 
+        "name": "Mega Charizard Y"
+      }, 
+      {
+        "item": null, 
+        "moves": [], 
+        "name": "Thundurus"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Hydro Pump"
+        ], 
+        "name": "Keldeo"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Sucker Punch", 
+          "Pursuit"
+        ], 
+        "name": "Bisharp"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Stealth Rock", 
+          "Slack Off"
+        ], 
+        "name": "Hippowdon"
+      }
+    ], 
+    "team2": [
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Draco Meteor"
+        ], 
+        "name": "Latios"
+      }, 
+      {
+        "item": "Beedrillite", 
+        "moves": [
+          "Protect", 
+          "U-turn", 
+          "Poison Jab", 
+          "Knock Off"
+        ], 
+        "name": "Mega Beedrill"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Stealth Rock"
+        ], 
+        "name": "Hippowdon"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Moonblast", 
+          "Ice Beam"
+        ], 
+        "name": "Clefable"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Volt Switch"
+        ], 
+        "name": "Wash Rotom"
+      }, 
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Rapid Spin", 
+          "Earthquake"
+        ], 
+        "name": "Excadrill"
+      }
+    ], 
+    "winner": "team2"
+  }, 
+  {
+    "team1": [
+      {
+        "item": "Black Sludge", 
+        "moves": [
+          "Knock Off", 
+          "Toxic Spikes"
+        ], 
+        "name": "Tentacruel"
+      }, 
+      {
+        "item": null, 
+        "moves": [], 
+        "name": "Latias"
+      }, 
+      {
+        "item": null, 
+        "moves": [], 
+        "name": "Bisharp"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Slack Off", 
+          "Stealth Rock", 
+          "Earthquake"
+        ], 
+        "name": "Hippowdon"
+      }, 
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Hidden Power", 
+          "Rock Polish", 
+          "Earth Power"
+        ], 
+        "name": "Landorus"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Leech Seed", 
+          "Power Whip", 
+          "Protect", 
+          "Spikes"
+        ], 
+        "name": "Ferrothorn"
+      }
+    ], 
+    "team2": [
+      {
+        "item": "Metagrossite", 
+        "moves": [
+          "Hammer Arm"
+        ], 
+        "name": "Mega Metagross"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Fiery Dance"
+        ], 
+        "name": "Volcarona"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Scald", 
+          "Psyshock", 
+          "Rapid Spin"
+        ], 
+        "name": "Starmie"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Stealth Rock", 
+          "Earthquake", 
+          "Toxic"
+        ], 
+        "name": "Garchomp"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Swords Dance", 
+          "Earthquake", 
+          "Roost", 
+          "Facade"
+        ], 
+        "name": "Gliscor"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Spikes", 
+          "Gyro Ball", 
+          "Protect", 
+          "Leech Seed"
+        ], 
+        "name": "Ferrothorn"
+      }
+    ], 
+    "winner": "team1"
+  }, 
+  {
+    "team1": [
+      {
+        "item": null, 
+        "moves": [], 
+        "name": "Reuniclus"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Stealth Rock", 
+          "Toxic", 
+          "Earthquake", 
+          "Slack Off"
+        ], 
+        "name": "Hippowdon"
+      }, 
+      {
+        "item": "Latiasite", 
+        "moves": [
+          "Dragon Pulse", 
+          "Thunder Wave", 
+          "Roost"
+        ], 
+        "name": "Mega Latias"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Heat Wave"
+        ], 
+        "name": "Zapdos"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Calm Mind", 
+          "Soft-Boiled", 
+          "Moonblast"
+        ], 
+        "name": "Clefable"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Gyro Ball"
+        ], 
+        "name": "Ferrothorn"
+      }
+    ], 
+    "team2": [
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Surf"
+        ], 
+        "name": "Latios"
+      }, 
+      {
+        "item": "Metagrossite", 
+        "moves": [
+          "Pursuit"
+        ], 
+        "name": "Mega Metagross"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Stealth Rock", 
+          "Dragon Tail", 
+          "Earthquake"
+        ], 
+        "name": "Garchomp"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Thunder Wave"
+        ], 
+        "name": "Thundurus"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Earth Power", 
+          "Sludge Wave"
+        ], 
+        "name": "Landorus"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Shadow Ball", 
+          "Thunderbolt"
+        ], 
+        "name": "Raikou"
+      }
+    ], 
+    "winner": "team1"
+  }, 
+  {
+    "team1": [
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Earthquake", 
+          "Dragon Dance", 
+          "Zen Headbutt"
+        ], 
+        "name": "Latios"
+      }, 
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Hydro Pump"
+        ], 
+        "name": "Starmie"
+      }, 
+      {
+        "item": null, 
+        "moves": [], 
+        "name": "Dragonite"
+      }, 
+      {
+        "item": "Scizorite", 
+        "moves": [
+          "Swords Dance", 
+          "Bug Bite"
+        ], 
+        "name": "Mega Scizor"
+      }, 
+      {
+        "item": "Lum Berry", 
+        "moves": [
+          "Outrage"
+        ], 
+        "name": "Garchomp"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Hidden Power", 
+          "Volt Switch", 
+          "Flash Cannon", 
+          "Thunderbolt"
+        ], 
+        "name": "Magnezone"
+      }
+    ], 
+    "team2": [
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Draco Meteor"
+        ], 
+        "name": "Latios"
+      }, 
+      {
+        "item": "Gyaradosite", 
+        "moves": [
+          "Dragon Dance", 
+          "Substitute", 
+          "Waterfall", 
+          "Crunch"
+        ], 
+        "name": "Mega Gyarados"
+      }, 
+      {
+        "item": null, 
+        "moves": [], 
+        "name": "Slowbro"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [], 
+        "name": "Clefable"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Fire Blast"
+        ], 
+        "name": "Heatran"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Stealth Rock", 
+          "Leech Seed"
+        ], 
+        "name": "Ferrothorn"
+      }
+    ], 
+    "winner": "team2"
+  }, 
+  {
+    "team1": [
+      {
+        "item": "Altarianite", 
+        "moves": [
+          "Return"
+        ], 
+        "name": "Mega Altaria"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Flash Cannon"
+        ], 
+        "name": "Magneton"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Roost", 
+          "Bug Buzz"
+        ], 
+        "name": "Volcarona"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Scald", 
+          "Calm Mind", 
+          "Psyshock", 
+          "Slack Off"
+        ], 
+        "name": "Slowbro"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Stealth Rock", 
+          "Roost", 
+          "Whirlwind", 
+          "Defog"
+        ], 
+        "name": "Skarmory"
+      }, 
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Sludge Wave", 
+          "Knock Off", 
+          "Earth Power"
+        ], 
+        "name": "Landorus"
+      }
+    ], 
+    "team2": [
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Swords Dance", 
+          "Stone Edge"
+        ], 
+        "name": "Terrakion"
+      }, 
+      {
+        "item": "Altarianite", 
+        "moves": [
+          "Dragon Dance", 
+          "Frustration", 
+          "Roost"
+        ], 
+        "name": "Mega Altaria"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Taunt", 
+          "Brave Bird", 
+          "Roost", 
+          "Bulk Up"
+        ], 
+        "name": "Talonflame"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Will-O-Wisp", 
+          "Defog", 
+          "Soft-Boiled", 
+          "Psychic"
+        ], 
+        "name": "Mew"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Stealth Rock", 
+          "Fire Blast", 
+          "Toxic"
+        ], 
+        "name": "Garchomp"
+      }, 
+      {
+        "item": "Chesto Berry", 
+        "moves": [
+          "Volt Switch", 
+          "Thunder Wave", 
+          "Rest", 
+          "Hydro Pump"
+        ], 
+        "name": "Wash Rotom"
+      }
+    ], 
+    "winner": "team1"
+  }, 
+  {
+    "team1": [
+      {
+        "item": null, 
+        "moves": [
+          "Will-O-Wisp", 
+          "Taunt"
+        ], 
+        "name": "Talonflame"
+      }, 
+      {
+        "item": "Slowbronite", 
+        "moves": [
+          "Scald", 
+          "Slack Off", 
+          "Calm Mind", 
+          "Psyshock"
+        ], 
+        "name": "Mega Slowbro"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Defog", 
+          "Scald"
+        ], 
+        "name": "Empoleon"
+      }, 
+      {
+        "item": "Black Sludge", 
+        "moves": [
+          "Spore"
+        ], 
+        "name": "Amoonguss"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Stealth Rock", 
+          "Slack Off", 
+          "Stone Edge", 
+          "Earthquake"
+        ], 
+        "name": "Hippowdon"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Calm Mind", 
+          "Soft-Boiled", 
+          "Focus Blast", 
+          "Moonblast"
+        ], 
+        "name": "Clefable"
+      }
+    ], 
+    "team2": [
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Recover", 
+          "Psyshock", 
+          "Draco Meteor"
+        ], 
+        "name": "Latios"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Knock Off", 
+          "Swords Dance", 
+          "Roost", 
+          "Earthquake"
+        ], 
+        "name": "Gliscor"
+      }, 
+      {
+        "item": "Slowbronite", 
+        "moves": [
+          "Calm Mind", 
+          "Slack Off", 
+          "Scald", 
+          "Psyshock"
+        ], 
+        "name": "Mega Slowbro"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Pursuit", 
+          "Stone Edge"
+        ], 
+        "name": "Tyranitar"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Calm Mind", 
+          "Moonblast"
+        ], 
+        "name": "Clefable"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Lava Plume", 
+          "Stealth Rock", 
+          "Toxic", 
+          "Taunt"
+        ], 
+        "name": "Heatran"
+      }
+    ], 
+    "winner": "team2"
+  }, 
+  {
+    "team1": [
+      {
+        "item": "Altarianite", 
+        "moves": [
+          "Hyper Voice"
+        ], 
+        "name": "Mega Altaria"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Taunt", 
+          "Brave Bird", 
+          "Will-O-Wisp"
+        ], 
+        "name": "Talonflame"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Scald", 
+          "Calm Mind"
+        ], 
+        "name": "Suicune"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "U-turn", 
+          "Defog"
+        ], 
+        "name": "Scizor"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Stealth Rock", 
+          "U-turn"
+        ], 
+        "name": "Landorus Therian Form"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Knock Off", 
+          "Leech Seed", 
+          "Spikes", 
+          "Power Whip"
+        ], 
+        "name": "Ferrothorn"
+      }
+    ], 
+    "team2": [
+      {
+        "item": null, 
+        "moves": [
+          "Stealth Rock"
+        ], 
+        "name": "Dugtrio"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Swords Dance", 
+          "Roost", 
+          "Acrobatics"
+        ], 
+        "name": "Talonflame"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Scald", 
+          "Calm Mind"
+        ], 
+        "name": "Slowbro"
+      }, 
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Defog", 
+          "Psyshock", 
+          "Roost"
+        ], 
+        "name": "Latias"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Soft-Boiled", 
+          "Moonblast", 
+          "Calm Mind", 
+          "Stored Power"
+        ], 
+        "name": "Clefable"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Protect", 
+          "Power Whip"
+        ], 
+        "name": "Ferrothorn"
+      }
+    ], 
+    "winner": "team1"
+  }, 
+  {
+    "team1": [
+      {
+        "item": "Scizorite", 
+        "moves": [
+          "Roost", 
+          "Swords Dance", 
+          "Bullet Punch"
+        ], 
+        "name": "Mega Scizor"
+      }, 
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Psyshock", 
+          "Healing Wish"
+        ], 
+        "name": "Latias"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Scald"
+        ], 
+        "name": "Keldeo"
+      }, 
+      {
+        "item": "Smooth Rock", 
+        "moves": [
+          "Fire Blast"
+        ], 
+        "name": "Tyranitar"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Will-O-Wisp", 
+          "Hydro Pump", 
+          "Pain Split", 
+          "Volt Switch"
+        ], 
+        "name": "Wash Rotom"
+      }, 
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Iron Head", 
+          "Rock Slide", 
+          "Earthquake"
+        ], 
+        "name": "Excadrill"
+      }
+    ], 
+    "team2": [
+      {
+        "item": "Metagrossite", 
+        "moves": [
+          "Meteor Mash", 
+          "Zen Headbutt"
+        ], 
+        "name": "Mega Metagross"
+      }, 
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Megahorn"
+        ], 
+        "name": "Scolipede"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Scald"
+        ], 
+        "name": "Keldeo"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Dragon Claw", 
+          "Stealth Rock"
+        ], 
+        "name": "Garchomp"
+      }, 
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Knock Off", 
+          "Thunderbolt"
+        ], 
+        "name": "Thundurus"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Calm Mind", 
+          "Fire Blast", 
+          "Soft-Boiled"
+        ], 
+        "name": "Clefable"
+      }
+    ], 
+    "winner": "team1"
+  }, 
+  {
+    "team1": [
+      {
+        "item": "Charizardite X", 
+        "moves": [
+          "Dragon Claw"
+        ], 
+        "name": "Mega Charizard X"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Thunder Wave", 
+          "Dazzling Gleam", 
+          "Magnet Rise"
+        ], 
+        "name": "Klefki"
+      }, 
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Draco Meteor"
+        ], 
+        "name": "Latias"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Swords Dance"
+        ], 
+        "name": "Lucario"
+      }, 
+      {
+        "item": "Passho Berry", 
+        "moves": [
+          "Stealth Rock", 
+          "Earthquake", 
+          "Knock Off"
+        ], 
+        "name": "Landorus Therian Form"
+      }, 
+      {
+        "item": null, 
+        "moves": [], 
+        "name": "Wash Rotom"
+      }
+    ], 
+    "team2": [
+      {
+        "item": "Metagrossite", 
+        "moves": [
+          "Pursuit"
+        ], 
+        "name": "Mega Metagross"
+      }, 
+      {
+        "item": "Life Orb", 
+        "moves": [], 
+        "name": "Latias"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Scald", 
+          "Energy Ball"
+        ], 
+        "name": "Manaphy"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Stealth Rock", 
+          "Dragon Tail"
+        ], 
+        "name": "Garchomp"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Thunderbolt"
+        ], 
+        "name": "Thundurus Therian Form"
+      }, 
+      {
+        "item": null, 
+        "moves": [], 
+        "name": "Landorus Therian Form"
+      }
+    ], 
+    "winner": "team2"
+  }, 
+  {
+    "team1": [
+      {
+        "item": "Aerodactylite", 
+        "moves": [
+          "Hone Claws", 
+          "Aqua Tail", 
+          "Roost", 
+          "Stone Edge"
+        ], 
+        "name": "Mega Aerodactyl"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Toxic", 
+          "Stealth Rock", 
+          "Earthquake"
+        ], 
+        "name": "Bronzong"
+      }, 
+      {
+        "item": "Black Sludge", 
+        "moves": [
+          "Toxic Spikes", 
+          "Scald"
+        ], 
+        "name": "Tentacruel"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Knock Off", 
+          "Taunt", 
+          "Earthquake", 
+          "Pursuit"
+        ], 
+        "name": "Krookodile"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Moonblast", 
+          "Synthesis", 
+          "Calm Mind"
+        ], 
+        "name": "Florges"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Thunderbolt"
+        ], 
+        "name": "Mow Rotom"
+      }
+    ], 
+    "team2": [
+      {
+        "item": "Aerodactylite", 
+        "moves": [
+          "Aerial Ace"
+        ], 
+        "name": "Mega Aerodactyl"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Stealth Rock", 
+          "Stone Edge", 
+          "Earthquake", 
+          "Slack Off"
+        ], 
+        "name": "Hippowdon"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Scald", 
+          "Defog", 
+          "Ice Beam", 
+          "Roar"
+        ], 
+        "name": "Empoleon"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Frustration", 
+          "Wild Charge"
+        ], 
+        "name": "Stoutland"
+      }, 
+      {
+        "item": null, 
+        "moves": [], 
+        "name": "Salamence"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Focus Blast", 
+          "Calm Mind", 
+          "Psyshock"
+        ], 
+        "name": "Reuniclus"
+      }
+    ], 
+    "winner": "team1"
+  }, 
+  {
+    "team1": [
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Draco Meteor", 
+          "Recover"
+        ], 
+        "name": "Latios"
+      }, 
+      {
+        "item": "Metagrossite", 
+        "moves": [
+          "Meteor Mash", 
+          "Zen Headbutt"
+        ], 
+        "name": "Mega Metagross"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Psychic", 
+          "Shadow Ball", 
+          "Hidden Power"
+        ], 
+        "name": "Alakazam"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Stealth Rock", 
+          "Toxic"
+        ], 
+        "name": "Garchomp"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Soft-Boiled", 
+          "Moonblast"
+        ], 
+        "name": "Clefable"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Knock Off"
+        ], 
+        "name": "Gliscor"
+      }
+    ], 
+    "team2": [
+      {
+        "item": "Rocky Helmet", 
+        "moves": [
+          "Return", 
+          "High Jump Kick"
+        ], 
+        "name": "Mega Lopunny"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Stealth Rock", 
+          "Psychic"
+        ], 
+        "name": "Celebi"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Tail Glow", 
+          "Surf"
+        ], 
+        "name": "Manaphy"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Pursuit", 
+          "Crunch"
+        ], 
+        "name": "Tyranitar"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Calm Mind"
+        ], 
+        "name": "Reuniclus"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Sludge Wave"
+        ], 
+        "name": "Landorus"
+      }
+    ], 
+    "winner": "team1"
+  }, 
+  {
+    "team1": [
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Draco Meteor"
+        ], 
+        "name": "Latios"
+      }, 
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Megahorn"
+        ], 
+        "name": "Scolipede"
+      }, 
+      {
+        "item": "Alakazite", 
+        "moves": [
+          "Psychic", 
+          "Protect", 
+          "Shadow Ball"
+        ], 
+        "name": "Mega Alakazam"
+      }, 
+      {
+        "item": "Power Herb", 
+        "moves": [
+          "High Jump Kick", 
+          "Sky Attack", 
+          "Acrobatics"
+        ], 
+        "name": "Hawlucha"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Earthquake", 
+          "Explosion"
+        ], 
+        "name": "Landorus Therian Form"
+      }, 
+      {
+        "item": "Power Herb", 
+        "moves": [
+          "Stealth Rock", 
+          "Magma Storm", 
+          "Solar Beam"
+        ], 
+        "name": "Heatran"
+      }
+    ], 
+    "team2": [
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Psyshock", 
+          "Slack Off", 
+          "Calm Mind", 
+          "Scald"
+        ], 
+        "name": "Slowbro"
+      }, 
+      {
+        "item": "Tyranitarite", 
+        "moves": [
+          "Stone Edge"
+        ], 
+        "name": "Mega Tyranitar"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Zen Headbutt", 
+          "V-create"
+        ], 
+        "name": "Victini"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Calm Mind", 
+          "Soft-Boiled"
+        ], 
+        "name": "Clefable"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Stealth Rock"
+        ], 
+        "name": "Ferrothorn"
+      }, 
+      {
+        "item": "Air Balloon", 
+        "moves": [
+          "Rapid Spin"
+        ], 
+        "name": "Excadrill"
+      }
+    ], 
+    "winner": "team1"
+  }, 
+  {
+    "team1": [
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Fire Punch", 
+          "Wish", 
+          "Body Slam"
+        ], 
+        "name": "Jirachi"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Moonblast", 
+          "Leech Seed"
+        ], 
+        "name": "Whimsicott"
+      }, 
+      {
+        "item": "Charizardite Y", 
+        "moves": [
+          "Flamethrower"
+        ], 
+        "name": "Mega Charizard Y"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Scald"
+        ], 
+        "name": "Starmie"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Pursuit"
+        ], 
+        "name": "Tyranitar"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Stealth Rock", 
+          "Toxic", 
+          "Earthquake", 
+          "Slack Off"
+        ], 
+        "name": "Hippowdon"
+      }
+    ], 
+    "team2": [
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Draco Meteor"
+        ], 
+        "name": "Latios"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Protect", 
+          "Body Slam", 
+          "Wish", 
+          "Iron Head"
+        ], 
+        "name": "Jirachi"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "U-turn", 
+          "Stun Spore"
+        ], 
+        "name": "Whimsicott"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Scald", 
+          "Hydro Pump"
+        ], 
+        "name": "Keldeo"
+      }, 
+      {
+        "item": "Houndoominite", 
+        "moves": [
+          "Dark Pulse", 
+          "Will-O-Wisp"
+        ], 
+        "name": "Mega Houndoom"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Stealth Rock", 
+          "U-turn", 
+          "Earthquake"
+        ], 
+        "name": "Landorus Therian Form"
+      }
+    ], 
+    "winner": "team1"
+  }, 
+  {
+    "team1": [
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Draco Meteor", 
+          "Psyshock"
+        ], 
+        "name": "Latios"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Swords Dance", 
+          "Earthquake"
+        ], 
+        "name": "Gliscor"
+      }, 
+      {
+        "item": "Gyaradosite", 
+        "moves": [
+          "Waterfall", 
+          "Crunch"
+        ], 
+        "name": "Mega Gyarados"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Crunch"
+        ], 
+        "name": "Tyranitar"
+      }, 
+      {
+        "item": null, 
+        "moves": [], 
+        "name": "Clefable"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Stealth Rock", 
+          "Leech Seed", 
+          "Knock Off", 
+          "Power Whip"
+        ], 
+        "name": "Ferrothorn"
+      }
+    ], 
+    "team2": [
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Stealth Rock", 
+          "Wish"
+        ], 
+        "name": "Jirachi"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Quiver Dance", 
+          "Fire Blast", 
+          "Giga Drain"
+        ], 
+        "name": "Volcarona"
+      }, 
+      {
+        "item": null, 
+        "moves": [], 
+        "name": "Latias"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Pursuit"
+        ], 
+        "name": "Tyranitar"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Will-O-Wisp", 
+          "Volt Switch"
+        ], 
+        "name": "Wash Rotom"
+      }, 
+      {
+        "item": "Blastoisinite", 
+        "moves": [
+          "Aura Sphere", 
+          "Hydro Pump"
+        ], 
+        "name": "Mega Blastoise"
+      }
+    ], 
+    "winner": "team2"
+  }, 
+  {
+    "team1": [
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Stealth Rock", 
+          "Toxic"
+        ], 
+        "name": "Bronzong"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Fire Blast", 
+          "Psyshock"
+        ], 
+        "name": "Slowking"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [], 
+        "name": "Togekiss"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Scald", 
+          "Secret Sword"
+        ], 
+        "name": "Keldeo"
+      }, 
+      {
+        "item": "Manectite", 
+        "moves": [
+          "Flamethrower", 
+          "Volt Switch"
+        ], 
+        "name": "Mega Manectric"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Stone Edge"
+        ], 
+        "name": "Tyranitar"
+      }
+    ], 
+    "team2": [
+      {
+        "item": null, 
+        "moves": [
+          "U-turn"
+        ], 
+        "name": "Jirachi"
+      }, 
+      {
+        "item": "Charizardite X", 
+        "moves": [
+          "Flare Blitz", 
+          "Dragon Dance"
+        ], 
+        "name": "Mega Charizard X"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Defog", 
+          "Healing Wish"
+        ], 
+        "name": "Latias"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Secret Sword"
+        ], 
+        "name": "Keldeo"
+      }, 
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Nasty Plot", 
+          "Thunderbolt"
+        ], 
+        "name": "Thundurus"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Stealth Rock"
+        ], 
+        "name": "Ferrothorn"
+      }
+    ], 
+    "winner": "team1"
+  }, 
+  {
+    "team1": [
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Draco Meteor", 
+          "Calm Mind"
+        ], 
+        "name": "Latios"
+      }, 
+      {
+        "item": "Pinsirite", 
+        "moves": [
+          "Swords Dance", 
+          "Earthquake"
+        ], 
+        "name": "Mega Pinsir"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Seed Flare"
+        ], 
+        "name": "Shaymin"
+      }, 
+      {
+        "item": "Chople Berry", 
+        "moves": [], 
+        "name": "Tyranitar"
+      }, 
+      {
+        "item": "Rocky Helmet", 
+        "moves": [
+          "Spikes", 
+          "Roost", 
+          "Whirlwind", 
+          "Brave Bird"
+        ], 
+        "name": "Skarmory"
+      }, 
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Iron Head"
+        ], 
+        "name": "Excadrill"
+      }
+    ], 
+    "team2": [
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Body Slam", 
+          "Wish", 
+          "Iron Head"
+        ], 
+        "name": "Jirachi"
+      }, 
+      {
+        "item": "Rocky Helmet", 
+        "moves": [
+          "U-turn", 
+          "Knock Off", 
+          "Hurricane"
+        ], 
+        "name": "Tornadus Therian Form"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Rapid Spin", 
+          "Recover", 
+          "Scald"
+        ], 
+        "name": "Starmie"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Nasty Plot", 
+          "Aura Sphere", 
+          "Air Slash", 
+          "Roost"
+        ], 
+        "name": "Togekiss"
+      }, 
+      {
+        "item": "Alakazite", 
+        "moves": [
+          "Encore", 
+          "Psychic", 
+          "Shadow Ball"
+        ], 
+        "name": "Mega Alakazam"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Stealth Rock", 
+          "Dragon Tail", 
+          "Fire Blast"
+        ], 
+        "name": "Garchomp"
+      }
+    ], 
+    "winner": "team2"
+  }, 
+  {
+    "team1": [
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Knock Off", 
+          "Low Kick", 
+          "Ice Shard"
+        ], 
+        "name": "Weavile"
+      }, 
+      {
+        "item": "Slowbronite", 
+        "moves": [
+          "Calm Mind", 
+          "Scald"
+        ], 
+        "name": "Mega Slowbro"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Thunder Wave", 
+          "Soft-Boiled", 
+          "Moonblast", 
+          "Calm Mind"
+        ], 
+        "name": "Clefable"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Pursuit", 
+          "U-turn"
+        ], 
+        "name": "Scizor"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Stealth Rock"
+        ], 
+        "name": "Garchomp"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Swords Dance", 
+          "Rock Polish"
+        ], 
+        "name": "Landorus Therian Form"
+      }
+    ], 
+    "team2": [
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Psychic"
+        ], 
+        "name": "Latios"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Stealth Rock", 
+          "Hypnosis"
+        ], 
+        "name": "Bronzong"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Fire Blast"
+        ], 
+        "name": "Volcarona"
+      }, 
+      {
+        "item": "Diancite", 
+        "moves": [
+          "Diamond Storm"
+        ], 
+        "name": "Mega Diancie"
+      }, 
+      {
+        "item": "Choice Scarf", 
+        "moves": [
+          "Scald"
+        ], 
+        "name": "Keldeo"
+      }, 
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Hidden Power", 
+          "Thunderbolt", 
+          "Thunder Wave"
+        ], 
+        "name": "Thundurus"
+      }
+    ], 
+    "winner": "team1"
+  }, 
+  {
+    "team1": [
+      {
+        "item": "Altarianite", 
+        "moves": [
+          "Return"
+        ], 
+        "name": "Mega Altaria"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Swords Dance", 
+          "Roost", 
+          "Brave Bird"
+        ], 
+        "name": "Talonflame"
+      }, 
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Hydro Pump", 
+          "Thunderbolt"
+        ], 
+        "name": "Starmie"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Magnet Rise", 
+          "Spikes"
+        ], 
+        "name": "Klefki"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Stone Edge"
+        ], 
+        "name": "Tyranitar"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Dragon Claw", 
+          "Stealth Rock"
+        ], 
+        "name": "Garchomp"
+      }
+    ], 
+    "team2": [
+      {
+        "item": null, 
+        "moves": [], 
+        "name": "Crawdaunt"
+      }, 
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Thunderbolt", 
+          "Thunder Wave"
+        ], 
+        "name": "Thundurus"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Bullet Punch"
+        ], 
+        "name": "Scizor"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Stealth Rock", 
+          "Earthquake"
+        ], 
+        "name": "Garchomp"
+      }, 
+      {
+        "item": "Heracronite", 
+        "moves": [
+          "Pin Missile"
+        ], 
+        "name": "Mega Heracross"
+      }, 
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Ice Beam"
+        ], 
+        "name": "Black Kyurem"
+      }
+    ], 
+    "winner": "team1"
+  }, 
+  {
+    "team1": [
+      {
+        "item": "Aerodactylite", 
+        "moves": [
+          "Stone Edge"
+        ], 
+        "name": "Mega Aerodactyl"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [], 
+        "name": "Starmie"
+      }, 
+      {
+        "item": "Lum Berry", 
+        "moves": [
+          "Quiver Dance", 
+          "Bug Buzz", 
+          "Fire Blast", 
+          "Giga Drain"
+        ], 
+        "name": "Volcarona"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Spikes"
+        ], 
+        "name": "Skarmory"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Earthquake"
+        ], 
+        "name": "Hippowdon"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Knock Off", 
+          "Moonblast", 
+          "Calm Mind"
+        ], 
+        "name": "Clefable"
+      }
+    ], 
+    "team2": [
+      {
+        "item": "Sceptilite", 
+        "moves": [
+          "Giga Drain", 
+          "Dragon Pulse"
+        ], 
+        "name": "Mega Sceptile"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [], 
+        "name": "Bronzong"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Hydro Pump"
+        ], 
+        "name": "Keldeo"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Crunch"
+        ], 
+        "name": "Tyranitar"
+      }, 
+      {
+        "item": "Black Sludge", 
+        "moves": [
+          "Toxic Spikes", 
+          "Sludge Bomb"
+        ], 
+        "name": "Dragalge"
+      }, 
+      {
+        "item": null, 
+        "moves": [], 
+        "name": "Landorus"
+      }
+    ], 
+    "winner": "team1"
+  }, 
+  {
+    "team1": [
+      {
+        "item": "Aerodactylite", 
+        "moves": [
+          "Aqua Tail", 
+          "Fire Fang", 
+          "Aerial Ace"
+        ], 
+        "name": "Mega Aerodactyl"
+      }, 
+      {
+        "item": null, 
+        "moves": [], 
+        "name": "Volcarona"
+      }, 
+      {
+        "item": "Assault Vest", 
+        "moves": [
+          "Giga Drain"
+        ], 
+        "name": "Tangrowth"
+      }, 
+      {
+        "item": "Chople Berry", 
+        "moves": [
+          "Defog"
+        ], 
+        "name": "Empoleon"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Volt Switch"
+        ], 
+        "name": "Raikou"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Earthquake", 
+          "Toxic"
+        ], 
+        "name": "Hippowdon"
+      }
+    ], 
+    "team2": [
+      {
+        "item": null, 
+        "moves": [], 
+        "name": "Diancie"
+      }, 
+      {
+        "item": null, 
+        "moves": [], 
+        "name": "Bisharp"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Focus Blast", 
+          "Psychic"
+        ], 
+        "name": "Alakazam"
+      }, 
+      {
+        "item": "Custap Berry", 
+        "moves": [
+          "Sticky Web", 
+          "Toxic", 
+          "Stealth Rock"
+        ], 
+        "name": "Shuckle"
+      }, 
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Earth Power", 
+          "Rock Slide", 
+          "Knock Off", 
+          "Hidden Power"
+        ], 
+        "name": "Landorus"
+      }, 
+      {
+        "item": "Air Balloon", 
+        "moves": [], 
+        "name": "Magnezone"
+      }
+    ], 
+    "winner": "team2"
+  }, 
+  {
+    "team1": [
+      {
+        "item": null, 
+        "moves": [
+          "Knock Off", 
+          "Iron Head"
+        ], 
+        "name": "Bisharp"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Scald", 
+          "Secret Sword", 
+          "Substitute"
+        ], 
+        "name": "Keldeo"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Stealth Rock"
+        ], 
+        "name": "Hippowdon"
+      }, 
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Earth Power", 
+          "Hidden Power"
+        ], 
+        "name": "Landorus"
+      }, 
+      {
+        "item": "Venusaurite", 
+        "moves": [
+          "Synthesis", 
+          "Giga Drain"
+        ], 
+        "name": "Mega Venusaur"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Volt Switch", 
+          "Will-O-Wisp"
+        ], 
+        "name": "Wash Rotom"
+      }
+    ], 
+    "team2": [
+      {
+        "item": "Altarianite", 
+        "moves": [
+          "Return", 
+          "Dragon Dance"
+        ], 
+        "name": "Mega Altaria"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Wish", 
+          "Fire Punch", 
+          "Iron Head"
+        ], 
+        "name": "Jirachi"
+      }, 
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Thunderbolt"
+        ], 
+        "name": "Latias"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Scald", 
+          "Hydro Pump"
+        ], 
+        "name": "Keldeo"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Thunderbolt"
+        ], 
+        "name": "Raikou"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Stealth Rock"
+        ], 
+        "name": "Landorus Therian Form"
+      }
+    ], 
+    "winner": "team1"
+  }, 
+  {
+    "team1": [
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Thunder Wave", 
+          "Psyshock"
+        ], 
+        "name": "Slowbro"
+      }, 
+      {
+        "item": "Lopunnite", 
+        "moves": [
+          "Fake Out", 
+          "Return"
+        ], 
+        "name": "Mega Lopunny"
+      }, 
+      {
+        "item": null, 
+        "moves": [], 
+        "name": "Bisharp"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Dragon Tail", 
+          "Stealth Rock", 
+          "Earthquake"
+        ], 
+        "name": "Garchomp"
+      }, 
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Sludge Wave", 
+          "Shadow Ball", 
+          "Taunt"
+        ], 
+        "name": "Gengar"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Spikes", 
+          "Protect", 
+          "Leech Seed", 
+          "Gyro Ball"
+        ], 
+        "name": "Ferrothorn"
+      }
+    ], 
+    "team2": [
+      {
+        "item": "Rocky Helmet", 
+        "moves": [
+          "Knock Off", 
+          "U-turn", 
+          "Hurricane", 
+          "Focus Blast"
+        ], 
+        "name": "Tornadus Therian Form"
+      }, 
+      {
+        "item": "Charizardite X", 
+        "moves": [
+          "Flare Blitz"
+        ], 
+        "name": "Mega Charizard X"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Scald", 
+          "Rest"
+        ], 
+        "name": "Suicune"
+      }, 
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Draco Meteor"
+        ], 
+        "name": "Latias"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Giga Drain", 
+          "Hidden Power"
+        ], 
+        "name": "Amoonguss"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Stealth Rock", 
+          "Lava Plume"
+        ], 
+        "name": "Heatran"
+      }
+    ], 
+    "winner": "team1"
+  }, 
+  {
+    "team1": [
+      {
+        "item": "Altarianite", 
+        "moves": [
+          "Roost", 
+          "Dragon Dance"
+        ], 
+        "name": "Mega Altaria"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Scald", 
+          "Recover", 
+          "Clear Smog", 
+          "Earthquake"
+        ], 
+        "name": "Gastrodon"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Knock Off", 
+          "Hurricane", 
+          "U-turn"
+        ], 
+        "name": "Tornadus Therian Form"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Stealth Rock", 
+          "U-turn", 
+          "Body Slam"
+        ], 
+        "name": "Jirachi"
+      }, 
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Icy Wind", 
+          "Shadow Ball"
+        ], 
+        "name": "Gengar"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Flash Cannon", 
+          "Hidden Power"
+        ], 
+        "name": "Magnezone"
+      }
+    ], 
+    "team2": [
+      {
+        "item": "Gardevoirite", 
+        "moves": [
+          "Hyper Voice", 
+          "Will-O-Wisp", 
+          "Psyshock"
+        ], 
+        "name": "Mega Gardevoir"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Hurricane", 
+          "U-turn", 
+          "Heat Wave"
+        ], 
+        "name": "Tornadus Therian Form"
+      }, 
+      {
+        "item": "Black Sludge", 
+        "moves": [
+          "Toxic Spikes", 
+          "Draco Meteor"
+        ], 
+        "name": "Dragalge"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Stealth Rock", 
+          "Earthquake", 
+          "Slack Off", 
+          "Whirlwind"
+        ], 
+        "name": "Hippowdon"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Spikes", 
+          "Leech Seed", 
+          "Power Whip"
+        ], 
+        "name": "Ferrothorn"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Will-O-Wisp", 
+          "Pain Split", 
+          "Volt Switch"
+        ], 
+        "name": "Wash Rotom"
+      }
+    ], 
+    "winner": "team2"
+  }, 
+  {
+    "team1": [
+      {
+        "item": null, 
+        "moves": [
+          "Hurricane", 
+          "U-turn", 
+          "Knock Off", 
+          "Superpower"
+        ], 
+        "name": "Tornadus Therian Form"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Will-O-Wisp", 
+          "Roost", 
+          "Psychic"
+        ], 
+        "name": "Mew"
+      }, 
+      {
+        "item": "Black Sludge", 
+        "moves": [
+          "Acid Spray", 
+          "Rapid Spin", 
+          "Scald"
+        ], 
+        "name": "Tentacruel"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Nasty Plot", 
+          "Giga Drain", 
+          "Recover", 
+          "Earth Power"
+        ], 
+        "name": "Celebi"
+      }, 
+      {
+        "item": "Scizorite", 
+        "moves": [
+          "Roost"
+        ], 
+        "name": "Mega Scizor"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Stealth Rock", 
+          "Slack Off", 
+          "Stone Edge"
+        ], 
+        "name": "Hippowdon"
+      }
+    ], 
+    "team2": [
+      {
+        "item": "Altarianite", 
+        "moves": [
+          "Roost", 
+          "Hyper Voice", 
+          "Fire Blast"
+        ], 
+        "name": "Mega Altaria"
+      }, 
+      {
+        "item": "Toxic Orb", 
+        "moves": [
+          "Swords Dance", 
+          "Knock Off"
+        ], 
+        "name": "Gliscor"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Gyro Ball", 
+          "Hypnosis", 
+          "Stealth Rock"
+        ], 
+        "name": "Bronzong"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Head Smash"
+        ], 
+        "name": "Tyrantrum"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Flash Cannon"
+        ], 
+        "name": "Magnezone"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Will-O-Wisp", 
+          "Volt Switch", 
+          "Pain Split"
+        ], 
+        "name": "Wash Rotom"
+      }
+    ], 
+    "winner": "team1"
+  }, 
+  {
+    "team1": [
+      {
+        "item": "Charizardite X", 
+        "moves": [
+          "Dragon Dance"
+        ], 
+        "name": "Mega Charizard X"
+      }, 
+      {
+        "item": null, 
+        "moves": [], 
+        "name": "Bronzong"
+      }, 
+      {
+        "item": null, 
+        "moves": [], 
+        "name": "Starmie"
+      }, 
+      {
+        "item": null, 
+        "moves": [], 
+        "name": "Keldeo"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Crunch"
+        ], 
+        "name": "Tyranitar"
+      }, 
+      {
+        "item": null, 
+        "moves": [], 
+        "name": "Landorus"
+      }
+    ], 
+    "team2": [
+      {
+        "item": null, 
+        "moves": [], 
+        "name": "Smeargle"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Tailwind", 
+          "Memento"
+        ], 
+        "name": "Whimsicott"
+      }, 
+      {
+        "item": null, 
+        "moves": [], 
+        "name": "Latias"
+      }, 
+      {
+        "item": null, 
+        "moves": [], 
+        "name": "Azelf"
+      }, 
+      {
+        "item": null, 
+        "moves": [], 
+        "name": "Espeon"
+      }, 
+      {
+        "item": null, 
+        "moves": [], 
+        "name": "Clefable"
+      }
+    ], 
+    "winner": "team2"
+  }, 
+  {
+    "team1": [
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Draco Meteor"
+        ], 
+        "name": "Latios"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Drain Punch", 
+          "Wood Hammer"
+        ], 
+        "name": "Chesnaught"
+      }, 
+      {
+        "item": "Aerodactylite", 
+        "moves": [
+          "Aqua Tail"
+        ], 
+        "name": "Mega Aerodactyl"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Stealth Rock"
+        ], 
+        "name": "Tyranitar"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "V-create", 
+          "Bolt Strike"
+        ], 
+        "name": "Victini"
+      }, 
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Earthquake"
+        ], 
+        "name": "Excadrill"
+      }
+    ], 
+    "team2": [
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Close Combat", 
+          "Swords Dance"
+        ], 
+        "name": "Terrakion"
+      }, 
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Rapid Spin"
+        ], 
+        "name": "Starmie"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Dragon Dance", 
+          "Bounce", 
+          "Waterfall"
+        ], 
+        "name": "Gyarados"
+      }, 
+      {
+        "item": "Scizorite", 
+        "moves": [
+          "Bullet Punch", 
+          "Bug Bite"
+        ], 
+        "name": "Mega Scizor"
+      }, 
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Hidden Power"
+        ], 
+        "name": "Thundurus Therian Form"
+      }, 
+      {
+        "item": "Air Balloon", 
+        "moves": [
+          "Magma Storm", 
+          "Flash Cannon"
+        ], 
+        "name": "Heatran"
+      }
+    ], 
+    "winner": "team2"
+  }, 
+  {
+    "team1": [
+      {
+        "item": null, 
+        "moves": [
+          "Brave Bird", 
+          "Flare Blitz"
+        ], 
+        "name": "Talonflame"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Scald", 
+          "Rapid Spin", 
+          "Psyshock"
+        ], 
+        "name": "Starmie"
+      }, 
+      {
+        "item": "Diancite", 
+        "moves": [
+          "Protect", 
+          "Moonblast"
+        ], 
+        "name": "Mega Diancie"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Will-O-Wisp", 
+          "Roost", 
+          "Ice Beam", 
+          "Taunt"
+        ], 
+        "name": "Mew"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Stealth Rock", 
+          "Whirlwind", 
+          "Earthquake"
+        ], 
+        "name": "Hippowdon"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Spikes", 
+          "Leech Seed", 
+          "Protect"
+        ], 
+        "name": "Ferrothorn"
+      }
+    ], 
+    "team2": [
+      {
+        "item": "Altarianite", 
+        "moves": [
+          "Heal Bell", 
+          "Return"
+        ], 
+        "name": "Mega Altaria"
+      }, 
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Knock Off", 
+          "Hurricane", 
+          "Heat Wave"
+        ], 
+        "name": "Tornadus Therian Form"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Body Slam", 
+          "Iron Head", 
+          "Wish", 
+          "Protect"
+        ], 
+        "name": "Jirachi"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Scald", 
+          "Tail Glow", 
+          "Energy Ball"
+        ], 
+        "name": "Manaphy"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Stealth Rock"
+        ], 
+        "name": "Tyranitar"
+      }, 
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Rapid Spin", 
+          "Earthquake", 
+          "Iron Head"
+        ], 
+        "name": "Excadrill"
+      }
+    ], 
+    "winner": "team1"
+  }, 
+  {
+    "team1": [
+      {
+        "item": "Altarianite", 
+        "moves": [
+          "Dragon Dance", 
+          "Frustration", 
+          "Roost"
+        ], 
+        "name": "Mega Altaria"
+      }, 
+      {
+        "item": null, 
+        "moves": [], 
+        "name": "Talonflame"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Scald", 
+          "Toxic"
+        ], 
+        "name": "Starmie"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Spikes", 
+          "Roost"
+        ], 
+        "name": "Skarmory"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Ice Beam", 
+          "Earth Power"
+        ], 
+        "name": "Black Kyurem"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Lava Plume"
+        ], 
+        "name": "Heatran"
+      }
+    ], 
+    "team2": [
+      {
+        "item": null, 
+        "moves": [], 
+        "name": "Starmie"
+      }, 
+      {
+        "item": "Lum Berry", 
+        "moves": [
+          "Earthquake", 
+          "Iron Tail"
+        ], 
+        "name": "Dragonite"
+      }, 
+      {
+        "item": "Diancite", 
+        "moves": [
+          "Diamond Storm"
+        ], 
+        "name": "Mega Diancie"
+      }, 
+      {
+        "item": "Focus Sash", 
+        "moves": [
+          "Outrage"
+        ], 
+        "name": "Garchomp"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Volt Switch", 
+          "Thunderbolt"
+        ], 
+        "name": "Magnezone"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Ice Beam"
+        ], 
+        "name": "Black Kyurem"
+      }
+    ], 
+    "winner": "team1"
+  }, 
+  {
+    "team1": [
+      {
+        "item": "Charizardite X", 
+        "moves": [
+          "Flare Blitz"
+        ], 
+        "name": "Mega Charizard X"
+      }, 
+      {
+        "item": null, 
+        "moves": [], 
+        "name": "Gengar"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Stealth Rock", 
+          "Earthquake"
+        ], 
+        "name": "Hippowdon"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Soft-Boiled", 
+          "Moonblast"
+        ], 
+        "name": "Clefable"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Spikes", 
+          "Leech Seed", 
+          "Gyro Ball"
+        ], 
+        "name": "Ferrothorn"
+      }, 
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Earthquake"
+        ], 
+        "name": "Excadrill"
+      }
+    ], 
+    "team2": [
+      {
+        "item": "Gardevoirite", 
+        "moves": [
+          "Hyper Voice"
+        ], 
+        "name": "Mega Gardevoir"
+      }, 
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Icicle Crash"
+        ], 
+        "name": "Weavile"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Hidden Power"
+        ], 
+        "name": "Raikou"
+      }, 
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Shadow Ball", 
+          "Icy Wind"
+        ], 
+        "name": "Gengar"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Superpower", 
+          "Waterfall", 
+          "Aqua Jet"
+        ], 
+        "name": "Azumarill"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Earthquake", 
+          "Swords Dance"
+        ], 
+        "name": "Garchomp"
+      }
+    ], 
+    "winner": "team1"
+  }, 
+  {
+    "team1": [
+      {
+        "item": "Gardevoirite", 
+        "moves": [
+          "Taunt", 
+          "Hyper Voice"
+        ], 
+        "name": "Mega Gardevoir"
+      }, 
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Draco Meteor"
+        ], 
+        "name": "Latias"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Tail Glow", 
+          "Ice Beam"
+        ], 
+        "name": "Manaphy"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Swords Dance", 
+          "Knock Off"
+        ], 
+        "name": "Scizor"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Stealth Rock", 
+          "Earthquake"
+        ], 
+        "name": "Garchomp"
+      }, 
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Thunderbolt", 
+          "Knock Off", 
+          "Superpower"
+        ], 
+        "name": "Thundurus"
+      }
+    ], 
+    "team2": [
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Draco Meteor"
+        ], 
+        "name": "Latios"
+      }, 
+      {
+        "item": "Charizardite X", 
+        "moves": [
+          "Flare Blitz"
+        ], 
+        "name": "Mega Charizard X"
+      }, 
+      {
+        "item": null, 
+        "moves": [], 
+        "name": "Tyranitar"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Soft-Boiled"
+        ], 
+        "name": "Clefable"
+      }, 
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Waterfall"
+        ], 
+        "name": "Feraligatr"
+      }, 
+      {
+        "item": "Air Balloon", 
+        "moves": [
+          "Iron Head", 
+          "Earthquake", 
+          "Rock Slide"
+        ], 
+        "name": "Excadrill"
+      }
+    ], 
+    "winner": "team2"
+  }, 
+  {
+    "team1": [
+      {
+        "item": "Latiasite", 
+        "moves": [
+          "Hidden Power"
+        ], 
+        "name": "Mega Latias"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Shadow Ball", 
+          "Focus Blast", 
+          "Psychic"
+        ], 
+        "name": "Alakazam"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Stealth Rock"
+        ], 
+        "name": "Hippowdon"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Ice Beam"
+        ], 
+        "name": "Clefable"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Protect", 
+          "Toxic", 
+          "Lava Plume", 
+          "Taunt"
+        ], 
+        "name": "Heatran"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Leech Seed"
+        ], 
+        "name": "Ferrothorn"
+      }
+    ], 
+    "team2": [
+      {
+        "item": "Altarianite", 
+        "moves": [
+          "Dragon Dance"
+        ], 
+        "name": "Mega Altaria"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Scald"
+        ], 
+        "name": "Slowbro"
+      }, 
+      {
+        "item": null, 
+        "moves": [], 
+        "name": "Tyranitar"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Spikes", 
+          "Iron Head", 
+          "Whirlwind"
+        ], 
+        "name": "Skarmory"
+      }, 
+      {
+        "item": null, 
+        "moves": [], 
+        "name": "Thundurus"
+      }, 
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Earth Power", 
+          "Sludge Wave"
+        ], 
+        "name": "Landorus"
+      }
+    ], 
+    "winner": "team1"
+  }, 
+  {
+    "team1": [
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Draco Meteor", 
+          "Roost", 
+          "Earthquake", 
+          "Hidden Power"
+        ], 
+        "name": "Latios"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Air Slash", 
+          "Nasty Plot", 
+          "Roost", 
+          "Thunder Wave"
+        ], 
+        "name": "Togekiss"
+      }, 
+      {
+        "item": "Scizorite", 
+        "moves": [
+          "Roost", 
+          "Swords Dance", 
+          "Bullet Punch"
+        ], 
+        "name": "Mega Scizor"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Substitute", 
+          "Thunderbolt", 
+          "Calm Mind"
+        ], 
+        "name": "Raikou"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Substitute", 
+          "Scald"
+        ], 
+        "name": "Keldeo"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Stealth Rock", 
+          "Dragon Tail", 
+          "Fire Blast"
+        ], 
+        "name": "Garchomp"
+      }
+    ], 
+    "team2": [
+      {
+        "item": "Charizardite X", 
+        "moves": [
+          "Will-O-Wisp", 
+          "Roost", 
+          "Flare Blitz"
+        ], 
+        "name": "Mega Charizard X"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Stealth Rock", 
+          "Toxic", 
+          "Gyro Ball"
+        ], 
+        "name": "Bronzong"
+      }, 
+      {
+        "item": null, 
+        "moves": [], 
+        "name": "Manaphy"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Defog", 
+          "Roost", 
+          "Ice Beam"
+        ], 
+        "name": "Mew"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Crunch", 
+          "Stone Edge"
+        ], 
+        "name": "Tyranitar"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Hidden Power", 
+          "Clear Smog", 
+          "Giga Drain"
+        ], 
+        "name": "Amoonguss"
+      }
+    ], 
+    "winner": "team2"
+  }, 
+  {
+    "team1": [
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Aqua Jet", 
+          "Waterfall"
+        ], 
+        "name": "Kabutops"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Psyshock"
+        ], 
+        "name": "Latias"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Spikes", 
+          "Thunder Wave", 
+          "Rain Dance"
+        ], 
+        "name": "Klefki"
+      }, 
+      {
+        "item": "Swampertite", 
+        "moves": [
+          "Power-Up Punch", 
+          "Waterfall"
+        ], 
+        "name": "Mega Swampert"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Stealth Rock", 
+          "Knock Off", 
+          "Earthquake"
+        ], 
+        "name": "Landorus Therian Form"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Encore"
+        ], 
+        "name": "Politoed"
+      }
+    ], 
+    "team2": [
+      {
+        "item": null, 
+        "moves": [], 
+        "name": "Aerodactyl"
+      }, 
+      {
+        "item": "Focus Sash", 
+        "moves": [
+          "Toxic Spikes", 
+          "Spikes", 
+          "Endeavor"
+        ], 
+        "name": "Scolipede"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Scald"
+        ], 
+        "name": "Keldeo"
+      }, 
+      {
+        "item": "Lum Berry", 
+        "moves": [
+          "Swords Dance", 
+          "Iron Head", 
+          "Sucker Punch"
+        ], 
+        "name": "Bisharp"
+      }, 
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Shadow Ball"
+        ], 
+        "name": "Gengar"
+      }, 
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Hidden Power", 
+          "Thunderbolt", 
+          "Thunder Wave"
+        ], 
+        "name": "Thundurus"
+      }
+    ], 
+    "winner": "team1"
+  }, 
+  {
+    "team1": [
+      {
+        "item": "Altarianite", 
+        "moves": [
+          "Roost", 
+          "Earthquake", 
+          "Hyper Voice"
+        ], 
+        "name": "Mega Altaria"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Spore"
+        ], 
+        "name": "Breloom"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Pursuit"
+        ], 
+        "name": "Scizor"
+      }, 
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Hidden Power"
+        ], 
+        "name": "Landorus"
+      }, 
+      {
+        "item": null, 
+        "moves": [], 
+        "name": "Heatran"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Volt Switch", 
+          "Hydro Pump", 
+          "Pain Split"
+        ], 
+        "name": "Wash Rotom"
+      }
+    ], 
+    "team2": [
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Calm Mind", 
+          "Draco Meteor", 
+          "Psyshock"
+        ], 
+        "name": "Latios"
+      }, 
+      {
+        "item": "Metagrossite", 
+        "moves": [
+          "Hammer Arm"
+        ], 
+        "name": "Mega Metagross"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Scald", 
+          "Secret Sword", 
+          "Icy Wind"
+        ], 
+        "name": "Keldeo"
+      }, 
+      {
+        "item": null, 
+        "moves": [], 
+        "name": "Skarmory"
+      }, 
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "U-turn", 
+          "Stealth Rock"
+        ], 
+        "name": "Landorus"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Flash Cannon"
+        ], 
+        "name": "Heatran"
+      }
+    ], 
+    "winner": "team2"
+  }, 
+  {
+    "team1": [
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Spiky Shield", 
+          "Spikes"
+        ], 
+        "name": "Chesnaught"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Toxic", 
+          "Protect", 
+          "Scald"
+        ], 
+        "name": "Alomomola"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Psyshock", 
+          "Roost", 
+          "Defog"
+        ], 
+        "name": "Latias"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Stealth Rock", 
+          "Earthquake", 
+          "Slack Off", 
+          "Stone Edge"
+        ], 
+        "name": "Hippowdon"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Calm Mind", 
+          "Moonblast"
+        ], 
+        "name": "Clefable"
+      }, 
+      {
+        "item": "Metagrossite", 
+        "moves": [
+          "Ice Punch"
+        ], 
+        "name": "Mega Metagross"
+      }
+    ], 
+    "team2": [
+      {
+        "item": "Aerodactylite", 
+        "moves": [
+          "Aqua Tail", 
+          "Stone Edge", 
+          "Fire Fang"
+        ], 
+        "name": "Mega Aerodactyl"
+      }, 
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Rapid Spin", 
+          "Thunderbolt"
+        ], 
+        "name": "Starmie"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Toxic", 
+          "Thunder Wave", 
+          "Spikes", 
+          "Play Rough"
+        ], 
+        "name": "Klefki"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Stealth Rock", 
+          "Toxic", 
+          "Dragon Tail"
+        ], 
+        "name": "Garchomp"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Sludge Wave", 
+          "Earth Power"
+        ], 
+        "name": "Landorus"
+      }, 
+      {
+        "item": null, 
+        "moves": [], 
+        "name": "Azumarill"
+      }
+    ], 
+    "winner": "team2"
+  }, 
+  {
+    "team1": [
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Ice Punch", 
+          "Iron Head"
+        ], 
+        "name": "Jirachi"
+      }, 
+      {
+        "item": "Altarianite", 
+        "moves": [
+          "Roost", 
+          "Dragon Dance", 
+          "Earthquake"
+        ], 
+        "name": "Mega Altaria"
+      }, 
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Knock Off"
+        ], 
+        "name": "Weavile"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Secret Sword", 
+          "Icy Wind", 
+          "Calm Mind"
+        ], 
+        "name": "Keldeo"
+      }, 
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Thunderbolt", 
+          "Hidden Power"
+        ], 
+        "name": "Thundurus"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Stealth Rock", 
+          "Earthquake", 
+          "Explosion"
+        ], 
+        "name": "Landorus Therian Form"
+      }
+    ], 
+    "team2": [
+      {
+        "item": "Altarianite", 
+        "moves": [
+          "Dragon Dance", 
+          "Roost", 
+          "Earthquake"
+        ], 
+        "name": "Mega Altaria"
+      }, 
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Knock Off"
+        ], 
+        "name": "Tornadus Therian Form"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Stealth Rock", 
+          "Dragon Tail", 
+          "Toxic", 
+          "Earthquake"
+        ], 
+        "name": "Garchomp"
+      }, 
+      {
+        "item": "Choice Scarf", 
+        "moves": [
+          "Thunderbolt"
+        ], 
+        "name": "Magnezone"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Volt Switch", 
+          "Thunder Wave"
+        ], 
+        "name": "Wash Rotom"
+      }, 
+      {
+        "item": "Black Sludge", 
+        "moves": [
+          "Toxic Spikes"
+        ], 
+        "name": "Dragalge"
+      }
+    ], 
+    "winner": "team2"
+  }, 
+  {
+    "team1": [
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Draco Meteor"
+        ], 
+        "name": "Latios"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Calm Mind", 
+          "Soft-Boiled", 
+          "Moonblast"
+        ], 
+        "name": "Clefable"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Scald"
+        ], 
+        "name": "Keldeo"
+      }, 
+      {
+        "item": "Alakazite", 
+        "moves": [
+          "Psychic", 
+          "Encore", 
+          "Focus Blast", 
+          "Shadow Ball"
+        ], 
+        "name": "Mega Alakazam"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [], 
+        "name": "Landorus Therian Form"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Gyro Ball", 
+          "Spikes", 
+          "Power Whip", 
+          "Leech Seed"
+        ], 
+        "name": "Ferrothorn"
+      }
+    ], 
+    "team2": [
+      {
+        "item": "Charizardite Y", 
+        "moves": [
+          "Roost", 
+          "Flamethrower"
+        ], 
+        "name": "Mega Charizard Y"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Scald"
+        ], 
+        "name": "Starmie"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Stone Edge"
+        ], 
+        "name": "Tyranitar"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Slack Off", 
+          "Earthquake", 
+          "Stealth Rock"
+        ], 
+        "name": "Hippowdon"
+      }, 
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Sludge Wave", 
+          "Earth Power", 
+          "Hidden Power"
+        ], 
+        "name": "Landorus"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Spikes", 
+          "Gyro Ball"
+        ], 
+        "name": "Ferrothorn"
+      }
+    ], 
+    "winner": "team2"
+  }, 
+  {
+    "team1": [
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Dragon Dance", 
+          "Bounce", 
+          "Waterfall"
+        ], 
+        "name": "Gyarados"
+      }, 
+      {
+        "item": "Lopunnite", 
+        "moves": [
+          "Fake Out", 
+          "Frustration"
+        ], 
+        "name": "Mega Lopunny"
+      }, 
+      {
+        "item": null, 
+        "moves": [], 
+        "name": "Bisharp"
+      }, 
+      {
+        "item": "Custap Berry", 
+        "moves": [
+          "Stealth Rock", 
+          "Spikes", 
+          "Brave Bird"
+        ], 
+        "name": "Skarmory"
+      }, 
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Shadow Ball", 
+          "Taunt", 
+          "Sludge Wave"
+        ], 
+        "name": "Gengar"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Earth Power"
+        ], 
+        "name": "Landorus"
+      }
+    ], 
+    "team2": [
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Psyshock", 
+          "Draco Meteor"
+        ], 
+        "name": "Latios"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Fire Punch"
+        ], 
+        "name": "Jirachi"
+      }, 
+      {
+        "item": "Charizardite X", 
+        "moves": [], 
+        "name": "Mega Charizard X"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Calm Mind", 
+          "Scald"
+        ], 
+        "name": "Suicune"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Slack Off", 
+          "Earthquake", 
+          "Stone Edge"
+        ], 
+        "name": "Hippowdon"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Rapid Spin"
+        ], 
+        "name": "Excadrill"
+      }
+    ], 
+    "winner": "team1"
+  }, 
+  {
+    "team1": [
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Roost", 
+          "Draco Meteor"
+        ], 
+        "name": "Latios"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Knock Off", 
+          "U-turn", 
+          "Icy Wind", 
+          "Hurricane"
+        ], 
+        "name": "Tornadus Therian Form"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Scald", 
+          "Tail Glow"
+        ], 
+        "name": "Manaphy"
+      }, 
+      {
+        "item": null, 
+        "moves": [], 
+        "name": "Scizor"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Stealth Rock", 
+          "Slack Off", 
+          "Stone Edge"
+        ], 
+        "name": "Hippowdon"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Moonblast", 
+          "Soft-Boiled", 
+          "Calm Mind", 
+          "Knock Off"
+        ], 
+        "name": "Clefable"
+      }
+    ], 
+    "team2": [
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Curse", 
+          "Recover", 
+          "Scald"
+        ], 
+        "name": "Quagsire"
+      }, 
+      {
+        "item": "Altarianite", 
+        "moves": [
+          "Cotton Guard", 
+          "Dragon Dance", 
+          "Return"
+        ], 
+        "name": "Mega Altaria"
+      }, 
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Psyshock", 
+          "Healing Wish"
+        ], 
+        "name": "Latias"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Pursuit"
+        ], 
+        "name": "Tyranitar"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Stealth Rock"
+        ], 
+        "name": "Garchomp"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Leech Seed", 
+          "Protect"
+        ], 
+        "name": "Ferrothorn"
+      }
+    ], 
+    "winner": "team1"
+  }, 
+  {
+    "team1": [
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Waterfall", 
+          "Rapid Spin"
+        ], 
+        "name": "Kabutops"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Scald"
+        ], 
+        "name": "Manaphy"
+      }, 
+      {
+        "item": null, 
+        "moves": [], 
+        "name": "Manectric"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Stealth Rock"
+        ], 
+        "name": "Ferrothorn"
+      }, 
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Hidden Power"
+        ], 
+        "name": "Articuno"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Scald"
+        ], 
+        "name": "Politoed"
+      }
+    ], 
+    "team2": [
+      {
+        "item": null, 
+        "moves": [], 
+        "name": "Altaria"
+      }, 
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Hydro Pump", 
+          "Psyshock"
+        ], 
+        "name": "Starmie"
+      }, 
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Leaf Storm", 
+          "Hidden Power"
+        ], 
+        "name": "Serperior"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Superpower", 
+          "Crunch"
+        ], 
+        "name": "Tyranitar"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Stealth Rock"
+        ], 
+        "name": "Hippowdon"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Taunt", 
+          "Lava Plume"
+        ], 
+        "name": "Heatran"
+      }
+    ], 
+    "winner": "team1"
+  }, 
+  {
+    "team1": [
+      {
+        "item": "Sablenite", 
+        "moves": [
+          "Recover", 
+          "Knock Off"
+        ], 
+        "name": "Mega Sableye"
+      }, 
+      {
+        "item": null, 
+        "moves": [
+          "Swords Dance", 
+          "Acrobatics"
+        ], 
+        "name": "Talonflame"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Scald", 
+          "Toxic", 
+          "Rapid Spin"
+        ], 
+        "name": "Starmie"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Stealth Rock", 
+          "Whirlwind"
+        ], 
+        "name": "Hippowdon"
+      }, 
+      {
+        "item": "Rocky Helmet", 
+        "moves": [
+          "Roost", 
+          "Spikes"
+        ], 
+        "name": "Skarmory"
+      }, 
+      {
+        "item": "Black Sludge", 
+        "moves": [
+          "Toxic Spikes"
+        ], 
+        "name": "Roserade"
+      }
+    ], 
+    "team2": [
+      {
+        "item": "Altarianite", 
+        "moves": [
+          "Heal Bell"
+        ], 
+        "name": "Mega Altaria"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Ice Beam", 
+          "Earthquake", 
+          "Scald"
+        ], 
+        "name": "Gastrodon"
+      }, 
+      {
+        "item": "Rocky Helmet", 
+        "moves": [
+          "Hurricane", 
+          "Knock Off", 
+          "Heat Wave", 
+          "U-turn"
+        ], 
+        "name": "Tornadus Therian Form"
+      }, 
+      {
+        "item": null, 
+        "moves": [], 
+        "name": "Gengar"
+      }, 
+      {
+        "item": "Life Orb", 
+        "moves": [
+          "Hidden Power", 
+          "Knock Off"
+        ], 
+        "name": "Landorus"
+      }, 
+      {
+        "item": "Leftovers", 
+        "moves": [
+          "Stealth Rock"
+        ], 
+        "name": "Ferrothorn"
+      }
+    ], 
+    "winner": "team1"
+  }
+]

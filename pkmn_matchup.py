@@ -1,7 +1,7 @@
 '''
 System tools and utilities
 '''
-import os, sys, math, re
+import os, sys, math, re, random
 
 # JSON tool for reading parsed data file
 import json
@@ -155,26 +155,63 @@ if __name__ == '__main__':
 	json_data = open(sys.argv[1], "r")
 	teams, results = populate(json_data)
 	
-	# For each team, compare to each other team
-	# Generate an adjacency matrix by calculating similarity as the distance between each team and normalizing
-	sim_mtrx = similarity(teams)
-	adj_mtrx = normalize(sim_mtrx) # Similarity matrix needs to be normalized for spectral clustering
+	# Simple version that uses all of the data to test
+	if not sys.argv[2] == 'rand':
+		# For each team, compare to each other team
+		# Generate an adjacency matrix by calculating similarity as the distance between each team and normalizing
+		sim_mtrx = similarity(teams)
+		adj_mtrx = normalize(sim_mtrx) # Similarity matrix needs to be normalized for spectral clustering
+		
+		# Run the clustering 5 times
+		i = 1
+		while i < 6:
+			# Generate labels (spectral clustering)
+			# Note that the adjacency matrix needs to be converted into a numpy array
+			labels = spectral_clustering(np.asarray(adj_mtrx), n_clusters = 2, eigen_solver = 'arpack', assign_labels = 'discretize')
+			
+			# Name of file to output test results
+			outfile_name = 'test' + str(i) + '_results.txt'
+			
+			# Compute the purity of the clustering
+			purity(labels, teams, results, sim_mtrx, outfile_name)
+			
+			# Next test
+			i += 1
 	
-	# Generate labels (spectral clustering)
-	# Note that the adjacency matrix needs to be converted into a numpy array
-	# Run the clustering 5 times
-	i = 1
-	while i < 6:
-		labels = spectral_clustering(np.asarray(adj_mtrx), n_clusters = 2, eigen_solver = 'arpack', assign_labels = 'discretize')
-		
-		# Name of file to output test results
-		outfile_name = 'test' + str(i) + '_results.txt'
-		
-		# Compute the purity of the clustering
-		purity(labels, teams, results, sim_mtrx, outfile_name)
-		
-		# Next test
-		i += 1
+	# Randomized version that tests a random subset of 50% of the data
+	else:
+		# Run tests on 5 different random samples
+		i = 0
+		while i < 6:
+			# Build a list of random battles
+			rand_battles = random.sample( range(0, len(teams) - 1, 2), len(teams) / 4 )
+			
+			rand_teams = []
+			rand_results = []
+			for index in rand_battles:
+				rand_teams.append( copy.deepcopy( teams[index] ) )
+				rand_teams.append( copy.deepcopy( teams[index + 1] ) )
+				
+				rand_results.append( results[i] )
+				rand_results.append( results[i + 1] )
+				
+			# For each team, compare to each other team
+			# Generate an adjacency matrix by calculating similarity as the distance between each team and normalizing
+			sim_mtrx = similarity(rand_teams)
+			adj_mtrx = normalize(sim_mtrx) # Similarity matrix needs to be normalized for spectral clustering
+			
+			# Generate labels (spectral clustering)
+			# Note that the adjacency matrix needs to be converted into a numpy array
+			labels = spectral_clustering(np.asarray(adj_mtrx), n_clusters = 2, eigen_solver = 'arpack', assign_labels = 'discretize')
+			
+			# Name of file to output test results
+			outfile_name = 'randtest' + str(i) + '_results.txt'
+			
+			# Compute the purity of the clustering
+			purity(labels, rand_teams, rand_results, sim_mtrx, outfile_name)
+			
+			# Next test
+			i += 1
 	
 	# Close out all sessions
 	#stop_dist()
