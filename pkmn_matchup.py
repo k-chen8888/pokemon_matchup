@@ -123,4 +123,8 @@ if __name__ == '__main__':
 		# Next test
 		i += 1
 	
+	# Close out all sessions
+	stop_dist()
+	stop_mock()
+	
 	print "Done"

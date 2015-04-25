@@ -269,3 +269,10 @@ def normalize(adj):
 		adj_norm.append(adj_norm_row)
 	
 	return adj_norm
+
+
+'''
+Stops the database session for distance measures
+'''
+def stop_dist():
+	s_dist.close()

@@ -145,20 +145,36 @@ def mock_battle(team1, team2):
 	# Defence evaluation for team2
 	for opponent in team2:
 		opponent['defense'] = []
+	
 	for pkmn in team1:
+		# Cleaning house
+		while len(pkmn['moves']) < 4:
+			pkmn['moves'].append("Splash")
+		
+		# Make labels
 		for i in range(0, len(pkmn['moves'])):
 			label = 'move' + str(i) + '_score'
 			pkmn[label] = []
+		
+		# Run the mock battle
 		partial_mock(pkmn, team2)
 	
 	# Offence evaluation for team2
 	# Defence evaluation for team1
 	for opponent in team1:
 		opponent['defense'] = []
+	
 	for pkmn in team2:
+		# Cleaning house
+		while len(pkmn['moves']) < 4:
+			pkmn['moves'].append("Splash")
+		
+		# Make labels
 		for i in range(0, len(pkmn['moves'])):
 			label = 'move' + str(i) + '_score'
 			pkmn[label] = []
+		
+		# Run the mock battle
 		partial_mock(pkmn, team1)
 	
 	# Calculate the distances
@@ -169,10 +185,6 @@ def mock_battle(team1, team2):
 Partial mock battle pitting a single Pokemon from one team against each Pokemon from the other team
 '''
 def partial_mock(pkmn, team):
-	# Cleaning house
-	while len(pkmn['moves']) < 4:
-		pkmn['moves'].append("Splash")
-	
 	# Need current Pokemon's data from database
 	p = s_mock.query(Pokemon).filter(Pokemon.name == pkmn['name']).first()
 	
@@ -356,3 +368,10 @@ def mock_dist(team1, team2):
 		diff.append( ( team1_scores[i] - team2_scores[i] ) ** 2 )
 	
 	return sum( diff )
+
+
+'''
+Stops the database session for mock battles
+'''
+def stop_mock():
+	s_mock.close()
