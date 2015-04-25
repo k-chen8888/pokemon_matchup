@@ -47,73 +47,80 @@ Distance between teams
 
 Define a team as a list of Pokemon
 '''
-def team_dist(team1, team2):
+def team_dist(team1, team2, mode):
 	if team1 == team2: # Identical teams means distance = 0
 		return 0.0
 	
-	# Type distributions for each team
-	team1_types = [0] * 18
-	team2_types = [0] * 18
-	
-	# Populate type distribution lists
-	for p in team1:
-		team1_types[p['pkmn'].type1] += 1
-		if p['pkmn'].type2 > -1:
-			team1_types[p['pkmn'].type2] += 1
-	for p in team2:
-		team2_types[p['pkmn'].type1] += 1
-		if p['pkmn'].type2 > -1:
-			team2_types[p['pkmn'].type2] += 1
-	
-	# Squared distance of type distribution
-	type_dist = sum( [ (team1_types[i] - team2_types[i]) ** 2 for i in range(0, 18) ] )
-	
-	# Squared distance of move type distribution
-	team1_move_types = [0] * 18
-	team2_move_types = [0] * 18
-	
-	# Populate move type distribution lists
-	for p in team2:
-		for m in p['moves']:
-			if not m.name == "Splash":
-				team1_move_types[m.move_type] += 1
-	for p in team2:
-		for m in p['moves']:
-			if not m.name == "Splash":
-				team2_move_types[m.move_type] += 1 
-	
-	# Squared distance of type distribution
-	move_type_dist = sum( [ (team1_move_types[i] - team2_move_types[i]) ** 2 for i in range(0, 18) ] )
-	
-	# Pairwise squared distances between each Pokemon (if full teams of 6 Pokemon, there are 36 calculations made)
-	# Get a list of distances for each Pokemon on the team
-	# Each entry in team#_distances is the average distance between a Pokemon on team# and every other Pokemon on the opposite team
-	team1_distance = 0
-	team2_distance = 0
-	for pkmn1 in team1:
-		for pkmn2 in team2:
-			# Distances between pkmn1 and each opponent
-			# Add to total
-			team1_distance += pkmn_dist(pkmn1, pkmn2)
-	
-	for pkmn1 in team2:
-		for pkmn2 in team1:
-			# Distances between pkmn1 and each opponent
-			# Add to total
-			team2_distance += pkmn_dist(pkmn1, pkmn2)
-	
-	# Compute distance between teams, absolute value
-	# Averaged by number of comparisons
-	team_dist = abs( team1_distance - team2_distance ) / (len(team1) * len(team2))
-	
-	print type_dist + move_type_dist, "team", team_dist
-	
-	# Squared "distance" between base strengths of Pokemon
-	# Use mock_battle_simple
-	mock_results = 0#mock_battle(team1, team2)
-	
-	# Output square root of sum
-	return ( type_dist + move_type_dist + team_dist + mock_results ) ** 0.5
+	if mode = 0:
+		# Type distributions for each team
+		team1_types = [0] * 18
+		team2_types = [0] * 18
+		
+		# Populate type distribution lists
+		for p in team1:
+			team1_types[p['pkmn'].type1] += 1
+			if p['pkmn'].type2 > -1:
+				team1_types[p['pkmn'].type2] += 1
+		for p in team2:
+			team2_types[p['pkmn'].type1] += 1
+			if p['pkmn'].type2 > -1:
+				team2_types[p['pkmn'].type2] += 1
+		
+		# Squared distance of type distribution
+		type_dist = sum( [ (team1_types[i] - team2_types[i]) ** 2 for i in range(0, 18) ] )
+		
+		# Squared distance of move type distribution
+		team1_move_types = [0] * 18
+		team2_move_types = [0] * 18
+		
+		# Populate move type distribution lists
+		for p in team2:
+			for m in p['moves']:
+				if not m.name == "Splash":
+					team1_move_types[m.move_type] += 1
+		for p in team2:
+			for m in p['moves']:
+				if not m.name == "Splash":
+					team2_move_types[m.move_type] += 1 
+		
+		# Squared distance of type distribution
+		move_type_dist = sum( [ (team1_move_types[i] - team2_move_types[i]) ** 2 for i in range(0, 18) ] )
+		
+		# Output square root
+		return ( type_dist + move_type_dist ) ** 0.5
+		
+	elif mode == 1:
+		# Pairwise squared distances between each Pokemon (if full teams of 6 Pokemon, there are 36 calculations made)
+		# Get a list of distances for each Pokemon on the team
+		# Each entry in team#_distances is the average distance between a Pokemon on team# and every other Pokemon on the opposite team
+		team1_distance = 0
+		team2_distance = 0
+		for pkmn1 in team1:
+			for pkmn2 in team2:
+				# Distances between pkmn1 and each opponent
+				# Add to total
+				team1_distance += pkmn_dist(pkmn1, pkmn2)
+		
+		for pkmn1 in team2:
+			for pkmn2 in team1:
+				# Distances between pkmn1 and each opponent
+				# Add to total
+				team2_distance += pkmn_dist(pkmn1, pkmn2)
+		
+		# Compute distance between teams, absolute value
+		# Averaged by number of comparisons
+		team_dist = abs( team1_distance - team2_distance ) / (len(team1) * len(team2))
+		
+		# Output square root
+		return team_dist ** 0.5
+		
+	else:
+		# Squared "distance" between base strengths of Pokemon
+		# Use mock_battle_simple
+		mock_results = mock_battle(team1, team2)
+		
+		# Output square root
+		return mock_results ** 0.5
 
 
 '''
@@ -238,7 +245,7 @@ def similarity(teams):
 			if i == j: # Same team means distance of 0
 				sim[i][j] = 0.0
 			else:
-				sim[i][j] = team_dist(teams[i], teams[j])
+				sim[i][j] = team_dist(teams[i], teams[j], 1)
 				sim[j][i] = sim[i][j]
 		
 			print "Calculation", i, j, "complete; go to next entry"
