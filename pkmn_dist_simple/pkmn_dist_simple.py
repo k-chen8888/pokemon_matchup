@@ -224,16 +224,22 @@ Similarity between teams
 Builds and normalizes distance matrix to create adjacency matrix
 '''
 def similarity(teams):
-	adj = []
+	# Start off with array of 0s
+	# Dimensions are len(teams) * len(teams)
+	adj = [ [0] * len(teams) ] * len(teams)
 	
-	# Get distance between each team
-	for team1 in teams:
-		adj_row = []
-		
-		for team2 in teams:
-			adj_row.append( team_dist(team1, team2) )
-		
-		adj.append(adj_row)
+	# Populate array with distances
+	# Takes advantage of symmetry
+	for i in range(0, len(teams)):
+		for j in range(0, i + 1):
+			if not i == j:
+				adj[i][j] = team_dist(teams[i], teams[j])
+				
+				# Symmetry
+				adj[j][i] = adj[i][j]
+				
+			else: # Same team means distance of 0
+				pass
 	
 	# Normalize
 	#adj_n = normalize(adj)
