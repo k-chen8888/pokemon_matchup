@@ -57,13 +57,13 @@ def team_dist(team1, team2):
 	
 	# Populate type distribution lists
 	for p in team1:
-		team1_types[p.type1] += 1
-		if p.type1 > -1:
-			team1_types[p.type2] += 1
+		team1_types[p['pkmn'].type1] += 1
+		if p['pkmn'].type2 > -1:
+			team1_types[p['pkmn'].type2] += 1
 	for p in team2:
-		team2_types[p.type1] += 1
-		if p.type1 > -1:
-			team2_types[p.type2] += 1
+		team2_types[p['pkmn'].type1] += 1
+		if p['pkmn'].type2 > -1:
+			team2_types[p['pkmn'].type2] += 1
 	
 	# Squared distance of type distribution
 	type_dist = sum( [ (team1_types[i] - team2_types[i]) ** 2 for i in range(0, 18) ] )
@@ -128,30 +128,30 @@ Define each Pokemon in the team as a dictionary
 def pkmn_dist(pkmn1, pkmn2):
 	# Type Similarity
 	type_dist = 0
-	if not pkmn1.type1 == pkmn2.type1 or not pkmn1.type2 == pkmn2.type2:
+	if not pkmn1['pkmn'].type1 == pkmn2['pkmn'].type1 or not pkmn1['pkmn'].type2 == pkmn2['pkmn'].type2:
 		# Table for first Pokemon
 		adv_table_pkmn1 = []
 		for i in range(0, 18):
-			if pkmn1.type2 == -1:
-				adv_table_pkmn1.append( typing[i][pkmn1.type1] )
+			if pkmn1['pkmn'].type2 == -1:
+				adv_table_pkmn1.append( typing[i][pkmn1['pkmn'].type1] )
 			else:
-				adv_table_pkmn1.append( typing[i][pkmn1.type1] * typing[i][pkmn1.type2] )
+				adv_table_pkmn1.append( typing[i][pkmn1['pkmn'].type1] * typing[i][pkmn1['pkmn'].type2] )
 		
 		# Table for second Pokemon
 		adv_table_pkmn2 = []
 		for i in range(0, 18):
-			if pkmn2.type2 == -1:
-				adv_table_pkmn2.append( typing[i][pkmn2.type1] )
+			if pkmn2['pkmn'].type2 == -1:
+				adv_table_pkmn2.append( typing[i][pkmn2['pkmn'].type1] )
 			else:
-				adv_table_pkmn2.append( typing[i][pkmn2.type1] * typing[i][pkmn2.type2] )
+				adv_table_pkmn2.append( typing[i][pkmn2['pkmn'].type1] * typing[i][pkmn2['pkmn'].type2] )
 		
 		# Euclidean Distance
 		type_dist = sum( [ ( adv_table_p1[i] - adv_table_p2[i] ) ** 2 for i in range(0, 18) ] )
 	
 	
 	# Distance between base stats
-	pkmn1_base = [ pkmn1.base_hp, pkmn1.base_atk, pkmn1.base_def, pkmn1.base_spatk, pkmn1.base_spdef, pkmn1.base_spd ]
-	pkmn2_base = [ pkmn2.base_hp, pkmn2.base_atk, pkmn2.base_def, pkmn2.base_spatk, pkmn2.base_spdef, pkmn2.base_spd ]
+	pkmn1_base = [ pkmn1['pkmn'].base_hp, pkmn1['pkmn'].base_atk, pkmn1['pkmn'].base_def, pkmn1['pkmn'].base_spatk, pkmn1['pkmn'].base_spdef, pkmn1['pkmn'].base_spd ]
+	pkmn2_base = [ pkmn2['pkmn'].base_hp, pkmn2['pkmn'].base_atk, pkmn2['pkmn'].base_def, pkmn2['pkmn'].base_spatk, pkmn2['pkmn'].base_spdef, pkmn2['pkmn'].base_spd ]
 	base_dist = sum( [ ( pkmn1_base[i] - pkmn2_base[i] ) ** 2 for i in range(0, 6) ] )
 	
 	# Pairwise distance between each move, averaged using the number of moves it was compared to
