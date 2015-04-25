@@ -229,7 +229,7 @@ def partition(data_table, results):
 	rand_inst = random.sample( range(0, len(data_table)), len(data_table) / 10 )
 	
 	for i in range(0, len(data_table)):
-		print len(data_table[i])
+		print i, len(data_table[i])
 		# Append to validation set
 		if i in rand_inst:
 			valid.append( copy.deepcopy(data_table[i]) )
