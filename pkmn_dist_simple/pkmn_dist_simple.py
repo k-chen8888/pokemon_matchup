@@ -238,7 +238,7 @@ def similarity(teams):
 	# Normalize
 	#adj_n = normalize(adj)
 	
-	return adj_n
+	return adj
 
 
 '''
