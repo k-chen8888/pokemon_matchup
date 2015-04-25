@@ -3,7 +3,7 @@ Experimental Naive Bayes classifier
 '''
 
 
-import sys, os, math, re, copy
+import sys, os, math, re, copy, json
 
 
 '''
@@ -11,6 +11,11 @@ Data analysis tools
 '''
 import numpy as np
 from sklearn.naive_bayes import GaussianNB
+
+# Distance measures and data evaluation
+from pkmn_dist_simple.mock_battle_simple import *
+from pkmn_dist_simple.pkmn_dist_simple import *
+from pkmn_dist_simple.clustering_tools import *
 
 
 '''
