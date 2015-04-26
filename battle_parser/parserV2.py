@@ -25,7 +25,7 @@ class Pokemon:
     self.moves = []
     self.boosts = {"hp":0, "atk":0, "def":0, "spa":0, "spd":0,"spe":0, "evasion":0, "accuracy":0}
     self.unboosts = {"hp":0, "atk":0, "def":0, "spa":0, "spd":0,"spe":0, "evasion":0, "accuracy":0}
-    self.status = {"brn":0, "par":0, "slp":0, "frz":0, "psn":0, "tox":0, "confusion":0, "trapped":0, "typechange":0, "Substitute":0, "Leech Seed":0, "Taunt":0, "Heal Block":0}
+    self.status = {"brn":0, "par":0, "slp":0, "frz":0, "psn":0, "tox":0, "confusion":0, "trapped":0, "typechange":0, "Substitute":0, "Leech Seed":0, "Taunt":0, "Heal Block":0, "Ingrain":0}
     self.faint = 0
     self.form = 0
 		
