@@ -1,0 +1,4663 @@
+[
+  {
+    "team1": [
+      {
+        "extra": {
+          "boosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }, 
+          "fainted": 1, 
+          "status": {
+            "Substitute": 0, 
+            "brn": 1, 
+            "confusion": 0, 
+            "frz": 0, 
+            "par": 0, 
+            "psn": 0, 
+            "slp": 0, 
+            "tox": 0, 
+            "trapped": 0, 
+            "typechange": 0
+          }, 
+          "unboosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 2, 
+            "spd": 0, 
+            "spe": 0
+          }
+        }, 
+        "item": "Life Orb", 
+        "moves": [
+          "Psyshock", 
+          "Roost", 
+          "Draco Meteor"
+        ], 
+        "name": "Latios"
+      }, 
+      {
+        "extra": {
+          "boosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }, 
+          "fainted": 1, 
+          "status": {
+            "Substitute": 0, 
+            "brn": 0, 
+            "confusion": 0, 
+            "frz": 0, 
+            "par": 0, 
+            "psn": 0, 
+            "slp": 0, 
+            "tox": 0, 
+            "trapped": 0, 
+            "typechange": 0
+          }, 
+          "unboosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }
+        }, 
+        "item": null, 
+        "moves": [
+          "U-turn"
+        ], 
+        "name": "Talonflame"
+      }, 
+      {
+        "extra": {
+          "boosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }, 
+          "fainted": 0, 
+          "status": {
+            "Substitute": 0, 
+            "brn": 0, 
+            "confusion": 0, 
+            "frz": 0, 
+            "par": 0, 
+            "psn": 0, 
+            "slp": 0, 
+            "tox": 0, 
+            "trapped": 0, 
+            "typechange": 0
+          }, 
+          "unboosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }
+        }, 
+        "item": null, 
+        "moves": [], 
+        "name": "Keldeo"
+      }, 
+      {
+        "extra": {
+          "boosts": {
+            "atk": 0, 
+            "def": 1, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }, 
+          "fainted": 0, 
+          "status": {
+            "Substitute": 0, 
+            "brn": 0, 
+            "confusion": 0, 
+            "frz": 0, 
+            "par": 0, 
+            "psn": 0, 
+            "slp": 0, 
+            "tox": 0, 
+            "trapped": 0, 
+            "typechange": 0
+          }, 
+          "unboosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }
+        }, 
+        "item": "Diancite", 
+        "moves": [
+          "Protect", 
+          "Whirlwind", 
+          "Diamond Storm", 
+          "Moonblast"
+        ], 
+        "name": "Mega Diancie"
+      }, 
+      {
+        "extra": {
+          "boosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }, 
+          "fainted": 0, 
+          "status": {
+            "Substitute": 0, 
+            "brn": 0, 
+            "confusion": 0, 
+            "frz": 0, 
+            "par": 0, 
+            "psn": 0, 
+            "slp": 0, 
+            "tox": 0, 
+            "trapped": 0, 
+            "typechange": 0
+          }, 
+          "unboosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }
+        }, 
+        "item": "Life Orb", 
+        "moves": [
+          "Knock Off"
+        ], 
+        "name": "Bisharp"
+      }, 
+      {
+        "extra": {
+          "boosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }, 
+          "fainted": 0, 
+          "status": {
+            "Substitute": 0, 
+            "brn": 0, 
+            "confusion": 0, 
+            "frz": 0, 
+            "par": 0, 
+            "psn": 0, 
+            "slp": 0, 
+            "tox": 0, 
+            "trapped": 0, 
+            "typechange": 0
+          }, 
+          "unboosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }
+        }, 
+        "item": null, 
+        "moves": [
+          "Earth Power", 
+          "Stealth Rock", 
+          "Focus Blast", 
+          "Sludge Wave"
+        ], 
+        "name": "Landorus"
+      }, 
+      {
+        "hazards": {
+          "Light Screen": 0, 
+          "Reflect": 0, 
+          "Spikes": 0, 
+          "Stealth Rock": 1, 
+          "Sticky Web": 0, 
+          "Tailwind": 0, 
+          "Toxic Spikes": 0
+        }, 
+        "weather": {
+          "DeltaStream": 0, 
+          "DesolateLand": 0, 
+          "Hail": 0, 
+          "PrimordialSea": 0, 
+          "RainDance": 0, 
+          "Sandstorm": 0, 
+          "SunnyDay": 0, 
+          "none": 1
+        }
+      }
+    ], 
+    "team2": [
+      {
+        "extra": {
+          "boosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }, 
+          "fainted": 1, 
+          "status": {
+            "Substitute": 0, 
+            "brn": 0, 
+            "confusion": 0, 
+            "frz": 0, 
+            "par": 0, 
+            "psn": 0, 
+            "slp": 0, 
+            "tox": 0, 
+            "trapped": 0, 
+            "typechange": 0
+          }, 
+          "unboosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 1, 
+            "spd": 0, 
+            "spe": 0
+          }
+        }, 
+        "item": null, 
+        "moves": [
+          "Scald"
+        ], 
+        "name": "Slowbro"
+      }, 
+      {
+        "extra": {
+          "boosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }, 
+          "fainted": 1, 
+          "status": {
+            "Substitute": 0, 
+            "brn": 0, 
+            "confusion": 0, 
+            "frz": 0, 
+            "par": 0, 
+            "psn": 0, 
+            "slp": 0, 
+            "tox": 0, 
+            "trapped": 0, 
+            "typechange": 0
+          }, 
+          "unboosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }
+        }, 
+        "item": "Black Sludge", 
+        "moves": [], 
+        "name": "Tentacruel"
+      }, 
+      {
+        "extra": {
+          "boosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }, 
+          "fainted": 1, 
+          "status": {
+            "Substitute": 0, 
+            "brn": 0, 
+            "confusion": 0, 
+            "frz": 0, 
+            "par": 0, 
+            "psn": 0, 
+            "slp": 0, 
+            "tox": 0, 
+            "trapped": 0, 
+            "typechange": 0
+          }, 
+          "unboosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }
+        }, 
+        "item": "Leftovers", 
+        "moves": [
+          "Recover", 
+          "Giga Drain"
+        ], 
+        "name": "Celebi"
+      }, 
+      {
+        "extra": {
+          "boosts": {
+            "atk": 1, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }, 
+          "fainted": 1, 
+          "status": {
+            "Substitute": 0, 
+            "brn": 0, 
+            "confusion": 0, 
+            "frz": 0, 
+            "par": 0, 
+            "psn": 0, 
+            "slp": 0, 
+            "tox": 0, 
+            "trapped": 0, 
+            "typechange": 0
+          }, 
+          "unboosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }
+        }, 
+        "item": "Leftovers", 
+        "moves": [
+          "Scald", 
+          "Secret Sword"
+        ], 
+        "name": "Keldeo"
+      }, 
+      {
+        "extra": {
+          "boosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }, 
+          "fainted": 1, 
+          "status": {
+            "Substitute": 0, 
+            "brn": 0, 
+            "confusion": 0, 
+            "frz": 0, 
+            "par": 0, 
+            "psn": 0, 
+            "slp": 0, 
+            "tox": 0, 
+            "trapped": 0, 
+            "typechange": 0
+          }, 
+          "unboosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }
+        }, 
+        "item": "Leftovers", 
+        "moves": [
+          "Whirlwind", 
+          "Brave Bird"
+        ], 
+        "name": "Skarmory"
+      }, 
+      {
+        "extra": {
+          "boosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }, 
+          "fainted": 1, 
+          "status": {
+            "Substitute": 0, 
+            "brn": 1, 
+            "confusion": 1, 
+            "frz": 0, 
+            "par": 0, 
+            "psn": 0, 
+            "slp": 0, 
+            "tox": 0, 
+            "trapped": 0, 
+            "typechange": 0
+          }, 
+          "unboosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }
+        }, 
+        "item": null, 
+        "moves": [
+          "Earthquake", 
+          "Outrage", 
+          "Stealth Rock"
+        ], 
+        "name": "Garchomp"
+      }
+    ], 
+    "winner": "team1"
+  }, 
+  {
+    "team1": [
+      {
+        "extra": {
+          "boosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }, 
+          "fainted": 1, 
+          "status": {
+            "Substitute": 0, 
+            "brn": 1, 
+            "confusion": 0, 
+            "frz": 0, 
+            "par": 0, 
+            "psn": 0, 
+            "slp": 0, 
+            "tox": 0, 
+            "trapped": 0, 
+            "typechange": 0
+          }, 
+          "unboosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }
+        }, 
+        "item": "Metagrossite", 
+        "moves": [
+          "Meteor Mash"
+        ], 
+        "name": "Mega Metagross"
+      }, 
+      {
+        "extra": {
+          "boosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 2, 
+            "spd": 2, 
+            "spe": 0
+          }, 
+          "fainted": 1, 
+          "status": {
+            "Substitute": 0, 
+            "brn": 0, 
+            "confusion": 0, 
+            "frz": 0, 
+            "par": 0, 
+            "psn": 0, 
+            "slp": 0, 
+            "tox": 2, 
+            "trapped": 0, 
+            "typechange": 0
+          }, 
+          "unboosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }
+        }, 
+        "item": "Leftovers", 
+        "moves": [
+          "Heal Bell", 
+          "Calm Mind", 
+          "Moonblast"
+        ], 
+        "name": "Clefable"
+      }, 
+      {
+        "extra": {
+          "boosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }, 
+          "fainted": 1, 
+          "status": {
+            "Substitute": 0, 
+            "brn": 4, 
+            "confusion": 0, 
+            "frz": 0, 
+            "par": 0, 
+            "psn": 0, 
+            "slp": 0, 
+            "tox": 0, 
+            "trapped": 0, 
+            "typechange": 0
+          }, 
+          "unboosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }
+        }, 
+        "item": "Lum Berry", 
+        "moves": [
+          "Scald", 
+          "Taunt"
+        ], 
+        "name": "Keldeo"
+      }, 
+      {
+        "extra": {
+          "boosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }, 
+          "fainted": 1, 
+          "status": {
+            "Substitute": 0, 
+            "brn": 1, 
+            "confusion": 0, 
+            "frz": 0, 
+            "par": 0, 
+            "psn": 0, 
+            "slp": 0, 
+            "tox": 0, 
+            "trapped": 0, 
+            "typechange": 0
+          }, 
+          "unboosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }
+        }, 
+        "item": "Black Sludge", 
+        "moves": [
+          "Spore", 
+          "Giga Drain"
+        ], 
+        "name": "Amoonguss"
+      }, 
+      {
+        "extra": {
+          "boosts": {
+            "atk": 4, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }, 
+          "fainted": 1, 
+          "status": {
+            "Substitute": 3, 
+            "brn": 0, 
+            "confusion": 0, 
+            "frz": 0, 
+            "par": 0, 
+            "psn": 0, 
+            "slp": 0, 
+            "tox": 0, 
+            "trapped": 0, 
+            "typechange": 0
+          }, 
+          "unboosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }
+        }, 
+        "item": "Salac Berry", 
+        "moves": [
+          "Substitute", 
+          "Swords Dance", 
+          "Knock Off"
+        ], 
+        "name": "Landorus Therian Form"
+      }, 
+      {
+        "extra": {
+          "boosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }, 
+          "fainted": 1, 
+          "status": {
+            "Substitute": 0, 
+            "brn": 0, 
+            "confusion": 0, 
+            "frz": 0, 
+            "par": 0, 
+            "psn": 0, 
+            "slp": 0, 
+            "tox": 0, 
+            "trapped": 0, 
+            "typechange": 0
+          }, 
+          "unboosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }
+        }, 
+        "item": null, 
+        "moves": [
+          "Stealth Rock", 
+          "Toxic"
+        ], 
+        "name": "Heatran"
+      }, 
+      {
+        "hazards": {
+          "Light Screen": 0, 
+          "Reflect": 0, 
+          "Spikes": 0, 
+          "Stealth Rock": 1, 
+          "Sticky Web": 0, 
+          "Tailwind": 0, 
+          "Toxic Spikes": 0
+        }, 
+        "weather": {
+          "DeltaStream": 0, 
+          "DesolateLand": 0, 
+          "Hail": 0, 
+          "PrimordialSea": 0, 
+          "RainDance": 0, 
+          "Sandstorm": 0, 
+          "SunnyDay": 0, 
+          "none": 1
+        }
+      }
+    ], 
+    "team2": [
+      {
+        "extra": {
+          "boosts": {
+            "atk": 2, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }, 
+          "fainted": 0, 
+          "status": {
+            "Substitute": 0, 
+            "brn": 0, 
+            "confusion": 0, 
+            "frz": 0, 
+            "par": 0, 
+            "psn": 0, 
+            "slp": 0, 
+            "tox": 1, 
+            "trapped": 0, 
+            "typechange": 0
+          }, 
+          "unboosts": {
+            "atk": 1, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }
+        }, 
+        "item": "Toxic Orb", 
+        "moves": [
+          "Knock Off", 
+          "Earthquake", 
+          "Swords Dance"
+        ], 
+        "name": "Gliscor"
+      }, 
+      {
+        "extra": {
+          "boosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }, 
+          "fainted": 0, 
+          "status": {
+            "Substitute": 0, 
+            "brn": 1, 
+            "confusion": 0, 
+            "frz": 0, 
+            "par": 0, 
+            "psn": 0, 
+            "slp": 0, 
+            "tox": 0, 
+            "trapped": 0, 
+            "typechange": 2
+          }, 
+          "unboosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }
+        }, 
+        "item": "Leftovers", 
+        "moves": [
+          "Rapid Spin", 
+          "Reflect Type", 
+          "Scald", 
+          "Recover"
+        ], 
+        "name": "Starmie"
+      }, 
+      {
+        "extra": {
+          "boosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }, 
+          "fainted": 0, 
+          "status": {
+            "Substitute": 0, 
+            "brn": 0, 
+            "confusion": 0, 
+            "frz": 0, 
+            "par": 0, 
+            "psn": 0, 
+            "slp": 0, 
+            "tox": 1, 
+            "trapped": 0, 
+            "typechange": 0
+          }, 
+          "unboosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }
+        }, 
+        "item": null, 
+        "moves": [
+          "Earth Power"
+        ], 
+        "name": "Landorus"
+      }, 
+      {
+        "extra": {
+          "boosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 1, 
+            "spd": 1, 
+            "spe": 0
+          }, 
+          "fainted": 1, 
+          "status": {
+            "Substitute": 0, 
+            "brn": 1, 
+            "confusion": 0, 
+            "frz": 0, 
+            "par": 0, 
+            "psn": 0, 
+            "slp": 0, 
+            "tox": 0, 
+            "trapped": 0, 
+            "typechange": 0
+          }, 
+          "unboosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }
+        }, 
+        "item": "Leftovers", 
+        "moves": [
+          "Soft-Boiled", 
+          "Calm Mind"
+        ], 
+        "name": "Clefable"
+      }, 
+      {
+        "extra": {
+          "boosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }, 
+          "fainted": 1, 
+          "status": {
+            "Substitute": 0, 
+            "brn": 1, 
+            "confusion": 0, 
+            "frz": 0, 
+            "par": 0, 
+            "psn": 0, 
+            "slp": 0, 
+            "tox": 0, 
+            "trapped": 0, 
+            "typechange": 0
+          }, 
+          "unboosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }
+        }, 
+        "item": "Venusaurite", 
+        "moves": [
+          "Giga Drain", 
+          "Synthesis", 
+          "Sludge Bomb"
+        ], 
+        "name": "Mega Venusaur"
+      }, 
+      {
+        "extra": {
+          "boosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }, 
+          "fainted": 0, 
+          "status": {
+            "Substitute": 0, 
+            "brn": 0, 
+            "confusion": 0, 
+            "frz": 0, 
+            "par": 0, 
+            "psn": 0, 
+            "slp": 0, 
+            "tox": 0, 
+            "trapped": 0, 
+            "typechange": 0
+          }, 
+          "unboosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 1, 
+            "spd": 0, 
+            "spe": 0
+          }
+        }, 
+        "item": "Leftovers", 
+        "moves": [
+          "Stealth Rock", 
+          "Toxic", 
+          "Taunt", 
+          "Lava Plume"
+        ], 
+        "name": "Heatran"
+      }
+    ], 
+    "winner": "team2"
+  }, 
+  {
+    "team1": [
+      {
+        "extra": {
+          "boosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }, 
+          "fainted": 1, 
+          "status": {
+            "Substitute": 0, 
+            "brn": 0, 
+            "confusion": 0, 
+            "frz": 0, 
+            "par": 0, 
+            "psn": 0, 
+            "slp": 0, 
+            "tox": 0, 
+            "trapped": 0, 
+            "typechange": 0
+          }, 
+          "unboosts": {
+            "atk": 2, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }
+        }, 
+        "item": "Life Orb", 
+        "moves": [
+          "Spore", 
+          "Bullet Seed", 
+          "Mach Punch"
+        ], 
+        "name": "Breloom"
+      }, 
+      {
+        "extra": {
+          "boosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }, 
+          "fainted": 1, 
+          "status": {
+            "Substitute": 0, 
+            "brn": 0, 
+            "confusion": 0, 
+            "frz": 0, 
+            "par": 0, 
+            "psn": 0, 
+            "slp": 0, 
+            "tox": 0, 
+            "trapped": 0, 
+            "typechange": 0
+          }, 
+          "unboosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }
+        }, 
+        "item": "Leftovers", 
+        "moves": [
+          "Scald"
+        ], 
+        "name": "Suicune"
+      }, 
+      {
+        "extra": {
+          "boosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }, 
+          "fainted": 1, 
+          "status": {
+            "Substitute": 0, 
+            "brn": 0, 
+            "confusion": 0, 
+            "frz": 0, 
+            "par": 0, 
+            "psn": 0, 
+            "slp": 0, 
+            "tox": 0, 
+            "trapped": 0, 
+            "typechange": 0
+          }, 
+          "unboosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }
+        }, 
+        "item": null, 
+        "moves": [
+          "Fire Blast"
+        ], 
+        "name": "Tyranitar"
+      }, 
+      {
+        "extra": {
+          "boosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }, 
+          "fainted": 1, 
+          "status": {
+            "Substitute": 0, 
+            "brn": 0, 
+            "confusion": 0, 
+            "frz": 0, 
+            "par": 0, 
+            "psn": 0, 
+            "slp": 0, 
+            "tox": 0, 
+            "trapped": 0, 
+            "typechange": 0
+          }, 
+          "unboosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }
+        }, 
+        "item": "Leftovers", 
+        "moves": [
+          "Psyshock", 
+          "Recover", 
+          "Focus Blast"
+        ], 
+        "name": "Reuniclus"
+      }, 
+      {
+        "extra": {
+          "boosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }, 
+          "fainted": 1, 
+          "status": {
+            "Substitute": 0, 
+            "brn": 0, 
+            "confusion": 0, 
+            "frz": 0, 
+            "par": 0, 
+            "psn": 0, 
+            "slp": 0, 
+            "tox": 0, 
+            "trapped": 0, 
+            "typechange": 0
+          }, 
+          "unboosts": {
+            "atk": 1, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }
+        }, 
+        "item": "Manectite", 
+        "moves": [
+          "Overheat", 
+          "Volt Switch", 
+          "Thunderbolt"
+        ], 
+        "name": "Mega Manectric"
+      }, 
+      {
+        "extra": {
+          "boosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }, 
+          "fainted": 0, 
+          "status": {
+            "Substitute": 0, 
+            "brn": 0, 
+            "confusion": 0, 
+            "frz": 0, 
+            "par": 0, 
+            "psn": 0, 
+            "slp": 0, 
+            "tox": 0, 
+            "trapped": 0, 
+            "typechange": 0
+          }, 
+          "unboosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }
+        }, 
+        "item": "Life Orb", 
+        "moves": [
+          "Earthquake", 
+          "Rock Slide"
+        ], 
+        "name": "Excadrill"
+      }, 
+      {
+        "hazards": {
+          "Light Screen": 0, 
+          "Reflect": 0, 
+          "Spikes": 0, 
+          "Stealth Rock": 0, 
+          "Sticky Web": 0, 
+          "Tailwind": 0, 
+          "Toxic Spikes": 0
+        }, 
+        "weather": {
+          "DeltaStream": 0, 
+          "DesolateLand": 0, 
+          "Hail": 0, 
+          "PrimordialSea": 0, 
+          "RainDance": 0, 
+          "Sandstorm": 0, 
+          "SunnyDay": 0, 
+          "none": 1
+        }
+      }
+    ], 
+    "team2": [
+      {
+        "extra": {
+          "boosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }, 
+          "fainted": 1, 
+          "status": {
+            "Substitute": 0, 
+            "brn": 0, 
+            "confusion": 0, 
+            "frz": 0, 
+            "par": 0, 
+            "psn": 0, 
+            "slp": 0, 
+            "tox": 0, 
+            "trapped": 0, 
+            "typechange": 0
+          }, 
+          "unboosts": {
+            "atk": 1, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }
+        }, 
+        "item": "Life Orb", 
+        "moves": [
+          "Gunk Shot", 
+          "Drain Punch", 
+          "Sucker Punch"
+        ], 
+        "name": "Toxicroak"
+      }, 
+      {
+        "extra": {
+          "boosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }, 
+          "fainted": 1, 
+          "status": {
+            "Substitute": 0, 
+            "brn": 0, 
+            "confusion": 0, 
+            "frz": 0, 
+            "par": 0, 
+            "psn": 0, 
+            "slp": 0, 
+            "tox": 0, 
+            "trapped": 0, 
+            "typechange": 0
+          }, 
+          "unboosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }
+        }, 
+        "item": null, 
+        "moves": [], 
+        "name": "Volcarona"
+      }, 
+      {
+        "extra": {
+          "boosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }, 
+          "fainted": 1, 
+          "status": {
+            "Substitute": 0, 
+            "brn": 0, 
+            "confusion": 0, 
+            "frz": 0, 
+            "par": 0, 
+            "psn": 0, 
+            "slp": 0, 
+            "tox": 0, 
+            "trapped": 0, 
+            "typechange": 0
+          }, 
+          "unboosts": {
+            "atk": 1, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }
+        }, 
+        "item": "Diancite", 
+        "moves": [
+          "Moonblast", 
+          "Earth Power"
+        ], 
+        "name": "Mega Diancie"
+      }, 
+      {
+        "extra": {
+          "boosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }, 
+          "fainted": 1, 
+          "status": {
+            "Substitute": 0, 
+            "brn": 0, 
+            "confusion": 0, 
+            "frz": 0, 
+            "par": 0, 
+            "psn": 0, 
+            "slp": 0, 
+            "tox": 0, 
+            "trapped": 0, 
+            "typechange": 0
+          }, 
+          "unboosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }
+        }, 
+        "item": "Chople Berry", 
+        "moves": [
+          "Stealth Rock", 
+          "Roar", 
+          "Scald"
+        ], 
+        "name": "Empoleon"
+      }, 
+      {
+        "extra": {
+          "boosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }, 
+          "fainted": 1, 
+          "status": {
+            "Substitute": 0, 
+            "brn": 0, 
+            "confusion": 0, 
+            "frz": 0, 
+            "par": 0, 
+            "psn": 0, 
+            "slp": 1, 
+            "tox": 0, 
+            "trapped": 0, 
+            "typechange": 0
+          }, 
+          "unboosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }
+        }, 
+        "item": null, 
+        "moves": [], 
+        "name": "Raikou"
+      }, 
+      {
+        "extra": {
+          "boosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }, 
+          "fainted": 1, 
+          "status": {
+            "Substitute": 0, 
+            "brn": 0, 
+            "confusion": 0, 
+            "frz": 0, 
+            "par": 0, 
+            "psn": 0, 
+            "slp": 0, 
+            "tox": 0, 
+            "trapped": 0, 
+            "typechange": 0
+          }, 
+          "unboosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }
+        }, 
+        "item": null, 
+        "moves": [
+          "U-turn", 
+          "Earthquake"
+        ], 
+        "name": "Landorus Therian Form"
+      }
+    ], 
+    "winner": "team1"
+  }, 
+  {
+    "team1": [
+      {
+        "extra": {
+          "boosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }, 
+          "fainted": 1, 
+          "status": {
+            "Substitute": 0, 
+            "brn": 1, 
+            "confusion": 0, 
+            "frz": 0, 
+            "par": 0, 
+            "psn": 0, 
+            "slp": 0, 
+            "tox": 0, 
+            "trapped": 0, 
+            "typechange": 0
+          }, 
+          "unboosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 4, 
+            "spd": 0, 
+            "spe": 0
+          }
+        }, 
+        "item": "Life Orb", 
+        "moves": [
+          "Draco Meteor", 
+          "Heal Block"
+        ], 
+        "name": "Latios"
+      }, 
+      {
+        "extra": {
+          "boosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }, 
+          "fainted": 0, 
+          "status": {
+            "Substitute": 0, 
+            "brn": 0, 
+            "confusion": 0, 
+            "frz": 0, 
+            "par": 0, 
+            "psn": 0, 
+            "slp": 0, 
+            "tox": 0, 
+            "trapped": 0, 
+            "typechange": 0
+          }, 
+          "unboosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }
+        }, 
+        "item": "Metagrossite", 
+        "moves": [
+          "Meteor Mash"
+        ], 
+        "name": "Mega Metagross"
+      }, 
+      {
+        "extra": {
+          "boosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }, 
+          "fainted": 0, 
+          "status": {
+            "Substitute": 0, 
+            "brn": 0, 
+            "confusion": 0, 
+            "frz": 0, 
+            "par": 0, 
+            "psn": 0, 
+            "slp": 0, 
+            "tox": 0, 
+            "trapped": 0, 
+            "typechange": 0
+          }, 
+          "unboosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }
+        }, 
+        "item": null, 
+        "moves": [
+          "Scald"
+        ], 
+        "name": "Keldeo"
+      }, 
+      {
+        "extra": {
+          "boosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }, 
+          "fainted": 1, 
+          "status": {
+            "Substitute": 0, 
+            "brn": 0, 
+            "confusion": 0, 
+            "frz": 0, 
+            "par": 0, 
+            "psn": 0, 
+            "slp": 0, 
+            "tox": 0, 
+            "trapped": 0, 
+            "typechange": 0
+          }, 
+          "unboosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }
+        }, 
+        "item": "Life Orb", 
+        "moves": [
+          "Thunderbolt"
+        ], 
+        "name": "Thundurus"
+      }, 
+      {
+        "extra": {
+          "boosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }, 
+          "fainted": 1, 
+          "status": {
+            "Substitute": 0, 
+            "brn": 0, 
+            "confusion": 0, 
+            "frz": 0, 
+            "par": 0, 
+            "psn": 0, 
+            "slp": 0, 
+            "tox": 0, 
+            "trapped": 0, 
+            "typechange": 0
+          }, 
+          "unboosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }
+        }, 
+        "item": null, 
+        "moves": [], 
+        "name": "Landorus"
+      }, 
+      {
+        "extra": {
+          "boosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }, 
+          "fainted": 1, 
+          "status": {
+            "Substitute": 0, 
+            "brn": 0, 
+            "confusion": 0, 
+            "frz": 0, 
+            "par": 0, 
+            "psn": 0, 
+            "slp": 0, 
+            "tox": 0, 
+            "trapped": 0, 
+            "typechange": 6
+          }, 
+          "unboosts": {
+            "atk": 4, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }
+        }, 
+        "item": "Life Orb", 
+        "moves": [
+          "Spikes", 
+          "Hidden Power", 
+          "Grass Knot", 
+          "Ice Beam"
+        ], 
+        "name": "Greninja"
+      }, 
+      {
+        "hazards": {
+          "Light Screen": 0, 
+          "Reflect": 0, 
+          "Spikes": 1, 
+          "Stealth Rock": 0, 
+          "Sticky Web": 0, 
+          "Tailwind": 0, 
+          "Toxic Spikes": 0
+        }, 
+        "weather": {
+          "DeltaStream": 0, 
+          "DesolateLand": 0, 
+          "Hail": 0, 
+          "PrimordialSea": 0, 
+          "RainDance": 0, 
+          "Sandstorm": 0, 
+          "SunnyDay": 0, 
+          "none": 1
+        }
+      }
+    ], 
+    "team2": [
+      {
+        "extra": {
+          "boosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }, 
+          "fainted": 1, 
+          "status": {
+            "Substitute": 0, 
+            "brn": 0, 
+            "confusion": 0, 
+            "frz": 0, 
+            "par": 0, 
+            "psn": 0, 
+            "slp": 0, 
+            "tox": 1, 
+            "trapped": 0, 
+            "typechange": 0
+          }, 
+          "unboosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }
+        }, 
+        "item": null, 
+        "moves": [], 
+        "name": "Gliscor"
+      }, 
+      {
+        "extra": {
+          "boosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 2, 
+            "spd": 2, 
+            "spe": 0
+          }, 
+          "fainted": 1, 
+          "status": {
+            "Substitute": 0, 
+            "brn": 0, 
+            "confusion": 0, 
+            "frz": 0, 
+            "par": 0, 
+            "psn": 0, 
+            "slp": 0, 
+            "tox": 0, 
+            "trapped": 0, 
+            "typechange": 0
+          }, 
+          "unboosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }
+        }, 
+        "item": "Slowbronite", 
+        "moves": [
+          "Scald", 
+          "Slack Off", 
+          "Calm Mind"
+        ], 
+        "name": "Mega Slowbro"
+      }, 
+      {
+        "extra": {
+          "boosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }, 
+          "fainted": 1, 
+          "status": {
+            "Substitute": 0, 
+            "brn": 0, 
+            "confusion": 0, 
+            "frz": 0, 
+            "par": 0, 
+            "psn": 0, 
+            "slp": 0, 
+            "tox": 0, 
+            "trapped": 0, 
+            "typechange": 0
+          }, 
+          "unboosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }
+        }, 
+        "item": null, 
+        "moves": [
+          "Healing Wish"
+        ], 
+        "name": "Latias"
+      }, 
+      {
+        "extra": {
+          "boosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }, 
+          "fainted": 1, 
+          "status": {
+            "Substitute": 0, 
+            "brn": 0, 
+            "confusion": 0, 
+            "frz": 0, 
+            "par": 0, 
+            "psn": 0, 
+            "slp": 0, 
+            "tox": 0, 
+            "trapped": 0, 
+            "typechange": 0
+          }, 
+          "unboosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }
+        }, 
+        "item": null, 
+        "moves": [
+          "U-turn", 
+          "Stone Edge", 
+          "Earthquake"
+        ], 
+        "name": "Landorus Therian Form"
+      }, 
+      {
+        "extra": {
+          "boosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }, 
+          "fainted": 1, 
+          "status": {
+            "Substitute": 0, 
+            "brn": 0, 
+            "confusion": 0, 
+            "frz": 0, 
+            "par": 0, 
+            "psn": 0, 
+            "slp": 0, 
+            "tox": 0, 
+            "trapped": 0, 
+            "typechange": 1
+          }, 
+          "unboosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }
+        }, 
+        "item": "Life Orb", 
+        "moves": [
+          "Ice Beam"
+        ], 
+        "name": "Greninja"
+      }, 
+      {
+        "extra": {
+          "boosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }, 
+          "fainted": 1, 
+          "status": {
+            "Substitute": 0, 
+            "brn": 0, 
+            "confusion": 0, 
+            "frz": 0, 
+            "par": 0, 
+            "psn": 0, 
+            "slp": 0, 
+            "tox": 0, 
+            "trapped": 0, 
+            "typechange": 0
+          }, 
+          "unboosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }
+        }, 
+        "item": null, 
+        "moves": [], 
+        "name": "Ferrothorn"
+      }
+    ], 
+    "winner": "team1"
+  }, 
+  {
+    "team1": [
+      {
+        "extra": {
+          "boosts": {
+            "atk": 1, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }, 
+          "fainted": 1, 
+          "status": {
+            "Substitute": 0, 
+            "brn": 1, 
+            "confusion": 0, 
+            "frz": 0, 
+            "par": 0, 
+            "psn": 0, 
+            "slp": 0, 
+            "tox": 0, 
+            "trapped": 0, 
+            "typechange": 0
+          }, 
+          "unboosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }
+        }, 
+        "item": "Metagrossite", 
+        "moves": [
+          "Zen Headbutt", 
+          "Meteor Mash"
+        ], 
+        "name": "Mega Metagross"
+      }, 
+      {
+        "extra": {
+          "boosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }, 
+          "fainted": 1, 
+          "status": {
+            "Substitute": 0, 
+            "brn": 0, 
+            "confusion": 0, 
+            "frz": 0, 
+            "par": 0, 
+            "psn": 0, 
+            "slp": 0, 
+            "tox": 0, 
+            "trapped": 0, 
+            "typechange": 0
+          }, 
+          "unboosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }
+        }, 
+        "item": null, 
+        "moves": [
+          "Hyper Voice"
+        ], 
+        "name": "Sylveon"
+      }, 
+      {
+        "extra": {
+          "boosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }, 
+          "fainted": 1, 
+          "status": {
+            "Substitute": 0, 
+            "brn": 0, 
+            "confusion": 0, 
+            "frz": 0, 
+            "par": 0, 
+            "psn": 0, 
+            "slp": 0, 
+            "tox": 0, 
+            "trapped": 0, 
+            "typechange": 0
+          }, 
+          "unboosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }
+        }, 
+        "item": "Life Orb", 
+        "moves": [
+          "Defog", 
+          "Psyshock"
+        ], 
+        "name": "Latias"
+      }, 
+      {
+        "extra": {
+          "boosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }, 
+          "fainted": 1, 
+          "status": {
+            "Substitute": 0, 
+            "brn": 0, 
+            "confusion": 0, 
+            "frz": 0, 
+            "par": 0, 
+            "psn": 0, 
+            "slp": 0, 
+            "tox": 0, 
+            "trapped": 0, 
+            "typechange": 0
+          }, 
+          "unboosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }
+        }, 
+        "item": "Leftovers", 
+        "moves": [
+          "Scald"
+        ], 
+        "name": "Keldeo"
+      }, 
+      {
+        "extra": {
+          "boosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }, 
+          "fainted": 1, 
+          "status": {
+            "Substitute": 0, 
+            "brn": 0, 
+            "confusion": 0, 
+            "frz": 0, 
+            "par": 0, 
+            "psn": 1, 
+            "slp": 0, 
+            "tox": 0, 
+            "trapped": 0, 
+            "typechange": 0
+          }, 
+          "unboosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }
+        }, 
+        "item": "Rocky Helmet", 
+        "moves": [
+          "U-turn", 
+          "Knock Off"
+        ], 
+        "name": "Landorus Therian Form"
+      }, 
+      {
+        "extra": {
+          "boosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }, 
+          "fainted": 1, 
+          "status": {
+            "Substitute": 0, 
+            "brn": 0, 
+            "confusion": 0, 
+            "frz": 0, 
+            "par": 0, 
+            "psn": 0, 
+            "slp": 0, 
+            "tox": 0, 
+            "trapped": 0, 
+            "typechange": 0
+          }, 
+          "unboosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }
+        }, 
+        "item": "Leftovers", 
+        "moves": [
+          "Stealth Rock", 
+          "Lava Plume"
+        ], 
+        "name": "Heatran"
+      }, 
+      {
+        "hazards": {
+          "Light Screen": 0, 
+          "Reflect": 0, 
+          "Spikes": 0, 
+          "Stealth Rock": 1, 
+          "Sticky Web": 0, 
+          "Tailwind": 0, 
+          "Toxic Spikes": 0
+        }, 
+        "weather": {
+          "DeltaStream": 0, 
+          "DesolateLand": 0, 
+          "Hail": 0, 
+          "PrimordialSea": 0, 
+          "RainDance": 0, 
+          "Sandstorm": 0, 
+          "SunnyDay": 0, 
+          "none": 1
+        }
+      }
+    ], 
+    "team2": [
+      {
+        "extra": {
+          "boosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }, 
+          "fainted": 0, 
+          "status": {
+            "Substitute": 0, 
+            "brn": 0, 
+            "confusion": 0, 
+            "frz": 0, 
+            "par": 0, 
+            "psn": 0, 
+            "slp": 0, 
+            "tox": 0, 
+            "trapped": 0, 
+            "typechange": 0
+          }, 
+          "unboosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }
+        }, 
+        "item": "Sablenite", 
+        "moves": [
+          "Will-O-Wisp", 
+          "Shadow Ball"
+        ], 
+        "name": "Mega Sableye"
+      }, 
+      {
+        "extra": {
+          "boosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }, 
+          "fainted": 1, 
+          "status": {
+            "Substitute": 0, 
+            "brn": 0, 
+            "confusion": 0, 
+            "frz": 0, 
+            "par": 0, 
+            "psn": 0, 
+            "slp": 0, 
+            "tox": 0, 
+            "trapped": 0, 
+            "typechange": 4
+          }, 
+          "unboosts": {
+            "atk": 3, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }
+        }, 
+        "item": "Life Orb", 
+        "moves": [
+          "Low Kick", 
+          "Gunk Shot", 
+          "Ice Beam"
+        ], 
+        "name": "Greninja"
+      }, 
+      {
+        "extra": {
+          "boosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }, 
+          "fainted": 1, 
+          "status": {
+            "Substitute": 0, 
+            "brn": 0, 
+            "confusion": 0, 
+            "frz": 0, 
+            "par": 0, 
+            "psn": 0, 
+            "slp": 0, 
+            "tox": 0, 
+            "trapped": 0, 
+            "typechange": 0
+          }, 
+          "unboosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }
+        }, 
+        "item": "Leftovers", 
+        "moves": [
+          "Flash Cannon", 
+          "Spikes"
+        ], 
+        "name": "Klefki"
+      }, 
+      {
+        "extra": {
+          "boosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }, 
+          "fainted": 1, 
+          "status": {
+            "Substitute": 0, 
+            "brn": 0, 
+            "confusion": 0, 
+            "frz": 0, 
+            "par": 0, 
+            "psn": 0, 
+            "slp": 0, 
+            "tox": 0, 
+            "trapped": 0, 
+            "typechange": 0
+          }, 
+          "unboosts": {
+            "atk": 1, 
+            "def": 0, 
+            "evasion": 1, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }
+        }, 
+        "item": null, 
+        "moves": [
+          "Stealth Rock", 
+          "Dragon Tail", 
+          "Earthquake"
+        ], 
+        "name": "Garchomp"
+      }, 
+      {
+        "extra": {
+          "boosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }, 
+          "fainted": 0, 
+          "status": {
+            "Substitute": 0, 
+            "brn": 0, 
+            "confusion": 0, 
+            "frz": 0, 
+            "par": 0, 
+            "psn": 0, 
+            "slp": 0, 
+            "tox": 0, 
+            "trapped": 0, 
+            "typechange": 0
+          }, 
+          "unboosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }
+        }, 
+        "item": null, 
+        "moves": [], 
+        "name": "Clefable"
+      }, 
+      {
+        "extra": {
+          "boosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }, 
+          "fainted": 1, 
+          "status": {
+            "Substitute": 0, 
+            "brn": 0, 
+            "confusion": 0, 
+            "frz": 0, 
+            "par": 0, 
+            "psn": 0, 
+            "slp": 0, 
+            "tox": 0, 
+            "trapped": 0, 
+            "typechange": 0
+          }, 
+          "unboosts": {
+            "atk": 1, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }
+        }, 
+        "item": "Leftovers", 
+        "moves": [
+          "Volt Switch", 
+          "Will-O-Wisp"
+        ], 
+        "name": "Wash Rotom"
+      }
+    ], 
+    "winner": "team2"
+  }, 
+  {
+    "team1": [
+      {
+        "extra": {
+          "boosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 1, 
+            "spd": 1, 
+            "spe": 0
+          }, 
+          "fainted": 0, 
+          "status": {
+            "Substitute": 0, 
+            "brn": 0, 
+            "confusion": 0, 
+            "frz": 0, 
+            "par": 0, 
+            "psn": 0, 
+            "slp": 0, 
+            "tox": 0, 
+            "trapped": 0, 
+            "typechange": 0
+          }, 
+          "unboosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }
+        }, 
+        "item": "Life Orb", 
+        "moves": [
+          "Calm Mind", 
+          "Roost"
+        ], 
+        "name": "Latios"
+      }, 
+      {
+        "extra": {
+          "boosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }, 
+          "fainted": 0, 
+          "status": {
+            "Substitute": 0, 
+            "brn": 0, 
+            "confusion": 0, 
+            "frz": 0, 
+            "par": 0, 
+            "psn": 0, 
+            "slp": 0, 
+            "tox": 0, 
+            "trapped": 0, 
+            "typechange": 0
+          }, 
+          "unboosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }
+        }, 
+        "item": null, 
+        "moves": [], 
+        "name": "Sableye"
+      }, 
+      {
+        "extra": {
+          "boosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }, 
+          "fainted": 0, 
+          "status": {
+            "Substitute": 0, 
+            "brn": 2, 
+            "confusion": 0, 
+            "frz": 0, 
+            "par": 0, 
+            "psn": 0, 
+            "slp": 0, 
+            "tox": 0, 
+            "trapped": 0, 
+            "typechange": 0
+          }, 
+          "unboosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }
+        }, 
+        "item": "Leftovers", 
+        "moves": [
+          "Toxic Spikes", 
+          "Scald", 
+          "Rapid Spin"
+        ], 
+        "name": "Tentacruel"
+      }, 
+      {
+        "extra": {
+          "boosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }, 
+          "fainted": 0, 
+          "status": {
+            "Substitute": 0, 
+            "brn": 0, 
+            "confusion": 0, 
+            "frz": 0, 
+            "par": 0, 
+            "psn": 0, 
+            "slp": 0, 
+            "tox": 0, 
+            "trapped": 0, 
+            "typechange": 0
+          }, 
+          "unboosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }
+        }, 
+        "item": null, 
+        "moves": [], 
+        "name": "Landorus Therian Form"
+      }, 
+      {
+        "extra": {
+          "boosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }, 
+          "fainted": 0, 
+          "status": {
+            "Substitute": 0, 
+            "brn": 0, 
+            "confusion": 0, 
+            "frz": 0, 
+            "par": 0, 
+            "psn": 0, 
+            "slp": 0, 
+            "tox": 0, 
+            "trapped": 0, 
+            "typechange": 0
+          }, 
+          "unboosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }
+        }, 
+        "item": "Leftovers", 
+        "moves": [
+          "Stealth Rock", 
+          "Moonblast", 
+          "Heal Bell"
+        ], 
+        "name": "Clefable"
+      }, 
+      {
+        "extra": {
+          "boosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }, 
+          "fainted": 0, 
+          "status": {
+            "Substitute": 0, 
+            "brn": 0, 
+            "confusion": 0, 
+            "frz": 0, 
+            "par": 0, 
+            "psn": 0, 
+            "slp": 0, 
+            "tox": 0, 
+            "trapped": 0, 
+            "typechange": 0
+          }, 
+          "unboosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }
+        }, 
+        "item": "Leftovers", 
+        "moves": [
+          "Magma Storm", 
+          "Taunt"
+        ], 
+        "name": "Heatran"
+      }, 
+      {
+        "hazards": {
+          "Light Screen": 0, 
+          "Reflect": 0, 
+          "Spikes": 0, 
+          "Stealth Rock": 1, 
+          "Sticky Web": 0, 
+          "Tailwind": 0, 
+          "Toxic Spikes": 1
+        }, 
+        "weather": {
+          "DeltaStream": 0, 
+          "DesolateLand": 0, 
+          "Hail": 0, 
+          "PrimordialSea": 0, 
+          "RainDance": 0, 
+          "Sandstorm": 0, 
+          "SunnyDay": 0, 
+          "none": 1
+        }
+      }
+    ], 
+    "team2": [
+      {
+        "extra": {
+          "boosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }, 
+          "fainted": 1, 
+          "status": {
+            "Substitute": 0, 
+            "brn": 0, 
+            "confusion": 0, 
+            "frz": 0, 
+            "par": 0, 
+            "psn": 1, 
+            "slp": 0, 
+            "tox": 0, 
+            "trapped": 0, 
+            "typechange": 0
+          }, 
+          "unboosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }
+        }, 
+        "item": "Sablenite", 
+        "moves": [
+          "Will-O-Wisp", 
+          "Recover"
+        ], 
+        "name": "Mega Sableye"
+      }, 
+      {
+        "extra": {
+          "boosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }, 
+          "fainted": 1, 
+          "status": {
+            "Substitute": 0, 
+            "brn": 0, 
+            "confusion": 0, 
+            "frz": 0, 
+            "par": 0, 
+            "psn": 0, 
+            "slp": 0, 
+            "tox": 1, 
+            "trapped": 0, 
+            "typechange": 0
+          }, 
+          "unboosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 1, 
+            "spd": 0, 
+            "spe": 0
+          }
+        }, 
+        "item": null, 
+        "moves": [
+          "Earthquake", 
+          "Roost", 
+          "Knock Off"
+        ], 
+        "name": "Gliscor"
+      }, 
+      {
+        "extra": {
+          "boosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }, 
+          "fainted": 0, 
+          "status": {
+            "Substitute": 0, 
+            "brn": 0, 
+            "confusion": 0, 
+            "frz": 0, 
+            "par": 0, 
+            "psn": 0, 
+            "slp": 0, 
+            "tox": 1, 
+            "trapped": 0, 
+            "typechange": 0
+          }, 
+          "unboosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }
+        }, 
+        "item": "Leftovers", 
+        "moves": [
+          "Scald"
+        ], 
+        "name": "Alomomola"
+      }, 
+      {
+        "extra": {
+          "boosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }, 
+          "fainted": 1, 
+          "status": {
+            "Substitute": 0, 
+            "brn": 0, 
+            "confusion": 0, 
+            "frz": 0, 
+            "par": 0, 
+            "psn": 0, 
+            "slp": 0, 
+            "tox": 1, 
+            "trapped": 0, 
+            "typechange": 0
+          }, 
+          "unboosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }
+        }, 
+        "item": null, 
+        "moves": [
+          "Stealth Rock", 
+          "Seismic Toss"
+        ], 
+        "name": "Chansey"
+      }, 
+      {
+        "extra": {
+          "boosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }, 
+          "fainted": 0, 
+          "status": {
+            "Substitute": 0, 
+            "brn": 0, 
+            "confusion": 0, 
+            "frz": 0, 
+            "par": 0, 
+            "psn": 0, 
+            "slp": 0, 
+            "tox": 0, 
+            "trapped": 0, 
+            "typechange": 0
+          }, 
+          "unboosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }
+        }, 
+        "item": "Leftovers", 
+        "moves": [], 
+        "name": "Clefable"
+      }, 
+      {
+        "extra": {
+          "boosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }, 
+          "fainted": 0, 
+          "status": {
+            "Substitute": 0, 
+            "brn": 0, 
+            "confusion": 0, 
+            "frz": 0, 
+            "par": 0, 
+            "psn": 0, 
+            "slp": 0, 
+            "tox": 0, 
+            "trapped": 0, 
+            "typechange": 0
+          }, 
+          "unboosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }
+        }, 
+        "item": null, 
+        "moves": [
+          "Gyro Ball", 
+          "Spikes"
+        ], 
+        "name": "Ferrothorn"
+      }
+    ], 
+    "winner": "team1"
+  }, 
+  {
+    "team1": [
+      {
+        "extra": {
+          "boosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }, 
+          "fainted": 1, 
+          "status": {
+            "Substitute": 0, 
+            "brn": 0, 
+            "confusion": 0, 
+            "frz": 0, 
+            "par": 0, 
+            "psn": 0, 
+            "slp": 0, 
+            "tox": 1, 
+            "trapped": 0, 
+            "typechange": 0
+          }, 
+          "unboosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }
+        }, 
+        "item": null, 
+        "moves": [
+          "Stealth Rock", 
+          "Knock Off"
+        ], 
+        "name": "Gliscor"
+      }, 
+      {
+        "extra": {
+          "boosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }, 
+          "fainted": 0, 
+          "status": {
+            "Substitute": 0, 
+            "brn": 0, 
+            "confusion": 0, 
+            "frz": 0, 
+            "par": 0, 
+            "psn": 0, 
+            "slp": 0, 
+            "tox": 0, 
+            "trapped": 0, 
+            "typechange": 0
+          }, 
+          "unboosts": {
+            "atk": 1, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }
+        }, 
+        "item": "Charizardite Y", 
+        "moves": [
+          "Flamethrower", 
+          "Solar Beam"
+        ], 
+        "name": "Mega Y Charizard"
+      }, 
+      {
+        "extra": {
+          "boosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }, 
+          "fainted": 0, 
+          "status": {
+            "Substitute": 0, 
+            "brn": 0, 
+            "confusion": 0, 
+            "frz": 0, 
+            "par": 0, 
+            "psn": 0, 
+            "slp": 0, 
+            "tox": 0, 
+            "trapped": 0, 
+            "typechange": 0
+          }, 
+          "unboosts": {
+            "atk": 1, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }
+        }, 
+        "item": "Black Sludge", 
+        "moves": [
+          "Hydro Pump", 
+          "Rapid Spin", 
+          "Acid Spray"
+        ], 
+        "name": "Tentacruel"
+      }, 
+      {
+        "extra": {
+          "boosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }, 
+          "fainted": 0, 
+          "status": {
+            "Substitute": 0, 
+            "brn": 0, 
+            "confusion": 0, 
+            "frz": 0, 
+            "par": 0, 
+            "psn": 0, 
+            "slp": 0, 
+            "tox": 0, 
+            "trapped": 0, 
+            "typechange": 0
+          }, 
+          "unboosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }
+        }, 
+        "item": null, 
+        "moves": [
+          "Pursuit"
+        ], 
+        "name": "Tyranitar"
+      }, 
+      {
+        "extra": {
+          "boosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 2, 
+            "spd": 0, 
+            "spe": 0
+          }, 
+          "fainted": 1, 
+          "status": {
+            "Substitute": 0, 
+            "brn": 0, 
+            "confusion": 0, 
+            "frz": 0, 
+            "par": 0, 
+            "psn": 0, 
+            "slp": 0, 
+            "tox": 1, 
+            "trapped": 0, 
+            "typechange": 0
+          }, 
+          "unboosts": {
+            "atk": 2, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }
+        }, 
+        "item": "Leftovers", 
+        "moves": [
+          "Nasty Plot", 
+          "Hidden Power", 
+          "Thunderbolt"
+        ], 
+        "name": "Thundurus"
+      }, 
+      {
+        "extra": {
+          "boosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }, 
+          "fainted": 0, 
+          "status": {
+            "Substitute": 0, 
+            "brn": 0, 
+            "confusion": 0, 
+            "frz": 0, 
+            "par": 0, 
+            "psn": 0, 
+            "slp": 0, 
+            "tox": 0, 
+            "trapped": 0, 
+            "typechange": 0
+          }, 
+          "unboosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }
+        }, 
+        "item": "Leftovers", 
+        "moves": [
+          "Soft-Boiled"
+        ], 
+        "name": "Clefable"
+      }, 
+      {
+        "hazards": {
+          "Light Screen": 0, 
+          "Reflect": 0, 
+          "Spikes": 0, 
+          "Stealth Rock": 1, 
+          "Sticky Web": 0, 
+          "Tailwind": 0, 
+          "Toxic Spikes": 0
+        }, 
+        "weather": {
+          "DeltaStream": 0, 
+          "DesolateLand": 0, 
+          "Hail": 0, 
+          "PrimordialSea": 0, 
+          "RainDance": 0, 
+          "Sandstorm": 0, 
+          "SunnyDay": 0, 
+          "none": 1
+        }
+      }
+    ], 
+    "team2": [
+      {
+        "extra": {
+          "boosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }, 
+          "fainted": 1, 
+          "status": {
+            "Substitute": 0, 
+            "brn": 0, 
+            "confusion": 0, 
+            "frz": 0, 
+            "par": 0, 
+            "psn": 0, 
+            "slp": 0, 
+            "tox": 0, 
+            "trapped": 0, 
+            "typechange": 0
+          }, 
+          "unboosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }
+        }, 
+        "item": "Altarianite", 
+        "moves": [
+          "Hyper Voice"
+        ], 
+        "name": "Mega Altaria"
+      }, 
+      {
+        "extra": {
+          "boosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }, 
+          "fainted": 1, 
+          "status": {
+            "Substitute": 0, 
+            "brn": 0, 
+            "confusion": 0, 
+            "frz": 0, 
+            "par": 0, 
+            "psn": 0, 
+            "slp": 0, 
+            "tox": 0, 
+            "trapped": 0, 
+            "typechange": 0
+          }, 
+          "unboosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 8, 
+            "spe": 0
+          }
+        }, 
+        "item": "Leftovers", 
+        "moves": [
+          "Wish", 
+          "Protect", 
+          "Toxic", 
+          "Scald"
+        ], 
+        "name": "Alomomola"
+      }, 
+      {
+        "extra": {
+          "boosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }, 
+          "fainted": 1, 
+          "status": {
+            "Substitute": 0, 
+            "brn": 0, 
+            "confusion": 0, 
+            "frz": 0, 
+            "par": 0, 
+            "psn": 0, 
+            "slp": 0, 
+            "tox": 0, 
+            "trapped": 0, 
+            "typechange": 0
+          }, 
+          "unboosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 6, 
+            "spe": 0
+          }
+        }, 
+        "item": "Leftovers", 
+        "moves": [
+          "Baton Pass", 
+          "Recover"
+        ], 
+        "name": "Celebi"
+      }, 
+      {
+        "extra": {
+          "boosts": {
+            "atk": 1, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }, 
+          "fainted": 1, 
+          "status": {
+            "Substitute": 0, 
+            "brn": 0, 
+            "confusion": 0, 
+            "frz": 0, 
+            "par": 0, 
+            "psn": 0, 
+            "slp": 0, 
+            "tox": 0, 
+            "trapped": 0, 
+            "typechange": 0
+          }, 
+          "unboosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 2, 
+            "spe": 0
+          }
+        }, 
+        "item": "Choice Specs", 
+        "moves": [
+          "Hydro Pump", 
+          "Scald"
+        ], 
+        "name": "Keldeo"
+      }, 
+      {
+        "extra": {
+          "boosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }, 
+          "fainted": 1, 
+          "status": {
+            "Substitute": 0, 
+            "brn": 0, 
+            "confusion": 0, 
+            "frz": 0, 
+            "par": 0, 
+            "psn": 0, 
+            "slp": 0, 
+            "tox": 0, 
+            "trapped": 0, 
+            "typechange": 0
+          }, 
+          "unboosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }
+        }, 
+        "item": "Choice Scarf", 
+        "moves": [
+          "Stone Edge", 
+          "U-turn", 
+          "Earthquake"
+        ], 
+        "name": "Landorus Therian Form"
+      }, 
+      {
+        "extra": {
+          "boosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }, 
+          "fainted": 1, 
+          "status": {
+            "Substitute": 0, 
+            "brn": 0, 
+            "confusion": 0, 
+            "frz": 0, 
+            "par": 0, 
+            "psn": 0, 
+            "slp": 0, 
+            "tox": 0, 
+            "trapped": 0, 
+            "typechange": 0
+          }, 
+          "unboosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }
+        }, 
+        "item": "Leftovers", 
+        "moves": [
+          "Stealth Rock", 
+          "Roar", 
+          "Lava Plume"
+        ], 
+        "name": "Heatran"
+      }
+    ], 
+    "winner": "team1"
+  }, 
+  {
+    "team1": [
+      {
+        "extra": {
+          "boosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 1, 
+            "spd": 1, 
+            "spe": 0
+          }, 
+          "fainted": 0, 
+          "status": {
+            "Substitute": 0, 
+            "brn": 0, 
+            "confusion": 0, 
+            "frz": 0, 
+            "par": 0, 
+            "psn": 0, 
+            "slp": 0, 
+            "tox": 1, 
+            "trapped": 0, 
+            "typechange": 0
+          }, 
+          "unboosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }
+        }, 
+        "item": "Sablenite", 
+        "moves": [
+          "Dark Pulse", 
+          "Calm Mind", 
+          "Recover"
+        ], 
+        "name": "Mega Sableye"
+      }, 
+      {
+        "extra": {
+          "boosts": {
+            "atk": 6, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }, 
+          "fainted": 0, 
+          "status": {
+            "Substitute": 0, 
+            "brn": 0, 
+            "confusion": 0, 
+            "frz": 0, 
+            "par": 0, 
+            "psn": 0, 
+            "slp": 0, 
+            "tox": 1, 
+            "trapped": 0, 
+            "typechange": 0
+          }, 
+          "unboosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 1, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }
+        }, 
+        "item": null, 
+        "moves": [
+          "Earthquake", 
+          "Roost", 
+          "Swords Dance", 
+          "Facade"
+        ], 
+        "name": "Gliscor"
+      }, 
+      {
+        "extra": {
+          "boosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }, 
+          "fainted": 1, 
+          "status": {
+            "Substitute": 0, 
+            "brn": 1, 
+            "confusion": 0, 
+            "frz": 0, 
+            "par": 0, 
+            "psn": 0, 
+            "slp": 0, 
+            "tox": 0, 
+            "trapped": 0, 
+            "typechange": 0
+          }, 
+          "unboosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }
+        }, 
+        "item": "Leftovers", 
+        "moves": [
+          "Scald"
+        ], 
+        "name": "Slowbro"
+      }, 
+      {
+        "extra": {
+          "boosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }, 
+          "fainted": 0, 
+          "status": {
+            "Substitute": 0, 
+            "brn": 0, 
+            "confusion": 0, 
+            "frz": 0, 
+            "par": 0, 
+            "psn": 0, 
+            "slp": 0, 
+            "tox": 0, 
+            "trapped": 0, 
+            "typechange": 0
+          }, 
+          "unboosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }
+        }, 
+        "item": null, 
+        "moves": [
+          "Pursuit"
+        ], 
+        "name": "Tyranitar"
+      }, 
+      {
+        "extra": {
+          "boosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }, 
+          "fainted": 0, 
+          "status": {
+            "Substitute": 0, 
+            "brn": 0, 
+            "confusion": 0, 
+            "frz": 0, 
+            "par": 0, 
+            "psn": 0, 
+            "slp": 0, 
+            "tox": 0, 
+            "trapped": 0, 
+            "typechange": 0
+          }, 
+          "unboosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }
+        }, 
+        "item": "Leftovers", 
+        "moves": [
+          "Stealth Rock", 
+          "Taunt", 
+          "Lava Plume", 
+          "Toxic"
+        ], 
+        "name": "Heatran"
+      }, 
+      {
+        "extra": {
+          "boosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }, 
+          "fainted": 0, 
+          "status": {
+            "Substitute": 0, 
+            "brn": 0, 
+            "confusion": 0, 
+            "frz": 0, 
+            "par": 0, 
+            "psn": 0, 
+            "slp": 0, 
+            "tox": 0, 
+            "trapped": 0, 
+            "typechange": 0
+          }, 
+          "unboosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }
+        }, 
+        "item": "Leftovers", 
+        "moves": [
+          "Spikes"
+        ], 
+        "name": "Ferrothorn"
+      }, 
+      {
+        "hazards": {
+          "Light Screen": 0, 
+          "Reflect": 0, 
+          "Spikes": 1, 
+          "Stealth Rock": 1, 
+          "Sticky Web": 0, 
+          "Tailwind": 0, 
+          "Toxic Spikes": 0
+        }, 
+        "weather": {
+          "DeltaStream": 0, 
+          "DesolateLand": 0, 
+          "Hail": 0, 
+          "PrimordialSea": 0, 
+          "RainDance": 0, 
+          "Sandstorm": 0, 
+          "SunnyDay": 0, 
+          "none": 1
+        }
+      }
+    ], 
+    "team2": [
+      {
+        "extra": {
+          "boosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }, 
+          "fainted": 1, 
+          "status": {
+            "Substitute": 16, 
+            "brn": 0, 
+            "confusion": 0, 
+            "frz": 0, 
+            "par": 0, 
+            "psn": 0, 
+            "slp": 0, 
+            "tox": 1, 
+            "trapped": 0, 
+            "typechange": 0
+          }, 
+          "unboosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }
+        }, 
+        "item": "Toxic Orb", 
+        "moves": [
+          "Protect", 
+          "Earthquake", 
+          "Fling", 
+          "Substitute"
+        ], 
+        "name": "Gliscor"
+      }, 
+      {
+        "extra": {
+          "boosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }, 
+          "fainted": 1, 
+          "status": {
+            "Substitute": 0, 
+            "brn": 1, 
+            "confusion": 0, 
+            "frz": 0, 
+            "par": 0, 
+            "psn": 0, 
+            "slp": 0, 
+            "tox": 0, 
+            "trapped": 0, 
+            "typechange": 0
+          }, 
+          "unboosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }
+        }, 
+        "item": null, 
+        "moves": [
+          "Stealth Rock", 
+          "Seismic Toss"
+        ], 
+        "name": "Chansey"
+      }, 
+      {
+        "extra": {
+          "boosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }, 
+          "fainted": 1, 
+          "status": {
+            "Substitute": 0, 
+            "brn": 0, 
+            "confusion": 0, 
+            "frz": 0, 
+            "par": 0, 
+            "psn": 0, 
+            "slp": 0, 
+            "tox": 1, 
+            "trapped": 0, 
+            "typechange": 0
+          }, 
+          "unboosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }
+        }, 
+        "item": "Leftovers", 
+        "moves": [
+          "Scald", 
+          "Flamethrower"
+        ], 
+        "name": "Slowbro"
+      }, 
+      {
+        "extra": {
+          "boosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }, 
+          "fainted": 1, 
+          "status": {
+            "Substitute": 0, 
+            "brn": 0, 
+            "confusion": 0, 
+            "frz": 0, 
+            "par": 0, 
+            "psn": 0, 
+            "slp": 0, 
+            "tox": 0, 
+            "trapped": 0, 
+            "typechange": 0
+          }, 
+          "unboosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }
+        }, 
+        "item": null, 
+        "moves": [
+          "Defog"
+        ], 
+        "name": "Mew"
+      }, 
+      {
+        "extra": {
+          "boosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }, 
+          "fainted": 1, 
+          "status": {
+            "Substitute": 0, 
+            "brn": 1, 
+            "confusion": 0, 
+            "frz": 0, 
+            "par": 0, 
+            "psn": 0, 
+            "slp": 0, 
+            "tox": 0, 
+            "trapped": 0, 
+            "typechange": 0
+          }, 
+          "unboosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }
+        }, 
+        "item": null, 
+        "moves": [
+          "Crunch"
+        ], 
+        "name": "Tyranitar"
+      }, 
+      {
+        "extra": {
+          "boosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }, 
+          "fainted": 1, 
+          "status": {
+            "Substitute": 0, 
+            "brn": 0, 
+            "confusion": 0, 
+            "frz": 0, 
+            "par": 0, 
+            "psn": 0, 
+            "slp": 0, 
+            "tox": 0, 
+            "trapped": 0, 
+            "typechange": 0
+          }, 
+          "unboosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }
+        }, 
+        "item": "Venusaurite", 
+        "moves": [
+          "Giga Drain", 
+          "Synthesis"
+        ], 
+        "name": "Mega Venusaur"
+      }
+    ], 
+    "winner": "team1"
+  }, 
+  {
+    "team1": [
+      {
+        "extra": {
+          "boosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }, 
+          "fainted": 0, 
+          "status": {
+            "Substitute": 0, 
+            "brn": 0, 
+            "confusion": 0, 
+            "frz": 0, 
+            "par": 0, 
+            "psn": 0, 
+            "slp": 0, 
+            "tox": 0, 
+            "trapped": 0, 
+            "typechange": 2
+          }, 
+          "unboosts": {
+            "atk": 1, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }
+        }, 
+        "item": "Life Orb", 
+        "moves": [
+          "Gunk Shot", 
+          "Ice Beam"
+        ], 
+        "name": "Greninja"
+      }, 
+      {
+        "extra": {
+          "boosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }, 
+          "fainted": 1, 
+          "status": {
+            "Substitute": 0, 
+            "brn": 0, 
+            "confusion": 0, 
+            "frz": 0, 
+            "par": 0, 
+            "psn": 0, 
+            "slp": 0, 
+            "tox": 0, 
+            "trapped": 0, 
+            "typechange": 0
+          }, 
+          "unboosts": {
+            "atk": 1, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }
+        }, 
+        "item": "Leftovers", 
+        "moves": [
+          "Baton Pass", 
+          "Recover"
+        ], 
+        "name": "Celebi"
+      }, 
+      {
+        "extra": {
+          "boosts": {
+            "atk": 1, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }, 
+          "fainted": 1, 
+          "status": {
+            "Substitute": 0, 
+            "brn": 0, 
+            "confusion": 0, 
+            "frz": 0, 
+            "par": 0, 
+            "psn": 0, 
+            "slp": 0, 
+            "tox": 0, 
+            "trapped": 0, 
+            "typechange": 0
+          }, 
+          "unboosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }
+        }, 
+        "item": "Choice Specs", 
+        "moves": [
+          "Scald", 
+          "Hydro Pump"
+        ], 
+        "name": "Keldeo"
+      }, 
+      {
+        "extra": {
+          "boosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }, 
+          "fainted": 0, 
+          "status": {
+            "Substitute": 0, 
+            "brn": 0, 
+            "confusion": 0, 
+            "frz": 0, 
+            "par": 0, 
+            "psn": 0, 
+            "slp": 0, 
+            "tox": 0, 
+            "trapped": 0, 
+            "typechange": 0
+          }, 
+          "unboosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }
+        }, 
+        "item": null, 
+        "moves": [
+          "U-turn"
+        ], 
+        "name": "Landorus Therian Form"
+      }, 
+      {
+        "extra": {
+          "boosts": {
+            "atk": 1, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }, 
+          "fainted": 0, 
+          "status": {
+            "Substitute": 0, 
+            "brn": 0, 
+            "confusion": 0, 
+            "frz": 0, 
+            "par": 0, 
+            "psn": 0, 
+            "slp": 0, 
+            "tox": 0, 
+            "trapped": 0, 
+            "typechange": 0
+          }, 
+          "unboosts": {
+            "atk": 1, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }
+        }, 
+        "item": "Metagrossite", 
+        "moves": [
+          "Zen Headbutt", 
+          "Meteor Mash"
+        ], 
+        "name": "Mega Metagross"
+      }, 
+      {
+        "extra": {
+          "boosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }, 
+          "fainted": 0, 
+          "status": {
+            "Substitute": 0, 
+            "brn": 0, 
+            "confusion": 0, 
+            "frz": 0, 
+            "par": 0, 
+            "psn": 0, 
+            "slp": 0, 
+            "tox": 0, 
+            "trapped": 0, 
+            "typechange": 0
+          }, 
+          "unboosts": {
+            "atk": 1, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }
+        }, 
+        "item": "Leftovers", 
+        "moves": [
+          "Stealth Rock"
+        ], 
+        "name": "Heatran"
+      }, 
+      {
+        "hazards": {
+          "Light Screen": 0, 
+          "Reflect": 0, 
+          "Spikes": 0, 
+          "Stealth Rock": 1, 
+          "Sticky Web": 0, 
+          "Tailwind": 0, 
+          "Toxic Spikes": 0
+        }, 
+        "weather": {
+          "DeltaStream": 0, 
+          "DesolateLand": 0, 
+          "Hail": 0, 
+          "PrimordialSea": 0, 
+          "RainDance": 0, 
+          "Sandstorm": 0, 
+          "SunnyDay": 0, 
+          "none": 1
+        }
+      }
+    ], 
+    "team2": [
+      {
+        "extra": {
+          "boosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }, 
+          "fainted": 1, 
+          "status": {
+            "Substitute": 0, 
+            "brn": 1, 
+            "confusion": 0, 
+            "frz": 0, 
+            "par": 0, 
+            "psn": 0, 
+            "slp": 0, 
+            "tox": 0, 
+            "trapped": 0, 
+            "typechange": 0
+          }, 
+          "unboosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 2, 
+            "spd": 0, 
+            "spe": 0
+          }
+        }, 
+        "item": "Life Orb", 
+        "moves": [
+          "Draco Meteor"
+        ], 
+        "name": "Latios"
+      }, 
+      {
+        "extra": {
+          "boosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }, 
+          "fainted": 1, 
+          "status": {
+            "Substitute": 0, 
+            "brn": 0, 
+            "confusion": 0, 
+            "frz": 0, 
+            "par": 0, 
+            "psn": 0, 
+            "slp": 0, 
+            "tox": 0, 
+            "trapped": 0, 
+            "typechange": 0
+          }, 
+          "unboosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }
+        }, 
+        "item": "Gardevoirite", 
+        "moves": [
+          "Hyper Voice"
+        ], 
+        "name": "Mega Gardevoir"
+      }, 
+      {
+        "extra": {
+          "boosts": {
+            "atk": 2, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 1
+          }, 
+          "fainted": 1, 
+          "status": {
+            "Substitute": 0, 
+            "brn": 0, 
+            "confusion": 0, 
+            "frz": 0, 
+            "par": 0, 
+            "psn": 0, 
+            "slp": 0, 
+            "tox": 0, 
+            "trapped": 0, 
+            "typechange": 0
+          }, 
+          "unboosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }
+        }, 
+        "item": "Life Orb", 
+        "moves": [
+          "Swords Dance", 
+          "Poison Jab"
+        ], 
+        "name": "Scolipede"
+      }, 
+      {
+        "extra": {
+          "boosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }, 
+          "fainted": 1, 
+          "status": {
+            "Substitute": 0, 
+            "brn": 0, 
+            "confusion": 0, 
+            "frz": 0, 
+            "par": 0, 
+            "psn": 0, 
+            "slp": 0, 
+            "tox": 0, 
+            "trapped": 0, 
+            "typechange": 0
+          }, 
+          "unboosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }
+        }, 
+        "item": null, 
+        "moves": [
+          "Secret Sword", 
+          "Scald"
+        ], 
+        "name": "Keldeo"
+      }, 
+      {
+        "extra": {
+          "boosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }, 
+          "fainted": 1, 
+          "status": {
+            "Substitute": 0, 
+            "brn": 0, 
+            "confusion": 0, 
+            "frz": 0, 
+            "par": 0, 
+            "psn": 0, 
+            "slp": 0, 
+            "tox": 0, 
+            "trapped": 0, 
+            "typechange": 0
+          }, 
+          "unboosts": {
+            "atk": 1, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }
+        }, 
+        "item": null, 
+        "moves": [
+          "Knock Off", 
+          "Stealth Rock", 
+          "Earthquake"
+        ], 
+        "name": "Landorus Therian Form"
+      }, 
+      {
+        "extra": {
+          "boosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }, 
+          "fainted": 1, 
+          "status": {
+            "Substitute": 0, 
+            "brn": 0, 
+            "confusion": 0, 
+            "frz": 0, 
+            "par": 0, 
+            "psn": 0, 
+            "slp": 0, 
+            "tox": 0, 
+            "trapped": 0, 
+            "typechange": 0
+          }, 
+          "unboosts": {
+            "atk": 0, 
+            "def": 0, 
+            "evasion": 0, 
+            "hp": 0, 
+            "spa": 0, 
+            "spd": 0, 
+            "spe": 0
+          }
+        }, 
+        "item": null, 
+        "moves": [
+          "Magma Storm"
+        ], 
+        "name": "Heatran"
+      }
+    ], 
+    "winner": "team1"
+  }
+]

@@ -23,9 +23,9 @@ class Pokemon:
     self.name = name
     self.item = None
     self.moves = []
-    self.boost = {"hp":0, "atk":0, "def":0, "spa":0, "spd":0,"spe":0}
-    self.unboost = {"hp":0, "atk":0, "def":0, "spa":0, "spd":0,"spe":0}
-    self.status = {"brn":0, "par":0, "slp":0, "frz":0, "psn":0, "tox":0, "confusion":0, "trapped":0}
+    self.boosts = {"hp":0, "atk":0, "def":0, "spa":0, "spd":0,"spe":0, "evasion":0}
+    self.unboosts = {"hp":0, "atk":0, "def":0, "spa":0, "spd":0,"spe":0, "evasion":0}
+    self.status = {"brn":0, "par":0, "slp":0, "frz":0, "psn":0, "tox":0, "confusion":0, "trapped":0, "typechange":0, "Substitute":0}
     self.faint = 0
     self.form = 0
 		
@@ -93,6 +93,7 @@ def parse_line(bat, line):
     elif 'mega' in raw[1]:    megaStone(plyr, raw)
     elif 'switch' in raw[1]:  switch(plyr, raw)
     elif 'drag' in raw[1]:    switch(plyr, raw)
+    elif 'faint' in raw[1]:   fainted(plyr, raw)
     elif 'status' in raw[1]:  stus(plyr, raw)
     elif '-start' in raw[1]:  stus(plyr, raw)
     elif 'detailschange' in raw[1]:  transform(plyr, raw)
@@ -257,7 +258,8 @@ def transform(plyr, line):
     temp = plyr.weather["PrimordialSea"]
     temp += 1
     plyr.weather["PrimordialSea"] = temp
-  elif 'Groudon' in name: plyr.cur.item = primal[1]
+  elif 'Groudon' in name:
+    plyr.cur.item = primal[1]
     temp = plyr.weather["DesolateLand"]
     temp += 1
     plyr.weather["DesolateLand"] = temp
@@ -288,19 +290,24 @@ def fainted(plyr, line):
   
 #|-status|p1a: Foxheart|slp
 #|-start|p2a: Aegislash|confusion
+#|-start|p1a: 420|ability: Flash Fire
 def stus(plyr, line):
-  t = plyr.cur.status[line[3]]
-  t += 1
-  plyr.cur.status[line[3]] = t #increment
+  if "Taunt" not in line[3] and "Heal Block" not in line[3]:
+    if "Flash Fire" in line[3]:
+      plyr.cur.ability = "Flash Fire"
+    else:  
+      t = plyr.cur.status[line[3]]
+      t += 1
+      plyr.cur.status[line[3]] = t #increment
   
 #|-formechange|p2a: Aegislash|Aegislash-Blade
 def formchange(plyr, line):
   plyr.cur.form += 1 # just increment the number of times it happened
 
 #|-boost|p2a: Genesect-Burn|spa|1|[from] ability: Download
-def boot(plyr, line):
+def boost(plyr, line):
   temp = plyr.cur.boosts[line[3]]
-  temp += (int)line[4]
+  temp += int(line[4])
   plyr.cur.boosts[line[3]] = temp
   #check if it is from an ability
   if len(line) > 5:
@@ -310,7 +317,7 @@ def boot(plyr, line):
 #|-unboost|p2a: Aegislash|spe|1
 def unboost(plyr, line):
   temp = plyr.cur.unboosts[line[3]]
-  temp += (int)line[4]
+  temp += int(line[4])
   plyr.cur.unboosts[line[3]] = temp
   #is it from a ability
   if len(line) > 5:
