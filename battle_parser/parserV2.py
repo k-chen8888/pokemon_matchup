@@ -23,9 +23,9 @@ class Pokemon:
     self.name = name
     self.item = None
     self.moves = []
-    self.boosts = {"hp":0, "atk":0, "def":0, "spa":0, "spd":0,"spe":0, "evasion":0}
-    self.unboosts = {"hp":0, "atk":0, "def":0, "spa":0, "spd":0,"spe":0, "evasion":0}
-    self.status = {"brn":0, "par":0, "slp":0, "frz":0, "psn":0, "tox":0, "confusion":0, "trapped":0, "typechange":0, "Substitute":0}
+    self.boosts = {"hp":0, "atk":0, "def":0, "spa":0, "spd":0,"spe":0, "evasion":0, "accuracy":0}
+    self.unboosts = {"hp":0, "atk":0, "def":0, "spa":0, "spd":0,"spe":0, "evasion":0, "accuracy":0}
+    self.status = {"brn":0, "par":0, "slp":0, "frz":0, "psn":0, "tox":0, "confusion":0, "trapped":0, "typechange":0, "Substitute":0, "Leech Seed":0, "Taunt":0, "Heal Block":0}
     self.faint = 0
     self.form = 0
 		
@@ -59,7 +59,7 @@ def parse(webpage):
   blog = StringIO.StringIO(log)
   line = blog.readline()
   while line is not "":
-    print line
+    #print line
     parse_line(bat, line)
     line = blog.readline()
     
@@ -88,16 +88,17 @@ def parse_line(bat, line):
     elif 'damage' in raw[1]:  dmgitem(plyr, raw)
     elif 'heal' in raw[1]:    healitem(plyr, raw)
     elif 'enditem' in raw[1]: enditem(plyr, raw)
-    elif 'unboost' in raw[1]: unboost(plyr, raw)
-    elif 'boost' in raw[1]:   boost(plyr, raw)
+    elif '-unboost' in raw[1]: unboost(plyr, raw)
+    elif '-boost' in raw[1]:   boost(plyr, raw)
     elif 'mega' in raw[1]:    megaStone(plyr, raw)
     elif 'switch' in raw[1]:  switch(plyr, raw)
     elif 'drag' in raw[1]:    switch(plyr, raw)
     elif 'faint' in raw[1]:   fainted(plyr, raw)
     elif 'status' in raw[1]:  stus(plyr, raw)
     elif '-start' in raw[1]:  stus(plyr, raw)
-    elif 'detailschange' in raw[1]:  transform(plyr, raw)
-    elif 'formchange' in raw[1]:  formchange(plyr, raw)
+    elif '-restoreboost' in raw[1]:   restoreboost(plyr, raw)
+    elif 'detailschange' in raw[1]:   transform(plyr, raw)
+    elif 'formchange' in raw[1]:      formchange(plyr, raw)
     elif 'poke' in raw[1]:    pokemon(plyr, raw)
     elif 'player' in raw[1]:  player(plyr, raw)
     elif 'win' in raw[1]:     winTeam(bat, raw)
@@ -291,15 +292,26 @@ def fainted(plyr, line):
 #|-status|p1a: Foxheart|slp
 #|-start|p2a: Aegislash|confusion
 #|-start|p1a: 420|ability: Flash Fire
+#|-start|p1a: Anzle|move: Leech Seed
 def stus(plyr, line):
-  if "Taunt" not in line[3] and "Heal Block" not in line[3]:
-    if "Flash Fire" in line[3]:
-      plyr.cur.ability = "Flash Fire"
-    else:  
-      t = plyr.cur.status[line[3]]
-      t += 1
-      plyr.cur.status[line[3]] = t #increment
   
+  if len(line) > 3:
+    temp = line[3].split(':')
+  
+    if 'ability' in line[3]:
+      plyr.cur.ability = temp[1].lstrip()
+    
+    elif 'move' in line[3] and "Future Sight" not in line[3]:
+      t = plyr.cur.status[temp[1].lstrip()]
+      t +=1
+      t = plyr.cur.status[temp[1].lstrip()]
+  
+  
+  else:
+    t = plyr.cur.status[line[3]]
+    t += 1
+    plyr.cur.status[line[3]] = t #increment
+
 #|-formechange|p2a: Aegislash|Aegislash-Blade
 def formchange(plyr, line):
   plyr.cur.form += 1 # just increment the number of times it happened
@@ -324,8 +336,10 @@ def unboost(plyr, line):
     if 'ability' in line[5]:
       plyr.cur.ability = line[5].split(':')[1].lstrip()
 
-
-
+#|-restoreboost|p2a: Gorebyss|[silent] ->Undo all negetaive stat changes
+def restoreboost(plyr, line):
+  for k in plyr.cur.unboosts:
+    plyr.cur.unboosts[k] = 0
 
 
 

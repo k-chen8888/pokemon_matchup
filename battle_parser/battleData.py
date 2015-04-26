@@ -17,4 +17,4 @@ def battleData(filename):
 	file.write(son)
 	file.close()
 
-battleData('test.txt')
+battleData('OU.txt')
