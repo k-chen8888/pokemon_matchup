@@ -255,7 +255,7 @@
 |turn|25
 |c|★ban1214|Sorry!
 |c|★Anzle|It's ok
-|
+|`
 |move|p1a: Ty|Flamethrower|p2a: Giratina-Origin
 |-resisted|p2a: Giratina-Origin
 |-damage|p2a: Giratina-Origin|75\/441
