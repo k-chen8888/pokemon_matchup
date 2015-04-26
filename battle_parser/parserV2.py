@@ -120,6 +120,7 @@ def makedic(bat):
   team1 = []
   team1extra = {}
   team2 = []
+  team2extra = {}
   
   #fill in team 1
   pokemon = p1.pokemon
