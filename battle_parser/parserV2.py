@@ -14,6 +14,8 @@ class Player:
     self.name = None
     self.pokemon = {}
     self.cur = None
+    self.hazards = {"Spikes":0, "Stealth Rock":0, "Sticky Web":0, "Toxic Spikes":0, "Tailwind":0, "Light Screen":0, "Reflect":0}
+    self.weather = { "RainDance":0, "PrimordialSea":0, "SunnyDay":0, "DesolateLand":0, "Sandstorm":0, "Hail":0, "DeltaStream":0, "none":1}
 
 ##Class Pokemon: holds the pokemon's name, item, and moveset.
 class Pokemon:
@@ -21,6 +23,12 @@ class Pokemon:
     self.name = name
     self.item = None
     self.moves = []
+    self.boost = {"hp":0, "atk":0, "def":0, "spa":0, "spd":0,"spe":0}
+    self.unboost = {"hp":0, "atk":0, "def":0, "spa":0, "spd":0,"spe":0}
+    self.status = {"brn":0, "par":0, "slp":0, "frz":0, "psn":0, "tox":0, "confusion":0, "trapped":0}
+    self.faint = 0
+    self.form = 0
+		
 
 #Arceus's Plates
 plate = {"Bug":"Insect Plate", "Dark":"Dread Plate", "Dragon":"Draco Plate", "Electric":"Zap Plate", "Fairy":"Pixie Plate" ,"Fighting":"Fist Plate", "Fire":"Flame Plate", "Flying":"Sky Plate", "Ghost":"Spooky Plate", "Grass":"Meadow Plate", "Ground":"Earth Plate", "Ice":"Icicle Plate", "Poison":"Toxic Plate", "Psychic":"Mind Plate", "Rock":"Stone Plate", "Steel":"Iron Plate", "Water":"Splash Plate", }
@@ -80,10 +88,15 @@ def parse_line(bat, line):
     elif 'damage' in raw[1]:  dmgitem(plyr, raw)
     elif 'heal' in raw[1]:    healitem(plyr, raw)
     elif 'enditem' in raw[1]: enditem(plyr, raw)
+    elif 'unboost' in raw[1]: unboost(plyr, raw)
+    elif 'boost' in raw[1]:   boost(plyr, raw)
     elif 'mega' in raw[1]:    megaStone(plyr, raw)
     elif 'switch' in raw[1]:  switch(plyr, raw)
     elif 'drag' in raw[1]:    switch(plyr, raw)
-    elif 'change' in raw[1]:  transform(plyr, raw)
+    elif 'status' in raw[1]:  stus(plyr, raw)
+    elif '-start' in raw[1]:  stus(plyr, raw)
+    elif 'detailschange' in raw[1]:  transform(plyr, raw)
+    elif 'formchange' in raw[1]:  formchange(plyr, raw)
     elif 'poke' in raw[1]:    pokemon(plyr, raw)
     elif 'player' in raw[1]:  player(plyr, raw)
     elif 'win' in raw[1]:     winTeam(bat, raw)
@@ -105,10 +118,16 @@ def makedic(bat):
   
   #lists for pokemon
   team1 = []
+  team1extra = {}
   team2 = []
   
   #fill in team 1
   pokemon = p1.pokemon
+  
+  #add extra components
+  team1extra['weather'] = p1.weather
+  team1extra['hazards'] = p1.hazards
+  
   for k in pokemon:
     poke = {}
       
@@ -127,9 +146,23 @@ def makedic(bat):
       poke['item'] = pokemon[k].item
     
     poke['moves'] = pokemon[k].moves
-    team1.append(deepcopy(poke))
-
     
+    #extra information
+    extras = {}
+    extras['boosts'] = pokemon[k].boosts
+    extras['unboosts'] = pokemon[k].unboosts
+    extras['status'] = pokemon[k].status
+    extras['fainted'] = pokemon[k].faint
+    poke['extra'] = extras
+    
+    team1.append(deepcopy(poke))
+    
+  team1.append(team1extra)
+    
+    
+  #add in extra information
+  team2extra['weather'] = p2.weather
+  team2extra['hazards'] = p2.hazards 
   #fill in team 2
   #used name Pikachu because why not?
   pikachu = p2.pokemon
@@ -150,6 +183,16 @@ def makedic(bat):
       poke['item'] = pikachu[k].item
       
     poke['moves'] = pikachu[k].moves
+    
+    #extra information
+    extras = {}
+    extras['boosts'] = pikachu[k].boosts
+    extras['unboosts'] = pikachu[k].unboosts
+    extras['status'] = pikachu[k].status
+    extras['fainted'] = pikachu[k].faint
+    
+    poke['extra'] = extras
+    
     team2.append(deepcopy(poke))
   
   #print team2
@@ -188,18 +231,36 @@ def switch(plyr, line):
   plyr.cur = plyr.pokemon[index]
   plyr.cur.name = name #set in the event of a form change or added typing
 
-
 #|move|p1a: Lopunny|Fake Out|p2a: Umbreon
 def move(plyr, line):
   if(line[3] not in plyr.cur.moves):
     plyr.cur.moves.append(line[3])
+    
+    #gather entry hazards, protect and lightscreen
+    if line[3] in plyr.hazards:
+      temp = plyr.hazards[line[3]]
+      temp += 1
+      plyr.hazards[line[3]] = temp
+    
+    #gather weather effects
+    elif line[3] in plyr.weather:
+      temp = plyr.weather[line[3]]
+      temp += 1
+      plyr.weather[line[3]] = temp
 
 #|detailschange|p1a: i built that.|Kyogre-Primal
 def transform(plyr, line):
   name = line[3].split(',')[0] #remove the gender and shiny tags
-  if 'Kyogre' in name:    plyr.cur.item = primal[0]
+  if 'Kyogre' in name:    
+    plyr.cur.item = primal[0]
+    temp = plyr.weather["PrimordialSea"]
+    temp += 1
+    plyr.weather["PrimordialSea"] = temp
   elif 'Groudon' in name: plyr.cur.item = primal[1]
-
+    temp = plyr.weather["DesolateLand"]
+    temp += 1
+    plyr.weather["DesolateLand"] = temp
+    
   plyr.cur.name = name
 
 #|-mega|p2a: steeljackal<3|Sableye|Sablenite
@@ -214,11 +275,56 @@ def enditem(plyr, line):
 def healitem(plyr, line):
   if len(line) > 4 and 'item' in line[4]:
     plyr.cur.item = line[4].split(':')[1].lstrip()
-  
+
 #|-damage|p1a: Foxheart|244\/271|[from] item: Life Orb
 def dmgitem(plyr, line):
   if len(line) > 4 and 'item' in line[4]:
     plyr.cur.item = line[4].split(':')[1].lstrip()
+
+#|faint|p2a: Kangaskhan
+def fainted(plyr, line):
+  plyr.cur.faint = 1
+  
+#|-status|p1a: Foxheart|slp
+#|-start|p2a: Aegislash|confusion
+def stus(plyr, line):
+  t = plyr.cur.status[line[3]]
+  t += 1
+  plyr.cur.status[line[3]] = t #increment
+  
+#|-formechange|p2a: Aegislash|Aegislash-Blade
+def formchange(plyr, line):
+  plyr.cur.form += 1 # just increment the number of times it happened
+
+#|-boost|p2a: Genesect-Burn|spa|1|[from] ability: Download
+def boot(plyr, line):
+  temp = plyr.cur.boosts[line[3]]
+  temp += (int)line[4]
+  plyr.cur.boosts[line[3]] = temp
+  #check if it is from an ability
+  if len(line) > 5:
+    if 'ability' in line[5]:
+      plyr.cur.ability = line[5].split(':')[1].lstrip()
+
+#|-unboost|p2a: Aegislash|spe|1
+def unboost(plyr, line):
+  temp = plyr.cur.unboosts[line[3]]
+  temp += (int)line[4]
+  plyr.cur.unboosts[line[3]] = temp
+  #is it from a ability
+  if len(line) > 5:
+    if 'ability' in line[5]:
+      plyr.cur.ability = line[5].split(':')[1].lstrip()
+
+
+
+
+
+
+
+
+
+
   
 #if the name has a -SOMETHING at the end. Move it to the front
 #if it is Keldo or Meloetta, just return their base name  
