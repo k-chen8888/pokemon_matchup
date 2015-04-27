@@ -147,8 +147,10 @@ def pack(team):
 			# Add to packed list
 			queried_team.append( packed_pkmn )
 		
-		else: # Must be extra information
-			pass # not sure what to do with this yet
+		else:
+			# Information on entry hazards and weather effects
+			# Store it in a key called extra2
+			packed_pkmn['extra2'] = pkmn
 		
 	# Output pre-processed team
 	return queried_team
@@ -316,9 +318,6 @@ def expand(matches):
 		team_instance2 = []
 		
 		for pkmn in match['team2']:
-			if i == 248:
-				print pkmn['pkmn'].name
-			
 			# Types
 			team_instance2.append(pkmn['pkmn'].type1)
 			team_instance2.append(pkmn['pkmn'].type2)
