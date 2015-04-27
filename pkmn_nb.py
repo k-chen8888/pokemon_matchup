@@ -313,6 +313,27 @@ def expand(matches):
 			team_instance1.append(pkmn['extra']['unboosts']['spd'])
 			team_instance1.append(pkmn['extra']['unboosts']['spe'])
 			
+			# Extra team measures
+			
+			# Entry hazards and other defensive mechanisms
+			team_instance1.append(pkmn['extra2']['hazards']['Light Screen'])
+			team_instance1.append(pkmn['extra2']['hazards']['Reflect'])
+			team_instance1.append(pkmn['extra2']['hazards']['Spikes'])
+			team_instance1.append(pkmn['extra2']['hazards']['Stealth Rock'])
+			team_instance1.append(pkmn['extra2']['hazards']['Sticky Web'])
+			team_instance1.append(pkmn['extra2']['hazards']['Tailwind'])
+			team_instance1.append(pkmn['extra2']['hazards']['Toxic Spikes'])
+			
+			# Weather
+			team_instance1.append(pkmn['extra2']['weather']['DeltaStream'])
+			team_instance1.append(pkmn['extra2']['weather']['DesolateLand'])
+			team_instance1.append(pkmn['extra2']['weather']['Hail'])
+			team_instance1.append(pkmn['extra2']['weather']['PrimordialSea'])
+			team_instance1.append(pkmn['extra2']['weather']['RainDance'])
+			team_instance1.append(pkmn['extra2']['weather']['Sandstorm'])
+			team_instance1.append(pkmn['extra2']['weather']['SunnyDay'])
+			team_instance1.append(pkmn['extra2']['weather']['none'])
+			
 		data_table.append(team_instance1)
 		
 		team_instance2 = []
