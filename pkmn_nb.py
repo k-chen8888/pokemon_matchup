@@ -66,6 +66,7 @@ def pack(team):
 	
 	# The last element is hazards/weather
 	extra2 = team.pop()
+	queried_team.append(extra2)
 	print extra2
 	
 	for i in range(0, len(team)):
@@ -149,10 +150,9 @@ def pack(team):
 		packed_pkmn['extra'] = pkmn['extra']
 		
 		# Add to packed list
-		queried_team.append(packed_pkmn)
+		queried_team.insert(i, packed_pkmn)
 	
 	# extra2 information tacked onto team information
-	queried_team.append(extra2)
 	print queried_team[6]
 	
 	# Output pre-processed team
