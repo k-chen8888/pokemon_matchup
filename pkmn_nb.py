@@ -149,10 +149,10 @@ def pack(team):
 		packed_pkmn['extra'] = pkmn['extra']
 		
 		# Add to packed list
-		queried_team.append( packed_pkmn )
+		queried_team.append(packed_pkmn)
 	
 	# extra2 information tacked onto team information
-	queried_team.append( extra2 )
+	queried_team.append(extra2)
 	print queried_team[6]
 	
 	# Output pre-processed team
