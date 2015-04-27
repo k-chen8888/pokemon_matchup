@@ -498,38 +498,3 @@ if __name__ == '__main__':
 	print "fn_nb =", fn_nb
 	print "fp_nb =", fp_nb
 	print "tn_nb =", tn_nb
-	
-	
-	# SVM
-	l = svm.SVC()
-	l.fit( np.array(test), np.array(test_res) )
-	
-	tp_svm = 0
-	fn_svm = 0
-	fp_svm = 0
-	tn_svm = 0
-	
-	# Run some predictions and get [ [tp, fn], [fp, tn] ]
-	for i in range(0, len(valid)):
-		try:
-			predict = l.predict( valid[i] )
-			print predict, str( predict[0] == valid_res[i] )
-			
-			if predict[0] == 0:
-				if predict[0] == valid_res[i]:
-					tn_svm += 1
-				else:
-					fn_svm += 1
-			else:
-				if predict[0] == valid_res[i]:
-					tp_svm += 1
-				else:
-					fp_svm += 1
-		except:
-			print "error"
-	
-	# Output results
-	print "tp_svm =", tp_svm
-	print "fn_svm =", fn_svm
-	print "fp_svm =", fp_svm
-	print "tn_svm =", tn_svm
