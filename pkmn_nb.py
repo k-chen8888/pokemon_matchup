@@ -20,13 +20,6 @@ from pkmn_dist_simple.clustering_tools import *
 
 
 '''
-Get the moves for a Pokemon
-moveset = s_global.query(Move).filter(Move.pokemon.any(name=pkmn.name)).all()
-where pkmn is a database object that represents a Pokemon
-'''
-
-
-'''
 All scraper and db tools
 '''
 from scrape_db_simple.pkmn_db_simple import *
@@ -118,7 +111,17 @@ def pack(team):
 				# Couldn't find anything not in the moveset
 				if len(pkmn['moves']) > 4:
 					pkmn['moves'].pop()
+			
+			# Irritating Pokemon with few moves
+			if pkmn['name'] == "Smeargle":
+				pkmn['moves'] = ["Sketch", "Sketch", "Sketch", "Sketch"]
 				
+			if pkmn['name'] == "Unown":
+				pkmn['moves'] = ["Hidden Power", "Hidden Power", "Hidden Power", "Hidden Power"]
+			
+			if pkmn['name'] == "Ditto":
+				pkmn['moves'] = ["Transform", "Transform", "Transform", "Transform"]
+			
 			packed_pkmn['moves'] = []
 			# Extract moves by name
 			for move in pkmn['moves']:
@@ -197,13 +200,7 @@ def expand(matches):
 	data_table = []
 	results = []
 	
-	i, j = 0, 0
 	for match in matches:
-		#print i
-		
-		#if i == 248:
-		#	print match
-		
 		team_instance1 = []
 		
 		# Let 1 = win, 0 = loss
@@ -215,9 +212,6 @@ def expand(matches):
 			results.append(1)
 		
 		for pkmn in match['team1']:
-			if i == 248:
-				print pkmn['pkmn'].name
-			
 			# Types
 			team_instance1.append(pkmn['pkmn'].type1)
 			team_instance1.append(pkmn['pkmn'].type2)
@@ -232,9 +226,6 @@ def expand(matches):
 			
 			# Moves
 			for move in pkmn['moves']:
-				if i == 248:
-					print move.name
-				
 				# Basic information
 				team_instance1.append(move.move_type)
 				team_instance1.append(move.move_cat)
@@ -321,8 +312,6 @@ def expand(matches):
 			team_instance1.append(pkmn['extra']['unboosts']['spe'])
 			
 		data_table.append(team_instance1)
-		#print j, len(team_instance1)
-		#j += 1
 		
 		team_instance2 = []
 		
@@ -344,9 +333,6 @@ def expand(matches):
 			
 			# Moves
 			for move in pkmn['moves']:
-				if i == 248:
-					print move.name
-				
 				# Basic information
 				team_instance2.append(move.move_type)
 				team_instance2.append(move.move_cat)
@@ -433,9 +419,7 @@ def expand(matches):
 			team_instance2.append(pkmn['extra']['unboosts']['spe'])
 		
 		data_table.append(team_instance2)
-		#print j, len(team_instance1)
-		#j += 1
-		i += 1
+	
 	return data_table, results
 
 
