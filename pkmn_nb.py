@@ -174,9 +174,11 @@ def populate(json_file):
 		
 		# team1 info, queried
 		q['team1'] = pack( match['team1'] )
+		q['team1-extra'] = match['team1-extra']
 		
 		# team2 info, queried
 		q['team2'] = pack( match['team2'] )
+		q['team2-extra'] = match['team2-extra']
 		
 		q['winner'] = match['winner']
 		
@@ -198,8 +200,7 @@ def expand(matches):
 	results = []
 	
 	for match in matches:
-		team_instance1 = []
-		
+		# Compile winners and losers
 		# Let 1 = win, 0 = loss
 		if match['winner'] == 'team1':
 			results.append(1)
@@ -207,6 +208,9 @@ def expand(matches):
 		else:
 			results.append(0)
 			results.append(1)
+		
+		# Compile instance for team1
+		team_instance1 = []
 		
 		for pkmn in match['team1']:
 			# Types
@@ -307,9 +311,32 @@ def expand(matches):
 			team_instance1.append(pkmn['extra']['unboosts']['spa'])
 			team_instance1.append(pkmn['extra']['unboosts']['spd'])
 			team_instance1.append(pkmn['extra']['unboosts']['spe'])
-			
+		
+		# team1-extra
+		
+		# Entry hazards
+		team_instance1.append(match['team1-extra']['hazards']['Light Screen'])
+		team_instance1.append(match['team1-extra']['hazards']['Reflect'])
+		team_instance1.append(match['team1-extra']['hazards']['Spikes'])
+		team_instance1.append(match['team1-extra']['hazards']['Stealth Rock'])
+		team_instance1.append(match['team1-extra']['hazards']['Sticky Web'])
+		team_instance1.append(match['team1-extra']['hazards']['Tailwind'])
+		team_instance1.append(match['team1-extra']['hazards']['Toxic Spikes'])
+		
+		# Weather effects
+		team_instance1.append(match['team1-extra']['weather']['DeltaStream'])
+		team_instance1.append(match['team1-extra']['weather']['DesolateLand'])
+		team_instance1.append(match['team1-extra']['weather']['Hail'])
+		team_instance1.append(match['team1-extra']['weather']['PrimordialSea'])
+		team_instance1.append(match['team1-extra']['weather']['RainDance'])
+		team_instance1.append(match['team1-extra']['weather']['Sandstorm'])
+		team_instance1.append(match['team1-extra']['weather']['SunnyDay'])
+		team_instance1.append(match['team1-extra']['weather']['none'])
+		
+		# Add to the data table
 		data_table.append(team_instance1)
 		
+		# Compile instance for team2
 		team_instance2 = []
 		
 		for pkmn in match['team2']:
@@ -412,6 +439,28 @@ def expand(matches):
 			team_instance2.append(pkmn['extra']['unboosts']['spd'])
 			team_instance2.append(pkmn['extra']['unboosts']['spe'])
 		
+		# team2-extra
+		
+		# Entry hazards
+		team_instance2.append(match['team1-extra']['hazards']['Light Screen'])
+		team_instance2.append(match['team1-extra']['hazards']['Reflect'])
+		team_instance2.append(match['team1-extra']['hazards']['Spikes'])
+		team_instance2.append(match['team1-extra']['hazards']['Stealth Rock'])
+		team_instance2.append(match['team1-extra']['hazards']['Sticky Web'])
+		team_instance2.append(match['team1-extra']['hazards']['Tailwind'])
+		team_instance2.append(match['team1-extra']['hazards']['Toxic Spikes'])
+		
+		# Weather effects
+		team_instance2.append(match['team1-extra']['weather']['DeltaStream'])
+		team_instance2.append(match['team1-extra']['weather']['DesolateLand'])
+		team_instance2.append(match['team1-extra']['weather']['Hail'])
+		team_instance2.append(match['team1-extra']['weather']['PrimordialSea'])
+		team_instance2.append(match['team1-extra']['weather']['RainDance'])
+		team_instance2.append(match['team1-extra']['weather']['Sandstorm'])
+		team_instance2.append(match['team1-extra']['weather']['SunnyDay'])
+		team_instance2.append(match['team1-extra']['weather']['none'])
+		
+		# Add to the data table
 		data_table.append(team_instance2)
 	
 	return data_table, results
@@ -497,3 +546,5 @@ if __name__ == '__main__':
 		f.write( "fn_nb = " + str(fn_nb) + "\n" )
 		f.write( "fp_nb = " + str(fp_nb) + "\n" )
 		f.write( "tn_nb = " + str(tn_nb) + "\n" )
+	
+	print "Done"
