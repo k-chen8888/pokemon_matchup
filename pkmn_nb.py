@@ -103,6 +103,10 @@ def pack(team):
 				rand = random.sample( range(0, len(moveset_name)), 1 )
 				if moveset_name[rand[0]] not in pkmn['moves']:
 					pkmn['moves'].append( moveset_name[rand[0]] )
+				
+				# What if there aren't enough moves to add?
+				if len(moveset_name) < 4:
+					pkmn['moves'].append( "Splash" )
 			
 			# Cleaning house, removing moves if there are too many
 			# First try to remove the moves that aren't in the Pokemon's moveset; then just pop a move off of the end
