@@ -215,6 +215,9 @@ def expand(matches):
 			results.append(1)
 		
 		for pkmn in match['team1']:
+			if i == 248:
+				print pkmn.name
+			
 			# Types
 			team_instance1.append(pkmn['pkmn'].type1)
 			team_instance1.append(pkmn['pkmn'].type2)
@@ -324,6 +327,9 @@ def expand(matches):
 		team_instance2 = []
 		
 		for pkmn in match['team2']:
+			if i == 248:
+				print pkmn.name
+			
 			# Types
 			team_instance2.append(pkmn['pkmn'].type1)
 			team_instance2.append(pkmn['pkmn'].type2)
