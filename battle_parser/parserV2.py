@@ -359,7 +359,8 @@ def nameSwap(name):
   elif 'Mega' in parts[1]:
     #Charizard and Mewtwo
     if len(parts) > 2: 
-      return parts[1] + ' ' + parts[2] + ' ' + parts[0]
+      return parts[1] + ' ' + parts[0] + ' ' + parts[2]
+    #NOrmal Mega Evolution
     else:
       return parts[1] + ' ' + parts[0]  
   
