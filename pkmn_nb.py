@@ -70,6 +70,13 @@ def pack(team):
 		if 'name' in pkmn:
 			packed_pkmn = {}
 			
+			# Get list of all moves that the Pokemon can learn
+			# Name only
+			moveset = s_global.query(Move).filter( Move.pokemon.any(name = pkmn['name']) ).all()
+			moveset_name = []
+			for move in moveset:
+				moveset_name.append(move.name)
+			
 			# Extract Pokemon by name
 			packed_pkmn['pkmn'] = s_global.query(Pokemon).filter(Pokemon.name == pkmn['name']).first()
 			
@@ -78,11 +85,21 @@ def pack(team):
 				
 			# Cleaning house, adding dummy moves to fill space
 			while len(pkmn['moves']) < 4:
-				pkmn['moves'].append("Splash")
+				# Find a random move in the moveset to add
+				rand = random.sample( range(0, len(moveset_name)), 1 )
+				if moveset_name[rand[0]] not in pkmn['moves']:
+					pkmn['moves'].append( moveset_name[rand[0]] )
 			
 			# Cleaning house, removing moves if there are too many
+			# First try to remove the moves that aren't in the Pokemon's moveset; then just pop a move off of the end
 			while len(pkmn['moves']) > 4:
-				pkmn['moves'].pop()
+				for move in pkmn['moves']:
+					if not move in moveset_name
+						pkmn['moves'].remove(move)
+				
+				# Couldn't find anything not in the moveset
+				if len(pkmn['moves']) > 4:
+					pkmn['moves'].pop()
 				
 			packed_pkmn['moves'] = []
 			# Extract moves by name
