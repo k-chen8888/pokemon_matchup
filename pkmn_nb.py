@@ -321,7 +321,7 @@ def expand(matches):
 			
 			# Measures in extra2
 			else:
-				print 'extra2'
+				print pkmn
 			
 		data_table.append(team_instance1)
 		
@@ -431,7 +431,7 @@ def expand(matches):
 			
 			# Measures in extra2
 			else:
-				print 'extra2'
+				print pkmn
 		
 		data_table.append(team_instance2)
 	
