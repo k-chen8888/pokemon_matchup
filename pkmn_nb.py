@@ -219,7 +219,7 @@ def expand(matches):
 		
 		for pkmn in match['team1']:
 			# Basic measures
-			if 'pkmn' in pkmn:
+			if not 'extra2' in pkmn:
 				# Types
 				team_instance1.append(pkmn['pkmn'].type1)
 				team_instance1.append(pkmn['pkmn'].type2)
@@ -329,7 +329,7 @@ def expand(matches):
 		
 		for pkmn in match['team2']:
 			# Basic measures
-			if 'pkmn' in pkmn:
+			if not 'extra2' in pkmn:
 				# Types
 				team_instance2.append(pkmn['pkmn'].type1)
 				team_instance2.append(pkmn['pkmn'].type2)
