@@ -67,6 +67,7 @@ def pack(team):
 		team.append(MAGIKARP)
 		
 	for pkmn in team:
+		print pkmn
 		packed_pkmn = {}
 		
 		# Extract Pokemon by name
