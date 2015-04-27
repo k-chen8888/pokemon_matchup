@@ -61,7 +61,7 @@ def pack(team):
 	queried_team = []
 	
 	# Cleaning house, adding dummy Pokemon to fill space
-	while len(team) < 7:
+	while len(team) < 6:
 		team.insert(0, MAGIKARP)
 	
 	for i in range(0, len(team)):
