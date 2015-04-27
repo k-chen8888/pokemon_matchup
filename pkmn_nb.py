@@ -72,7 +72,7 @@ def pack(team):
 		team.append(MAGIKARP)
 	
 	for pkmn in team:
-		if 'name' in moveset_name[rand[0]]:
+		if 'name' in pkmn:
 			packed_pkmn = {}
 			
 			# Get list of all moves that the Pokemon can learn
