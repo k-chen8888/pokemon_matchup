@@ -64,19 +64,26 @@ def pack(team):
 		
 		# Extract Pokemon by name
 		packed_pkmn['pkmn'] = s_global.query(Pokemon).filter(Pokemon.name == pkmn['name']).first()
-		
+		#print "XXXXXXXXXXXXXXX"		'''Easily find in output'''
+		#print packed_pkmn['pkmn'] ''' Check if we got anything'''
 		# Save actual number of moves
 		packed_pkmn['move_count'] = len( pkmn['moves'] )
-			
+		
+		
+		'''
+		query moveset filter for pokemon's name and get all
+		if the move is already in the movelist, get another random number and
+		try for another move
+		'''
+		moves = s_global.query(moveset).filter(Pokemon.name == pkmn['name']).all()
 		# Cleaning house, adding dummy moves to fill space
 		while len(pkmn['moves']) < 4:
-      ''' select a random move from this Pokemon's database entry
-      Rob Notes:
-      s_global is the database check table moveset
-      http://stackoverflow.com/questions/12593421/sqlalchemy-and-flask-how-to-query-many-to-many-relationship for info on how to do
-      
-      '''
-			pkmn['moves'].append("Splash")
+			if len(moves) > 0:			
+				random_int = random.randint(0, len(moves)-1)
+				if moves[random_int] not in pkmn['moves']:			
+					pkmn['moves'].append(moves[random_int])
+			else: #have this there because I dont' have a database
+				pkmn['moves'].append("Splash")
 		
 		# Cleaning house, removing moves if there are too many
 		while len(pkmn['moves']) > 4:
