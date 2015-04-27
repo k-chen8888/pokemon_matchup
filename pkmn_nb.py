@@ -65,49 +65,52 @@ def pack(team):
 	# Cleaning house, adding dummy Pokemon to fill space
 	while len(team) < 6:
 		team.append(MAGIKARP)
-		
+	
 	for pkmn in team:
-		print pkmn
-		packed_pkmn = {}
-		
-		# Extract Pokemon by name
-		packed_pkmn['pkmn'] = s_global.query(Pokemon).filter(Pokemon.name == pkmn['name']).first()
-		
-		# Save actual number of moves
-		packed_pkmn['move_count'] = len( pkmn['moves'] )
+		if 'name' in pkmn:
+			packed_pkmn = {}
 			
-		# Cleaning house, adding dummy moves to fill space
-		while len(pkmn['moves']) < 4:
-			pkmn['moves'].append("Splash")
-		
-		# Cleaning house, removing moves if there are too many
-		while len(pkmn['moves']) > 4:
-			pkmn['moves'].pop()
+			# Extract Pokemon by name
+			packed_pkmn['pkmn'] = s_global.query(Pokemon).filter(Pokemon.name == pkmn['name']).first()
 			
-		packed_pkmn['moves'] = []
-		# Extract moves by name
-		for move in pkmn['moves']:
-			packed_pkmn['moves'].append( get_move(move, s_global) )
+			# Save actual number of moves
+			packed_pkmn['move_count'] = len( pkmn['moves'] )
+				
+			# Cleaning house, adding dummy moves to fill space
+			while len(pkmn['moves']) < 4:
+				pkmn['moves'].append("Splash")
 			
-		# Extract items; give it a useless Soothe Bell if it has no item
-		if 'item' in pkmn:
-			if pkmn['item'] == None:
-				packed_pkmn['item'] = s_global.query(HoldItem).filter(HoldItem.name == "Soothe Bell").first()
+			# Cleaning house, removing moves if there are too many
+			while len(pkmn['moves']) > 4:
+				pkmn['moves'].pop()
+				
+			packed_pkmn['moves'] = []
+			# Extract moves by name
+			for move in pkmn['moves']:
+				packed_pkmn['moves'].append( get_move(move, s_global) )
+				
+			# Extract items; give it a useless Soothe Bell if it has no item
+			if 'item' in pkmn:
+				if pkmn['item'] == None:
+					packed_pkmn['item'] = s_global.query(HoldItem).filter(HoldItem.name == "Soothe Bell").first()
+				else:
+					packed_pkmn['item'] = s_global.query(HoldItem).filter(HoldItem.name == pkmn['item']).first()
+			
 			else:
-				packed_pkmn['item'] = s_global.query(HoldItem).filter(HoldItem.name == pkmn['item']).first()
+				packed_pkmn['item'] = s_global.query(HoldItem).filter(HoldItem.name == "Soothe Bell").first()
+			
+			# Just in case
+			if packed_pkmn['item'] == None:
+				packed_pkmn['item'] = s_global.query(HoldItem).filter(HoldItem.name == "Soothe Bell").first()
+			
+			# Keep extra information just the way it is
+			packed_pkmn['extra'] = pkmn['extra']
+			
+			# Add to packed list
+			queried_team.append( packed_pkmn )
 		
-		else:
-			packed_pkmn['item'] = s_global.query(HoldItem).filter(HoldItem.name == "Soothe Bell").first()
-		
-		# Just in case
-		if packed_pkmn['item'] == None:
-			packed_pkmn['item'] = s_global.query(HoldItem).filter(HoldItem.name == "Soothe Bell").first()
-		
-		# Keep extra information just the way it is
-		packed_pkmn['extra'] = pkmn['extra']
-		
-		# Add to packed list
-		queried_team.append( packed_pkmn )
+		else: # Must be extra information
+			pass # not sure what to do with this yet
 		
 	# Output pre-processed team
 	return queried_team
