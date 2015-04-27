@@ -69,98 +69,92 @@ def pack(team):
 	print extra2
 	
 	for i in range(0, len(team)):
-		if i < len(team):
-			pkmn = team[i]
-			packed_pkmn = {}
+		pkmn = team[i]
+		packed_pkmn = {}
+		
+		# Get list of all moves that the Pokemon can learn
+		# Name only
+		moveset_name = []
+		if not pkmn['name'] in all_movepools:
+			moveset = s_global.query(Move).filter( Move.pokemon.any(name = pkmn['name']) ).all()
 			
-			# Get list of all moves that the Pokemon can learn
-			# Name only
-			moveset_name = []
-			if not pkmn['name'] in all_movepools:
-				moveset = s_global.query(Move).filter( Move.pokemon.any(name = pkmn['name']) ).all()
-				
-				for move in moveset:
-					moveset_name.append(move.name)
-				
-				# Add to dictionary to prevent redundant queries
-				all_movepools[ pkmn['name'] ] = moveset_name
+			for move in moveset:
+				moveset_name.append(move.name)
 			
-			# If the moveset was previously queried, grab it from the dictionary
-			else:
-				moveset_name = all_movepools[ pkmn['name'] ]
+			# Add to dictionary to prevent redundant queries
+			all_movepools[ pkmn['name'] ] = moveset_name
+		
+		# If the moveset was previously queried, grab it from the dictionary
+		else:
+			moveset_name = all_movepools[ pkmn['name'] ]
+		
+		# Extract Pokemon by name
+		packed_pkmn['pkmn'] = s_global.query(Pokemon).filter(Pokemon.name == pkmn['name']).first()
+		
+		# Save actual number of moves
+		packed_pkmn['move_count'] = len( pkmn['moves'] )
 			
-			# Extract Pokemon by name
-			packed_pkmn['pkmn'] = s_global.query(Pokemon).filter(Pokemon.name == pkmn['name']).first()
+		# Cleaning house, adding dummy moves to fill space
+		while len(pkmn['moves']) < 4:
+			# Find a random move in the moveset to add
+			rand = random.sample( range(0, len(moveset_name)), 1 )
+			if moveset_name[rand[0]] not in pkmn['moves']:
+				pkmn['moves'].append( moveset_name[rand[0]] )
 			
-			# Save actual number of moves
-			packed_pkmn['move_count'] = len( pkmn['moves'] )
-				
-			# Cleaning house, adding dummy moves to fill space
-			while len(pkmn['moves']) < 4:
-				# Find a random move in the moveset to add
-				rand = random.sample( range(0, len(moveset_name)), 1 )
-				if moveset_name[rand[0]] not in pkmn['moves']:
-					pkmn['moves'].append( moveset_name[rand[0]] )
-				
-				# What if there aren't enough moves to add?
-				if len(moveset_name) < 4:
-					pkmn['moves'].append( "Splash" )
-			
-			# Cleaning house, removing moves if there are too many
-			# First try to remove the moves that aren't in the Pokemon's moveset; then just pop a move off of the end
-			while len(pkmn['moves']) > 4:
-				for move in pkmn['moves']:
-					if not move in moveset_name:
-						pkmn['moves'].remove(move)
-				
-				# Couldn't find anything not in the moveset
-				if len(pkmn['moves']) > 4:
-					pkmn['moves'].pop()
-			
-			# Irritating Pokemon with few moves
-			if pkmn['name'] == "Smeargle":
-				pkmn['moves'] = ["Sketch", "Sketch", "Sketch", "Sketch"]
-				
-			if pkmn['name'] == "Unown":
-				pkmn['moves'] = ["Hidden Power", "Hidden Power", "Hidden Power", "Hidden Power"]
-			
-			if pkmn['name'] == "Ditto":
-				pkmn['moves'] = ["Transform", "Transform", "Transform", "Transform"]
-			
-			packed_pkmn['moves'] = []
-			# Extract moves by name
+			# What if there aren't enough moves to add?
+			if len(moveset_name) < 4:
+				pkmn['moves'].append( "Splash" )
+		
+		# Cleaning house, removing moves if there are too many
+		# First try to remove the moves that aren't in the Pokemon's moveset; then just pop a move off of the end
+		while len(pkmn['moves']) > 4:
 			for move in pkmn['moves']:
-				packed_pkmn['moves'].append( get_move(move, s_global) )
-				
-			# Extract items; give it a useless Soothe Bell if it has no item
-			if 'item' in pkmn:
-				if pkmn['item'] == None:
-					packed_pkmn['item'] = s_global.query(HoldItem).filter(HoldItem.name == "Soothe Bell").first()
-				else:
-					packed_pkmn['item'] = s_global.query(HoldItem).filter(HoldItem.name == pkmn['item']).first()
+				if not move in moveset_name:
+					pkmn['moves'].remove(move)
 			
+			# Couldn't find anything not in the moveset
+			if len(pkmn['moves']) > 4:
+				pkmn['moves'].pop()
+		
+		# Irritating Pokemon with few moves
+		if pkmn['name'] == "Smeargle":
+			pkmn['moves'] = ["Sketch", "Sketch", "Sketch", "Sketch"]
+			
+		if pkmn['name'] == "Unown":
+			pkmn['moves'] = ["Hidden Power", "Hidden Power", "Hidden Power", "Hidden Power"]
+		
+		if pkmn['name'] == "Ditto":
+			pkmn['moves'] = ["Transform", "Transform", "Transform", "Transform"]
+		
+		packed_pkmn['moves'] = []
+		# Extract moves by name
+		for move in pkmn['moves']:
+			packed_pkmn['moves'].append( get_move(move, s_global) )
+			
+		# Extract items; give it a useless Soothe Bell if it has no item
+		if 'item' in pkmn:
+			if pkmn['item'] == None:
+				packed_pkmn['item'] = s_global.query(HoldItem).filter(HoldItem.name == "Soothe Bell").first()
 			else:
-				packed_pkmn['item'] = s_global.query(HoldItem).filter(HoldItem.name == "Soothe Bell").first()
-			
-			# Just in case
-			if packed_pkmn['item'] == None:
-				packed_pkmn['item'] = s_global.query(HoldItem).filter(HoldItem.name == "Soothe Bell").first()
-			
-			# Keep extra information just the way it is
-			packed_pkmn['extra'] = pkmn['extra']
-			
-			# Add to packed list
-			queried_team.append( packed_pkmn )
+				packed_pkmn['item'] = s_global.query(HoldItem).filter(HoldItem.name == pkmn['item']).first()
 		
 		else:
-			# Information on entry hazards and weather effects
-			# Store it in a key called extra2
-			packed_pkmn['extra2'] = team[i]
-			
-			# Add to packed list
-			queried_team.append( packed_pkmn )
-			print packed_pkmn
+			packed_pkmn['item'] = s_global.query(HoldItem).filter(HoldItem.name == "Soothe Bell").first()
 		
+		# Just in case
+		if packed_pkmn['item'] == None:
+			packed_pkmn['item'] = s_global.query(HoldItem).filter(HoldItem.name == "Soothe Bell").first()
+		
+		# Keep extra information just the way it is
+		packed_pkmn['extra'] = pkmn['extra']
+		
+		# Add to packed list
+		queried_team.append( packed_pkmn )
+	
+	# extra2 information tacked onto team information
+	queried_team.append( extra2 )
+	print queried_team[6]
+	
 	# Output pre-processed team
 	return queried_team
 
