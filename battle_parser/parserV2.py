@@ -159,8 +159,9 @@ def makedic(bat):
     poke['extra'] = extras
     
     team1.append(deepcopy(poke))
-    
-  team1.append(team1extra)
+   
+    #Add this to the Dictonary
+  #team1.append(team1extra)
     
     
   #add in extra information
@@ -198,10 +199,12 @@ def makedic(bat):
     
     team2.append(deepcopy(poke))
   
+  #team2.append(deepcopy(team2extra))
+  
   #print team2
  
   #Craft the Dictionary
-  battleDic = {'team1' : team1, 'team2' : team2, 'winner' : victor}
+  battleDic = {'team1' : team1, 'team1-extra':team1extra, 'team2' : team2, 'team2-extra':team2extra, 'winner' : victor}
 #  print battleDic
   return battleDic
   
