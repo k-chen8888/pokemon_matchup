@@ -151,9 +151,10 @@ def pack(team):
 			# Information on entry hazards and weather effects
 			# Store it in a key called extra2
 			packed_pkmn['extra2'] = pkmn
-			
+			'''
 			# Add to packed list
 			queried_team.append( packed_pkmn )
+			'''
 		
 	# Output pre-processed team
 	return queried_team
@@ -217,255 +218,209 @@ def expand(matches):
 			results.append(1)
 		
 		for pkmn in match['team1']:
-			# Standard measures
-			if 'pkmn' in pkmn:
-				# Types
-				team_instance1.append(pkmn['pkmn'].type1)
-				team_instance1.append(pkmn['pkmn'].type2)
+			# Types
+			team_instance1.append(pkmn['pkmn'].type1)
+			team_instance1.append(pkmn['pkmn'].type2)
+			
+			# Base stats
+			team_instance1.append(pkmn['pkmn'].base_hp)
+			team_instance1.append(pkmn['pkmn'].base_atk)
+			team_instance1.append(pkmn['pkmn'].base_def)
+			team_instance1.append(pkmn['pkmn'].base_spatk)
+			team_instance1.append(pkmn['pkmn'].base_spdef)
+			team_instance1.append(pkmn['pkmn'].base_spd)
+			
+			# Moves
+			for move in pkmn['moves']:
+				# Basic information
+				team_instance1.append(move.move_type)
+				team_instance1.append(move.move_cat)
+				team_instance1.append(move.base_power)
+				team_instance1.append(move.priority)
+				team_instance1.append(move.accuracy)
 				
-				# Base stats
-				team_instance1.append(pkmn['pkmn'].base_hp)
-				team_instance1.append(pkmn['pkmn'].base_atk)
-				team_instance1.append(pkmn['pkmn'].base_def)
-				team_instance1.append(pkmn['pkmn'].base_spatk)
-				team_instance1.append(pkmn['pkmn'].base_spdef)
-				team_instance1.append(pkmn['pkmn'].base_spd)
-				
-				# Moves
-				for move in pkmn['moves']:
-					# Basic information
-					team_instance1.append(move.move_type)
-					team_instance1.append(move.move_cat)
-					team_instance1.append(move.base_power)
-					team_instance1.append(move.priority)
-					team_instance1.append(move.accuracy)
-					
-					# Special information
-					if move.weather:
-						team_instance1.append(1)
-					else:
-						team_instance1.append(0)
-					
-					if move.entry:
-						team_instance1.append(1)
-					else:
-						team_instance1.append(0)
-					
-					if move.status:
-						team_instance1.append(1)
-					else:
-						team_instance1.append(0)
-					
-					if move.heal:
-						team_instance1.append(1)
-					else:
-						team_instance1.append(0)
-					
-					if move.stat_change:
-						team_instance1.append(1)
-					else:
-						team_instance1.append(0)
-				
-				# Hold item
-				team_instance1.append(pkmn['item'].fling_dmg)
-				
-				if pkmn['item'].mega_stone:
+				# Special information
+				if move.weather:
 					team_instance1.append(1)
 				else:
 					team_instance1.append(0)
 				
-				team_instance1.append(pkmn['item'].natural_gift_type)
-				team_instance1.append(pkmn['item'].natural_gift_power)
+				if move.entry:
+					team_instance1.append(1)
+				else:
+					team_instance1.append(0)
 				
-				# Specific battle statistics
+				if move.status:
+					team_instance1.append(1)
+				else:
+					team_instance1.append(0)
 				
-				# Boosts
-				team_instance1.append(pkmn['extra']['boosts']['accuracy'])
-				team_instance1.append(pkmn['extra']['boosts']['atk'])
-				team_instance1.append(pkmn['extra']['boosts']['def'])
-				team_instance1.append(pkmn['extra']['boosts']['evasion'])
-				team_instance1.append(pkmn['extra']['boosts']['hp'])
-				team_instance1.append(pkmn['extra']['boosts']['spa'])
-				team_instance1.append(pkmn['extra']['boosts']['spd'])
-				team_instance1.append(pkmn['extra']['boosts']['spe'])
+				if move.heal:
+					team_instance1.append(1)
+				else:
+					team_instance1.append(0)
 				
-				# Fainted
-				team_instance1.append(pkmn['extra']['fainted'])
-				
-				# Status conditions
-				team_instance1.append(pkmn['extra']['status']['Heal Block'])
-				team_instance1.append(pkmn['extra']['status']['Ingrain'])
-				team_instance1.append(pkmn['extra']['status']['Leech Seed'])
-				team_instance1.append(pkmn['extra']['status']['Substitute'])
-				team_instance1.append(pkmn['extra']['status']['Taunt'])
-				team_instance1.append(pkmn['extra']['status']['brn'])
-				team_instance1.append(pkmn['extra']['status']['confusion'])
-				team_instance1.append(pkmn['extra']['status']['frz'])
-				team_instance1.append(pkmn['extra']['status']['par'])
-				team_instance1.append(pkmn['extra']['status']['psn'])
-				team_instance1.append(pkmn['extra']['status']['slp'])
-				team_instance1.append(pkmn['extra']['status']['tox'])
-				team_instance1.append(pkmn['extra']['status']['trapped'])
-				team_instance1.append(pkmn['extra']['status']['typechange'])
-				
-				# Un-boosts
-				team_instance1.append(pkmn['extra']['unboosts']['accuracy'])
-				team_instance1.append(pkmn['extra']['unboosts']['atk'])
-				team_instance1.append(pkmn['extra']['unboosts']['def'])
-				team_instance1.append(pkmn['extra']['unboosts']['evasion'])
-				team_instance1.append(pkmn['extra']['unboosts']['hp'])
-				team_instance1.append(pkmn['extra']['unboosts']['spa'])
-				team_instance1.append(pkmn['extra']['unboosts']['spd'])
-				team_instance1.append(pkmn['extra']['unboosts']['spe'])
+				if move.stat_change:
+					team_instance1.append(1)
+				else:
+					team_instance1.append(0)
 			
-			# Extra team measures
+			# Hold item
+			team_instance1.append(pkmn['item'].fling_dmg)
+			
+			if pkmn['item'].mega_stone:
+				team_instance1.append(1)
 			else:
-				# Entry hazards and other defensive mechanisms
-				team_instance1.append(pkmn['extra2']['hazards']['Light Screen'])
-				team_instance1.append(pkmn['extra2']['hazards']['Reflect'])
-				team_instance1.append(pkmn['extra2']['hazards']['Spikes'])
-				team_instance1.append(pkmn['extra2']['hazards']['Stealth Rock'])
-				team_instance1.append(pkmn['extra2']['hazards']['Sticky Web'])
-				team_instance1.append(pkmn['extra2']['hazards']['Tailwind'])
-				team_instance1.append(pkmn['extra2']['hazards']['Toxic Spikes'])
-				
-				# Weather
-				team_instance1.append(pkmn['extra2']['weather']['DeltaStream'])
-				team_instance1.append(pkmn['extra2']['weather']['DesolateLand'])
-				team_instance1.append(pkmn['extra2']['weather']['Hail'])
-				team_instance1.append(pkmn['extra2']['weather']['PrimordialSea'])
-				team_instance1.append(pkmn['extra2']['weather']['RainDance'])
-				team_instance1.append(pkmn['extra2']['weather']['Sandstorm'])
-				team_instance1.append(pkmn['extra2']['weather']['SunnyDay'])
-				team_instance1.append(pkmn['extra2']['weather']['none'])
+				team_instance1.append(0)
+			
+			team_instance1.append(pkmn['item'].natural_gift_type)
+			team_instance1.append(pkmn['item'].natural_gift_power)
+			
+			# Specific battle statistics
+			
+			# Boosts
+			team_instance1.append(pkmn['extra']['boosts']['accuracy'])
+			team_instance1.append(pkmn['extra']['boosts']['atk'])
+			team_instance1.append(pkmn['extra']['boosts']['def'])
+			team_instance1.append(pkmn['extra']['boosts']['evasion'])
+			team_instance1.append(pkmn['extra']['boosts']['hp'])
+			team_instance1.append(pkmn['extra']['boosts']['spa'])
+			team_instance1.append(pkmn['extra']['boosts']['spd'])
+			team_instance1.append(pkmn['extra']['boosts']['spe'])
+			
+			# Fainted
+			team_instance1.append(pkmn['extra']['fainted'])
+			
+			# Status conditions
+			team_instance1.append(pkmn['extra']['status']['Heal Block'])
+			team_instance1.append(pkmn['extra']['status']['Ingrain'])
+			team_instance1.append(pkmn['extra']['status']['Leech Seed'])
+			team_instance1.append(pkmn['extra']['status']['Substitute'])
+			team_instance1.append(pkmn['extra']['status']['Taunt'])
+			team_instance1.append(pkmn['extra']['status']['brn'])
+			team_instance1.append(pkmn['extra']['status']['confusion'])
+			team_instance1.append(pkmn['extra']['status']['frz'])
+			team_instance1.append(pkmn['extra']['status']['par'])
+			team_instance1.append(pkmn['extra']['status']['psn'])
+			team_instance1.append(pkmn['extra']['status']['slp'])
+			team_instance1.append(pkmn['extra']['status']['tox'])
+			team_instance1.append(pkmn['extra']['status']['trapped'])
+			team_instance1.append(pkmn['extra']['status']['typechange'])
+			
+			# Un-boosts
+			team_instance1.append(pkmn['extra']['unboosts']['accuracy'])
+			team_instance1.append(pkmn['extra']['unboosts']['atk'])
+			team_instance1.append(pkmn['extra']['unboosts']['def'])
+			team_instance1.append(pkmn['extra']['unboosts']['evasion'])
+			team_instance1.append(pkmn['extra']['unboosts']['hp'])
+			team_instance1.append(pkmn['extra']['unboosts']['spa'])
+			team_instance1.append(pkmn['extra']['unboosts']['spd'])
+			team_instance1.append(pkmn['extra']['unboosts']['spe'])
 			
 		data_table.append(team_instance1)
 		
 		team_instance2 = []
 		
 		for pkmn in match['team2']:
-			# Standard measures
-			if 'pkmn' in pkmn:
-				# Types
-				team_instance2.append(pkmn['pkmn'].type1)
-				team_instance2.append(pkmn['pkmn'].type2)
+			# Types
+			team_instance2.append(pkmn['pkmn'].type1)
+			team_instance2.append(pkmn['pkmn'].type2)
+			
+			# Base stats
+			team_instance2.append(pkmn['pkmn'].base_hp)
+			team_instance2.append(pkmn['pkmn'].base_atk)
+			team_instance2.append(pkmn['pkmn'].base_def)
+			team_instance2.append(pkmn['pkmn'].base_spatk)
+			team_instance2.append(pkmn['pkmn'].base_spdef)
+			team_instance2.append(pkmn['pkmn'].base_spd)
+			
+			# Moves
+			for move in pkmn['moves']:
+				# Basic information
+				team_instance2.append(move.move_type)
+				team_instance2.append(move.move_cat)
+				team_instance2.append(move.base_power)
+				team_instance2.append(move.priority)
+				team_instance2.append(move.accuracy)
 				
-				# Base stats
-				team_instance2.append(pkmn['pkmn'].base_hp)
-				team_instance2.append(pkmn['pkmn'].base_atk)
-				team_instance2.append(pkmn['pkmn'].base_def)
-				team_instance2.append(pkmn['pkmn'].base_spatk)
-				team_instance2.append(pkmn['pkmn'].base_spdef)
-				team_instance2.append(pkmn['pkmn'].base_spd)
-				
-				# Moves
-				for move in pkmn['moves']:
-					# Basic information
-					team_instance2.append(move.move_type)
-					team_instance2.append(move.move_cat)
-					team_instance2.append(move.base_power)
-					team_instance2.append(move.priority)
-					team_instance2.append(move.accuracy)
-					
-					# Special information
-					if move.weather:
-						team_instance2.append(1)
-					else:
-						team_instance2.append(0)
-					
-					if move.entry:
-						team_instance2.append(1)
-					else:
-						team_instance2.append(0)
-					
-					if move.status:
-						team_instance2.append(1)
-					else:
-						team_instance2.append(0)
-					
-					if move.heal:
-						team_instance2.append(1)
-					else:
-						team_instance2.append(0)
-					
-					if move.stat_change:
-						team_instance2.append(1)
-					else:
-						team_instance2.append(0)
-				
-				# Hold item
-				team_instance2.append(pkmn['item'].fling_dmg)
-				
-				if pkmn['item'].mega_stone:
+				# Special information
+				if move.weather:
 					team_instance2.append(1)
 				else:
 					team_instance2.append(0)
 				
-				team_instance2.append(pkmn['item'].natural_gift_type)
-				team_instance2.append(pkmn['item'].natural_gift_power)
+				if move.entry:
+					team_instance2.append(1)
+				else:
+					team_instance2.append(0)
 				
-				# Specific battle statistics
+				if move.status:
+					team_instance2.append(1)
+				else:
+					team_instance2.append(0)
 				
-				# Boosts
-				team_instance2.append(pkmn['extra']['boosts']['accuracy'])
-				team_instance2.append(pkmn['extra']['boosts']['atk'])
-				team_instance2.append(pkmn['extra']['boosts']['def'])
-				team_instance2.append(pkmn['extra']['boosts']['evasion'])
-				team_instance2.append(pkmn['extra']['boosts']['hp'])
-				team_instance2.append(pkmn['extra']['boosts']['spa'])
-				team_instance2.append(pkmn['extra']['boosts']['spd'])
-				team_instance2.append(pkmn['extra']['boosts']['spe'])
+				if move.heal:
+					team_instance2.append(1)
+				else:
+					team_instance2.append(0)
 				
-				# Fainted
-				team_instance2.append(pkmn['extra']['fainted'])
-				
-				# Status conditions
-				team_instance2.append(pkmn['extra']['status']['Heal Block'])
-				team_instance2.append(pkmn['extra']['status']['Ingrain'])
-				team_instance2.append(pkmn['extra']['status']['Leech Seed'])
-				team_instance2.append(pkmn['extra']['status']['Substitute'])
-				team_instance2.append(pkmn['extra']['status']['Taunt'])
-				team_instance2.append(pkmn['extra']['status']['brn'])
-				team_instance2.append(pkmn['extra']['status']['confusion'])
-				team_instance2.append(pkmn['extra']['status']['frz'])
-				team_instance2.append(pkmn['extra']['status']['par'])
-				team_instance2.append(pkmn['extra']['status']['psn'])
-				team_instance2.append(pkmn['extra']['status']['slp'])
-				team_instance2.append(pkmn['extra']['status']['tox'])
-				team_instance2.append(pkmn['extra']['status']['trapped'])
-				team_instance2.append(pkmn['extra']['status']['typechange'])
-				
-				# Un-boosts
-				team_instance2.append(pkmn['extra']['unboosts']['accuracy'])
-				team_instance2.append(pkmn['extra']['unboosts']['atk'])
-				team_instance2.append(pkmn['extra']['unboosts']['def'])
-				team_instance2.append(pkmn['extra']['unboosts']['evasion'])
-				team_instance2.append(pkmn['extra']['unboosts']['hp'])
-				team_instance2.append(pkmn['extra']['unboosts']['spa'])
-				team_instance2.append(pkmn['extra']['unboosts']['spd'])
-				team_instance2.append(pkmn['extra']['unboosts']['spe'])
+				if move.stat_change:
+					team_instance2.append(1)
+				else:
+					team_instance2.append(0)
 			
-			# Extra team measures
+			# Hold item
+			team_instance2.append(pkmn['item'].fling_dmg)
+			
+			if pkmn['item'].mega_stone:
+				team_instance2.append(1)
 			else:
-				# Entry hazards and other defensive mechanisms
-				team_instance2.append(pkmn['extra2']['hazards']['Light Screen'])
-				team_instance2.append(pkmn['extra2']['hazards']['Reflect'])
-				team_instance2.append(pkmn['extra2']['hazards']['Spikes'])
-				team_instance2.append(pkmn['extra2']['hazards']['Stealth Rock'])
-				team_instance2.append(pkmn['extra2']['hazards']['Sticky Web'])
-				team_instance2.append(pkmn['extra2']['hazards']['Tailwind'])
-				team_instance2.append(pkmn['extra2']['hazards']['Toxic Spikes'])
-				
-				# Weather
-				team_instance2.append(pkmn['extra2']['weather']['DeltaStream'])
-				team_instance2.append(pkmn['extra2']['weather']['DesolateLand'])
-				team_instance2.append(pkmn['extra2']['weather']['Hail'])
-				team_instance2.append(pkmn['extra2']['weather']['PrimordialSea'])
-				team_instance2.append(pkmn['extra2']['weather']['RainDance'])
-				team_instance2.append(pkmn['extra2']['weather']['Sandstorm'])
-				team_instance2.append(pkmn['extra2']['weather']['SunnyDay'])
-				team_instance2.append(pkmn['extra2']['weather']['none'])
+				team_instance2.append(0)
 			
+			team_instance2.append(pkmn['item'].natural_gift_type)
+			team_instance2.append(pkmn['item'].natural_gift_power)
+			
+			# Specific battle statistics
+			
+			# Boosts
+			team_instance2.append(pkmn['extra']['boosts']['accuracy'])
+			team_instance2.append(pkmn['extra']['boosts']['atk'])
+			team_instance2.append(pkmn['extra']['boosts']['def'])
+			team_instance2.append(pkmn['extra']['boosts']['evasion'])
+			team_instance2.append(pkmn['extra']['boosts']['hp'])
+			team_instance2.append(pkmn['extra']['boosts']['spa'])
+			team_instance2.append(pkmn['extra']['boosts']['spd'])
+			team_instance2.append(pkmn['extra']['boosts']['spe'])
+			
+			# Fainted
+			team_instance2.append(pkmn['extra']['fainted'])
+			
+			# Status conditions
+			team_instance2.append(pkmn['extra']['status']['Heal Block'])
+			team_instance2.append(pkmn['extra']['status']['Ingrain'])
+			team_instance2.append(pkmn['extra']['status']['Leech Seed'])
+			team_instance2.append(pkmn['extra']['status']['Substitute'])
+			team_instance2.append(pkmn['extra']['status']['Taunt'])
+			team_instance2.append(pkmn['extra']['status']['brn'])
+			team_instance2.append(pkmn['extra']['status']['confusion'])
+			team_instance2.append(pkmn['extra']['status']['frz'])
+			team_instance2.append(pkmn['extra']['status']['par'])
+			team_instance2.append(pkmn['extra']['status']['psn'])
+			team_instance2.append(pkmn['extra']['status']['slp'])
+			team_instance2.append(pkmn['extra']['status']['tox'])
+			team_instance2.append(pkmn['extra']['status']['trapped'])
+			team_instance2.append(pkmn['extra']['status']['typechange'])
+			
+			# Un-boosts
+			team_instance2.append(pkmn['extra']['unboosts']['accuracy'])
+			team_instance2.append(pkmn['extra']['unboosts']['atk'])
+			team_instance2.append(pkmn['extra']['unboosts']['def'])
+			team_instance2.append(pkmn['extra']['unboosts']['evasion'])
+			team_instance2.append(pkmn['extra']['unboosts']['hp'])
+			team_instance2.append(pkmn['extra']['unboosts']['spa'])
+			team_instance2.append(pkmn['extra']['unboosts']['spd'])
+			team_instance2.append(pkmn['extra']['unboosts']['spe'])
+		
 		data_table.append(team_instance2)
 	
 	return data_table, results
