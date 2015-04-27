@@ -201,8 +201,8 @@ def expand(matches):
 	for match in matches:
 		#print i
 		
-		if i == 248:
-			print match
+		#if i == 248:
+		#	print match
 		
 		team_instance1 = []
 		
@@ -229,6 +229,9 @@ def expand(matches):
 			
 			# Moves
 			for move in pkmn['moves']:
+				if i == 248:
+					print move.name
+				
 				# Basic information
 				team_instance1.append(move.move_type)
 				team_instance1.append(move.move_cat)
@@ -335,6 +338,9 @@ def expand(matches):
 			
 			# Moves
 			for move in pkmn['moves']:
+				if i == 248:
+					print move.name
+				
 				# Basic information
 				team_instance2.append(move.move_type)
 				team_instance2.append(move.move_cat)
