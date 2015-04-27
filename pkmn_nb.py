@@ -64,8 +64,9 @@ def pack(team):
 	while len(team) < 6:
 		team.append(MAGIKARP)
 	
-	for pkmn in team:
-		if 'name' in pkmn:
+	for i in range(0, len(team)):
+		if not i == len(team) - 1:
+			pkmn = team[i]
 			packed_pkmn = {}
 			
 			# Get list of all moves that the Pokemon can learn
@@ -150,7 +151,7 @@ def pack(team):
 		else:
 			# Information on entry hazards and weather effects
 			# Store it in a key called extra2
-			packed_pkmn['extra2'] = pkmn
+			packed_pkmn['extra2'] = team[i]
 			
 			# Add to packed list
 			queried_team.append( packed_pkmn )
