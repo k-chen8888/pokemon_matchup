@@ -197,7 +197,10 @@ def expand(matches):
 	data_table = []
 	results = []
 	
+	i, j = 0, 0
 	for match in matches:
+		print i
+		
 		team_instance1 = []
 		
 		# Let 1 = win, 0 = loss
@@ -308,8 +311,9 @@ def expand(matches):
 			team_instance1.append(pkmn['extra']['unboosts']['spd'])
 			team_instance1.append(pkmn['extra']['unboosts']['spe'])
 			
-			
 		data_table.append(team_instance1)
+		print j, len(team_instance1)
+		j += 1
 		
 		team_instance2 = []
 		
@@ -414,7 +418,9 @@ def expand(matches):
 			team_instance2.append(pkmn['extra']['unboosts']['spe'])
 		
 		data_table.append(team_instance2)
-	
+		print j, len(team_instance1)
+		j += 1
+		i += 1
 	return data_table, results
 
 
