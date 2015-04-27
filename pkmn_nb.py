@@ -64,11 +64,14 @@ def pack(team):
 	while len(team) < 6:
 		team.append(MAGIKARP)
 	
-	for i in range(0, len(team) - 1):
+	for i in range(0, len(team)):
+		print team[i]
+	
+	for i in range(0, len(team)):
 		if i < len(team):
 			pkmn = team[i]
 			packed_pkmn = {}
-			print len(team) - 1
+			print i
 			
 			# Get list of all moves that the Pokemon can learn
 			# Name only
