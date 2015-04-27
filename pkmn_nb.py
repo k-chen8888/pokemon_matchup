@@ -20,6 +20,13 @@ from pkmn_dist_simple.clustering_tools import *
 
 
 '''
+Get the moves for a Pokemon
+moveset = s_global.query(Move).filter(Move.pokemon.any(name=pkmn.name)).all()
+where pkmn is a database object that represents a Pokemon
+'''
+
+
+'''
 All scraper and db tools
 '''
 from scrape_db_simple.pkmn_db_simple import *
@@ -94,6 +101,9 @@ def pack(team):
 		# Just in case
 		if packed_pkmn['item'] == None:
 			packed_pkmn['item'] = s_global.query(HoldItem).filter(HoldItem.name == "Soothe Bell").first()
+		
+		# Keep extra information just the way it is
+		packed_pkmn['extra'] = pkmn['extra']
 		
 		# Add to packed list
 		queried_team.append( packed_pkmn )
@@ -217,7 +227,49 @@ def expand(matches):
 			
 			team_instance1.append(pkmn['item'].natural_gift_type)
 			team_instance1.append(pkmn['item'].natural_gift_power)
-		
+			
+			# Specific battle statistics
+			
+			# Boosts
+			team_instance1.append(pkmn['extra']['boosts']['accuracy'])
+			team_instance1.append(pkmn['extra']['boosts']['atk'])
+			team_instance1.append(pkmn['extra']['boosts']['def'])
+			team_instance1.append(pkmn['extra']['boosts']['evasion'])
+			team_instance1.append(pkmn['extra']['boosts']['hp'])
+			team_instance1.append(pkmn['extra']['boosts']['spa'])
+			team_instance1.append(pkmn['extra']['boosts']['spd'])
+			team_instance1.append(pkmn['extra']['boosts']['spe'])
+			
+			# Fainted
+			team_instance1.append(pkmn['extra']['fainted'])
+			
+			# Status conditions
+			team_instance1.append(pkmn['extra']['status']['Heal Block'])
+			team_instance1.append(pkmn['extra']['status']['Ingrain'])
+			team_instance1.append(pkmn['extra']['status']['Leech Seed'])
+			team_instance1.append(pkmn['extra']['status']['Substitute'])
+			team_instance1.append(pkmn['extra']['status']['Taunt'])
+			team_instance1.append(pkmn['extra']['status']['brn'])
+			team_instance1.append(pkmn['extra']['status']['confusion'])
+			team_instance1.append(pkmn['extra']['status']['frz'])
+			team_instance1.append(pkmn['extra']['status']['par'])
+			team_instance1.append(pkmn['extra']['status']['psn'])
+			team_instance1.append(pkmn['extra']['status']['slp'])
+			team_instance1.append(pkmn['extra']['status']['tox'])
+			team_instance1.append(pkmn['extra']['status']['trapped'])
+			team_instance1.append(pkmn['extra']['status']['typechange'])
+			
+			# Un-boosts
+			team_instance1.append(pkmn['extra']['unboosts']['accuracy'])
+			team_instance1.append(pkmn['extra']['unboosts']['atk'])
+			team_instance1.append(pkmn['extra']['unboosts']['def'])
+			team_instance1.append(pkmn['extra']['unboosts']['evasion'])
+			team_instance1.append(pkmn['extra']['unboosts']['hp'])
+			team_instance1.append(pkmn['extra']['unboosts']['spa'])
+			team_instance1.append(pkmn['extra']['unboosts']['spd'])
+			team_instance1.append(pkmn['extra']['unboosts']['spe'])
+			
+			
 		data_table.append(team_instance1)
 		
 		team_instance2 = []
@@ -280,6 +332,47 @@ def expand(matches):
 			
 			team_instance2.append(pkmn['item'].natural_gift_type)
 			team_instance2.append(pkmn['item'].natural_gift_power)
+			
+			# Specific battle statistics
+			
+			# Boosts
+			team_instance2.append(pkmn['extra']['boosts']['accuracy'])
+			team_instance2.append(pkmn['extra']['boosts']['atk'])
+			team_instance2.append(pkmn['extra']['boosts']['def'])
+			team_instance2.append(pkmn['extra']['boosts']['evasion'])
+			team_instance2.append(pkmn['extra']['boosts']['hp'])
+			team_instance2.append(pkmn['extra']['boosts']['spa'])
+			team_instance2.append(pkmn['extra']['boosts']['spd'])
+			team_instance2.append(pkmn['extra']['boosts']['spe'])
+			
+			# Fainted
+			team_instance2.append(pkmn['extra']['fainted'])
+			
+			# Status conditions
+			team_instance2.append(pkmn['extra']['status']['Heal Block'])
+			team_instance2.append(pkmn['extra']['status']['Ingrain'])
+			team_instance2.append(pkmn['extra']['status']['Leech Seed'])
+			team_instance2.append(pkmn['extra']['status']['Substitute'])
+			team_instance2.append(pkmn['extra']['status']['Taunt'])
+			team_instance2.append(pkmn['extra']['status']['brn'])
+			team_instance2.append(pkmn['extra']['status']['confusion'])
+			team_instance2.append(pkmn['extra']['status']['frz'])
+			team_instance2.append(pkmn['extra']['status']['par'])
+			team_instance2.append(pkmn['extra']['status']['psn'])
+			team_instance2.append(pkmn['extra']['status']['slp'])
+			team_instance2.append(pkmn['extra']['status']['tox'])
+			team_instance2.append(pkmn['extra']['status']['trapped'])
+			team_instance2.append(pkmn['extra']['status']['typechange'])
+			
+			# Un-boosts
+			team_instance2.append(pkmn['extra']['unboosts']['accuracy'])
+			team_instance2.append(pkmn['extra']['unboosts']['atk'])
+			team_instance2.append(pkmn['extra']['unboosts']['def'])
+			team_instance2.append(pkmn['extra']['unboosts']['evasion'])
+			team_instance2.append(pkmn['extra']['unboosts']['hp'])
+			team_instance2.append(pkmn['extra']['unboosts']['spa'])
+			team_instance2.append(pkmn['extra']['unboosts']['spd'])
+			team_instance2.append(pkmn['extra']['unboosts']['spe'])
 		
 		data_table.append(team_instance2)
 	
