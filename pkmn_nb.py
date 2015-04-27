@@ -94,7 +94,7 @@ def pack(team):
 			# First try to remove the moves that aren't in the Pokemon's moveset; then just pop a move off of the end
 			while len(pkmn['moves']) > 4:
 				for move in pkmn['moves']:
-					if not move in moveset_name
+					if not move in moveset_name:
 						pkmn['moves'].remove(move)
 				
 				# Couldn't find anything not in the moveset
