@@ -502,7 +502,7 @@ if __name__ == '__main__':
 				print "error"
 		
 		# Output results
-		f.write( "tp_nb = " + tp_nb )
-		f.write( "fn_nb = " + fn_nb )
-		f.write( "fp_nb = " + fp_nb )
-		f.write( "tn_nb = " + tn_nb )
+		f.write( "tp_nb = " + str(tp_nb) )
+		f.write( "fn_nb = " + str(fn_nb) )
+		f.write( "fp_nb = " + str(fp_nb) )
+		f.write( "tn_nb = " + str(tn_nb) )
