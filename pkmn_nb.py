@@ -64,11 +64,6 @@ def pack(team):
 	while len(team) < 7:
 		team.insert(0, MAGIKARP)
 	
-	# The last element is hazards/weather
-	extra2 = team.pop()
-	queried_team.append(extra2)
-	print extra2
-	
 	for i in range(0, len(team)):
 		pkmn = team[i]
 		packed_pkmn = {}
@@ -151,9 +146,6 @@ def pack(team):
 		
 		# Add to packed list
 		queried_team.insert(i, packed_pkmn)
-	
-	# extra2 information tacked onto team information
-	print queried_team[6]
 	
 	# Output pre-processed team
 	return queried_team
