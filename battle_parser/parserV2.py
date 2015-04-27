@@ -341,13 +341,7 @@ def restoreboost(plyr, line):
   for k in plyr.cur.unboosts:
     plyr.cur.unboosts[k] = 0
 
-
-
-
-
-
-
-  
+ 
 #if the name has a -SOMETHING at the end. Move it to the front
 #if it is Keldo or Meloetta, just return their base name  
 def nameSwap(name):
@@ -369,6 +363,8 @@ def nameSwap(name):
     return parts[1] + ' ' + parts[0]
   
     #Pokemon Specific Cases
+  elif 'Pikachu' in parts[0]:
+    return 'Pikachu'
   elif 'Nidoran' in parts[0]:
     return name
   elif 'Porygon' in parts[0]:
