@@ -56,6 +56,11 @@ Session.configure(bind=engine)
 s_global = Session()
 
 
+# A dictionary of movepools for each Pokemon
+# Prevents redundant queries
+all_movepools = {}
+
+
 '''
 For a single team, pack it into a dictionary of database objects
 '''
@@ -67,15 +72,24 @@ def pack(team):
 		team.append(MAGIKARP)
 	
 	for pkmn in team:
-		if 'name' in pkmn:
+		if 'name' in moveset_name[rand[0]]:
 			packed_pkmn = {}
 			
 			# Get list of all moves that the Pokemon can learn
 			# Name only
-			moveset = s_global.query(Move).filter( Move.pokemon.any(name = pkmn['name']) ).all()
 			moveset_name = []
-			for move in moveset:
-				moveset_name.append(move.name)
+			if not pkmn['name'] in all_movepools:
+				moveset = s_global.query(Move).filter( Move.pokemon.any(name = pkmn['name']) ).all()
+				
+				for move in moveset:
+					moveset_name.append(move.name)
+				
+				# Add to dictionary to prevent redundant queries
+				all_movepools[ pkmn['name'] ] = moveset_name
+			
+			# If the moveset was previously queried, grab it from the dictionary
+			else:
+				moveset_name = all_movepools[ pkmn['name'] ]
 			
 			# Extract Pokemon by name
 			packed_pkmn['pkmn'] = s_global.query(Pokemon).filter(Pokemon.name == pkmn['name']).first()
