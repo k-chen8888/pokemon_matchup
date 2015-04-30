@@ -1,0 +1,12 @@
+Run once: Spectral clustering
+	Out: Purity analysis
+
+Run twice: Naive Bayes and SVM, vote using SC, NB, and SVM
+	Out: TP, FP, FN, TN
+	Out: Precision, accuracy, F-score for each
+Out: 
+
+Run 50x each: Naive Bayes, SVM
+	Out: TP, FP, FN, TN
+	Out: Precision, accuracy, F-score for each
+Out: 
