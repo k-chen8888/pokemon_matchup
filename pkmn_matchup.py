@@ -107,23 +107,23 @@ def runEnsemble(matches, labels, win, valid_size, iterations):
 		out[i].append(0) # TN, 3
 		
 		# Run some predictions and get [ [tp, fn], [fp, tn] ]
-		for i in range(0, len(valid)):
+		for j in range(0, len(valid)):
 			try:
 				win_vote = 0
 				lose_vote = 0
 				
 				# Run all predictors
-				predict_nb = clf_nb.predict( valid[i] )
+				predict_nb = clf_nb.predict( valid[j] )
 				if predict_nb[0] == 0:
 					lose_vote += 1
 				else:
 					win_vote += 1
-				predict_svm = clf_svm.predict( valid[i] )
+				predict_svm = clf_svm.predict( valid[j] )
 				if predict_svm[0] == 0:
 					lose_vote += 1
 				else:
 					win_vote += 1
-				predict_spec = [1] if labels [ data.index( valid[i] ) ] == win else [0]
+				predict_spec = [1] if labels [ data.index( valid[j] ) ] == win else [0]
 				if predict_spec[0] == 0:
 					lose_vote += 1
 				else:
@@ -133,12 +133,12 @@ def runEnsemble(matches, labels, win, valid_size, iterations):
 				predict = 0 if lose_vote > win_vote else 1
 				
 				if predict == 0: # N
-					if predict == valid_res[i]: # TN
+					if predict == valid_res[j]: # TN
 						out[i][3] += 1
 					else: # FN
 						out[i][1] += 1
 				else: # P
-					if predict == valid_res[i]: # TP
+					if predict == valid_res[j]: # TP
 						out[i][0] += 1
 					else: # FP
 						out[i][2] += 1

@@ -97,17 +97,17 @@ def runNB(data, results, valid_size, iterations):
 		out[i].append(0) # TN, 3
 		
 		# Run some predictions and get [ [tp, fn], [fp, tn] ]
-		for i in range(0, len(valid)):
+		for j in range(0, len(valid)):
 			try:
-				predict = clf.predict( valid[i] )
+				predict = clf.predict( valid[j] )
 				
 				if predict[0] == 0: # N
-					if predict[0] == valid_res[i]: # TN
+					if predict[0] == valid_res[j]: # TN
 						out[i][3] += 1
 					else: # FN
 						out[i][1] += 1
 				else: # P
-					if predict[0] == valid_res[i]: # TP
+					if predict[0] == valid_res[j]: # TP
 						out[i][0] += 1
 					else: # FP
 						out[i][2] += 1
