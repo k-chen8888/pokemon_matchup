@@ -58,11 +58,6 @@ Session.configure(bind=engine)
 s_global = Session()
 
 
-# A dictionary of movepools for each Pokemon
-# Prevents redundant queries
-all_movepools = {}
-
-
 '''
 Run inputted number of iterations of Naive Bayes using 10 different randomly generated data sets
 Save results in a list of lists [ [ tp, fn, fp, tn ], ... ]

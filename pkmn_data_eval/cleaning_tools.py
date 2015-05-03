@@ -209,7 +209,7 @@ def select(matches, p):
 	# Using randomness
 	if p < 1.0 and p > 0.0:
 		# Build a list of random battles
-		rand_battles = random.sample( range(0, len(matches) - 1, 2), int( math.floor( len(data_table) * p ) ) )
+		rand_battles = random.sample( range(0, len(matches) - 1, 2), int( math.floor( len(matches) * p ) ) )
 		
 		# Create output
 		teams = []
