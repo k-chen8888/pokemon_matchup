@@ -88,12 +88,13 @@ def runNB(data, results, valid_size, iterations):
 		
 		# Make note of the current iteration
 		f.write( "Iteration " + str(i + 1) + "\n\n" )
+		out.append([])
 		
 		# Preload values
-		out[0].append(0) # TP
-		out[1].append(0) # FN
-		out[2].append(0) # FP
-		out[3].append(0) # TN
+		out[i].append(0) # TP, 0
+		out[i].append(0) # FN, 1
+		out[i].append(0) # FP, 2
+		out[i].append(0) # TN, 3
 		
 		# Run some predictions and get [ [tp, fn], [fp, tn] ]
 		for i in range(0, len(valid)):
@@ -102,36 +103,41 @@ def runNB(data, results, valid_size, iterations):
 				
 				if predict[0] == 0: # N
 					if predict[0] == valid_res[i]: # TN
-						out[3] += 1
+						out[i][3] += 1
 					else: # FN
-						out[1] += 1
+						out[i][1] += 1
 				else: # P
 					if predict[0] == valid_res[i]: # TP
-						out[0] += 1
+						out[i][0] += 1
 					else: # FP
-						out[2] += 1
+						out[i][2] += 1
 			except:
 				print "error"
 		
 		# Output results
-		f.write( "True Positives = " + str(out[0]) + "\n" )
-		f.write( "False Negatives = " + str(out[1]) + "\n" )
-		f.write( "False Positives = " + str(out[2]) + "\n" )
-		f.write( "True Negatives = " + str(out[3]) + "\n\n" )
+		f.write( "True Positives = " + str(out[i][0]) + "\n" )
+		f.write( "False Negatives = " + str(out[i][1]) + "\n" )
+		f.write( "False Positives = " + str(out[i][2]) + "\n" )
+		f.write( "True Negatives = " + str(out[i][3]) + "\n\n" )
 		
 		# Precision, recall, and f-score
-		prec = float(out[0]) / float(out[0] + out[2])
+		prec = float(out[i][0]) / float(out[i][0] + out[i][2])
 		f.write( "Precision: " + str(prec) + "\n")
-		rec = float(out[0]) / float(out[0] + out[1])
+		rec = float(out[i][0]) / float(out[i][0] + out[i][1])
 		f.write( "Recall: " + str(rec) + "\n")
 		fscore = float(2 * rec * prec) / float(rec + prec)
 		f.write( "F-score: " + str(fscore) + "\n\n")
 		
 		# Accuracy
-		acc = float(out[0] + out[3]) / float(out[0] + out[1] + out[2] + out[3])
+		acc = float(out[i][0] + out[i][3]) / float(out[i][0] + out[i][1] + out[i][2] + out[i][3])
 		f.write( "Accuracy: " + str(acc) + "\n\n")
 		
 		print "Iteration", i, "done"
+	
+	# Mean and standard deviation
+	out_arr = np.array(out)
+	f.write( "Mean of each measure: " + np.array_str( np.mean(out_arr, axis = 0) ) + "\n")
+	f.write( "Standard deviation of each measure: " + np.array_str( np.std(out_arr, axis = 0, dtype=np.float64) ) + "\n\n\n")
 	
 	f.close()
 	print "Done"
