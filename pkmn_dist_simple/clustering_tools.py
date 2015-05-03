@@ -94,7 +94,7 @@ def purity(k, labels, teams, results, sim_mtrx, out = None):
 	f.close()
 	
 	print "Test done"
-	return max
+	return win
 
 '''
 Silhouette coefficient
