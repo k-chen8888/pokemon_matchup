@@ -177,17 +177,37 @@ def runEnsemble(matches, labels, win, valid_size, iterations):
 '''
 sys.argv
 	1 -> JSON file
-	2 -> Decimal proportion of data to use as the validation set
+	2 -> Decimal proportion of data to use as the validation set (modes 0, 2, 3)
 	3 -> kmeans or discretize
 	4 -> Number of times to run the ensemble method
+	5 -> Mode
+		0 = ensemble
+		1 = spectral clustering
+		2 = naive bayes
+		3 = svm
 '''
 if __name__ == '__main__':
 	# Pull instances and results out of JSON table
 	json_data = open(sys.argv[1], "r")
 	matches = populate(json_data)
 	
-	# Run spectral clustering ONCE on the all of the matches to get the labels
-	labels, win = spec_cluster( matches, 1.0, sys.argv[3], 1 )
-	
 	# Run the ensemble using the data received from the spectral clustering
-	runEnsemble(matches, labels, win, float( sys.argv[2] ), int( sys.argv[4] ) )
+	if int(sys.argv[5]) == 0:
+		# Run spectral clustering ONCE on the all of the matches to get the labels
+		labels, win = spec_cluster( matches, 1.0, sys.argv[3], 1 )
+		
+		runEnsemble(matches, labels, win, float( sys.argv[2] ), int( sys.argv[4] ) )
+	elif int(sys.argv[5]) == 1:
+		spec_cluster( matches, float( sys.argv[2] ), sys.argv[3], 1 )
+	elif int(sys.argv[5]) == 2:
+		# Generate data and results
+		data, results = expand(matches)
+		
+		runNB( data, results, float( sys.argv[2] ), int( sys.argv[4] ) )
+	elif int(sys.argv[5]) == 3:
+		# Generate data and results
+		data, results = expand(matches)
+		
+		runSVM(data, results, float( sys.argv[2] ), int( sys.argv[4] ) )
+	else:
+		print "Invalid choice"

@@ -152,5 +152,5 @@ if __name__ == '__main__':
 	# Generate data and results
 	data, results = expand(matches)
 	
-	# Run 50 iterations of Naive Bayes
+	# Run user-inputted number of iterations of Naive Bayes
 	runSVM(data, results, float( sys.argv[2] ), int( sys.argv[3] ) )
