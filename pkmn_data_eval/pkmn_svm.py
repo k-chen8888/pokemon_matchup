@@ -1,5 +1,5 @@
 '''
-Experimental classifier that usese NB, SVM, and spectral clustering as an ensemble
+Experimental SVM classifier
 '''
 
 
@@ -19,18 +19,14 @@ import numpy as np
 from sklearn.naive_bayes import GaussianNB
 from sklearn import svm
 
+# Data cleaning
+from pkmn_data_eval.cleaning_tools import *
+
 # Distance measures and data evaluation
 from pkmn_dist_simple.mock_battle_simple import *
 from pkmn_dist_simple.pkmn_dist_simple import *
 from pkmn_dist_simple.clustering_tools import *
 
-
-'''
-The functions from all the other evaluators
-'''
-from pkmn_data_eval.pkmn_spectral import *
-from pkmn_data_eval.pkmn_nb import *
-from pkmn_data_eval.pkmn_svm import *
 
 '''
 All scraper and db tools
@@ -68,33 +64,27 @@ all_movepools = {}
 
 
 '''
-Runs the ensemble off of the results of all other classifiers for a given number of iterations
-User may input size of validation set as a proportion p of the data
+Run inputted number of iterations of Naive Bayes using 10 different randomly generated data sets
+Save results in a list of lists [ [ tp, fn, fp, tn ], ... ]
+Also find mean and standard deviation for each of the 4 measures
 
-Output the results to a file
+Write output to text file
 '''
-def runEnsemble(matches, labels, win, valid_size, iterations):
-	# Generate data and results
-	data, results = expand(matches)
-	
-	# Store results for the ensemble
+def runSVM(data, results, valid_size, iterations):
 	out = []
-	f = open("ensemble_results.txt", "w")
+	f = open("svm_results.txt", "w")
 	
-	# Run the ensemble for the given number of iterations
 	for i in range(0, iterations):
+		# Add iteration to array
+		out.append([])
+		
 		# Create test and validation sets randomly
 		test, test_res, valid, valid_res = partition(data, results, valid_size)
 		
-		# Naive Bayes (Gaussian)
+		# Run support vector machine
 		# Note that numpy arrays are needed
-		clf_nb = GaussianNB()
-		clf_nb.fit( np.array(test), np.array(test_res) )
-		
-		# Support vector machine
-		# Note that numpy arrays are needed
-		clf_svm = svm.SVC()
-		clf_svm.fit( np.array(test), np.array(test_res) )
+		clf = svm.SVC()
+		clf.fit( np.array(test), np.array(test_res) )
 		
 		# Make note of the current iteration
 		f.write( "Iteration " + str(i + 1) + "\n\n" )
@@ -108,36 +98,15 @@ def runEnsemble(matches, labels, win, valid_size, iterations):
 		# Run some predictions and get [ [tp, fn], [fp, tn] ]
 		for i in range(0, len(valid)):
 			try:
-				win_vote = 0
-				lose_vote = 0
+				predict = clf.predict( valid[i] )
 				
-				# Run all predictors
-				predict_nb = clf_nb.predict( valid[i] )
-				if predict_nb[0] == 0:
-					lose_vote += 1
-				else:
-					win_vote += 1
-				predict_svm = clf_svm.predict( valid[i] )
-				if predict_svm[0] == 0:
-					lose_vote += 1
-				else:
-					win_vote += 1
-				predict_spec = [1] if labels [ data.index( valid[i] ) ] == win else [0]
-				if predict_spec[0] == 0:
-					lose_vote += 1
-				else:
-					win_vote += 1
-				
-				# Take the majority vote
-				predict = 0 if lose_vote > win_vote else 1
-				
-				if predict == 0: # N
-					if predict == valid_res[i]: # TN
+				if predict[0] == 0: # N
+					if predict[0] == valid_res[i]: # TN
 						out[3] += 1
 					else: # FN
 						out[1] += 1
 				else: # P
-					if predict == valid_res[i]: # TP
+					if predict[0] == valid_res[i]: # TP
 						out[0] += 1
 					else: # FP
 						out[2] += 1
@@ -178,8 +147,8 @@ if __name__ == '__main__':
 	json_data = open(sys.argv[1], "r")
 	matches = populate(json_data)
 	
-	# Run spectral clustering on the matches to get the labels
-	labels, win = spec_cluster( matches, p, int(sys.argv[4]) )
+	# Generate data and results
+	data, results = expand(matches)
 	
-	# Run the ensemble using the data received from the spectral clustering
-	runEnsemble(matches, labels, win, sys.argv[2], iterations)
+	# Run 50 iterations of Naive Bayes
+	runSVM(data, results, sys.argv[2], 50)

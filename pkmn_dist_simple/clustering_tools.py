@@ -18,6 +18,8 @@ Given labels, sort into two lists
 
 Calculate percentage of winners/losers in zero
 Calculate percentage of winners/losers in one
+
+Return the label that indicates the cluster of winners
 '''
 def purity(k, labels, teams, results, sim_mtrx, out = None):
 	f = None
@@ -26,6 +28,10 @@ def purity(k, labels, teams, results, sim_mtrx, out = None):
 	else:
 		# Store test results in file
 		f = open(out, "w")
+	
+	# The label of the cluster of winners (integer)
+	win = -1
+	max_cluster_win_purity = 0
 	
 	# The number k represents the number of unique labels
 	# In scikit, this is [0, k - 1]
@@ -57,6 +63,15 @@ def purity(k, labels, teams, results, sim_mtrx, out = None):
 		cluster_win_purity = float(cluster_wins) / len(cluster) if len(cluster) > 0 else 0
 		cluster_loss_purity = float(cluster_losses) / len(cluster) if len(cluster) > 0 else 0
 		
+		# Just in case
+		if i == k - 1 and max_cluster_win_purity == 0:
+			max = k
+		
+		# Check to see if this is the cluster of winners
+		if cluster_win_purity > max_cluster_win_purity:
+			max_cluster_win_purity = cluster_win_purity
+			win = i
+		
 		report0 = "Cluster label " + str(i) + ", size " + str( len(cluster) ) + "\n"
 		report1 = str(cluster_wins) + "W " + str(cluster_losses) + "L\n"
 		report2 = str(cluster_win_purity * 100) + "% wins and " + str(cluster_loss_purity * 100) + "% losses\n"
@@ -79,6 +94,7 @@ def purity(k, labels, teams, results, sim_mtrx, out = None):
 	f.close()
 	
 	print "Test done"
+	return max
 
 '''
 Silhouette coefficient

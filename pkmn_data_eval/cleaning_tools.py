@@ -1,22 +1,15 @@
 '''
-Experimental Naive Bayes classifier
+Data cleaning tools
 '''
 
 
-import sys, os, math, re, copy, json, random
-
-
 '''
-Data analysis tools
+System tools and utilities
 '''
-import numpy as np
-from sklearn.naive_bayes import GaussianNB
-from sklearn import svm
+import os, sys, math, re, random, copy
 
-# Distance measures and data evaluation
-from pkmn_dist_simple.mock_battle_simple import *
-from pkmn_dist_simple.pkmn_dist_simple import *
-from pkmn_dist_simple.clustering_tools import *
+# JSON tool for reading parsed data file
+import json
 
 
 '''
@@ -185,6 +178,70 @@ def populate(json_file):
 		queried_matches.append(q)
 	
 	return queried_matches
+
+
+
+'''
+Function select is for spectral clustering only`
+'''
+
+
+'''
+Selects a proportion p of matches to use in the clustering
+'''
+def select(matches, p):
+	# Using randomness
+	if p < 1.0 and p > 0.0:
+		# Build a list of random battles
+		rand_battles = random.sample( range(0, len(matches) - 1, 2), int( math.floor( len(data_table) * p ) ) )
+		
+		# Create output
+		teams = []
+		results = []
+		for i in range(0, len(rand_battles)):
+			if matches[i]['winner'] == "team1":
+				teams.append( matches[i]["team1"] )
+				teams.append( matches[i]["team2"] )
+				results.append(True)
+				results.append(False)
+			
+			else:
+				teams.append( matches[i]["team1"] )
+				teams.append( matches[i]["team2"] )
+				results.append(False)
+				results.append(True)
+		
+		return teams, results
+	
+	elif p <= 0.0 or p > 1.0:
+		print "Invalid proportion of data"
+		return None, None
+	
+	else:
+		# Dump all teams into output
+		teams = []
+		results = []
+		
+		for match in matches:
+			if match['winner'] == "team1":
+				teams.append( match["team1"] )
+				teams.append( match["team2"] )
+				results.append(True)
+				results.append(False)
+			
+			else:
+				teams.append( match["team1"] )
+				teams.append( match["team2"] )
+				results.append(False)
+				results.append(True)
+		
+		return teams, results
+
+
+
+'''
+The below are for NB and SVM only
+'''
 
 
 '''
@@ -467,9 +524,9 @@ def expand(matches):
 
 
 '''
-Randomly selects 90% of instances to be in the training set and 10% of the instances to be in the validation set
+Randomly selects 1 - p of instances to be in the training set and p of the instances to be in the validation set, where p is a proportion of data
 '''
-def partition(data_table, results):
+def partition(data_table, results, p):
 	# Store test data and results here
 	test = []
 	test_res = []
@@ -480,7 +537,7 @@ def partition(data_table, results):
 	
 	# Generate a list of random numbers, non-repeating
 	# This is the validation set
-	rand_inst = random.sample( range(0, len(data_table)), len(data_table) / 10 )
+	rand_inst = random.sample( range(0, len(data_table)), int( math.floor( len(data_table) * p ) ) )
 	
 	for i in range(0, len(data_table)):
 		# Append to validation set
@@ -494,57 +551,3 @@ def partition(data_table, results):
 			test_res.append( copy.deepcopy(results[i]) )
 	
 	return test, test_res, valid, valid_res
-
-	
-if __name__ == '__main__':
-	# Pull instances and results out of JSON table
-	json_data = open(sys.argv[1], "r")
-	matches = populate(json_data)
-	
-	# Generate data and results
-	data, results = expand(matches)
-	
-	# Run 10 iterations of Naive Bayes using 10 different randomly generated data sets
-	# Write output to text file
-	for i in range(0, 10):
-		f = open("nb" + str(i) + "_results.txt", "w")
-		
-		# Create test and validation sets randomly
-		test, test_res, valid, valid_res = partition(data, results)
-		
-		# Run Naive Bayes (Gaussian)
-		# Note that numpy arrays are needed
-		clf = GaussianNB()
-		clf.fit( np.array(test), np.array(test_res) )
-		
-		tp_nb = 0
-		fn_nb = 0
-		fp_nb = 0
-		tn_nb = 0
-		
-		# Run some predictions and get [ [tp, fn], [fp, tn] ]
-		for i in range(0, len(valid)):
-			try:
-				predict = clf.predict( valid[i] )
-				f.write( str(predict) + " " + str( predict[0] == valid_res[i] )  + "\n")
-				
-				if predict[0] == 0:
-					if predict[0] == valid_res[i]:
-						tn_nb += 1
-					else:
-						fn_nb += 1
-				else:
-					if predict[0] == valid_res[i]:
-						tp_nb += 1
-					else:
-						fp_nb += 1
-			except:
-				print "error"
-		
-		# Output results
-		f.write( "\ntp_nb = " + str(tp_nb) + "\n" )
-		f.write( "fn_nb = " + str(fn_nb) + "\n" )
-		f.write( "fp_nb = " + str(fp_nb) + "\n" )
-		f.write( "tn_nb = " + str(tn_nb) + "\n" )
-	
-	print "Done"
