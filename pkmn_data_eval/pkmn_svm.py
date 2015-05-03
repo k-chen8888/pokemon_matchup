@@ -121,15 +121,15 @@ def runSVM(data, results, valid_size, iterations):
 		f.write( "True Negatives = " + str(out[i][3]) + "\n\n" )
 		
 		# Precision, recall, and f-score
-		prec = float(out[i][0]) / float(out[i][0] + out[i][2])
+		prec = float(out[i][0]) / float(out[i][0] + out[i][2]) if out[i][0] > 0 else 0
 		f.write( "Precision: " + str(prec) + "\n")
-		rec = float(out[i][0]) / float(out[i][0] + out[i][1])
+		rec = float(out[i][0]) / float(out[i][0] + out[i][1]) if out[i][0] > 0 else 0
 		f.write( "Recall: " + str(rec) + "\n")
-		fscore = float(2 * rec * prec) / float(rec + prec)
-		f.write( "F-score: " + str(fscore) + "\n\n")
+		fscore = float(2 * rec * prec) / float(rec + prec) if rec > 0 or prec > 0 else 0
+		f.write( "F-score: " + str(fscore) + "\n\n\n")
 		
 		# Accuracy
-		acc = float(out[i][0] + out[i][3]) / float(out[i][0] + out[i][1] + out[i][2] + out[i][3])
+		acc = float(out[i][0] + out[i][3]) / float(out[i][0] + out[i][1] + out[i][2] + out[i][3]) if out[i][0] > 0 or out[i][3] > 0 else 0
 		f.write( "Accuracy: " + str(acc) + "\n\n")
 		
 		print "Iteration", i, "done"
