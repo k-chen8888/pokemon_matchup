@@ -172,14 +172,16 @@ def runEnsemble(matches, labels, win, valid_size, iterations):
 sys.argv
 	1 -> JSON file
 	2 -> Decimal proportion of data to use as the validation set
+	3 -> kmeans or discretize
+	4 -> Number of times to run the ensemble method
 '''
 if __name__ == '__main__':
 	# Pull instances and results out of JSON table
 	json_data = open(sys.argv[1], "r")
 	matches = populate(json_data)
 	
-	# Run spectral clustering on the matches to get the labels
-	labels, win = spec_cluster( matches, p, int(sys.argv[4]) )
+	# Run spectral clustering ONCE on the all of the matches to get the labels
+	labels, win = spec_cluster( matches, 1.0, sys.argv[3], 1 )
 	
 	# Run the ensemble using the data received from the spectral clustering
-	runEnsemble(matches, labels, win, sys.argv[2], iterations)
+	runEnsemble(matches, labels, win, float( sys.argv[2] ), int( sys.argv[4] ) )

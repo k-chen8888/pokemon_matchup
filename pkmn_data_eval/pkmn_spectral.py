@@ -66,7 +66,7 @@ Runs spectral clustering on a given proportion p of the inputted matches for som
 
 Returns the labels if only one iteration is made
 '''
-def spec_cluster(matches, p, iterations):
+def spec_cluster(matches, p, mode, iterations):
 	labels = []
 	win = -1
 	
@@ -81,7 +81,7 @@ def spec_cluster(matches, p, iterations):
 		
 		# Generate labels (spectral clustering)
 		# Note that the adjacency matrix needs to be converted into a numpy array
-		labels = spectral_clustering(np.asarray(adj_mtrx), n_clusters = k, eigen_solver = 'arpack', assign_labels = sys.argv[3])
+		labels = spectral_clustering(np.asarray(adj_mtrx), n_clusters = k, eigen_solver = 'arpack', assign_labels = mode)
 		
 		# Name of file to output test results
 		outfile_name = 'test' + str(i) + '_results.txt'
@@ -120,6 +120,6 @@ if __name__ == '__main__':
 	p = float(sys.argv[2])
 	
 	# Run the clustering
-	spec_cluster( matches, p, int(sys.argv[4]) )
+	spec_cluster( matches, p, sys.argv[3], int(sys.argv[4]) )
 	
 	print "Done"

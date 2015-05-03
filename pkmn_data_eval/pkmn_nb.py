@@ -141,6 +141,7 @@ def runNB(data, results, valid_size, iterations):
 sys.argv
 	1 -> JSON file
 	2 -> Decimal proportion of data to use as the validation set
+	3 -> Number of iterations to run Naive Bayes
 '''
 if __name__ == '__main__':
 	# Pull instances and results out of JSON table
@@ -150,5 +151,5 @@ if __name__ == '__main__':
 	# Generate data and results
 	data, results = expand(matches)
 	
-	# Run 50 iterations of Naive Bayes
-	runNB(data, results, sys.argv[2], 50)
+	# Run user-inputted number of iterations of Naive Bayes
+	runNB( data, results, float( sys.argv[2] ), int( sys.argv[3] ) )
