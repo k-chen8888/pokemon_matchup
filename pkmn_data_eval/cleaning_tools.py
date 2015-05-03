@@ -13,6 +13,22 @@ import json
 
 
 '''
+Data analysis tools
+'''
+import numpy as np
+from sklearn.naive_bayes import GaussianNB
+from sklearn import svm
+
+# Data cleaning
+from pkmn_data_eval.cleaning_tools import *
+
+# Distance measures and data evaluation
+from pkmn_dist_simple.mock_battle_simple import *
+from pkmn_dist_simple.pkmn_dist_simple import *
+from pkmn_dist_simple.clustering_tools import *
+
+
+'''
 All scraper and db tools
 '''
 from scrape_db_simple.pkmn_db_simple import *
