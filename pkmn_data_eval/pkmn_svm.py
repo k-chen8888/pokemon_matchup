@@ -117,17 +117,22 @@ def runSVM(data, results, valid_size, iterations):
 		
 		# Precision, recall, and f-score
 		prec = float(out[i][0]) / float(out[i][0] + out[i][2]) if out[i][0] > 0 else 0
-		f.write( "Precision: " + str(prec) + "\n")
+		f.write( "Precision: " + str(prec) + "\n" )
 		rec = float(out[i][0]) / float(out[i][0] + out[i][1]) if out[i][0] > 0 else 0
-		f.write( "Recall: " + str(rec) + "\n")
+		f.write( "Recall: " + str(rec) + "\n" )
 		fscore = float(2 * rec * prec) / float(rec + prec) if rec > 0 or prec > 0 else 0
-		f.write( "F-score: " + str(fscore) + "\n\n\n")
+		f.write( "F-score: " + str(fscore) + "\n\n\n" )
 		
 		# Accuracy
 		acc = float(out[i][0] + out[i][3]) / float(out[i][0] + out[i][1] + out[i][2] + out[i][3]) if out[i][0] > 0 or out[i][3] > 0 else 0
-		f.write( "Accuracy: " + str(acc) + "\n\n")
+		f.write( "Accuracy: " + str(acc) + "\n\n" )
 		
 		print "Iteration", i, "done"
+	
+	# Mean and standard deviation
+	out_arr = np.array(out)
+	f.write( "Mean of each measure: " + np.array_str( np.mean(out_arr, axis = 0) ) + "\n" )
+	f.write( "Standard deviation of each measure: " + np.array_str( np.std(out_arr, axis = 0, dtype = np.float64) ) + "\n\n\n" )
 	
 	f.close()
 	print "Done"

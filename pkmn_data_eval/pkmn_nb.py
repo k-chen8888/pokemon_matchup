@@ -131,8 +131,8 @@ def runNB(data, results, valid_size, iterations):
 	
 	# Mean and standard deviation
 	out_arr = np.array(out)
-	f.write( "Mean of each measure: " + np.array_str( np.mean(out_arr, axis = 0) ) + "\n")
-	f.write( "Standard deviation of each measure: " + np.array_str( np.std(out_arr, axis = 0, dtype=np.float64) ) + "\n\n\n")
+	f.write( "Mean of each measure: " + np.array_str( np.mean(out_arr, axis = 0) ) + "\n" )
+	f.write( "Standard deviation of each measure: " + np.array_str( np.std(out_arr, axis = 0, dtype = np.float64) ) + "\n\n\n" )
 	
 	f.close()
 	print "Done"
