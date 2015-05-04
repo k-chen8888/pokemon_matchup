@@ -198,7 +198,7 @@ if __name__ == '__main__':
 		
 		runEnsemble(matches, labels, win, float( sys.argv[2] ), int( sys.argv[4] ) )
 	elif int(sys.argv[5]) == 1:
-		spec_cluster( matches, float( sys.argv[2] ), sys.argv[3], 1 )
+		spec_cluster( matches, float( sys.argv[2] ), sys.argv[3], int( sys.argv[4] ) )
 	elif int(sys.argv[5]) == 2:
 		# Generate data and results
 		data, results = expand(matches)
