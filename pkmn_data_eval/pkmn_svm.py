@@ -70,9 +70,6 @@ def runSVM(data, results, valid_size, iterations):
 	f = open("svm_results.txt", "w")
 	
 	for i in range(0, iterations):
-		# Add iteration to array
-		out.append([])
-		
 		# Create test and validation sets randomly
 		test, test_res, valid, valid_res = partition(data, results, valid_size)
 		
