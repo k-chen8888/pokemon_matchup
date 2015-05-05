@@ -28,7 +28,7 @@ pkmn_types = ['normal', 'fire', 'water', 'electric', 'grass', 'ice',
 # For entry i, j... if i == j, then neutral nature
 # List order: Attack, Defense, Sp.Atk, Sp.Def, Speed
 # The extra '' is because there is no nature that modifies HP (base_stat index 0)
-pkmn_natures = [['', '', '', '', '', '']
+pkmn_natures = [['', '', '', '', '', ''],
 				['', 'Hardy', 'Lonely', 'Adamant', 'Naughty', 'Brave'],
 				['', 'Bold', 'Docile', 'Impish', 'Lax', 'Relaxed'],
 				['', 'Modest', 'Mild', 'Bashful', 'Rash', 'Quiet'],
