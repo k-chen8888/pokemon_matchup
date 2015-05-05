@@ -124,7 +124,7 @@ def runSVM(data, results, valid_size, iterations):
 		# Accuracy
 		acc = float(out[i][0] + out[i][3]) / float(out[i][0] + out[i][1] + out[i][2] + out[i][3]) if out[i][0] > 0 or out[i][3] > 0 else 0
 		f.write( "Accuracy: " + str(acc) + "\n\n" )
-		acc_list.append(acc)
+		acc_list.append([acc])
 		
 		print "Iteration", i, "done"
 	
