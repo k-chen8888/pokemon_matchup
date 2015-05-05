@@ -29,6 +29,8 @@ def purity(k, labels, teams, results, sim_mtrx, out = None):
 		# Store test results in file
 		f = open(out, "w")
 	
+	all_clusters = []
+	
 	# The label of the cluster of winners (integer)
 	win = -1
 	max_cluster_win_purity = 0
@@ -45,9 +47,10 @@ def purity(k, labels, teams, results, sim_mtrx, out = None):
 			if labels[j] == i:
 				cluster.append( teams[j] )
 				cluster_res.append( results[j] )
-					
 			else:
 				pass
+		
+		all_clusters.append(cluster)
 		
 		# Calculate percentage of wins and losses in cluster
 		cluster_wins = 0
@@ -80,12 +83,18 @@ def purity(k, labels, teams, results, sim_mtrx, out = None):
 			# Display test results
 			print report0
 			print report1
-			print "\n"
+			print "\n\n"
 			
 		else:
 			f.write( report0 )
 			f.write( report1 )
-			f.write("\n")
+			f.write("\n\n")
+	
+	# Compute and output silhouette coefficient
+	for cluster1 in all_clusters:
+		for cluster2 in all_clusters:
+			if not cluster1 == cluster2:
+				sil_report = "Silhouette Coefficient: " + str( silhouette(cluster1, cluster2, teams, sim_mtrx) )
 	
 	# Close file
 	f.close()
@@ -101,25 +110,23 @@ Queries the distances out of the original similarity matrix
 
 a = Average distance between each point and points in the same cluster
 b = Average distance between each point and points in a different cluster
-Store a list of coefficients 1 - a / b
+Store a list of coefficients (b - a) / max(a, b)
 
 Output the average of the list as the coefficent of the cluster
 	Coefficients close to 1 are better
 '''
-def silhouette(winners, losers, teams, sim_mtrx):
+def silhouette(cluster1, cluster2, teams, sim_mtrx):
 	# Get a list of coefficients
 	coefficients = []
 	
-	for team1 in winners:
+	for team1 in cluster1:
 		# Distance to points in same cluster
-		#a = sum( [ team_dist(team1, team2) for team2 in winners if not team1 == team2 ] ) / len(winners)
-		a = sum( [ sim_mtrx[teams.index(team1)][teams.index(team2)] for team2 in winners if not team1 == team2 ] ) / len(winners)
+		a = sum( [ sim_mtrx[teams.index(team1)][teams.index(team2)] for team2 in cluster1 if not team1 == team2 ] ) / len(cluster1)
 		
 		# Distance to points in different cluster
-		#b = sum( [ team_dist(team1, team2) for team2 in losers ] ) / len(losers)
-		b = sum( [ sim_mtrx[teams.index(team1)][teams.index(team2)] for team2 in losers ] ) / len(losers)
+		b = sum( [ sim_mtrx[teams.index(team1)][teams.index(team2)] for team2 in cluster2 ] ) / len(cluster2)
 		
-		coefficients.append(1 - a / b)
+		coefficients.append( (b - a) / max(a, b) )
 	
 	# Output average of all coefficients to get cluster coefficient
 	return sum( coefficients ) / len(coefficients)
