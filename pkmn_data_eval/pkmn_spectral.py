@@ -90,7 +90,7 @@ def spec_cluster(matches, p, mode, iterations):
 		# Compute the purity of the clustering
 		win = purity(k, labels, teams, results, sim_mtrx, outfile_name)
 	
-	if iterations == 1 && k == 2:
+	if iterations == 1 and k == 2:
 		return labels, win
 	else:
 		return None
