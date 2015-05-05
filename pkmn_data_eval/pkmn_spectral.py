@@ -81,14 +81,16 @@ def spec_cluster(matches, p, mode, iterations):
 		
 		# Generate labels (spectral clustering)
 		# Note that the adjacency matrix needs to be converted into a numpy array
+		k += i
 		labels = spectral_clustering(np.asarray(adj_mtrx), n_clusters = k, eigen_solver = 'arpack', assign_labels = mode)
 		
 		# Name of file to output test results
-		outfile_name = 'test' + str(i) + '_results.txt'
+		outfile_name = 'test' + str(k) + '_results.txt'
 		
 		# Compute the purity of the clustering
 		win = purity(k, labels, teams, results, sim_mtrx, outfile_name)
 	
+	if iterations == 1 && k == 2:
 		return labels, win
 	else:
 		return None
