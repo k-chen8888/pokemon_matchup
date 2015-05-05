@@ -276,8 +276,8 @@ def mock_calculate(pokemon, move, opponent, special):
 		move_power = move.base_power
 	
 	# Attack/Defense ratio, based off of move category
-	atk = pkmn['stats'][1] if move.move_cat == 0 else pkmn['stats'][3]
-	de = opp['stats'][2] if move.move_cat == 0 else opp['stats'][4]
+	atk = pokemon['stats'][1] if move.move_cat == 0 else pokemon['stats'][3]
+	de = opponent['stats'][2] if move.move_cat == 0 else opponent['stats'][4]
 	atk_de_ratio = float(atk) / float(de)
 	
 	# Modifier
@@ -293,8 +293,8 @@ def mock_calculate(pokemon, move, opponent, special):
 		crit = (0.84 * atk_de_ratio * move_power + 2) * stab * type_eff * reduce * 1.5
 		
 		# Add percentage of health taken away to score
-		score += min( no_crit / opp['stats'][0], 1.0 ) * 3
-		score += min( crit / opp['stats'][0], 1.0 ) * 3
+		score += min( no_crit / opponent['stats'][0], 1.0 ) * 3
+		score += min( crit / opponent['stats'][0], 1.0 ) * 3
 	
 	else: # Very often going to be only 25% of health in damage
 		score += 0.25 * 6
