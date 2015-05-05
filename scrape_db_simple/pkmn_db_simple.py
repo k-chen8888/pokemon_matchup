@@ -23,6 +23,20 @@ pkmn_types = ['normal', 'fire', 'water', 'electric', 'grass', 'ice',
 			  'rock', 'ghost', 'dragon', 'dark', 'steel', 'fairy']
 
 
+# Use this to look up natures
+# Vertical axis = increase, horizontal axis = reduction
+# For entry i, j... if i == j, then neutral nature
+# List order: Attack, Defense, Sp.Atk, Sp.Def, Speed
+# The extra '' is because there is no nature that modifies HP (base_stat index 0)
+pkmn_natures = [['', '', '', '', '', '']
+				['', 'Hardy', 'Lonely', 'Adamant', 'Naughty', 'Brave'],
+				['', 'Bold', 'Docile', 'Impish', 'Lax', 'Relaxed'],
+				['', 'Modest', 'Mild', 'Bashful', 'Rash', 'Quiet'],
+				['', 'Calm', 'Gentle', 'Careful', 'Quirky', 'Sassy'],
+				['', 'Timid', 'Hasty', 'Jolly', 'Naive', 'Serious'],
+				]
+
+
 # Use this to look up the type granted to Arceus by its hold item
 # Key = type
 plate_types = {}

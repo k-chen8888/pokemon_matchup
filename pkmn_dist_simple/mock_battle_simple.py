@@ -118,7 +118,7 @@ Dummy Pokemon to fill up space
 '''
 MAGIKARP = {}
 MAGIKARP['name'] = 'Magikarp'
-MAGIKARP['item'] = None
+MAGIKARP['item'] = 'Soothe Bell'
 MAGIKARP['moves'] = ['Splash', 'Splash', 'Splash', 'Splash']
 
 
@@ -185,7 +185,7 @@ def partial_mock(pkmn, team):
 			
 			# Non-damaging move
 			if move.move_cat == 2:
-				score += 1 if move.priority > 0 or pkmn['pkmn'].base_spd > opponent['pkmn'].base_spd or ( pkmn['item'].name == "Quick Claw" and move.priority > 0 ) else 0
+				score += 1 if move.priority > 0 or pkmn['stats'][5] > opponent['stats'][5] or ( pkmn['item'].name == "Quick Claw" and move.priority > 0 ) else 0
 				score += 1 if move.weather == True else 0
 				score += 1 if move.entry == True else 0
 				score += 1 if move.status == True else 0
@@ -276,8 +276,8 @@ def mock_calculate(pokemon, move, opponent, special):
 		move_power = move.base_power
 	
 	# Attack/Defense ratio, based off of move category
-	atk = pkmn.base_atk if move.move_cat == 0 else pkmn.base_spatk
-	de = opp.base_def if move.move_cat == 0 else opp.base_spdef
+	atk = pkmn['stats'][1] if move.move_cat == 0 else pkmn['stats'][3]
+	de = opp['stats'][2] if move.move_cat == 0 else opp['stats'][4]
 	atk_de_ratio = float(atk) / float(de)
 	
 	# Modifier
@@ -285,25 +285,16 @@ def mock_calculate(pokemon, move, opponent, special):
 	type_eff = typing[move.move_type][opp.type1] if opp.type2 == -1 else typing[move.move_type][opp.type1] * typing[pkmn.type1][opp.type2] # Type effectiveness
 	reduce = 1.0
 	if o_item:
-		reduce = 0.5 if o_item.name in se_reduce and move.move_type == o_item.natural_gift_type else 1 # 50% reduction from super-effective reducing Berry, if any
-	'''
-	# Calculate the other parts of the score first
-	score += 1 if pkmn.base_spd > opp.base_spd else 0 # Higher speed?
-	if o_item:
-		score += 1 if not o_item.name in se_reduce and not o_item.name == "Leftovers" and not o_item.name == "Focus Sash" and not opp_sub else 0 # Any damage-disrupting items/moves?
-	else:
-		score += 1 if not opp_sub else 0 # Any damage-disrupting moves?
-	score += 1 if stab > 1 else 0 # STAB?
-	score += 1 if type_eff > 1 else 0 # Super effective?
-	'''
+		reduce = 0.5 if o_item.name in se_reduce and move.move_type == o_item.natural_gift_type else 1.0 # 50% reduction from super-effective reducing Berry, if any
+	
 	# Calculate damage-based score
 	if not opp_sub:
 		no_crit = (0.84 * atk_de_ratio * move_power + 2) * stab * type_eff * reduce
 		crit = (0.84 * atk_de_ratio * move_power + 2) * stab * type_eff * reduce * 1.5
 		
 		# Add percentage of health taken away to score
-		score += min( no_crit / opp.base_hp, 1.0 ) * 3
-		score += min( crit / opp.base_hp, 1.0 ) * 3
+		score += min( no_crit / opp['stats'][0], 1.0 ) * 3
+		score += min( crit / opp['stats'][0], 1.0 ) * 3
 	
 	else: # Very often going to be only 25% of health in damage
 		score += 0.25 * 6

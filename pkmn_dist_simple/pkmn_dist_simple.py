@@ -142,10 +142,10 @@ def pkmn_dist(pkmn1, pkmn2):
 		type_dist = sum( [ ( adv_table_pkmn1[i] - adv_table_pkmn2[i] ) ** 2 for i in range(0, 18) ] )
 	
 	
-	# Distance between base stats
-	pkmn1_base = sum([ pkmn1['pkmn'].base_hp, pkmn1['pkmn'].base_atk, pkmn1['pkmn'].base_def, pkmn1['pkmn'].base_spatk, pkmn1['pkmn'].base_spdef, pkmn1['pkmn'].base_spd ])
-	pkmn2_base = sum([ pkmn2['pkmn'].base_hp, pkmn2['pkmn'].base_atk, pkmn2['pkmn'].base_def, pkmn2['pkmn'].base_spatk, pkmn2['pkmn'].base_spdef, pkmn2['pkmn'].base_spd ])
-	base_dist = (pkmn1_base - pkmn2_base) ** 2
+	# Distance between stats
+	stats_dist = 0
+	for i in range(0, len(pkmn1['stats'])):
+		stats_dist += (pkmn1['stats'][i] - pkmn2['stats'][i]) ** 2
 	
 	# Pairwise distance between each move, averaged using the number of moves it was compared to
 	m_dist = 0
@@ -157,7 +157,7 @@ def pkmn_dist(pkmn1, pkmn2):
 	i_dist = item_dist(pkmn1['item'], pkmn2['item'])
 	
 	# Output sum
-	return type_dist + base_dist# + m_dist + i_dist
+	return type_dist + stats_dist + m_dist + i_dist
 
 
 '''
@@ -230,22 +230,22 @@ def similarity(teams):
 	
 	# mode = 0, basic team similarity
 	sim0 = copy.deepcopy(sim)
-	'''
+	
 	# mode = 1, pkmn_dist
 	sim1 = copy.deepcopy(sim)
 	
 	# mode = 2, mock_battle
 	sim2 = copy.deepcopy(sim)
-	'''
+	
 	for i in range(0, len(sim)):
 		for j in range(0, i + 1):
 			if i == j: # Same team means distance of 0
 				sim0[i][j] = 0.0
 			else:
 				# mode = 0, basic team similarity
-				sim0[i][j] = team_dist(teams[i], teams[j], 1)
+				sim0[i][j] = team_dist(teams[i], teams[j], 0)
 				sim0[j][i] = sim0[i][j]
-				'''
+				
 				# mode = 1, pkmn_dist
 				sim1[i][j] = team_dist(teams[i], teams[j], 1)
 				sim1[j][i] = sim1[i][j]
@@ -253,22 +253,22 @@ def similarity(teams):
 				# mode = 2, mock_battle
 				sim2[i][j] = team_dist(teams[i], teams[j], 2)
 				sim2[j][i] = sim2[i][j]
-				'''
+				
 			print "Calculation", i, j, "complete; go to next entry"
 		
 		print "Calculation", i, "complete; go to next row"
 	
 	# Normalize and sum all 3 measures
 	sim0_n = normalize(sim0)
-	#sim1_n = normalize(sim1)
-	#sim2_n = normalize(sim2)
+	sim1_n = normalize(sim1)
+	sim2_n = normalize(sim2)
 	
 	for i in range(0, len(sim)):
 		for j in range(0, i + 1):
 			if i == j: # Same team means distance of 0
 				sim[i][j] = 0.0
 			else:
-				sim[i][j] = sim0_n[i][j] #+ sim1_n[i][j] + sim2_n[i][j]
+				sim[i][j] = sim0_n[i][j] + sim1_n[i][j] + sim2_n[i][j]
 				sim[j][i] = sim[i][j]
 	
 	return sim

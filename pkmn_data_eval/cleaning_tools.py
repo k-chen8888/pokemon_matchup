@@ -98,7 +98,33 @@ def pack(team):
 		
 		# Save actual number of moves
 		packed_pkmn['move_count'] = len( pkmn['moves'] )
+		
+		# Get most probable nature and Lv. 100 stats
+		base_stats = [ packed_pkmn['pkmn'].base_hp, packed_pkmn['pkmn'].base_atk, packed_pkmn['pkmn'].base_def, packed_pkmn['pkmn'].base_spatk, packed_pkmn['pkmn'].base_spdef, packed_pkmn['pkmn'].base_spd ]
+		weakest = 1
+		strongest = 1
+		for i in range(1, len(base_stats)):
+			# Get index of weakest stat
+			if base_stats[i] < base_stats[weakest]:
+				weakest = i
 			
+			# Get strongest stat
+			if base_stats[i] > base_stats[strongest]:
+				strongest = i
+		packed_pkmn['nature'] = pkmn_natures[strongest][weakest]
+		packed_pkmn['stats'] = []
+		for i in range(0, len(base_stats)): # Calculate actual stats
+			# Note: Level is used as a ratio; Lv. 100 means 100/100 = 1
+			if i == 0: # HP
+				packed_pkmn['stats'].append( (31 + 2.0 * base_stats[i] + 100) + 10 )
+			else:
+				if i == weakest: # Hindering nature, times 0.9
+					packed_pkmn['stats'].append( ( (31 + 2.0 * base_stats[i]) + 5 ) * 0.9 )
+				elif i == strongest: # Beneficial nature, times 1.1 and also full EVs
+					packed_pkmn['stats'].append( ( (31 + 2.0 * base_stats[i] + 63) + 5 ) * 1.1 )
+				else: # Neutral nature
+					packed_pkmn['stats'].append( (31 + 2.0 * base_stats[i]) + 5 )
+		
 		# Cleaning house, adding dummy moves to fill space
 		while len(pkmn['moves']) < 4:
 			# Find a random move in the moveset to add
@@ -290,13 +316,13 @@ def expand(matches):
 			team_instance1.append(pkmn['pkmn'].type1)
 			team_instance1.append(pkmn['pkmn'].type2)
 			
-			# Base stats
-			team_instance1.append(pkmn['pkmn'].base_hp)
-			team_instance1.append(pkmn['pkmn'].base_atk)
-			team_instance1.append(pkmn['pkmn'].base_def)
-			team_instance1.append(pkmn['pkmn'].base_spatk)
-			team_instance1.append(pkmn['pkmn'].base_spdef)
-			team_instance1.append(pkmn['pkmn'].base_spd)
+			# Stats
+			team_instance1.append(pkmn['pkmn']['stats'][0])
+			team_instance1.append(pkmn['pkmn']['stats'][1])
+			team_instance1.append(pkmn['pkmn']['stats'][2])
+			team_instance1.append(pkmn['pkmn']['stats'][3])
+			team_instance1.append(pkmn['pkmn']['stats'][4])
+			team_instance1.append(pkmn['pkmn']['stats'][5])
 			
 			# Moves
 			for move in pkmn['moves']:
@@ -417,13 +443,13 @@ def expand(matches):
 			team_instance2.append(pkmn['pkmn'].type1)
 			team_instance2.append(pkmn['pkmn'].type2)
 			
-			# Base stats
-			team_instance2.append(pkmn['pkmn'].base_hp)
-			team_instance2.append(pkmn['pkmn'].base_atk)
-			team_instance2.append(pkmn['pkmn'].base_def)
-			team_instance2.append(pkmn['pkmn'].base_spatk)
-			team_instance2.append(pkmn['pkmn'].base_spdef)
-			team_instance2.append(pkmn['pkmn'].base_spd)
+			# Stats
+			team_instance2.append(pkmn['pkmn']['stats'][0])
+			team_instance2.append(pkmn['pkmn']['stats'][1])
+			team_instance2.append(pkmn['pkmn']['stats'][2])
+			team_instance2.append(pkmn['pkmn']['stats'][3])
+			team_instance2.append(pkmn['pkmn']['stats'][4])
+			team_instance2.append(pkmn['pkmn']['stats'][5])
 			
 			# Moves
 			for move in pkmn['moves']:
