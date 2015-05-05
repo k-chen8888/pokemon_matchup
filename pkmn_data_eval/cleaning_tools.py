@@ -317,12 +317,12 @@ def expand(matches):
 			team_instance1.append(pkmn['pkmn'].type2)
 			
 			# Stats
-			team_instance1.append(pkmn['pkmn']['stats'][0])
-			team_instance1.append(pkmn['pkmn']['stats'][1])
-			team_instance1.append(pkmn['pkmn']['stats'][2])
-			team_instance1.append(pkmn['pkmn']['stats'][3])
-			team_instance1.append(pkmn['pkmn']['stats'][4])
-			team_instance1.append(pkmn['pkmn']['stats'][5])
+			team_instance1.append(pkmn['stats'][0])
+			team_instance1.append(pkmn['stats'][1])
+			team_instance1.append(pkmn['stats'][2])
+			team_instance1.append(pkmn['stats'][3])
+			team_instance1.append(pkmn['stats'][4])
+			team_instance1.append(pkmn['stats'][5])
 			
 			# Moves
 			for move in pkmn['moves']:
@@ -444,12 +444,12 @@ def expand(matches):
 			team_instance2.append(pkmn['pkmn'].type2)
 			
 			# Stats
-			team_instance2.append(pkmn['pkmn']['stats'][0])
-			team_instance2.append(pkmn['pkmn']['stats'][1])
-			team_instance2.append(pkmn['pkmn']['stats'][2])
-			team_instance2.append(pkmn['pkmn']['stats'][3])
-			team_instance2.append(pkmn['pkmn']['stats'][4])
-			team_instance2.append(pkmn['pkmn']['stats'][5])
+			team_instance2.append(pkmn['stats'][0])
+			team_instance2.append(pkmn['stats'][1])
+			team_instance2.append(pkmn['stats'][2])
+			team_instance2.append(pkmn['stats'][3])
+			team_instance2.append(pkmn['stats'][4])
+			team_instance2.append(pkmn['stats'][5])
 			
 			# Moves
 			for move in pkmn['moves']:
