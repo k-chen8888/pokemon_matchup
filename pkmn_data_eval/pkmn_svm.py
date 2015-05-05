@@ -135,8 +135,8 @@ def runSVM(data, results, valid_size, iterations):
 	
 	# Mean and standard deviation of accuracy
 	acc_arr = np.array(acc_list)
-	f.write( "Mean accuracy: " + np.array_str( np.mean(acc_arr, axis = 1) ) + "\n" )
-	f.write( "Standard deviation of accuracy: " + np.array_str( np.std(acc_arr, axis = 1, dtype = np.float64) ) )
+	f.write( "Mean accuracy: " + np.array_str( np.mean(acc_arr, axis = 0) ) + "\n" )
+	f.write( "Standard deviation of accuracy: " + np.array_str( np.std(acc_arr, axis = 0, dtype = np.float64) ) )
 	
 	f.close()
 	print "Done"
