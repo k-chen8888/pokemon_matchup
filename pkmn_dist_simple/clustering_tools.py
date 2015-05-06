@@ -94,7 +94,7 @@ def purity(k, labels, teams, results, sim_mtrx, out = None):
 	for cluster1 in all_clusters:
 		for cluster2 in all_clusters:
 			if not cluster1 == cluster2:
-				sil_report = "Silhouette Coefficient: " + str( silhouette(cluster1, cluster2, teams, sim_mtrx) )
+				sil_report = "Silhouette Coefficient: " + str( silhouette(cluster1, cluster2, teams, sim_mtrx) + "\n" )
 				f.write( sil_report )
 	
 	# Close file

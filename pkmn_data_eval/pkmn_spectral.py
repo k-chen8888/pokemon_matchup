@@ -82,7 +82,7 @@ def spec_cluster(matches, p, mode, iterations):
 		
 		# Generate labels (spectral clustering)
 		# Note that the adjacency matrix needs to be converted into a numpy array
-		k_local += i
+		k_local = k + i
 		labels = spectral_clustering(np.asarray(adj_mtrx), n_clusters = k_local, eigen_solver = 'arpack', assign_labels = mode)
 		
 		# Name of file to output test results
