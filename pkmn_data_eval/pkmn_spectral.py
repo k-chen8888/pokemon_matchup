@@ -86,10 +86,10 @@ def spec_cluster(matches, p, mode, iterations):
 		labels = spectral_clustering(np.asarray(adj_mtrx), n_clusters = k_local, eigen_solver = 'arpack', assign_labels = mode)
 		
 		# Name of file to output test results
-		outfile_name = 'test' + str(k) + '_results.txt'
+		outfile_name = 'test' + str(k_local) + '_results.txt'
 		
 		# Compute the purity of the clustering
-		win = purity(k, labels, teams, results, sim_mtrx, outfile_name)
+		win = purity(k_local, labels, teams, results, sim_mtrx, outfile_name)
 	
 	if iterations == 1 and k_local == 2:
 		return labels, win
