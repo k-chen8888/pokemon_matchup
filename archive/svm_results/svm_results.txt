@@ -1,60 +1,17 @@
 Iteration 1
 
 True Positives = 0
-False Negatives = 38
+False Negatives = 33
 False Positives = 0
-True Negatives = 26
+True Negatives = 31
 
 Precision: 0
 Recall: 0
 F-score: 0
 
-
-Accuracy: 0.40625
+Accuracy: 0.484375
 
 Iteration 2
-
-True Positives = 23
-False Negatives = 0
-False Positives = 41
-True Negatives = 0
-
-Precision: 0.359375
-Recall: 1.0
-F-score: 0.528735632184
-
-
-Accuracy: 0.359375
-
-Iteration 3
-
-True Positives = 14
-False Negatives = 18
-False Positives = 16
-True Negatives = 16
-
-Precision: 0.466666666667
-Recall: 0.4375
-F-score: 0.451612903226
-
-
-Accuracy: 0.46875
-
-Iteration 4
-
-True Positives = 0
-False Negatives = 34
-False Positives = 0
-True Negatives = 30
-
-Precision: 0
-Recall: 0
-F-score: 0
-
-
-Accuracy: 0.46875
-
-Iteration 5
 
 True Positives = 30
 False Negatives = 0
@@ -65,150 +22,113 @@ Precision: 0.46875
 Recall: 1.0
 F-score: 0.63829787234
 
+Accuracy: 0.46875
+
+Iteration 3
+
+True Positives = 0
+False Negatives = 35
+False Positives = 0
+True Negatives = 29
+
+Precision: 0
+Recall: 0
+F-score: 0
+
+Accuracy: 0.453125
+
+Iteration 4
+
+True Positives = 0
+False Negatives = 35
+False Positives = 0
+True Negatives = 29
+
+Precision: 0
+Recall: 0
+F-score: 0
+
+Accuracy: 0.453125
+
+Iteration 5
+
+True Positives = 0
+False Negatives = 34
+False Positives = 0
+True Negatives = 30
+
+Precision: 0
+Recall: 0
+F-score: 0
 
 Accuracy: 0.46875
 
 Iteration 6
 
 True Positives = 0
-False Negatives = 39
+False Negatives = 42
 False Positives = 0
-True Negatives = 25
+True Negatives = 22
 
 Precision: 0
 Recall: 0
 F-score: 0
 
-
-Accuracy: 0.390625
+Accuracy: 0.34375
 
 Iteration 7
 
-True Positives = 0
-False Negatives = 35
-False Positives = 0
-True Negatives = 29
-
-Precision: 0
-Recall: 0
-F-score: 0
-
-
-Accuracy: 0.453125
-
-Iteration 8
-
-True Positives = 0
-False Negatives = 34
-False Positives = 0
-True Negatives = 30
-
-Precision: 0
-Recall: 0
-F-score: 0
-
-
-Accuracy: 0.46875
-
-Iteration 9
-
-True Positives = 30
-False Negatives = 0
-False Positives = 34
-True Negatives = 0
-
-Precision: 0.46875
-Recall: 1.0
-F-score: 0.63829787234
-
-
-Accuracy: 0.46875
-
-Iteration 10
-
-True Positives = 0
-False Negatives = 35
-False Positives = 0
-True Negatives = 29
-
-Precision: 0
-Recall: 0
-F-score: 0
-
-
-Accuracy: 0.453125
-
-Iteration 11
-
-True Positives = 15
-False Negatives = 17
-False Positives = 15
-True Negatives = 17
+True Positives = 20
+False Negatives = 12
+False Positives = 20
+True Negatives = 12
 
 Precision: 0.5
-Recall: 0.46875
-F-score: 0.483870967742
-
+Recall: 0.625
+F-score: 0.555555555556
 
 Accuracy: 0.5
 
-Iteration 12
+Iteration 8
+
+True Positives = 16
+False Negatives = 16
+False Positives = 14
+True Negatives = 18
+
+Precision: 0.533333333333
+Recall: 0.5
+F-score: 0.516129032258
+
+Accuracy: 0.53125
+
+Iteration 9
 
 True Positives = 0
-False Negatives = 35
+False Negatives = 41
 False Positives = 0
-True Negatives = 29
+True Negatives = 23
 
 Precision: 0
 Recall: 0
 F-score: 0
 
+Accuracy: 0.359375
 
-Accuracy: 0.453125
+Iteration 10
 
-Iteration 13
+True Positives = 14
+False Negatives = 18
+False Positives = 18
+True Negatives = 14
 
-True Positives = 30
-False Negatives = 0
-False Positives = 34
-True Negatives = 0
+Precision: 0.4375
+Recall: 0.4375
+F-score: 0.4375
 
-Precision: 0.46875
-Recall: 1.0
-F-score: 0.63829787234
+Accuracy: 0.4375
 
-
-Accuracy: 0.46875
-
-Iteration 14
-
-True Positives = 29
-False Negatives = 0
-False Positives = 35
-True Negatives = 0
-
-Precision: 0.453125
-Recall: 1.0
-F-score: 0.623655913978
-
-
-Accuracy: 0.453125
-
-Iteration 15
-
-True Positives = 29
-False Negatives = 0
-False Positives = 35
-True Negatives = 0
-
-Precision: 0.453125
-Recall: 1.0
-F-score: 0.623655913978
-
-
-Accuracy: 0.453125
-
-Iteration 16
+Iteration 11
 
 True Positives = 0
 False Negatives = 34
@@ -219,66 +139,22 @@ Precision: 0
 Recall: 0
 F-score: 0
 
-
 Accuracy: 0.46875
 
-Iteration 17
+Iteration 12
 
-True Positives = 31
-False Negatives = 0
-False Positives = 33
-True Negatives = 0
+True Positives = 19
+False Negatives = 13
+False Positives = 17
+True Negatives = 15
 
-Precision: 0.484375
-Recall: 1.0
-F-score: 0.652631578947
+Precision: 0.527777777778
+Recall: 0.59375
+F-score: 0.558823529412
 
+Accuracy: 0.53125
 
-Accuracy: 0.484375
-
-Iteration 18
-
-True Positives = 29
-False Negatives = 0
-False Positives = 35
-True Negatives = 0
-
-Precision: 0.453125
-Recall: 1.0
-F-score: 0.623655913978
-
-
-Accuracy: 0.453125
-
-Iteration 19
-
-True Positives = 0
-False Negatives = 38
-False Positives = 0
-True Negatives = 26
-
-Precision: 0
-Recall: 0
-F-score: 0
-
-
-Accuracy: 0.40625
-
-Iteration 20
-
-True Positives = 0
-False Negatives = 37
-False Positives = 0
-True Negatives = 27
-
-Precision: 0
-Recall: 0
-F-score: 0
-
-
-Accuracy: 0.421875
-
-Iteration 21
+Iteration 13
 
 True Positives = 0
 False Negatives = 33
@@ -289,80 +165,22 @@ Precision: 0
 Recall: 0
 F-score: 0
 
-
 Accuracy: 0.484375
 
-Iteration 22
+Iteration 14
 
-True Positives = 18
-False Negatives = 14
-False Positives = 15
-True Negatives = 17
+True Positives = 30
+False Negatives = 0
+False Positives = 34
+True Negatives = 0
 
-Precision: 0.545454545455
-Recall: 0.5625
-F-score: 0.553846153846
-
-
-Accuracy: 0.546875
-
-Iteration 23
-
-True Positives = 0
-False Negatives = 34
-False Positives = 0
-True Negatives = 30
-
-Precision: 0
-Recall: 0
-F-score: 0
-
+Precision: 0.46875
+Recall: 1.0
+F-score: 0.63829787234
 
 Accuracy: 0.46875
 
-Iteration 24
-
-True Positives = 14
-False Negatives = 18
-False Positives = 13
-True Negatives = 19
-
-Precision: 0.518518518519
-Recall: 0.4375
-F-score: 0.474576271186
-
-
-Accuracy: 0.515625
-
-Iteration 25
-
-True Positives = 0
-False Negatives = 37
-False Positives = 0
-True Negatives = 27
-
-Precision: 0
-Recall: 0
-F-score: 0
-
-
-Accuracy: 0.421875
-
-Iteration 26
-
-True Positives = 28
-False Negatives = 0
-False Positives = 36
-True Negatives = 0
-
-Precision: 0.4375
-Recall: 1.0
-F-score: 0.608695652174
-
-
-Accuracy: 0.4375
-
-Iteration 27
+Iteration 15
 
 True Positives = 0
 False Negatives = 35
@@ -373,22 +191,176 @@ Precision: 0
 Recall: 0
 F-score: 0
 
+Accuracy: 0.453125
+
+Iteration 16
+
+True Positives = 0
+False Negatives = 42
+False Positives = 0
+True Negatives = 22
+
+Precision: 0
+Recall: 0
+F-score: 0
+
+Accuracy: 0.34375
+
+Iteration 17
+
+True Positives = 25
+False Negatives = 0
+False Positives = 39
+True Negatives = 0
+
+Precision: 0.390625
+Recall: 1.0
+F-score: 0.561797752809
+
+Accuracy: 0.390625
+
+Iteration 18
+
+True Positives = 0
+False Negatives = 34
+False Positives = 0
+True Negatives = 30
+
+Precision: 0
+Recall: 0
+F-score: 0
+
+Accuracy: 0.46875
+
+Iteration 19
+
+True Positives = 0
+False Negatives = 35
+False Positives = 0
+True Negatives = 29
+
+Precision: 0
+Recall: 0
+F-score: 0
 
 Accuracy: 0.453125
 
-Iteration 28
+Iteration 20
 
-True Positives = 10
-False Negatives = 22
+True Positives = 0
+False Negatives = 35
+False Positives = 0
+True Negatives = 29
+
+Precision: 0
+Recall: 0
+F-score: 0
+
+Accuracy: 0.453125
+
+Iteration 21
+
+True Positives = 31
+False Negatives = 0
+False Positives = 33
+True Negatives = 0
+
+Precision: 0.484375
+Recall: 1.0
+F-score: 0.652631578947
+
+Accuracy: 0.484375
+
+Iteration 22
+
+True Positives = 15
+False Negatives = 17
 False Positives = 12
 True Negatives = 20
 
-Precision: 0.454545454545
-Recall: 0.3125
-F-score: 0.37037037037
+Precision: 0.555555555556
+Recall: 0.46875
+F-score: 0.508474576271
 
+Accuracy: 0.546875
+
+Iteration 23
+
+True Positives = 0
+False Negatives = 38
+False Positives = 0
+True Negatives = 26
+
+Precision: 0
+Recall: 0
+F-score: 0
+
+Accuracy: 0.40625
+
+Iteration 24
+
+True Positives = 30
+False Negatives = 0
+False Positives = 34
+True Negatives = 0
+
+Precision: 0.46875
+Recall: 1.0
+F-score: 0.63829787234
 
 Accuracy: 0.46875
+
+Iteration 25
+
+True Positives = 0
+False Negatives = 40
+False Positives = 0
+True Negatives = 24
+
+Precision: 0
+Recall: 0
+F-score: 0
+
+Accuracy: 0.375
+
+Iteration 26
+
+True Positives = 25
+False Negatives = 0
+False Positives = 39
+True Negatives = 0
+
+Precision: 0.390625
+Recall: 1.0
+F-score: 0.561797752809
+
+Accuracy: 0.390625
+
+Iteration 27
+
+True Positives = 28
+False Negatives = 0
+False Positives = 36
+True Negatives = 0
+
+Precision: 0.4375
+Recall: 1.0
+F-score: 0.608695652174
+
+Accuracy: 0.4375
+
+Iteration 28
+
+True Positives = 0
+False Negatives = 37
+False Positives = 0
+True Negatives = 27
+
+Precision: 0
+Recall: 0
+F-score: 0
+
+Accuracy: 0.421875
 
 Iteration 29
 
@@ -401,220 +373,61 @@ Precision: 0
 Recall: 0
 F-score: 0
 
-
 Accuracy: 0.453125
 
 Iteration 30
 
-True Positives = 30
-False Negatives = 0
-False Positives = 34
-True Negatives = 0
+True Positives = 0
+False Negatives = 34
+False Positives = 0
+True Negatives = 30
 
-Precision: 0.46875
-Recall: 1.0
-F-score: 0.63829787234
-
+Precision: 0
+Recall: 0
+F-score: 0
 
 Accuracy: 0.46875
 
 Iteration 31
 
-True Positives = 30
-False Negatives = 0
-False Positives = 34
-True Negatives = 0
-
-Precision: 0.46875
-Recall: 1.0
-F-score: 0.63829787234
-
-
-Accuracy: 0.46875
-
-Iteration 32
-
-True Positives = 31
-False Negatives = 0
-False Positives = 33
-True Negatives = 0
-
-Precision: 0.484375
-Recall: 1.0
-F-score: 0.652631578947
-
-
-Accuracy: 0.484375
-
-Iteration 33
-
 True Positives = 0
-False Negatives = 33
+False Negatives = 40
 False Positives = 0
-True Negatives = 31
+True Negatives = 24
 
 Precision: 0
 Recall: 0
 F-score: 0
-
-
-Accuracy: 0.484375
-
-Iteration 34
-
-True Positives = 0
-False Negatives = 34
-False Positives = 0
-True Negatives = 30
-
-Precision: 0
-Recall: 0
-F-score: 0
-
-
-Accuracy: 0.46875
-
-Iteration 35
-
-True Positives = 24
-False Negatives = 0
-False Positives = 40
-True Negatives = 0
-
-Precision: 0.375
-Recall: 1.0
-F-score: 0.545454545455
-
 
 Accuracy: 0.375
 
-Iteration 36
+Iteration 32
 
-True Positives = 29
-False Negatives = 0
-False Positives = 35
-True Negatives = 0
+True Positives = 9
+False Negatives = 23
+False Positives = 12
+True Negatives = 20
 
-Precision: 0.453125
-Recall: 1.0
-F-score: 0.623655913978
-
+Precision: 0.428571428571
+Recall: 0.28125
+F-score: 0.339622641509
 
 Accuracy: 0.453125
 
-Iteration 37
+Iteration 33
 
-True Positives = 23
-False Negatives = 0
-False Positives = 41
-True Negatives = 0
+True Positives = 16
+False Negatives = 16
+False Positives = 15
+True Negatives = 17
 
-Precision: 0.359375
-Recall: 1.0
-F-score: 0.528735632184
+Precision: 0.516129032258
+Recall: 0.5
+F-score: 0.507936507937
 
+Accuracy: 0.515625
 
-Accuracy: 0.359375
-
-Iteration 38
-
-True Positives = 0
-False Negatives = 34
-False Positives = 0
-True Negatives = 30
-
-Precision: 0
-Recall: 0
-F-score: 0
-
-
-Accuracy: 0.46875
-
-Iteration 39
-
-True Positives = 0
-False Negatives = 36
-False Positives = 0
-True Negatives = 28
-
-Precision: 0
-Recall: 0
-F-score: 0
-
-
-Accuracy: 0.4375
-
-Iteration 40
-
-True Positives = 26
-False Negatives = 0
-False Positives = 38
-True Negatives = 0
-
-Precision: 0.40625
-Recall: 1.0
-F-score: 0.577777777778
-
-
-Accuracy: 0.40625
-
-Iteration 41
-
-True Positives = 0
-False Negatives = 36
-False Positives = 0
-True Negatives = 28
-
-Precision: 0
-Recall: 0
-F-score: 0
-
-
-Accuracy: 0.4375
-
-Iteration 42
-
-True Positives = 0
-False Negatives = 34
-False Positives = 0
-True Negatives = 30
-
-Precision: 0
-Recall: 0
-F-score: 0
-
-
-Accuracy: 0.46875
-
-Iteration 43
-
-True Positives = 0
-False Negatives = 33
-False Positives = 0
-True Negatives = 31
-
-Precision: 0
-Recall: 0
-F-score: 0
-
-
-Accuracy: 0.484375
-
-Iteration 44
-
-True Positives = 0
-False Negatives = 33
-False Positives = 0
-True Negatives = 31
-
-Precision: 0
-Recall: 0
-F-score: 0
-
-
-Accuracy: 0.484375
-
-Iteration 45
+Iteration 34
 
 True Positives = 27
 False Negatives = 0
@@ -625,24 +438,22 @@ Precision: 0.421875
 Recall: 1.0
 F-score: 0.593406593407
 
-
 Accuracy: 0.421875
 
-Iteration 46
+Iteration 35
 
-True Positives = 0
-False Negatives = 35
-False Positives = 0
-True Negatives = 29
+True Positives = 30
+False Negatives = 0
+False Positives = 34
+True Negatives = 0
 
-Precision: 0
-Recall: 0
-F-score: 0
+Precision: 0.46875
+Recall: 1.0
+F-score: 0.63829787234
 
+Accuracy: 0.46875
 
-Accuracy: 0.453125
-
-Iteration 47
+Iteration 36
 
 True Positives = 0
 False Negatives = 34
@@ -653,24 +464,178 @@ Precision: 0
 Recall: 0
 F-score: 0
 
+Accuracy: 0.46875
+
+Iteration 37
+
+True Positives = 0
+False Negatives = 33
+False Positives = 0
+True Negatives = 31
+
+Precision: 0
+Recall: 0
+F-score: 0
+
+Accuracy: 0.484375
+
+Iteration 38
+
+True Positives = 0
+False Negatives = 37
+False Positives = 0
+True Negatives = 27
+
+Precision: 0
+Recall: 0
+F-score: 0
+
+Accuracy: 0.421875
+
+Iteration 39
+
+True Positives = 30
+False Negatives = 0
+False Positives = 34
+True Negatives = 0
+
+Precision: 0.46875
+Recall: 1.0
+F-score: 0.63829787234
+
+Accuracy: 0.46875
+
+Iteration 40
+
+True Positives = 31
+False Negatives = 0
+False Positives = 33
+True Negatives = 0
+
+Precision: 0.484375
+Recall: 1.0
+F-score: 0.652631578947
+
+Accuracy: 0.484375
+
+Iteration 41
+
+True Positives = 30
+False Negatives = 0
+False Positives = 34
+True Negatives = 0
+
+Precision: 0.46875
+Recall: 1.0
+F-score: 0.63829787234
+
+Accuracy: 0.46875
+
+Iteration 42
+
+True Positives = 0
+False Negatives = 33
+False Positives = 0
+True Negatives = 31
+
+Precision: 0
+Recall: 0
+F-score: 0
+
+Accuracy: 0.484375
+
+Iteration 43
+
+True Positives = 0
+False Negatives = 34
+False Positives = 0
+True Negatives = 30
+
+Precision: 0
+Recall: 0
+F-score: 0
+
+Accuracy: 0.46875
+
+Iteration 44
+
+True Positives = 20
+False Negatives = 0
+False Positives = 44
+True Negatives = 0
+
+Precision: 0.3125
+Recall: 1.0
+F-score: 0.47619047619
+
+Accuracy: 0.3125
+
+Iteration 45
+
+True Positives = 21
+False Negatives = 11
+False Positives = 16
+True Negatives = 16
+
+Precision: 0.567567567568
+Recall: 0.65625
+F-score: 0.608695652174
+
+Accuracy: 0.578125
+
+Iteration 46
+
+True Positives = 0
+False Negatives = 33
+False Positives = 0
+True Negatives = 31
+
+Precision: 0
+Recall: 0
+F-score: 0
+
+Accuracy: 0.484375
+
+Iteration 47
+
+True Positives = 30
+False Negatives = 0
+False Positives = 34
+True Negatives = 0
+
+Precision: 0.46875
+Recall: 1.0
+F-score: 0.63829787234
 
 Accuracy: 0.46875
 
 Iteration 48
 
 True Positives = 0
-False Negatives = 45
+False Negatives = 33
 False Positives = 0
-True Negatives = 19
+True Negatives = 31
 
 Precision: 0
 Recall: 0
 F-score: 0
 
-
-Accuracy: 0.296875
+Accuracy: 0.484375
 
 Iteration 49
+
+True Positives = 0
+False Negatives = 35
+False Positives = 0
+True Negatives = 29
+
+Precision: 0
+Recall: 0
+F-score: 0
+
+Accuracy: 0.453125
+
+Iteration 50
 
 True Positives = 29
 False Negatives = 0
@@ -681,24 +646,10 @@ Precision: 0.453125
 Recall: 1.0
 F-score: 0.623655913978
 
-
 Accuracy: 0.453125
 
-Iteration 50
+Mean of each measure: [ 11.12  21.8   13.16  17.92]
+Standard deviation of each measure: [ 12.85245502  16.10093165  15.78399189  12.65992101]
 
-True Positives = 0
-False Negatives = 38
-False Positives = 0
-True Negatives = 26
-
-Precision: 0
-Recall: 0
-F-score: 0
-
-
-Accuracy: 0.40625
-
-Mean of each measure: [ 11.58  20.94  14.3   17.18]
-Standard deviation of each measure: [ 13.25607785  16.64621278  16.70239504  13.39207228]
-
-
+Mean accuracy: [ 0.45375]
+Standard deviation of accuracy: [ 0.05134519]

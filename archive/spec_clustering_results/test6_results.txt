@@ -1,6 +1,59 @@
-Cluster label 0, size 319
-49.8432601881% wins and 50.1567398119% losses
+Cluster label 0, size 65
+49.2307692308% wins and 50.7692307692% losses
 
-Cluster label 1, size 1
-100.0% wins and 0.0% losses
 
+Cluster label 1, size 88
+50.0% wins and 50.0% losses
+
+
+Cluster label 2, size 53
+49.0566037736% wins and 50.9433962264% losses
+
+
+Cluster label 3, size 49
+48.9795918367% wins and 51.0204081633% losses
+
+
+Cluster label 4, size 64
+50.0% wins and 50.0% losses
+
+
+Cluster label 5, size 65
+49.2307692308% wins and 50.7692307692% losses
+
+
+Silhouette Coefficient: -0.0182714832486
+Silhouette Coefficient: 0.00194103874032
+Silhouette Coefficient: 0.00991802816602
+Silhouette Coefficient: 0.0127170990976
+Silhouette Coefficient: 0.000850644077359
+
+Silhouette Coefficient: 0.0289533906582
+Silhouette Coefficient: 0.0265015904947
+Silhouette Coefficient: 0.0324741547419
+Silhouette Coefficient: 0.0405361059682
+Silhouette Coefficient: 0.0263226851654
+
+Silhouette Coefficient: 0.00175970871546
+Silhouette Coefficient: -0.0208334577329
+Silhouette Coefficient: 0.00502061833633
+Silhouette Coefficient: 0.0164572620071
+Silhouette Coefficient: -6.09625074985e-05
+
+Silhouette Coefficient: 0.00983452795942
+Silhouette Coefficient: -0.0149704202103
+Silhouette Coefficient: 0.00495117576241
+Silhouette Coefficient: 0.0199000214165
+Silhouette Coefficient: 0.00412385913244
+
+Silhouette Coefficient: -0.0159258520687
+Silhouette Coefficient: -0.0347083357075
+Silhouette Coefficient: -0.0119835436909
+Silhouette Coefficient: -0.00841850753957
+Silhouette Coefficient: -0.0124683365079
+
+Silhouette Coefficient: 0.0083199870485
+Silhouette Coefficient: -0.013570481175
+Silhouette Coefficient: 0.00746935764305
+Silhouette Coefficient: 0.0116672192404
+Silhouette Coefficient: 0.0233513158134
