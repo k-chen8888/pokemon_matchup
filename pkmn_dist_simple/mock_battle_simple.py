@@ -293,8 +293,9 @@ def mock_calculate(pokemon, move, opponent, special):
 		crit = (0.84 * atk_de_ratio * move_power + 2) * stab * type_eff * reduce * 1.5
 		
 		# Add percentage of health taken away to score
-		score += min( no_crit / opponent['stats'][0], 1.0 ) * 3
-		score += min( crit / opponent['stats'][0], 1.0 ) * 3
+		# Weight based on base chance for critical hit (0.0625)
+		score += min( no_crit / opponent['stats'][0], 1.0 ) * (1 - 0.0625) * 6
+		score += min( crit / opponent['stats'][0], 1.0 ) * (0.0625) * 6
 	
 	else: # Very often going to be only 25% of health in damage
 		score += 0.25 * 6

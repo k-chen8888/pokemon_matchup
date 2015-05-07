@@ -145,9 +145,26 @@ $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ & $\v
 \subsection{Methods Used}
 The methods used to analyze the data were spectral clustering, Naive Bayes, Support Vector Machines, and an ensemble of all three.
 
-For the spectral clustering, we decided to use diversity and strength as distance measures, and we split the distance measure into three phases. In the first phase, we measured diversity by building distributions of the types found in a team. For the Pokemon and moves, this meant counting the number of Water-types, Fire-types, and so on and taking the squared distance between a list of the counts. Phase 2 included distances between individual Pokemon, such as the distance between their stats and various features of moves, such as power and accuracy. Finally, our third distance measure was derived from a score received in a mock battle. When performing spectral clustering by itself, we tried $k=[2, 8]$ to see if there were differences between winning and losing teams.
+For the spectral clustering, we decided to use diversity and strength as distance measures, and we split the distance measure into three phases: diversity, feature distance, and strength distance. When calculated separately, we found that all three spanned very different ranges. Therefore, we normalized everything separately and gave each a weight of $\frac{1}{3}$ to build the adjacency matrix. When performing spectral clustering by itself, we also tried $k=[2, 8]$ clusters to see if there were differences between winning and losing teams.
 
-In addition to spectral clustering, we also tried to classify using Naive Bayes and a Support Vector Machine. Both classifiers classify data into one of two labels, 0 or 1, so this was appropriate for our data, where 0 represented “loss” and 1 represented “win.” For these two measures, we simply expanded out each team into a data table.
+In addition to spectral clustering, we also tried to classify using Naive Bayes and a Support Vector Machine. Both classifiers classify data into one of two labels, 0 or 1, so this was appropriate for our data, where 0 represented "loss" and 1 represented "win." In this table, there is still a small number of features and an intermediate number of instances, so an SVM with a Gaussian kernel was appropriate. As for Naive Bayes, it is safe to assume that any of the features in a class are conditionally independent given the class because, for any given team, it does not make sense to say something like “the base power of a move depends on the type of the Pokemon.” Finally, for completeness, we decided to combine the measures and take a majority vote of an ensemble of all three methods to see if we could get a better classification.
 
+\section{Experiments}
+
+In this experiment, four tests were run: spectral clustering, Naive Bayes, SVM, and an ensemble. While the dataset was largely the same for all of the tests, the format was changed for classification. For the spectral clustering, we kept the dataset as a dictionary because it was easiest to access the needed features by name rather table index. On the other hand, we expanded the data into a table for Naive Bayes and SVM because the Python SciKit module was able to work directly with these tables.
+
+\subsection{Datasets Used}
+
+The data for spectral clustering was the dictionary obtained from reading a JSON dump of the parsed battle information with constants filled in using database queries. In the first phase, we measured diversity by building distributions of the types found in a team. For the Pokemon and moves, this meant counting the number of Water-types, Fire-types, and so on and taking the squared distance between a list of the counts. Phase 2 included distances between individual Pokemon, such as the distance between their stats and various features of moves, such as power and accuracy. Finally, our third distance measure was derived from a score received in a mock battle.
+
+To generate data tables for Naive Bayes and SVM, we simply expanded out each team into the format shown in Table 2. Each Pokemon was also expanded out so that each facet of the Pokemon was a feature, as shown in Table 3. In addition, this method also accounts for battle statistics that weren't considered in the spectral clustering, such as the number of times the weather changed and how many times each Pokemon was weakened or buffed. These were very sparse features, so we took a category summation.
+
+\subsection{Spectral Clustering}
+
+\subsection{Naive Bayes}
+
+\subsection{SVM}
+
+\subsection{Ensemble}
 
 \end{document}
