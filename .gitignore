@@ -225,3 +225,12 @@ venv/
 
 *.db
 *.db-journal
+
+
+#############
+## LaTeX
+#############
+
+*.aux
+*.synctex.gz
+*.log
