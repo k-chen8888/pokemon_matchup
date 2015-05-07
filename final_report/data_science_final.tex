@@ -155,16 +155,19 @@ In this experiment, four tests were run: spectral clustering, Naive Bayes, SVM, 
 
 \subsection{Datasets Used}
 
-The data for spectral clustering was the dictionary obtained from reading a JSON dump of the parsed battle information with constants filled in using database queries. In the first phase, we measured diversity by building distributions of the types found in a team. For the Pokemon and moves, this meant counting the number of Water-types, Fire-types, and so on and taking the squared distance between a list of the counts. Phase 2 included distances between individual Pokemon, such as the distance between their stats and various features of moves, such as power and accuracy. Finally, our third distance measure was derived from a score received in a mock battle.
+The data for spectral clustering was the dictionary obtained from reading a JSON dump of the parsed battle information with constants filled in using database queries. In the first phase, we measured diversity by building distributions of the types found in a team. For the Pokemon and moves, this meant counting the number of Water-types, Fire-types, and so on and taking the squared distance between a list of the counts. Phase 2 included distances between individual Pokemon, such as the distance between their stats and various features of moves, such as power and accuracy. Once again, this was a squared difference. Finally, our third distance measure was derived from a score received in a mock battle. Mock battles were out of 6 points. Damaging moves went through the Bulbapedia damage formula and were scored based on how much damage they did as a percentage of the opponent's HP. Moves classified as "Other" were given scores based on the potential to have "game changing effects," such as applying status debuffs and changing the weather.
 
-To generate data tables for Naive Bayes and SVM, we simply expanded out each team into the format shown in Table 2. Each Pokemon was also expanded out so that each facet of the Pokemon was a feature, as shown in Table 3. In addition, this method also accounts for battle statistics that weren't considered in the spectral clustering, such as the number of times the weather changed and how many times each Pokemon was weakened or buffed. These were very sparse features, so we took a category summation.
+To generate data tables for Naive Bayes and SVM, we simply expanded out each team into the format shown in Table 2. Each Pokemon was also expanded out so that each facet of the Pokemon was a feature, as shown in Table 3. In addition, this method also accounts for battle statistics that weren't considered in the spectral clustering, such as the number of times the weather changed and how many times each Pokemon was weakened or buffed. These were very sparse features, so we took a category summation. The only notable difference between spectral clustering and these classifiers was the fact that spectral clustering did not consider extra information like the number of times weather changed or the number of entry hazards that a team put on the field.
 
-\subsection{Spectral Clustering}
+Despite all the information given, there were many features missing from the data given by Pokemon Showdown. extra information like base stats and types were queried from a database and added to the dataset. Ideally, we would have also considered abilities, but we found that Pokemon Showdown did not display ability names. In addition, hold items were not present because they had passive effects\footnote{Only a small subset of items like Leftovers activated during battle, so we were able to detect them.}. For hold items, we substituted a useless Soothe Bell to take its place. We also noticed that EVs, IVs, and Natures were not displayed. Thus, we had to rely on the stat predictor described earlier to fill this information in. The most unfortunate missing data, however, were the missing moves. Because some Pokemon may not have been sent out or did not get to use a move before leaving battle, some movesets were blank. Thus, we used a random move generator to fill in possible moves randomly pulled from the Pokemon’s movepool.
 
-\subsection{Naive Bayes}
+\subsection{Spectral Clustering Results}
+Intuitively, spectral clustering should have worked the best out of all of the classifiers. In any game, there are unbalanced elements that dominate the meta and thus have a high usage frequency and win often.
 
-\subsection{SVM}
+\subsection{Naive Bayes Results}
 
-\subsection{Ensemble}
+\subsection{SVM Results}
+
+\subsection{Ensemble Results}
 
 \end{document}
