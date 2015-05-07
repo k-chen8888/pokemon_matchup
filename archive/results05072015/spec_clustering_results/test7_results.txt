@@ -1,0 +1,76 @@
+Cluster label 0, size 63
+49.2063492063% wins and 50.7936507937% losses
+
+
+Cluster label 1, size 38
+50.0% wins and 50.0% losses
+
+
+Cluster label 2, size 78
+50.0% wins and 50.0% losses
+
+
+Cluster label 3, size 56
+50.0% wins and 50.0% losses
+
+
+Cluster label 4, size 45
+48.8888888889% wins and 51.1111111111% losses
+
+
+Cluster label 5, size 48
+50.0% wins and 50.0% losses
+
+
+Cluster label 6, size 56
+50.0% wins and 50.0% losses
+
+
+Silhouette Coefficient: 0.00992636523598
+Silhouette Coefficient: -0.0161024364698
+Silhouette Coefficient: 0.00547596735161
+Silhouette Coefficient: 0.0195160015889
+Silhouette Coefficient: -0.0033678907066
+Silhouette Coefficient: 0.0238306689275
+
+Silhouette Coefficient: 0.00320679681089
+Silhouette Coefficient: -0.01444024874
+Silhouette Coefficient: 0.0081583042404
+Silhouette Coefficient: 0.0124406484865
+Silhouette Coefficient: -0.00483844992313
+Silhouette Coefficient: 0.0295209525914
+
+Silhouette Coefficient: 0.0276790772746
+Silhouette Coefficient: 0.0357102450804
+Silhouette Coefficient: 0.0255649707595
+Silhouette Coefficient: 0.036578477814
+Silhouette Coefficient: 0.0181031994407
+Silhouette Coefficient: 0.0452371404618
+
+Silhouette Coefficient: 0.00330848618667
+Silhouette Coefficient: 0.0123280371552
+Silhouette Coefficient: -0.0204453361088
+Silhouette Coefficient: 0.0117160754264
+Silhouette Coefficient: -0.00917023909736
+Silhouette Coefficient: 0.0242591120533
+
+Silhouette Coefficient: 0.00207347205457
+Silhouette Coefficient: 0.00177108005881
+Silhouette Coefficient: -0.0242858471723
+Silhouette Coefficient: -0.00327397910477
+Silhouette Coefficient: -0.0120249486786
+Silhouette Coefficient: 0.014723280836
+
+Silhouette Coefficient: 0.0198577742276
+Silhouette Coefficient: 0.0249685076692
+Silhouette Coefficient: -0.00255250042968
+Silhouette Coefficient: 0.0163760696377
+Silhouette Coefficient: 0.0283922622287
+Silhouette Coefficient: 0.038281668066
+
+Silhouette Coefficient: -0.0137624279084
+Silhouette Coefficient: -0.00119515664099
+Silhouette Coefficient: -0.0352697897251
+Silhouette Coefficient: -0.010832709099
+Silhouette Coefficient: -0.00554088958912
+Silhouette Coefficient: -0.0221723767053
