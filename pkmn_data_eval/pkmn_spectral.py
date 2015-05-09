@@ -66,18 +66,18 @@ Runs spectral clustering on a given proportion p of the inputted matches for som
 
 Returns the labels if only one iteration is made
 '''
-def spec_cluster(matches, p, mode, iterations):
+def spec_cluster(matches, p, mode, start, iterations):
 	labels = []
-	win = -1
+	win = []
 	k_local = k
 	
-	for i in range(0, iterations):
+	for i in range(start, iterations):
 		# Run the test using the given p
-		teams, results = select(matches, p)
+		teams, teams_extra, results = select(matches, p)
 		
 		# For each team, compare to each other team
 		# Generate an adjacency matrix by calculating similarity as the distance between each team and normalizing
-		sim_mtrx = similarity(teams)
+		sim_mtrx = similarity(teams, teams_extra)
 		adj_mtrx = normalize(sim_mtrx) # Similarity matrix needs to be normalized for spectral clustering
 		
 		# Generate labels (spectral clustering)
@@ -122,6 +122,6 @@ if __name__ == '__main__':
 	p = float(sys.argv[2])
 	
 	# Run the clustering
-	spec_cluster( matches, p, sys.argv[3], int(sys.argv[4]) )
+	spec_cluster( matches, p, sys.argv[3], 0, int(sys.argv[4]) )
 	
 	print "Done"

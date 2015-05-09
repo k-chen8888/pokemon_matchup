@@ -73,7 +73,7 @@ User may input size of validation set as a proportion p of the data
 
 Output the results to a file
 '''
-def runEnsemble(matches, labels, win, valid_size, iterations):
+def runEnsemble(matches, labels, win, valid_size, all_settings, iterations):
 	# Generate data and results
 	data, results = expand(matches)
 	
@@ -94,8 +94,11 @@ def runEnsemble(matches, labels, win, valid_size, iterations):
 		
 		# Support vector machine
 		# Note that numpy arrays are needed
-		clf_svm = svm.SVC()
-		clf_svm.fit( np.array(test), np.array(test_res) )
+		clf_svm = []
+		for i in range(0, len(all_settings)):
+			svm_settings = all_settings[i]
+			clf_svm.append( svm.SVC(kernel = svm_settings[0], degree = svm_settings[1], gamma = 1 / float( svm_settings[2] ), coef0 = 2 ** svm_settings[3], max_iter = svm_settings[4]) )
+			clf_svm[i].fit( np.array(test), np.array(test_res) )
 		
 		# Make note of the current iteration
 		f.write( "Iteration " + str(i + 1) + "\n\n" )
@@ -114,17 +117,23 @@ def runEnsemble(matches, labels, win, valid_size, iterations):
 				lose_vote = 0
 				
 				# Run all predictors
+				# Naive Bayes
 				predict_nb = clf_nb.predict( valid[j] )
 				if predict_nb[0] == 0:
 					lose_vote += 1
 				else:
 					win_vote += 1
-				predict_svm = clf_svm.predict( valid[j] )
-				if predict_svm[0] == 0:
-					lose_vote += 1
-				else:
-					win_vote += 1
-				predict_spec = [1] if labels [ data.index( valid[j] ) ] == win else [0]
+				# SVM
+				for i in range(0, len(clf_svm)):
+					predict_svm = clf_svm[i].predict( valid[j] )
+					if predict_svm[0] == 0:
+						lose_vote += 1
+					else:
+						win_vote += 1
+				# Spectral Clustering
+				predict_spec = []
+				for i in range(0, len(win)):
+					predict_spec = [1] if labels [ data.index( valid[j] ) ] == win[i] else [0]
 				if predict_spec[0] == 0:
 					lose_vote += 1
 				else:
@@ -201,20 +210,158 @@ if __name__ == '__main__':
 	# Run the ensemble using the data received from the spectral clustering
 	if int(sys.argv[5]) == 0:
 		# Run spectral clustering ONCE on the all of the matches to get the labels
-		labels, win = spec_cluster( matches, 1.0, sys.argv[3], 1 )
+		labels, win = spec_cluster( matches, 1.0, sys.argv[3], 0, 1 )
 		
-		runEnsemble(matches, labels, win, float( sys.argv[2] ), int( sys.argv[4] ) )
+		# Generate data and results
+		data, results = expand(matches)
+		
+		# Generate optimal settings for each SVM in the ensemble
+		test, test_res, valid, valid_res = partition(data, results, valid_size)
+		set_data = [test, test_res, valid, valid_res]
+		
+		all_svm_settings = []
+		# Cross-validation to determine SVM settings
+		for mode in ['linear', 'poly', 'rbf', 'sigmoid']:
+			# [kernel, degree, gamma, coef0, max_iter]
+			svm_settings = []
+			
+			# Determine the best settings for each mode
+			if mode == 'linear':
+				all_svm_settings.append( ['linear', 3, 0.0, 0.0, 10000] )
+			
+			elif mode == 'poly':
+				best_acc = 0.0
+				best_settings = ['poly', 2, 0.0, 0.0, 10000]
+				
+				# Run cross-validation to determine best settings
+				for degree in range(2, 9): # degree
+					for i in range(1, len(data[1]) + 1): # gamma
+						for j in range(-10, 6): # coef0
+							svm_settings = ['poly', degree, i, j, 10000]
+							acc = runSVM(data, results, float( sys.argv[2] ), svm_settings, int( sys.argv[4] ), use_data = set_data )
+							
+							# Update accuracy
+							if acc > best_acc:
+								best_acc = acc
+								best_settings = svm_settings
+				
+				all_svm_settings.append( best_settings )
+			
+			elif mode == 'rbf':
+				best_acc = 0.0
+				best_settings = ['rbf', 2, 0.0, 0.0, 10000]
+				
+				# Run cross-validation to determine best settings
+				for i in range(1, len(data[1]) + 1): # gamma
+					svm_settings = ['rbf', 2, i, 0.0, 10000]
+					acc = runSVM(data, results, float( sys.argv[2] ), svm_settings, int( sys.argv[4] ), use_data = set_data )
+					
+					# Update accuracy
+					if acc > best_acc:
+						best_acc = acc
+						best_settings = svm_settings
+				
+				all_svm_settings.append( best_settings )
+			
+			else: # mode == 'sigmoid'
+				best_acc = 0.0
+				best_settings = ['sigmoid', 2, 0.0, 0.0, 10000]
+				
+				# Run cross-validation to determine best settings
+				for i in range(1, len(data[1]) + 1): # gamma
+					for j in range(-10, 6): # coef0
+						svm_settings = ['sigmoid', degree, i, j, 10000]
+						acc = runSVM(data, results, float( sys.argv[2] ), svm_settings, int( sys.argv[4] ), use_data = set_data )
+						
+						# Update accuracy
+						if acc > best_acc:
+							best_acc = acc
+							best_settings = svm_settings
+				
+				all_svm_settings.append( best_settings )
+		
+		print svm_settings
+		runEnsemble(matches, labels, win, float( sys.argv[2] ), all_svm_settings, int( sys.argv[4] ) )
+	
 	elif int(sys.argv[5]) == 1:
-		spec_cluster( matches, float( sys.argv[2] ), sys.argv[3], int( sys.argv[4] ) )
+		spec_cluster( matches, float( sys.argv[2] ), sys.argv[3], 0, int( sys.argv[4] ) )
+	
 	elif int(sys.argv[5]) == 2:
 		# Generate data and results
 		data, results = expand(matches)
 		
 		runNB( data, results, float( sys.argv[2] ), int( sys.argv[4] ) )
+	
 	elif int(sys.argv[5]) == 3:
 		# Generate data and results
 		data, results = expand(matches)
 		
-		runSVM(data, results, float( sys.argv[2] ), int( sys.argv[4] ) )
+		# Run SVM sys.argv[4] times for each kernel
+		test, test_res, valid, valid_res = partition(data, results, valid_size)
+		set_data = [test, test_res, valid, valid_res]
+		
+		# Cross-validation to determine SVM settings
+		for mode in ['linear', 'poly', 'rbf', 'sigmoid']:
+			# [kernel, degree, gamma, coef0, max_iter]
+			svm_settings = []
+			
+			# Determine the best settings for each mode
+			if mode == 'linear':
+				svm_settings = ['linear', 3, 0.0, 0.0, 10000]
+			
+			elif mode == 'poly':
+				best_acc = 0.0
+				best_settings = ['poly', 2, 0.0, 0.0, 10000]
+				
+				# Run cross-validation to determine best settings
+				for degree in range(2, 9): # degree
+					for i in range(1, len(data[1]) + 1): # gamma
+						for j in range(-10, 6): # coef0
+							svm_settings = ['poly', degree, i, j, 10000]
+							acc = runSVM(data, results, float( sys.argv[2] ), svm_settings, int( sys.argv[4] ), use_data = set_data )
+							
+							# Update accuracy
+							if acc > best_acc:
+								best_acc = acc
+								best_settings = svm_settings
+				
+				svm_settings = best_settings
+			
+			elif mode == 'rbf':
+				best_acc = 0.0
+				best_settings = ['rbf', 2, 0.0, 0.0, 10000]
+				
+				# Run cross-validation to determine best settings
+				for i in range(1, len(data[1]) + 1): # gamma
+					svm_settings = ['rbf', 2, i, 0.0, 10000]
+					acc = runSVM(data, results, float( sys.argv[2] ), svm_settings, int( sys.argv[4] ), use_data = set_data )
+					
+					# Update accuracy
+					if acc > best_acc:
+						best_acc = acc
+						best_settings = svm_settings
+				
+				svm_settings = best_settings
+			
+			else: # mode == 'sigmoid'
+				best_acc = 0.0
+				best_settings = ['sigmoid', 2, 0.0, 0.0, 10000]
+				
+				# Run cross-validation to determine best settings
+				for i in range(1, len(data[1]) + 1): # gamma
+					for j in range(-10, 6): # coef0
+						svm_settings = ['sigmoid', degree, i, j, 10000]
+						acc = runSVM(data, results, float( sys.argv[2] ), svm_settings, int( sys.argv[4] ), use_data = set_data )
+						
+						# Update accuracy
+						if acc > best_acc:
+							best_acc = acc
+							best_settings = svm_settings
+				
+				svm_settings = best_settings
+			
+			print svm_settings
+			runSVM(data, results, float( sys.argv[2] ), svm_settings, int( sys.argv[4] ) )
+	
 	else:
 		print "Invalid choice"

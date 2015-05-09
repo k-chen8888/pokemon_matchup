@@ -32,7 +32,7 @@ def purity(k, labels, teams, results, sim_mtrx, out = None):
 	all_clusters = []
 	
 	# The label of the cluster of winners (integer)
-	win = -1
+	win = []
 	max_cluster_win_purity = 0
 	
 	# The number k represents the number of unique labels
@@ -73,7 +73,7 @@ def purity(k, labels, teams, results, sim_mtrx, out = None):
 		# Check to see if this is the cluster of winners
 		if cluster_win_purity > max_cluster_win_purity:
 			max_cluster_win_purity = cluster_win_purity
-			win = i
+			win.append(i)
 		
 		report0 = "Cluster label " + str(i) + ", size " + str( len(cluster) ) + "\n"
 		report1 = str(cluster_win_purity * 100) + "% wins and " + str(cluster_loss_purity * 100) + "% losses\n"

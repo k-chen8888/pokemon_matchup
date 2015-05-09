@@ -47,7 +47,7 @@ Distance between teams
 
 Define a team as a list of Pokemon
 '''
-def team_dist(team1, team2, mode):
+def team_dist(team1, team2, team1_extra = None, team2_extra = None, mode):
 	if team1 == team2: # Identical teams means distance = 0
 		return 0.0
 	
@@ -101,14 +101,82 @@ def team_dist(team1, team2, mode):
 		
 		# Output square root
 		return pkmn_distance ** 0.5
+	
+	elif mode == 2: # Battle performance difference
+		differences = []
 		
-	else: # Mock battle difference
+		# Pokemon extra information
+		for pkmn1 in team1:
+			for pkmn2 in team2:
+				# Boosts
+				differences.append( (pkmn1['extra']['boosts']['accuracy'] - pkmn2['extra']['boosts']['accuracy']) ** 2 )
+				differences.append( (pkmn1['extra']['boosts']['atk'] - pkmn2['extra']['boosts']['atk']) ** 2 )
+				differences.append( (pkmn1['extra']['boosts']['def'] - pkmn2['extra']['boosts']['def']) ** 2 )
+				differences.append( (pkmn1['extra']['boosts']['evasion'] - pkmn2['extra']['boosts']['evasion']) ** 2 )
+				differences.append( (pkmn1['extra']['boosts']['hp'] - pkmn2['extra']['boosts']['hp']) ** 2 )
+				differences.append( (pkmn1['extra']['boosts']['spa'] - pkmn2['extra']['boosts']['spa']) ** 2 )
+				differences.append( (pkmn1['extra']['boosts']['spd'] - pkmn2['extra']['boosts']['spd']) ** 2 )
+				differences.append( (pkmn1['extra']['boosts']['spe'] - pkmn2['extra']['boosts']['spe']) ** 2 )
+				
+				# Status conditions
+				differences.append( (pkmn1['extra']['status']['Heal Block'] - pkmn2['extra']['status']['Heal Block']) ** 2 )
+				differences.append( (pkmn1['extra']['status']['Ingrain'] - pkmn2['extra']['status']['Ingrain']) ** 2 )
+				differences.append( (pkmn1['extra']['status']['Leech Seed'] - pkmn2['extra']['status']['Leech Seed']) ** 2 )
+				differences.append( (pkmn1['extra']['status']['Substitute'] - pkmn2['extra']['status']['Substitute']) ** 2 )
+				differences.append( (pkmn1['extra']['status']['Taunt'] - pkmn2['extra']['status']['Taunt']) ** 2 )
+				differences.append( (pkmn1['extra']['status']['brn'] - pkmn2['extra']['status']['brn']) ** 2 )
+				differences.append( (pkmn1['extra']['status']['confusion'] - pkmn2['extra']['status']['confusion']) ** 2 )
+				differences.append( (pkmn1['extra']['status']['frz'] - pkmn2['extra']['status']['frz']) ** 2 )
+				differences.append( (pkmn1['extra']['status']['par'] - pkmn2['extra']['status']['par']) ** 2 )
+				differences.append( (pkmn1['extra']['status']['psn'] - pkmn2['extra']['status']['psn']) ** 2 )
+				differences.append( (pkmn1['extra']['status']['slp'] - pkmn2['extra']['status']['slp']) ** 2 )
+				differences.append( (pkmn1['extra']['status']['tox'] - pkmn2['extra']['status']['tox']) ** 2 )
+				differences.append( (pkmn1['extra']['status']['trapped'] - pkmn2['extra']['status']['trapped']) ** 2 )
+				differences.append( (pkmn1['extra']['status']['typechange'] - pkmn2['extra']['status']['typechange']) ** 2 )
+				
+				# Un-boosts
+				differences.append( (pkmn1['extra']['unboosts']['accuracy'] - pkmn2['extra']['unboosts']['accuracy']) ** 2 )
+				differences.append( (pkmn1['extra']['unboosts']['atk'] - pkmn2['extra']['unboosts']['atk']) ** 2 )
+				differences.append( (pkmn1['extra']['unboosts']['def'] - pkmn2['extra']['unboosts']['def']) ** 2 )
+				differences.append( (pkmn1['extra']['unboosts']['evasion'] - pkmn2['extra']['unboosts']['evasion']) ** 2 )
+				differences.append( (pkmn1['extra']['unboosts']['hp'] - pkmn2['extra']['unboosts']['hp']) ** 2 )
+				differences.append( (pkmn1['extra']['unboosts']['spa'] - pkmn2['extra']['unboosts']['spa']) ** 2 )
+				differences.append( (pkmn1['extra']['unboosts']['spd'] - pkmn2['extra']['unboosts']['spd']) ** 2 )
+				differences.append( (pkmn1['extra']['unboosts']['spe'] - pkmn2['extra']['unboosts']['spe']) ** 2 )
+		
+		# Team extra information
+		
+		# Entry hazards
+		differences.append( (team1_extra['hazards']['Light Screen'] - team2_extra['hazards']['Light Screen']) ** 2 )
+		differences.append( (team1_extra['hazards']['Reflect'] - team2_extra['hazards']['Reflect']) ** 2 )
+		differences.append( (team1_extra['hazards']['Spikes'] - team2_extra['hazards']['Spikes']) ** 2 )
+		differences.append( (team1_extra['hazards']['Stealth Rock'] - team2_extra['hazards']['Stealth Rock']) ** 2 )
+		differences.append( (team1_extra['hazards']['Sticky Web'] - team2_extra['hazards']['Sticky Web']) ** 2 )
+		differences.append( (team1_extra['hazards']['Tailwind'] - team2_extra['hazards']['Tailwind']) ** 2 )
+		differences.append( (team1_extra['hazards']['Toxic Spikes'] - team2_extra['hazards']['Toxic Spikes']) ** 2 )
+		
+		# Weather effects
+		differences.append( (team1_extra['weather']['DeltaStream'] - team2_extra['weather']['DeltaStream']) ** 2 )
+		differences.append( (team1_extra['weather']['DesolateLand'] - team1_extra['weather']['DesolateLand']) ** 2 )
+		differences.append( (team1_extra['weather']['Hail'] - team1_extra['weather']['Hail']) ** 2 )
+		differences.append( (team1_extra['weather']['PrimordialSea'] - team1_extra['weather']['PrimordialSea']) ** 2 )
+		differences.append( (team1_extra['weather']['RainDance'] - team1_extra['weather']['RainDance']) ** 2 )
+		differences.append( (team1_extra['weather']['Sandstorm'] - team1_extra['weather']['Sandstorm']) ** 2 )
+		differences.append( (team1_extra['weather']['SunnyDay'] - team1_extra['weather']['SunnyDay']) ** 2 )
+		
+		return sum(differences) ** 0.5
+	
+	elif mode == 3: # Mock battle difference
 		# Squared "distance" between base strengths of Pokemon
 		# Use mock_battle_simple
 		mock_results = mock_battle(team1, team2)
 		
 		# Output square root
 		return mock_results ** 0.5
+	
+	else:
+		print "Invalid mode"
+		return 0
 
 
 '''
@@ -215,7 +283,7 @@ Similarity between teams
 
 Builds and normalizes distance matrix to create adjacency matrix
 '''
-def similarity(teams):
+def similarity(teams, teams_extra):
 	# Start off with empty array
 	sim = []
 	for i in range(0, len(teams)):
@@ -234,8 +302,11 @@ def similarity(teams):
 	# mode = 1, pkmn_dist
 	sim1 = copy.deepcopy(sim)
 	
-	# mode = 2, mock_battle
+	# mode = 2, battle performance similarity
 	sim2 = copy.deepcopy(sim)
+	
+	# mode = 3, mock_battle
+	sim3 = copy.deepcopy(sim)
 	
 	for i in range(0, len(sim)):
 		for j in range(0, i + 1):
@@ -250,9 +321,13 @@ def similarity(teams):
 				sim1[i][j] = team_dist(teams[i], teams[j], 1)
 				sim1[j][i] = sim1[i][j]
 				
-				# mode = 2, mock_battle
-				sim2[i][j] = team_dist(teams[i], teams[j], 2)
-				sim2[j][i] = sim2[i][j]
+				# mode = 2, pkmn_dist
+				sim2[i][j] = team_dist(teams[i], teams[j], team1_extra = teams_extra[i], team2_extra = teams_extra[j], 2)
+				sim2[j][i] = sim1[i][j]
+				
+				# mode = 3, mock_battle
+				sim3[i][j] = team_dist(teams[i], teams[j], 3)
+				sim3[j][i] = sim2[i][j]
 				
 			print "Calculation", i, j, "complete; go to next entry"
 		
@@ -262,13 +337,14 @@ def similarity(teams):
 	sim0_n = normalize(sim0)
 	sim1_n = normalize(sim1)
 	sim2_n = normalize(sim2)
+	sim3_n = normalize(sim3)
 	
 	for i in range(0, len(sim)):
 		for j in range(0, i + 1):
 			if i == j: # Same team means distance of 0
 				sim[i][j] = 0.0
 			else:
-				sim[i][j] = sim0_n[i][j] + sim1_n[i][j] + sim2_n[i][j]
+				sim[i][j] = sim0_n[i][j] + sim1_n[i][j] + sim2_n[i][j] + sim3_n[i][j]
 				sim[j][i] = sim[i][j]
 	
 	return sim

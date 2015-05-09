@@ -65,18 +65,22 @@ Also find mean and standard deviation for each of the 4 measures
 
 Write output to text file
 '''
-def runSVM(data, results, valid_size, iterations):
+def runSVM(data, results, valid_size, svm_settings, iterations, use_data = None):
 	out = []
 	acc_list = []
-	f = open("svm_results.txt", "w")
+	f = open(svm_settings[0] + "_svm_results.txt", "w")
 	
 	for i in range(0, iterations):
 		# Create test and validation sets randomly
-		test, test_res, valid, valid_res = partition(data, results, valid_size)
+		test, test_res, valid, valid_res = [], [], [], []
+		if use_data == None:
+			test, test_res, valid, valid_res = partition(data, results, valid_size)
+		else:
+			test, test_res, valid, valid_res = use_data[0], use_data[1], use_data[2], use_data[3]
 		
-		# Run support vector machine
+		# Run support vector machine using the inputted settings
 		# Note that numpy arrays are needed
-		clf = svm.SVC()
+		clf = svm.SVC(kernel = svm_settings[0], degree = svm_settings[1], gamma = 1 / float( svm_settings[2] ), coef0 = 2 ** svm_settings[3], max_iter = svm_settings[4])
 		clf.fit( np.array(test), np.array(test_res) )
 		
 		# Make note of the current iteration
@@ -135,11 +139,16 @@ def runSVM(data, results, valid_size, iterations):
 	
 	# Mean and standard deviation of accuracy
 	acc_arr = np.array(acc_list)
-	f.write( "Mean accuracy: " + np.array_str( np.mean(acc_arr, axis = 0) ) + "\n" )
+	acc = np.mean(acc_arr, axis = 0)
+	f.write( "Mean accuracy: " + np.array_str( acc ) + "\n" )
 	f.write( "Standard deviation of accuracy: " + np.array_str( np.std(acc_arr, axis = 0, dtype = np.float64) ) )
 	
 	f.close()
 	print "Done"
+	
+	if iterations == 1:
+		return acc
+		
 
 
 '''
