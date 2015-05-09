@@ -65,10 +65,12 @@ Also find mean and standard deviation for each of the 4 measures
 
 Write output to text file
 '''
-def runSVM(data, results, valid_size, svm_settings, iterations, use_data = None):
+def runSVM(data, results, valid_size, svm_settings, iterations, use_data = None, outfile = True):
 	out = []
 	acc_list = []
-	f = open(svm_settings[0] + "_svm_results.txt", "w")
+	f = None
+	if outfile:
+		f = open(svm_settings[0] + "_svm_results.txt", "w")
 	
 	for i in range(0, iterations):
 		# Create test and validation sets randomly
@@ -84,7 +86,10 @@ def runSVM(data, results, valid_size, svm_settings, iterations, use_data = None)
 		clf.fit( np.array(test), np.array(test_res) )
 		
 		# Make note of the current iteration
-		f.write( "Iteration " + str(i + 1) + "\n\n" )
+		if f == None:
+			pass
+		else:
+			f.write( "Iteration " + str(i + 1) + "\n\n" )
 		out.append([])
 		
 		# Preload values
@@ -112,38 +117,60 @@ def runSVM(data, results, valid_size, svm_settings, iterations, use_data = None)
 				print "error"
 		
 		# Output results
-		f.write( "True Positives = " + str(out[i][0]) + "\n" )
-		f.write( "False Negatives = " + str(out[i][1]) + "\n" )
-		f.write( "False Positives = " + str(out[i][2]) + "\n" )
-		f.write( "True Negatives = " + str(out[i][3]) + "\n\n" )
+		if f == None:
+			pass
+		else:
+			f.write( "True Positives = " + str(out[i][0]) + "\n" )
+			f.write( "False Negatives = " + str(out[i][1]) + "\n" )
+			f.write( "False Positives = " + str(out[i][2]) + "\n" )
+			f.write( "True Negatives = " + str(out[i][3]) + "\n\n" )
 		
 		# Precision, recall, and f-score
 		prec = float(out[i][0]) / float(out[i][0] + out[i][2]) if out[i][0] > 0 else 0
-		f.write( "Precision: " + str(prec) + "\n" )
+		if f == None:
+			pass
+		else:
+			f.write( "Precision: " + str(prec) + "\n" )
 		rec = float(out[i][0]) / float(out[i][0] + out[i][1]) if out[i][0] > 0 else 0
-		f.write( "Recall: " + str(rec) + "\n" )
+		if f == None:
+			pass
+		else:
+			f.write( "Recall: " + str(rec) + "\n" )
 		fscore = float(2 * rec * prec) / float(rec + prec) if rec > 0 or prec > 0 else 0
-		f.write( "F-score: " + str(fscore) + "\n\n" )
+		if f == None:
+			pass
+		else:
+			f.write( "F-score: " + str(fscore) + "\n\n" )
 		
 		# Accuracy
 		acc = float(out[i][0] + out[i][3]) / float(out[i][0] + out[i][1] + out[i][2] + out[i][3]) if out[i][0] > 0 or out[i][3] > 0 else 0
-		f.write( "Accuracy: " + str(acc) + "\n\n" )
+		if f == None:
+			pass
+		else:
+			f.write( "Accuracy: " + str(acc) + "\n\n" )
 		acc_list.append([acc])
 		
 		print "Iteration", i, "done"
 	
 	# Mean and standard deviation of confusion matrix
 	out_arr = np.array(out)
-	f.write( "Mean of each measure: " + np.array_str( np.mean(out_arr, axis = 0) ) + "\n" )
-	f.write( "Standard deviation of each measure: " + np.array_str( np.std(out_arr, axis = 0, dtype = np.float64) ) + "\n\n" )
+	if f == None:
+		pass
+	else:
+		f.write( "Mean of each measure: " + np.array_str( np.mean(out_arr, axis = 0) ) + "\n" )
+		f.write( "Standard deviation of each measure: " + np.array_str( np.std(out_arr, axis = 0, dtype = np.float64) ) + "\n\n" )
 	
 	# Mean and standard deviation of accuracy
 	acc_arr = np.array(acc_list)
 	acc = np.mean(acc_arr, axis = 0)
-	f.write( "Mean accuracy: " + np.array_str( acc ) + "\n" )
-	f.write( "Standard deviation of accuracy: " + np.array_str( np.std(acc_arr, axis = 0, dtype = np.float64) ) )
+	if f == None:
+		pass
+	else:
+		f.write( "Mean accuracy: " + np.array_str( acc ) + "\n" )
+		f.write( "Standard deviation of accuracy: " + np.array_str( np.std(acc_arr, axis = 0, dtype = np.float64) ) )
 	
-	f.close()
+		f.close()
+	
 	print "Done"
 	
 	if iterations == 1:

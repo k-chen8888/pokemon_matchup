@@ -238,7 +238,7 @@ if __name__ == '__main__':
 					for i in range(1, len(data[1]) + 1): # gamma
 						for j in range(-10, 6): # coef0
 							svm_settings = ['poly', degree, i, j, 10000]
-							acc = runSVM(data, results, float( sys.argv[2] ), svm_settings, int( sys.argv[4] ), use_data = set_data )
+							acc = runSVM(data, results, float( sys.argv[2] ), svm_settings, 1, use_data = set_data, outfile = False )
 							
 							# Update accuracy
 							if acc > best_acc:
@@ -254,7 +254,7 @@ if __name__ == '__main__':
 				# Run cross-validation to determine best settings
 				for i in range(1, len(data[1]) + 1): # gamma
 					svm_settings = ['rbf', 2, i, 0.0, 10000]
-					acc = runSVM(data, results, float( sys.argv[2] ), svm_settings, int( sys.argv[4] ), use_data = set_data )
+					acc = runSVM(data, results, float( sys.argv[2] ), svm_settings, 1, use_data = set_data, outfile = False )
 					
 					# Update accuracy
 					if acc > best_acc:
@@ -271,7 +271,7 @@ if __name__ == '__main__':
 				for i in range(1, len(data[1]) + 1): # gamma
 					for j in range(-10, 6): # coef0
 						svm_settings = ['sigmoid', degree, i, j, 10000]
-						acc = runSVM(data, results, float( sys.argv[2] ), svm_settings, int( sys.argv[4] ), use_data = set_data )
+						acc = runSVM(data, results, float( sys.argv[2] ), svm_settings, 1, use_data = set_data, outfile = False )
 						
 						# Update accuracy
 						if acc > best_acc:
@@ -318,7 +318,7 @@ if __name__ == '__main__':
 					for i in range(1, len(data[1]) + 1): # gamma
 						for j in range(-10, 6): # coef0
 							svm_settings = ['poly', degree, i, j, 10000]
-							acc = runSVM(data, results, float( sys.argv[2] ), svm_settings, int( sys.argv[4] ), use_data = set_data )
+							acc = runSVM(data, results, float( sys.argv[2] ), svm_settings, 1, use_data = set_data, outfile = False )
 							
 							# Update accuracy
 							if acc > best_acc:
@@ -334,7 +334,7 @@ if __name__ == '__main__':
 				# Run cross-validation to determine best settings
 				for i in range(1, len(data[1]) + 1): # gamma
 					svm_settings = ['rbf', 2, i, 0.0, 10000]
-					acc = runSVM(data, results, float( sys.argv[2] ), svm_settings, int( sys.argv[4] ), use_data = set_data )
+					acc = runSVM(data, results, float( sys.argv[2] ), svm_settings, 1, use_data = set_data, outfile = False )
 					
 					# Update accuracy
 					if acc > best_acc:
@@ -351,7 +351,7 @@ if __name__ == '__main__':
 				for i in range(1, len(data[1]) + 1): # gamma
 					for j in range(-10, 6): # coef0
 						svm_settings = ['sigmoid', degree, i, j, 10000]
-						acc = runSVM(data, results, float( sys.argv[2] ), svm_settings, int( sys.argv[4] ), use_data = set_data )
+						acc = runSVM(data, results, float( sys.argv[2] ), svm_settings, 1, use_data = set_data, outfile = False )
 						
 						# Update accuracy
 						if acc > best_acc:
