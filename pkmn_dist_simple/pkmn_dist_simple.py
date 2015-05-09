@@ -47,7 +47,7 @@ Distance between teams
 
 Define a team as a list of Pokemon
 '''
-def team_dist(team1, team2, team1_extra = None, team2_extra = None, mode):
+def team_dist(team1, team2, team1_extra = None, team2_extra = None, mode = 0):
 	if team1 == team2: # Identical teams means distance = 0
 		return 0.0
 	
@@ -314,19 +314,19 @@ def similarity(teams, teams_extra):
 				sim0[i][j] = 0.0
 			else:
 				# mode = 0, basic team similarity
-				sim0[i][j] = team_dist(teams[i], teams[j], 0)
+				sim0[i][j] = team_dist(teams[i], teams[j], mode = 0)
 				sim0[j][i] = sim0[i][j]
 				
 				# mode = 1, pkmn_dist
-				sim1[i][j] = team_dist(teams[i], teams[j], 1)
+				sim1[i][j] = team_dist(teams[i], teams[j], mode = 1)
 				sim1[j][i] = sim1[i][j]
 				
 				# mode = 2, pkmn_dist
-				sim2[i][j] = team_dist(teams[i], teams[j], team1_extra = teams_extra[i], team2_extra = teams_extra[j], 2)
+				sim2[i][j] = team_dist(teams[i], teams[j], team1_extra = teams_extra[i], team2_extra = teams_extra[j], mode = 2)
 				sim2[j][i] = sim1[i][j]
 				
 				# mode = 3, mock_battle
-				sim3[i][j] = team_dist(teams[i], teams[j], 3)
+				sim3[i][j] = team_dist(teams[i], teams[j], mode = 3)
 				sim3[j][i] = sim2[i][j]
 				
 			print "Calculation", i, j, "complete; go to next entry"

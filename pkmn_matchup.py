@@ -195,7 +195,7 @@ sys.argv
 	1 -> JSON file
 	2 -> Decimal proportion of data to use as the validation set (modes 0, 2, 3)
 	3 -> kmeans or discretize
-	4 -> Number of times to run the ensemble method
+	4 -> Number of times to run chosen method
 	5 -> Mode
 		0 = ensemble
 		1 = spectral clustering
