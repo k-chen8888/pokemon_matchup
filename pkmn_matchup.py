@@ -226,63 +226,43 @@ if __name__ == '__main__':
 			svm_settings = []
 			
 			# Determine the best settings for each mode
-			if mode == 'linear':
-				all_svm_settings.append( ['linear', 3, 0.0, 0.0, 10000] )
+			if mode == 'linear' or mode == 'rbf':
+				all_svm_settings.append( ['linear', 3, len(data[1]), 0.0, 10000] )
 			
 			elif mode == 'poly':
 				best_acc = 0.0
-				best_settings = ['poly', 2, 0.0, 0.0, 10000]
+				best_settings = ['poly', 2, 1, 0.0, 10000]
 				
 				# Run cross-validation to determine best settings
 				for degree in range(2, 9): # degree
-					for i in range(len(data[1]) * 3/4, len(data[1]) + 1): # gamma
-						for j in range(-10, 6): # coef0
-							print "Degree", degree, "polynomial with gamma of 1 /", i, "and coefficient of 2 **", j
-							
-							svm_settings = ['poly', degree, i, j, 10000]
-							acc = runSVM(data, results, float( sys.argv[2] ), svm_settings, 1, use_data = set_data, outfile = False )
-							
-							# Update accuracy
-							if acc > best_acc:
-								best_acc = acc
-								best_settings = svm_settings
-				
-				all_svm_settings.append( best_settings )
-			
-			elif mode == 'rbf':
-				best_acc = 0.0
-				best_settings = ['rbf', 2, 0.0, 0.0, 10000]
-				
-				# Run cross-validation to determine best settings
-				for i in range(len(data[1]) * 3/4, len(data[1]) + 1): # gamma
-					print "RBF with gamma of 1 / ", i
-					
-					svm_settings = ['rbf', 2, i, 0.0, 10000]
-					acc = runSVM(data, results, float( sys.argv[2] ), svm_settings, 1, use_data = set_data, outfile = False )
-					
-					# Update accuracy
-					if acc > best_acc:
-						best_acc = acc
-						best_settings = svm_settings
-				
-				all_svm_settings.append( best_settings )
-			
-			else: # mode == 'sigmoid'
-				best_acc = 0.0
-				best_settings = ['sigmoid', 2, 0.0, 0.0, 10000]
-				
-				# Run cross-validation to determine best settings
-				for i in range(1, len(data[1]) + 1): # gamma
 					for j in range(-10, 6): # coef0
-						print "Sigmoid with gamma of 1 /", i, "and coefficient of 2 **", j
+						print "Degree", degree, "polynomial with and coefficient of 2 **", j
 						
-						svm_settings = ['sigmoid', degree, i, j, 10000]
+						svm_settings = ['poly', degree, i, j, 10000]
 						acc = runSVM(data, results, float( sys.argv[2] ), svm_settings, 1, use_data = set_data, outfile = False )
 						
 						# Update accuracy
 						if acc > best_acc:
 							best_acc = acc
 							best_settings = svm_settings
+				
+				all_svm_settings.append( best_settings )
+			
+			else: # mode == 'sigmoid'
+				best_acc = 0.0
+				best_settings = ['sigmoid', 2, 1, 0.0, 10000]
+				
+				# Run cross-validation to determine best settings
+				for j in range(-10, 6): # coef0
+					print "Sigmoid with coefficient of 2 **", j
+					
+					svm_settings = ['sigmoid', degree, 1, j, 10000]
+					acc = runSVM(data, results, float( sys.argv[2] ), svm_settings, 1, use_data = set_data, outfile = False )
+					
+					# Update accuracy
+					if acc > best_acc:
+						best_acc = acc
+						best_settings = svm_settings
 				
 				all_svm_settings.append( best_settings )
 		
@@ -312,7 +292,7 @@ if __name__ == '__main__':
 			svm_settings = []
 			
 			# Determine the best settings for each mode
-			if mode == 'linear':
+			if mode == 'linear' or mode == 'rbf':
 				svm_settings = ['linear', 3, len(data[1]), 0.0, 10000]
 			
 			elif mode == 'poly':
@@ -321,35 +301,16 @@ if __name__ == '__main__':
 				
 				# Run cross-validation to determine best settings
 				for degree in range(2, 9): # degree
-					for i in range(len(data[1]) * 3/4, len(data[1]) + 1): # gamma
-						for j in range(-10, 6): # coef0
-							print "Degree", degree, "polynomial with gamma of 1 /", i, "and coefficient of 2 **", j
-							
-							svm_settings = ['poly', degree, i, j, 10000]
-							acc = runSVM(data, results, float( sys.argv[2] ), svm_settings, 1, use_data = set_data, outfile = False )
-							
-							# Update accuracy
-							if acc > best_acc:
-								best_acc = acc
-								best_settings = svm_settings
-				
-				svm_settings = best_settings
-			
-			elif mode == 'rbf':
-				best_acc = 0.0
-				best_settings = ['rbf', 2, 1, 0.0, 10000]
-				
-				# Run cross-validation to determine best settings
-				for i in range(len(data[1]) * 3/4, len(data[1]) + 1): # gamma
-					print "RBF with gamma of 1 / ", i
-					
-					svm_settings = ['rbf', 2, i, 0.0, 10000]
-					acc = runSVM(data, results, float( sys.argv[2] ), svm_settings, 1, use_data = set_data, outfile = False )
-					
-					# Update accuracy
-					if acc > best_acc:
-						best_acc = acc
-						best_settings = svm_settings
+					for j in range(-10, 6): # coef0
+						print "Degree", degree, "polynomial with and coefficient of 2 **", j
+						
+						svm_settings = ['poly', degree, i, j, 10000]
+						acc = runSVM(data, results, float( sys.argv[2] ), svm_settings, 1, use_data = set_data, outfile = False )
+						
+						# Update accuracy
+						if acc > best_acc:
+							best_acc = acc
+							best_settings = svm_settings
 				
 				svm_settings = best_settings
 			
@@ -358,17 +319,16 @@ if __name__ == '__main__':
 				best_settings = ['sigmoid', 2, 1, 0.0, 10000]
 				
 				# Run cross-validation to determine best settings
-				for i in range(1, len(data[1]) + 1): # gamma
-					for j in range(-10, 6): # coef0
-						print "Sigmoid with gamma of 1 /", i, "and coefficient of 2 **", j
-						
-						svm_settings = ['sigmoid', degree, i, j, 10000]
-						acc = runSVM(data, results, float( sys.argv[2] ), svm_settings, 1, use_data = set_data, outfile = False )
-						
-						# Update accuracy
-						if acc > best_acc:
-							best_acc = acc
-							best_settings = svm_settings
+				for j in range(-10, 6): # coef0
+					print "Sigmoid with coefficient of 2 **", j
+					
+					svm_settings = ['sigmoid', degree, 1, j, 10000]
+					acc = runSVM(data, results, float( sys.argv[2] ), svm_settings, 1, use_data = set_data, outfile = False )
+					
+					# Update accuracy
+					if acc > best_acc:
+						best_acc = acc
+						best_settings = svm_settings
 				
 				svm_settings = best_settings
 			

@@ -82,7 +82,7 @@ def runSVM(data, results, valid_size, svm_settings, iterations, use_data = None,
 		
 		# Run support vector machine using the inputted settings
 		# Note that numpy arrays are needed
-		clf = svm.SVC(kernel = svm_settings[0], degree = svm_settings[1], gamma = 1 / float( svm_settings[2] ), coef0 = 2 ** svm_settings[3], max_iter = svm_settings[4])
+		clf = svm.SVC(kernel = svm_settings[0], degree = svm_settings[1], coef0 = 2 ** svm_settings[3], max_iter = svm_settings[4])
 		clf.fit( np.array(test), np.array(test_res) )
 		
 		# Make note of the current iteration
