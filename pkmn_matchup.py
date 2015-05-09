@@ -307,11 +307,11 @@ if __name__ == '__main__':
 			
 			# Determine the best settings for each mode
 			if mode == 'linear':
-				svm_settings = ['linear', 3, 0.0, 0.0, 10000]
+				svm_settings = ['linear', 3, len(data[1]), 0.0, 10000]
 			
 			elif mode == 'poly':
 				best_acc = 0.0
-				best_settings = ['poly', 2, 0.0, 0.0, 10000]
+				best_settings = ['poly', 2, 1, 0.0, 10000]
 				
 				# Run cross-validation to determine best settings
 				for degree in range(2, 9): # degree
@@ -329,7 +329,7 @@ if __name__ == '__main__':
 			
 			elif mode == 'rbf':
 				best_acc = 0.0
-				best_settings = ['rbf', 2, 0.0, 0.0, 10000]
+				best_settings = ['rbf', 2, 1, 0.0, 10000]
 				
 				# Run cross-validation to determine best settings
 				for i in range(1, len(data[1]) + 1): # gamma
@@ -345,7 +345,7 @@ if __name__ == '__main__':
 			
 			else: # mode == 'sigmoid'
 				best_acc = 0.0
-				best_settings = ['sigmoid', 2, 0.0, 0.0, 10000]
+				best_settings = ['sigmoid', 2, 1, 0.0, 10000]
 				
 				# Run cross-validation to determine best settings
 				for i in range(1, len(data[1]) + 1): # gamma
