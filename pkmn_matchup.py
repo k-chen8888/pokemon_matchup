@@ -216,7 +216,7 @@ if __name__ == '__main__':
 		data, results = expand(matches)
 		
 		# Generate optimal settings for each SVM in the ensemble
-		test, test_res, valid, valid_res = partition(data, results, valid_size)
+		test, test_res, valid, valid_res = partition(data, results, float( sys.argv[2] ))
 		set_data = [test, test_res, valid, valid_res]
 		
 		all_svm_settings = []
@@ -297,7 +297,7 @@ if __name__ == '__main__':
 		data, results = expand(matches)
 		
 		# Run SVM sys.argv[4] times for each kernel
-		test, test_res, valid, valid_res = partition(data, results, valid_size)
+		test, test_res, valid, valid_res = partition(data, results, float( sys.argv[2] ))
 		set_data = [test, test_res, valid, valid_res]
 		
 		# Cross-validation to determine SVM settings
