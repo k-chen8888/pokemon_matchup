@@ -254,7 +254,7 @@ if __name__ == '__main__':
 				best_settings = ['rbf', 2, 0.0, 0.0, 10000]
 				
 				# Run cross-validation to determine best settings
-				for i in range(data[1]) * 3/4, len(data[1]) + 1): # gamma
+				for i in range(len(data[1]) * 3/4, len(data[1]) + 1): # gamma
 					print "RBF with gamma of 1 / ", gamma
 					
 					svm_settings = ['rbf', 2, i, 0.0, 10000]
@@ -321,7 +321,7 @@ if __name__ == '__main__':
 				
 				# Run cross-validation to determine best settings
 				for degree in range(2, 9): # degree
-					for i in range(data[1]) * 3/4, len(data[1]) + 1): # gamma
+					for i in range(len(data[1]) * 3/4, len(data[1]) + 1): # gamma
 						for j in range(-10, 6): # coef0
 							print "Degree", degree, "polynomial with gamma of 1 /", gamma, "and coefficient of 2 **", j
 							
@@ -340,7 +340,7 @@ if __name__ == '__main__':
 				best_settings = ['rbf', 2, 1, 0.0, 10000]
 				
 				# Run cross-validation to determine best settings
-				for i in range(data[1]) * 3/4, len(data[1]) + 1): # gamma
+				for i in range(len(data[1]) * 3/4, len(data[1]) + 1): # gamma
 					print "RBF with gamma of 1 / ", gamma
 					
 					svm_settings = ['rbf', 2, i, 0.0, 10000]
