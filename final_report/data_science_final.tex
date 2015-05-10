@@ -33,12 +33,12 @@ Robert Williams\\
        \affaddr{Rutgers University}\\
        \affaddr{Department of Computer Science}\\
        \affaddr{Piscataway, NJ  08854}\\
-       \email{@}
+       \email{Robleewilliams3@gmail.com}
 }
 
 \maketitle
 \begin{abstract}
-Thousands of people play Pokemon competitively throughout the world. Through trial and error, some are able build teams that win in the current metagame\footnote{The "metagame," or "meta," refers to a set of general unwritten rules that most players accept as the norm when playing any online game. As new game features and player innovations are introduced, the metagame is said to "evolve" to accommodate those changes.} and rise to the top. However, the sheer amount of time and effort needed to reach this point is daunting to novice Trainers. Thus, we looked at over 300 Pokemon battles to get an idea of what makes a Pokemon team successful today. After careful analysis of the data, it is clear that the current meta does not feature grossly unbalanced play and cannot be effectively classified through pure strength analysis; however, these results give all Trainers hope that player skill and learning how to deal with particular opponents is better than having an overpowered team.
+Thousands of people play Pokemon competitively throughout the world. Through trial and error, some are able build teams that win in the current metagame\footnote{The "metagame," or "meta," refers to a set of general unwritten rules that most players accept as the norm when playing any online game. As new game features and player innovations are introduced, the metagame is said to "evolve" to accommodate those changes.} and rise to the top. However, the amount of time and effort needed to reach this point is daunting to novice Trainers. Thus, we looked at over 300 Pokemon battles to determine what makes a Pokemon team successful today. After careful analysis of the data, it is clear that the current meta does not feature grossly unbalanced play and cannot be effectively classified through pure strength analysis; however, these results give all Trainers hope that player skill and learning how to deal with particular opponents is better than having an overpowered team.
 \end{abstract}
 
 \keywords{Classification, e-sports, outcome prediction}
@@ -49,16 +49,16 @@ With the release of Pokemon X and Y in October 2013, competitive Pokemon suddenl
 As for the game itself, Pokemon is deceptively simple. Back when the first games came out, there were only around 150 Pokemon and constant base stats for each Pokemon at each level. Then, the creators introduced elements like Individual Values (IVs), Effort Values (EVs), and Natures, warping each Pokemon's natural ability based on a random number generator. In addition, they added new mechanics like Hold Items that activate in the middle of battles, moves and abilities that change based on the weather, transforming Pokemon, and, recently, a brand-new Fairy-type that did not exist before X and Y. With the addition of each new feature combined with the natural ingenuity of a professional gamer, it became increasingly more difficult to predict which Pokemon were "overpowered," which teams, moves, and abilities should be banned, and who would win in a battle. If it were at all possible to find these things out, it would be possible to predict, both now and in the future, which Pokemon and which teams will dominate the game.
 
 \section{Related Work}
-Currently, the most extensive databases on Pokemon are serebii.net and smogon.com. On serebii.net, one can find information on every single Pokemon game released to date, a detailed PokeDex that displays base stats, types, possible moves, and much more for each Pokemon. Meanwhile, smogon.com is the go-to standard for information on competitive Pokemon. They provide the standard tier classification for the entire set of Pokemon: Never Used (NU), Under Used (UU), Over Used (OU), and Uber. In addition, for each Pokemon, they give suggested movesets, hold items, natures, and usage summaries. Finally, we even looked in bulbapedia.bulbagarden.net for "hidden" aspects of the game like the damage equation for moves.
+Currently, the most extensive databases on Pokemon are serebii.net and smogon.com. Serebii.net contains information on every single Pokemon game released to date, a detailed PokeDex that displays base stats, types, possible moves, and much more for each Pokemon. Meanwhile, smogon.com is the go-to source for information on competitive Pokemon. They provide the standard tier classification for the entire set of Pokemon: Never Used (NU), Under Used (UU), Over Used (OU), and Uber. In addition, it lists suggested movesets, hold items, natures, and usage summaries for each Pokemon. Finally, we looked in bulbapedia.bulbagarden.net for "hidden" aspects of the game like the damage equation for moves.
 	
-As our preliminary research shows, there has been some preliminary classification work and description based on intuition and human analysis; however, there is no tier list within each of the classifications, nor is there a list for the most powerful teams and moves. It should be possible to calculate such a ranking based on how many wins these Pokemon, teams, and moves achieve. To start off, it would suffice to first decide which teams actually win battles.
+As our research shows, preliminary classification work and description based on intuition and human analysis has already been done; however, there is no ranking within any of the tiers, nor is there a list for the most powerful teams and moves. Based on how many wins these Pokemon, teams, and moves achieve, we sought to derive such a ranking. To start off, it would suffice to first decide which teams actually win battles.
 
 \section{Background Information}
-In our research, we sought to find the most powerful teams in the OU meta; specifically, we wanted to decide which teams were the most powerful by classifying teams into "winners" and "losers," with "winners" being the cluster of the most powerful teams. We chose to work only in OU, since it is currently the most popular format. To gather data on Pokemon battles, we accessed battle records from Pokemon Showdown, an open-source online Pokemon battle and tournament tool. All battles were written in a scripting format that can be deciphered by looking at code examples from Pokemon Showdown, which can be found on Github.
+In our research, we sought to find the most powerful teams in the OU meta; specifically, we wanted to decide which teams were the most powerful by classifying teams into "winners" and "losers," with "winners" being the cluster of the most powerful teams. We chose to work only in OU, since it is currently the most popular format. To gather data on Pokemon battles, we accessed battle records from Pokemon Showdown, an open-source online Pokemon battle and tournament tool. All battles were written in a scripting format that can be deciphered by looking at code examples from Pokemon Showdown, which can be found on GitHub.
 
-In addition, we had access to both the built-in PokeDex information given by Pokemon Showdown and the move, ability, and hold item information found on serebii.net. The basic PokeDex includes the types and base stats\footnote{ In the PokeDex and in this report, we will refer to given constant stats as the "base" stats for a Pokemon or "base" power for a move and so on. If a stat is derived from an equation, it will simply be referred to as a "stat" or "power."} for a given Pokemon. Moves are what a Pokemon use in combat. They can be split into three categories: Physical, Special, and Other. A Physical move's effectiveness is calculated based on Attack and Defense, whereas a Special move's effectiveness is based on Special Attack and Special Defense. Other moves are generally used for support, such as healing, inflicting negative status conditions, and setting up "entry hazards" that damage a Pokemon being switched in. While the movepool for each Pokemon can be large, only a set of 4 of those moves may be taught to a Pokemon for use in battle. Abilities are what a Pokemon is capable of doing outside of its normal moves. Each Pokemon has one ability from a set of possible abilities, and these abilities may do anything from boost stats to inflict negative status conditions on an opponent and more. Each Pokemon is also allowed to hold an item, which aids the Pokemon in battle by doing things such as powering up specific moves, healing, and allowing the Pokemon to transform into its ultimate form, the Mega-Evolution.
+In addition, we had access to both the built-in PokeDex information given by Pokemon Showdown and information on moves, abilities, and hold items found on serebii.net. The basic PokeDex includes the types and base stats\footnote{In the PokeDex and in this report, we will refer to given constant stats as the "base" stats for a Pokemon or "base" power for a move and so on. If a stat is derived from an equation, it will simply be referred to as a "stat" or "power."} for a given Pokemon. Moves are what a Pokemon use in combat. They can be split into three categories: Physical, Special, and Other. A Physical move's effectiveness is calculated based on Attack and Defense, whereas a Special move's effectiveness is based on Special Attack and Special Defense. Other moves are generally used for support, such as healing, inflicting negative status conditions, and setting up "entry hazards" that damage a Pokemon being switched in. While the movepool for each Pokemon can be large, only a set of 4 of those moves may be taught to a Pokemon for use in battle. Abilities are what a Pokemon is capable of doing outside of its normal moves. Each Pokemon has one ability from a set of possible abilities, and these abilities may do anything from boost stats to inflict negative status conditions on an opponent and more. Each Pokemon is also allowed to hold an item, which aids the Pokemon in battle by doing things such as powering up specific moves, healing, and allowing the Pokemon to transform into its ultimate form, the Mega-Evolution.
 
-On top of that information, we had access to basic information like a list of natures and what stats they affect and a table from which type advantages could be calculated. Natures provided a 0.9 times debuff to one stat and a 1.1 times buff to another. The type table gave a damage multiplier for moves\footnote{A move is "super effective" if it does more than 2.0 times damage and "not very effective" if it does 0.5 times damage.}. To do so, simply take an entry $(row, column)$, where the Attacking move's type is the row and the Defending Pokemon's type is the column. Up to two entries can be taken, and the type advantage is simply a singular entry the product of two entries. Having this data introduced absolute rules that had to be followed; for example, Water-types beat Fire-types.
+On top of that information, we had access to basic information like a list of natures and what stats they affect and a table from which type advantages could be calculated. Natures provided a $0.9\times$ debuff to one stat and a $1.1\times$ buff to another. The type table gave a damage multiplier for moves\footnote{A move is "super effective" if it does more than 2.0 times damage and "not very effective" if it does 0.5 times damage.}. To do so, simply take an entry $(row, column)$, where the Attacking move's type is the row and the Defending Pokemon's type is the column. Up to two entries can be taken, and the type advantage is simply product of two entries. Having this data introduced absolute rules that had to be followed; for example, Water-types beat Fire-types.
 
 \begin{table}
 
@@ -93,10 +93,10 @@ Finally, we are given the equation for calculating how much damage any move does
 where $D_1$ is the damage calculated from Pokemon and move metrics, $M$ is the damage from modifiers, and $D$, the total damage dealt, is their product. Within each of these, $L$ is the Pokemon's level, $Atk$ is the attacking Pokemon's relevant Attack stat, $Def$ is the defending Pokemon's relevant Defense stat, $B$ is the move's base power, $STAB$ is Same-Type Attack Bonus\footnote{This value is 1.5 if the type of the move is the same as the type of the attacker.}, $T$ is the calculated type advantage, $C$ is a critical hit multiplier\footnote{This value is 2 if the move was a critical hit. The chance of this is random.}, $other$ is other damage multipliers\footnote{This is generally due to hold items.}, and $r\in[0.85, 1]$ is a random number. Using this information, we were able to calculate how much offensive and defensive power each Pokemon had when matched up against specific moves and Pokemon. Once again, this gives an absolute rule as to which Pokemon is stronger.
 
 \section{Proposed Approach}
-To handle this dataset, we believed that spectral clustering would be the best way to distinguish between winners and losers, since winners would be “further away” in terms of relative strength from the losers. We also tried Naive Bayes and an SVM, since our target variable was a boolean: True if the team is predicted to win, and False if the team is predicted to lose.
+To handle this dataset, we believed that spectral clustering would be the best way to distinguish between winners and losers, since winners would be "further away" in terms of relative strength from the losers. We also tried Naive Bayes and an SVM, since our target variable was a boolean: True if the team is predicted to win, and False if the team is predicted to lose.
 
 \subsection{Pokemon Stat Assumptions}
-First of all, we had to make some assumptions about the team composition and how each Pokemon was trained. In the game, there are certain archetypes such as tank, support, offense, and revenge-killer. Each of these archetypes have distinctive features that are revealed through how Trainers decide to allocate EVs to their base stats, given that each Pokemon is limited to 510 and each move is limited to 252. For example, an offensive Pokemon will likely have maximum or near maximum possible EVs in either Attack or Special Attack. In addition, Trainers are likely to give max EVs to the highest base stat to make it better, and use a Pokemon with a Nature that amplifies the strongest stat while weakening the weakest stat. As for IVs and levels, the vast majority of Trainers are known to have perfect 31 IVs for each stat for each Pokemon and battle using Pokemon at maximum level 100. Finally, Trainers are likely to teach moves that make use of the strengths of any given Pokemon; for example, Physical moves would be taught to a Pokemon with high Attack. These basic assumptions were used as a safeguard to repair data for missing entries and are based off of very general rules that have been around since the creation of the game. All of these stat changes can be summarized in an equation found on Bulbapedia.
+First of all, we had to make some assumptions about the team composition and how each Pokemon was trained. In the game, there are certain archetypes such as tank, support, offense, and revenge-killer. Each of these archetypes have distinctive features that are revealed through how Trainers decide to allocate EVs to their base stats, given that each Pokemon is limited to 510 and each stat is limited to 252. For example, an offensive Pokemon will likely have maximum or near maximum possible EVs in either Attack or Special Attack. In addition, Trainers are likely to give max EVs to the highest base stat to make it better, and use a Pokemon with a Nature that amplifies the strongest stat while weakening the weakest stat. As for IVs and levels, the vast majority of Trainers are known to have perfect 31 IVs for each stat for each Pokemon and battle using Pokemon at maximum level 100. Finally, Trainers are likely to teach moves that make use of the strengths of any given Pokemon; for example, Physical moves would be taught to a Pokemon with high Attack. These basic assumptions were used as a safeguard to repair data for missing entries and are based off of very general rules that have been around since the creation of the game. All of these stat changes can be summarized in an equation found on Bulbapedia.
 
 Hit Points
 \begin{equation}\frac{(IV + 2 \times Base + EV/4 + 100) \times L}{100} + 10
@@ -145,7 +145,7 @@ $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ & $\v
 \subsection{Methods Used}
 The methods used to analyze the data were spectral clustering, Naive Bayes, Support Vector Machines, and an ensemble of all three.
 
-For the spectral clustering, we decided to use diversity and strength as distance measures, and we split the distance measure into four phases: diversity, feature distance, battle performance distance, and strength distance. When calculated separately, we found that all three spanned very different ranges. Therefore, we normalized everything separately and gave each a weight of $\frac{1}{4}$ to build the adjacency matrix. When performing spectral clustering by itself, we also tried $k=[2, 6]$ clusters to see if there were differences between winning and losing teams. We used SciKit's spectral clustering function using a $k$-means kernel for this task.
+For the spectral clustering, we decided to use diversity and strength as distance measures, and we split the distance measure into four phases: diversity, feature distance, battle performance distance, and strength distance. When calculated separately, we found that all four spanned very different ranges. Therefore, we normalized everything separately and gave each a weight of $\frac{1}{4}$ to build the adjacency matrix. When performing spectral clustering by itself, we also tried $k=[2, 6]$ clusters to see if there were differences between winning and losing teams. We used SciKit's spectral clustering function using a $k$-means kernel for this task. To verify the clusters, we took a purity measure as the percentage of wins and losses and a silhouette coefficient on the range [-1, 1], where negative values indicate inappropriate clustering and positive values indicate appropriate clustering.
 
 In addition to spectral clustering, we also tried to classify using Naive Bayes and a Support Vector Machine. Both classifiers classify data into one of two labels, 0 (False) or 1 (True), so this was appropriate for our data, where 0 represented "loss" and 1 represented "win." In this table, there is still a small number of features and an intermediate number of instances, so an SVM with a Gaussian kernel was appropriate. For the SVM, we used SciKit's default SVM that uses the (Gaussian) radial basis function. As for Naive Bayes, it is safe to assume conditional independence given the class because it does not make sense to say something like “the base power of a move is dependent on the type of the Pokemon for a winning team.” Finally, for completeness, we decided to combine the measures and take a majority vote of an ensemble of all three methods to see if we could get a better classification. Once again, we used SciKit's built-in Gaussian Naive Bayes classifier.
 
@@ -159,13 +159,13 @@ To evaluate spectral clustering, we mapped the teams back to whether or not they
 
 \subsection{Datasets Used}
 
-To gather data, we went on Smogon's blogs and scraped for URLs for Pokemon Showdown battle replays. In particular, we only took the competitive "smogtours-ou" URLs. This data was fed through a parser and gave us 321 battles, the equivalent of 642 Pokemon teams, to work with. Most features turned out to be real-valued or something that could be distilled to a ratio. In Table 3, stats is actually 6 features: HP, Attack, Defense, Sp. Attack, Sp. Defense, and Speed, all of which are real-valued. Moves became their base power levels. Item descriptions were parsed for specific effect words like "heal" and "reduce damage," and each item got +1 for each keyword found, creating a ratio variable. Buffs, status, and debuffs were ratio variables that were counts derived from parsing the battle text for information like "attack increase" (buff), "paralyze" (status), or "attack lowered" (debuff). For all of these ratios, 0 meant "useless" or "did not happen." In all, there were 8 features in Table 2, but each Pokemon in Table 2 could be expanded using Table 3. Because each Pokemon had 15 features each, there were a total of $6 * 15 + 2 = 92$ features.
+To gather data, we went on Smogon's blogs and scraped for URLs for Pokemon Showdown battle replays. In particular, we only took the competitive "smogtours-ou" URLs. Using a parser, we extracted 321 battles, the equivalent of 642 Pokemon teams, from the data to work with. Most features turned out to be real-valued or something that could be distilled to a ratio. In Table 3, stats is actually 6 features: HP, Attack, Defense, Sp. Attack, Sp. Defense, and Speed, all of which are real-valued. Moves became their base power levels. Item descriptions were parsed for specific effect words like "heal" and "reduce damage," and each item got +1 for each keyword found, creating a ratio variable. Buffs, status, and debuffs were ratio variables that were counts derived from parsing the battle text for information like "attack increase" (buff), "paralyze" (status), or "attack lowered" (debuff). For all of these ratios, 0 meant "useless" or "did not happen." In all, there were 8 features in Table 2, but each Pokemon in Table 2 could be expanded using Table 3. Because each Pokemon had 15 features each, there were a total of $6 * 15 + 2 = 92$ features.
 
-The data for spectral clustering was the dictionary obtained from reading a JSON dump of the parsed battle information with constants filled in using database queries. In the first phase, we measured diversity by building distributions of the types found in a team. For the Pokemon and moves, this meant counting the number of Water-types, Fire-types, and so on and taking the squared distance between a list of the counts. Phase 2 included distances between individual Pokemon, such as the distance between their stats and various features of moves, such as power and accuracy. Once again, this was a squared difference. Finally, our third distance measure was derived from a score received in a mock battle. Mock battles were out of 6 points. Damaging moves went through the Bulbapedia damage formula and were scored based on how much damage they did as a percentage of the opponent's HP. Moves classified as "Other" were given scores based on the potential to have "game changing effects," such as applying status debuffs and changing the weather.
+To get the data for spectral clustering, our analysis program read a JSON dump of the parsed battle information with constants filled in using database queries. In the first phase, we measured diversity by building distributions of the types found in a team. For the Pokemon and moves, this meant counting the number of Water-types, Fire-types, and so on and taking the squared distance between a list of the counts. Phase 2 included distances between individual Pokemon, such as the distance between their stats and various features of moves, such as power and accuracy. Once again, this was a squared difference. In our third phase, we took a squared distance between the extra information for a two teams, like counts of weather effects and status buffs. Finally, our fourth distance measure was derived from a score received in a mock battle. Mock battles were out of 6 points. Damaging moves went through the Bulbapedia damage formula and were scored based on how much damage they did as a percentage of the opponent's HP. Moves classified as "Other" were given scores based on the potential to have "game changing effects," such as applying status debuffs and changing the weather.
 
 To generate data tables for Naive Bayes and SVM, we simply expanded out each team into the format shown in Table 2. Each Pokemon was also expanded out so that each facet of the Pokemon was a feature, as shown in Table 3. In addition, this method also accounts for battle statistics that weren't considered in the spectral clustering, such as the number of times the weather changed and how many times each Pokemon was weakened or buffed. These were very sparse features, so we took a category summation. The only notable difference between spectral clustering and these classifiers was the fact that spectral clustering did not consider extra information like the number of times weather changed or the number of entry hazards that a team put on the field.
 
-Despite all the information given, there were many features missing from the data given by Pokemon Showdown. extra information like base stats and types were queried from a database and added to the dataset. Ideally, we would have also considered abilities, but we found that Pokemon Showdown did not display ability names. In addition, hold items were not present because they had passive effects\footnote{Only a small subset of items like Leftovers activated during battle, so we were able to detect them.}. For hold items, we substituted a useless Soothe Bell to take its place. We also noticed that EVs, IVs, and Natures were not displayed. Thus, we had to rely on the stat predictor described earlier to fill this information in. The most unfortunate missing data, however, were the missing moves. Because some Pokemon may not have been sent out or did not get to use a move before leaving battle, some movesets were blank. Thus, we simply inserted a dummy move that did no damage and had no special effects.
+Despite all the information given, there were many features missing from the data given by Pokemon Showdown. Extra information like base stats and types were queried from a database and added to the dataset. Ideally, we would have also considered abilities, but we found that Pokemon Showdown did not display ability names. In addition, hold items were not present because they had passive effects\footnote{Only a small subset of items like Leftovers activated during battle, so we were able to detect them.}. For hold items, we substituted a useless Soothe Bell to take its place. We also noticed that EVs, IVs, and Natures were not displayed. Thus, we had to rely on the stat predictor described earlier to fill this information in. The most unfortunate missing data, however, were the missing moves. Because some Pokemon may not have been sent out or did not get to use a move before leaving battle, some movesets were blank. To handle this situation, we inserted a dummy move that did no damage and had no special effects.
 
 \subsection{Spectral Clustering Results}
 
@@ -177,42 +177,42 @@ Despite all the information given, there were many features missing from the dat
 
 \begin{tabular}{|c|c|c|l|} \hline
 
-k & Label & Purity & Silhouette \\ \hline
-2 & 0 & 0 & 0 \\ \hline
-2 & 1 & 0 & 0 \\ \hline
-3 & 0 & 0 & 0 \\ \hline
-3 & 1 & 0 & 0 \\ \hline
-3 & 2 & 0 & v \\ \hline
-4 & 0 & 0 & 0 \\ \hline
-4 & 1 & 0 & 0 \\ \hline
-4 & 2 & 0 & 0 \\ \hline
-4 & 3 & 0 & 0 \\ \hline
-5 & 0 & 0 & 0 \\ \hline
-5 & 1 & 0 & 0 \\ \hline
-5 & 2 & 0 & 0 \\ \hline
-5 & 3 & 0 & 0 \\ \hline
-5 & 4 & 0 & 0 \\ \hline
-6 & 0 & 0 & 0 \\ \hline
-6 & 1 & 0 & 0 \\ \hline
-6 & 2 & 0 & 0 \\ \hline
-6 & 3 & 0 & 0 \\ \hline
-6 & 4 & 0 & 0 \\ \hline
-6 & 5 & 0 & 0 \\ \hline
+k & Label & \% Wins (Purity) & Silhouette \\ \hline
+2 & 0 & 0.50625 & 0.0055290 \\ \hline
+2 & 1 & 0.49375 & -0.0116987 \\ \hline
+3 & 0 & 0.5074627 & 0.0086038 \\ \hline
+3 & 1 & 0.4891304 & -0.0089911 \\ \hline
+3 & 2 & 0.5 & -0.0040147 \\ \hline
+4 & 0 & 0.5 & 0.0036739 \\ \hline
+4 & 1 & 0.5 & 0.0123182 \\ \hline
+4 & 2 & 0.4936708 & 0.0165263 \\ \hline
+4 & 3 & 0.5044248 & 0.0828076 \\ \hline
+5 & 0 & 0.5064935 & 0.0672046 \\ \hline
+5 & 1 & 0.4938272 & 0.0463291 \\ \hline
+5 & 2 & 0.5049505 & 0.1118926 \\ \hline
+5 & 3 & 0.5 & -0.0156582 \\ \hline
+5 & 4 & 0.4920635 & 0.0473298 \\ \hline
+6 & 0 & 0.4923077 & 0.0254268 \\ \hline
+6 & 1 & 0.5227272 & 0.1547879 \\ \hline
+6 & 2 & 0.4905660 & 0.0232376 \\ \hline
+6 & 3 & 0.4897959 & 0.0388096 \\ \hline
+6 & 4 & 0.53125 & 0.0835046 \\ \hline
+6 & 5 & 0.4923077 & 0.0372374 \\ \hline
 \end{tabular}
 
 \end{table}
 
-Intuitively, spectral clustering should have worked the best out of all of the classifiers. In any game, should be unbalanced elements that dominate the meta and thus have a high usage frequency and win often. For Pokemon, however, spectral clustering says otherwise. Intuitively, we felt that testing up to $k=2$ would distinguish between 2 clusters: winners and losers. However, the clustering was no better than randomly guessing. Based on the dataset, we suspect that the clustering failed because of the 0 moves resulting from blank movesets. Because of these blanks, spectral clustering most likely computed that two Pokemon were similar because they had blank movesets when in reality they weren't. In order to see if spectral clustering would be more sensitive to other differences, we increased the number of clusters.
+Intuitively, spectral clustering should have worked the best out of all of the classifiers. In any game, there should be unbalanced elements that dominate the meta and thus have a high usage frequency and win often. For Pokemon, however, spectral clustering says otherwise. Intuitively, we felt that testing up to $k=2$ would distinguish between 2 clusters: winners and losers. However, the clustering was no better than randomly guessing. Based on the dataset, we suspect that the clustering failed because of the 0 moves resulting from blank movesets. Because of these blanks, spectral clustering most likely computed that two Pokemon were similar because they had blank movesets when in reality they were not. In order to see if spectral clustering would be more sensitive to other differences, we increased the number of clusters.
 
-Even when tested for up to $k=6$ clusters, however, spectral clustering still failed to distinguish between strong and weak teams effectively, indicating that the teams were fairly evenly matched. Sure enough, looking through the data revealed that Legendary Pokemon are very popular, and slight increases in purity and the silhouette coefficient for higher values of $k$ came from separating out teams with more Legendary Pokemon from those with fewer.
+Even when tested for up to $k=6$ clusters, however, spectral clustering still failed to distinguish between strong and weak teams effectively, indicating that the teams were fairly evenly matched. Sure enough, looking through the data revealed that Legendary Pokemon\footnote{Legendary Pokemon are, by lore, the most powerful Pokemon in the Pokemon World.} are very popular, and slight increases in purity and the silhouette coefficient for higher values of $k$ came from separating out teams with more Legendary Pokemon from those with fewer.
 
-\subsection{Naive Bayes Results, Average Confusion Matrix Entries}
+\subsection{Naive Bayes Results}
 
 \begin{table}
 
 \centering
 
-\caption{Naive Bayes Results}
+\caption{Naive Bayes Results, Average Confusion Matrix Entries}
 
 \begin{tabular}{|c|c|c|l|} \hline
 
@@ -230,15 +230,15 @@ Standard Deviation of Accuracy: 0.06226518
 
 95\% Confidence Interval: [0.6316200309, 0.6621299691]
 
-Out of all the classifiers, Naive Bayes had the highest average accuracy. 
+Out of all the classifiers, Naive Bayes had the highest average accuracy. In addition, it had a relatively low false positive rate, which means that it was able to better distinguish winning teams from losing teams in certain cases. On the other hand, the false negative rate was still fairly high, which means that it predicted that certain strong teams would lose. Looking back at the data, we found that several winning teams had nearly empty movesets. As it turns out, movesets are empty either because the Pokemon fainted before using a move or the team won before a Pokemon was sent out. In both cases, Pokemon Showdown does not report that Pokemon's moves. From this, we can say that Naive Bayes was able to detect the teams that lost because they were defeated before they got a chance to use their moves but failed to detect teams that were strong enough to win with a small subset of their moves.
 
-\subsection{SVM Results, Average Confusion Matrix Entries}
+\subsection{SVM Results}
 
 \begin{table}
 
 \centering
 
-\caption{SVM Results}
+\caption{SVM Results, Average Confusion Matrix Entries}
 
 \begin{tabular}{|c|c|c|l|} \hline
 
@@ -258,31 +258,31 @@ Standard Deviation of Accuracy: 0.06054844
 
 SVM did not do well in this setting, most likely for the same reason as spectral clustering. Visually, SVM and spectral clustering accomplish nearly the same thing but through different means. For $k=2$, spectral clustering failed to accurately distinguish between strong and weak teams. This implies that the margin between them is small, so an SVM would not be able to get a good enough decision boundary. Once again, this is probably due to missing move information.
 
-\subsection{Ensemble Results, Average Confusion Matrix Entries}
+\subsection{Ensemble Results}
 
 \begin{table}
 
 \centering
 
-\caption{Ensemble Results}
+\caption{Ensemble Results, Average Confusion Matrix Entries}
 
 \begin{tabular}{|c|c|c|l|} \hline
 
  & Predict True & Predict False \\ \hline
-Actual True & & \\ \hline
-Actual False & & \\ \hline
+Actual True & 13.82 & 17.62 \\ \hline
+Actual False & 12.2 & 20.36 \\ \hline
 
 \end{tabular}
 
 \end{table}
 
-Average Accuracy: 
+Average Accuracy: 0.5340625
 
-Standard Deviation of Accuracy: 
+Standard Deviation of Accuracy: 0.04918178
 
-95\% Confidence Interval: 
+95\% Confidence Interval: [0.5220129639, 0.5461120361]
 
-Like spectral clustering and SVM, the ensemble also did not do too well. This is probably because we decided to use a majority vote, which gave the wrong predictions in spectral clustering and SVM equal weight relative to the more accurate Naive Bayes results. From reading a dump of the voting process, we found that there were several cases when two wrong answers outvoted a correct answer, resulting in false positives and false negatives.
+Like spectral clustering and SVM, the ensemble also did not do too well. This is probably because we decided to use a majority vote, which gave the wrong predictions in spectral clustering and SVM equal weight relative to the more accurate Naive Bayes results. From reading a dump of the voting process, we found that there were several cases when two wrong answers outvoted a correct answer, resulting in false positives and false negatives. At the very least, having the ensemble was better than the separate classifiers because accuracy did increase slightly
 
 \section{Conclusion}
 
@@ -296,13 +296,36 @@ In the future, we would definitely like to try this problem again with a more co
 
 Based on this research, we have discovered that it is far too optimistic to think that certain Pokemon are much more powerful than others within any tier, OU or otherwise. Instead of trying to rank teams and find team archetypes that dominate the meta, we encourage new players to try many different kinds of teams and find a playstyle that feels as natural as breathing. Finally, we recommend all players to use the meta only as a guide and try and play around the meta that others follow so religiously.
 
-\begin{thebibliography}{1}
+\begin{thebibliography}{5}
+
+\bibitem{bulbapedia151}
+  Bulbapedia.
+  \emph{Damage}.
+  January 2015.
+  URL: http://bulbapedia.bulbagarden.net/wiki/Stats
+
+\bibitem{bulbapedia152}
+  Bulbapedia.
+  \emph{Stats}.
+  2015.
+  URL: http://bulbapedia.bulbagarden.net/wiki/Stats
+
+\bibitem{serebii15}
+  Serebii.net.
+  May 2015.
+  URL: http://serebii.net/
 
 \bibitem{smogon14}
   Smogon University.
   \emph{Smogon Official Tier Lists}.
   July 2014.
   URL: http://www.smogon.com/forums/threads/smogon-official-tier-lists.3513352/
+
+\bibitem{pokemonshowdown15}
+  Zarel, et al.
+  \emph{Pokemon-Showdown}.
+  May 2015.
+  URL: https://github.com/Zarel/Pokemon-Showdown
 
 \end{thebibliography}
 
