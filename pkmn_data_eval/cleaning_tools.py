@@ -274,16 +274,16 @@ def select(matches, p):
 			if match['winner'] == "team1":
 				teams.append( match["team1"] )
 				teams.append( match["team2"] )
-				teams_extra.append( matches[i]["team1-extra"] )
-				teams_extra.append( matches[i]["team2-extra"] )
+				teams_extra.append( match["team1-extra"] )
+				teams_extra.append( match["team2-extra"] )
 				results.append(True)
 				results.append(False)
 			
 			else:
 				teams.append( match["team1"] )
 				teams.append( match["team2"] )
-				teams_extra.append( matches[i]["team1-extra"] )
-				teams_extra.append( matches[i]["team2-extra"] )
+				teams_extra.append( match["team1-extra"] )
+				teams_extra.append( match["team2-extra"] )
 				results.append(False)
 				results.append(True)
 		
