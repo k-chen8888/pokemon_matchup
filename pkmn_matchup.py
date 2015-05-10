@@ -124,6 +124,8 @@ def runEnsemble(matches, labels, win, valid_size, all_settings, iterations):
 				else:
 					win_vote += 1
 				# SVM
+				for l in range(0, len(clf_svm)):
+					predict_svm = clf_svm[l].predict( valid[j] )
 					if predict_svm[0] == 0:
 						lose_vote += 0.25
 					else:
