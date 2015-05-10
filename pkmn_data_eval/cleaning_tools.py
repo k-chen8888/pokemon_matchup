@@ -267,6 +267,7 @@ def select(matches, p):
 	else:
 		# Dump all teams into output
 		teams = []
+		teams_extra = []
 		results = []
 		
 		for match in matches:
