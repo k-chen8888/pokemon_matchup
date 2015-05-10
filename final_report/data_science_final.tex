@@ -23,11 +23,11 @@
 
 \author{
 \alignauthor
-1\\
+Kevin Chen\\
        \affaddr{Rutgers University}\\
        \affaddr{Department of Computer Science}\\
        \affaddr{Piscataway, NJ  08854}\\
-       \email{@}
+       \email{k.chen8880@gmail.com}
 \alignauthor
 Robert Williams\\
        \affaddr{Rutgers University}\\
@@ -93,7 +93,7 @@ Finally, we are given the equation for calculating how much damage any move does
 where $D_1$ is the damage calculated from Pokemon and move metrics, $M$ is the damage from modifiers, and $D$, the total damage dealt, is their product. Within each of these, $L$ is the Pokemon's level, $Atk$ is the attacking Pokemon's relevant Attack stat, $Def$ is the defending Pokemon's relevant Defense stat, $B$ is the move's base power, $STAB$ is Same-Type Attack Bonus\footnote{This value is 1.5 if the type of the move is the same as the type of the attacker.}, $T$ is the calculated type advantage, $C$ is a critical hit multiplier\footnote{This value is 2 if the move was a critical hit. The chance of this is random.}, $other$ is other damage multipliers\footnote{This is generally due to hold items.}, and $r\in[0.85, 1]$ is a random number. Using this information, we were able to calculate how much offensive and defensive power each Pokemon had when matched up against specific moves and Pokemon. Once again, this gives an absolute rule as to which Pokemon is stronger.
 
 \section{Proposed Approach}
-To handle this dataset, we believed that spectral clustering would be the best way to distinguish between winners and losers, since winners would be “further away” in terms of relative strength from the losers.
+To handle this dataset, we believed that spectral clustering would be the best way to distinguish between winners and losers, since winners would be “further away” in terms of relative strength from the losers. We also tried Naive Bayes and an SVM, since our target variable was a boolean: True if the team is predicted to win, and False if the team is predicted to lose.
 
 \subsection{Pokemon Stat Assumptions}
 First of all, we had to make some assumptions about the team composition and how each Pokemon was trained. In the game, there are certain archetypes such as tank, support, offense, and revenge-killer. Each of these archetypes have distinctive features that are revealed through how Trainers decide to allocate EVs to their base stats, given that each Pokemon is limited to 510 and each move is limited to 252. For example, an offensive Pokemon will likely have maximum or near maximum possible EVs in either Attack or Special Attack. In addition, Trainers are likely to give max EVs to the highest base stat to make it better, and use a Pokemon with a Nature that amplifies the strongest stat while weakening the weakest stat. As for IVs and levels, the vast majority of Trainers are known to have perfect 31 IVs for each stat for each Pokemon and battle using Pokemon at maximum level 100. Finally, Trainers are likely to teach moves that make use of the strengths of any given Pokemon; for example, Physical moves would be taught to a Pokemon with high Attack. These basic assumptions were used as a safeguard to repair data for missing entries and are based off of very general rules that have been around since the creation of the game. All of these stat changes can be summarized in an equation found on Bulbapedia.
@@ -116,7 +116,7 @@ Other Stats
 
 Features & Pokemon 1 & Pokemon 2 & Pokemon 3 & Pokemon 4 & Pokemon 5 & Pokemon 6 & Entry Hazards & Weather \\ \hline
 
-Instance 1 & $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ \\ \hline
+Instance 1 & [1,1 in Table 3] & $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ \\ \hline
 
 $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ \\ \hline
 
@@ -132,9 +132,9 @@ $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ & $\v
 
 \begin{tabular}{|c|c|c|c|c|c|c|c|c|l|} \hline
 
-Features & Base Stats & Move 1 & Move 2 & Move 3 & Move 4 & Hold Item & Buffs & Status & Debuffs \\ \hline
+Features & Stats & Move 1 & Move 2 & Move 3 & Move 4 & Hold Item & Buffs & Status & Debuffs \\ \hline
 
-Instance 1 & $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ \\ \hline
+Instance 1,1 & $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ \\ \hline
 
 $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ \\ \hline
 
@@ -145,29 +145,165 @@ $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$ & $\v
 \subsection{Methods Used}
 The methods used to analyze the data were spectral clustering, Naive Bayes, Support Vector Machines, and an ensemble of all three.
 
-For the spectral clustering, we decided to use diversity and strength as distance measures, and we split the distance measure into three phases: diversity, feature distance, and strength distance. When calculated separately, we found that all three spanned very different ranges. Therefore, we normalized everything separately and gave each a weight of $\frac{1}{3}$ to build the adjacency matrix. When performing spectral clustering by itself, we also tried $k=[2, 8]$ clusters to see if there were differences between winning and losing teams.
+For the spectral clustering, we decided to use diversity and strength as distance measures, and we split the distance measure into four phases: diversity, feature distance, battle performance distance, and strength distance. When calculated separately, we found that all three spanned very different ranges. Therefore, we normalized everything separately and gave each a weight of $\frac{1}{4}$ to build the adjacency matrix. When performing spectral clustering by itself, we also tried $k=[2, 6]$ clusters to see if there were differences between winning and losing teams. We used SciKit's spectral clustering function using a $k$-means kernel for this task.
 
-In addition to spectral clustering, we also tried to classify using Naive Bayes and a Support Vector Machine. Both classifiers classify data into one of two labels, 0 or 1, so this was appropriate for our data, where 0 represented "loss" and 1 represented "win." In this table, there is still a small number of features and an intermediate number of instances, so an SVM with a Gaussian kernel was appropriate. As for Naive Bayes, it is safe to assume that any of the features in a class are conditionally independent given the class because, for any given team, it does not make sense to say something like “the base power of a move depends on the type of the Pokemon.” Finally, for completeness, we decided to combine the measures and take a majority vote of an ensemble of all three methods to see if we could get a better classification.
+In addition to spectral clustering, we also tried to classify using Naive Bayes and a Support Vector Machine. Both classifiers classify data into one of two labels, 0 (False) or 1 (True), so this was appropriate for our data, where 0 represented "loss" and 1 represented "win." In this table, there is still a small number of features and an intermediate number of instances, so an SVM with a Gaussian kernel was appropriate. For the SVM, we used SciKit's default SVM that uses the (Gaussian) radial basis function. As for Naive Bayes, it is safe to assume conditional independence given the class because it does not make sense to say something like “the base power of a move is dependent on the type of the Pokemon for a winning team.” Finally, for completeness, we decided to combine the measures and take a majority vote of an ensemble of all three methods to see if we could get a better classification. Once again, we used SciKit's built-in Gaussian Naive Bayes classifier.
+
+While we used all of the classifiers named above, some classifiers were not used. We felt that decision trees would not be applicable here because they are primarily used to condition on binary features whereas we have many real-valued features. Secondly, when deciding between an SVM or logistic regression, the number of instances and features pointed towards the SVM with a Gaussian kernel, so we dropped logistic regression.
 
 \section{Experiments}
 
-In this experiment, four tests were run: spectral clustering, Naive Bayes, SVM, and an ensemble. While the dataset was largely the same for all of the tests, the format was changed for classification. For the spectral clustering, we kept the dataset as a dictionary because it was easiest to access the needed features by name rather table index. On the other hand, we expanded the data into a table for Naive Bayes and SVM because the Python SciKit module was able to work directly with these tables.
+In this experiment, four tests were run: spectral clustering, Naive Bayes, SVM, and an ensemble. While the dataset was largely the same for all of the tests, the format was changed for classification. For the spectral clustering, we kept the dataset as a dictionary because it was easiest to access the needed features by name rather table index. On the other hand, we expanded the data into a table for Naive Bayes and SVM because the Python SciKit module was able to work directly with these tables. Since the ensemble combined spectral clustering, Naive Bayes, and SVM, both the dictionary and tables were used.
+
+To evaluate spectral clustering, we mapped the teams back to whether or not they won or lost, and calculated the purity of the clustering using that information. We also got a silhouette coefficient by querying back into the similarity matrix. For Naive Bayes, SVM, and the ensemble method, we got an average accuracy and the standard deviation of the accuracy using 10-fold cross validation. To generate the training and test sets, we used a random number generator to partition the dataset into 10 sets. We then trained the model on 9 of those sets and validated using one of them, and each set was used as a validation set once.
 
 \subsection{Datasets Used}
+
+To gather data, we went on Smogon's blogs and scraped for URLs for Pokemon Showdown battle replays. In particular, we only took the competitive "smogtours-ou" URLs. This data was fed through a parser and gave us 321 battles, the equivalent of 642 Pokemon teams, to work with. Most features turned out to be real-valued or something that could be distilled to a ratio. In Table 3, stats is actually 6 features: HP, Attack, Defense, Sp. Attack, Sp. Defense, and Speed, all of which are real-valued. Moves became their base power levels. Item descriptions were parsed for specific effect words like "heal" and "reduce damage," and each item got +1 for each keyword found, creating a ratio variable. Buffs, status, and debuffs were ratio variables that were counts derived from parsing the battle text for information like "attack increase" (buff), "paralyze" (status), or "attack lowered" (debuff). For all of these ratios, 0 meant "useless" or "did not happen." In all, there were 8 features in Table 2, but each Pokemon in Table 2 could be expanded using Table 3. Because each Pokemon had 15 features each, there were a total of $6 * 15 + 2 = 92$ features.
 
 The data for spectral clustering was the dictionary obtained from reading a JSON dump of the parsed battle information with constants filled in using database queries. In the first phase, we measured diversity by building distributions of the types found in a team. For the Pokemon and moves, this meant counting the number of Water-types, Fire-types, and so on and taking the squared distance between a list of the counts. Phase 2 included distances between individual Pokemon, such as the distance between their stats and various features of moves, such as power and accuracy. Once again, this was a squared difference. Finally, our third distance measure was derived from a score received in a mock battle. Mock battles were out of 6 points. Damaging moves went through the Bulbapedia damage formula and were scored based on how much damage they did as a percentage of the opponent's HP. Moves classified as "Other" were given scores based on the potential to have "game changing effects," such as applying status debuffs and changing the weather.
 
 To generate data tables for Naive Bayes and SVM, we simply expanded out each team into the format shown in Table 2. Each Pokemon was also expanded out so that each facet of the Pokemon was a feature, as shown in Table 3. In addition, this method also accounts for battle statistics that weren't considered in the spectral clustering, such as the number of times the weather changed and how many times each Pokemon was weakened or buffed. These were very sparse features, so we took a category summation. The only notable difference between spectral clustering and these classifiers was the fact that spectral clustering did not consider extra information like the number of times weather changed or the number of entry hazards that a team put on the field.
 
-Despite all the information given, there were many features missing from the data given by Pokemon Showdown. extra information like base stats and types were queried from a database and added to the dataset. Ideally, we would have also considered abilities, but we found that Pokemon Showdown did not display ability names. In addition, hold items were not present because they had passive effects\footnote{Only a small subset of items like Leftovers activated during battle, so we were able to detect them.}. For hold items, we substituted a useless Soothe Bell to take its place. We also noticed that EVs, IVs, and Natures were not displayed. Thus, we had to rely on the stat predictor described earlier to fill this information in. The most unfortunate missing data, however, were the missing moves. Because some Pokemon may not have been sent out or did not get to use a move before leaving battle, some movesets were blank. Thus, we used a random move generator to fill in possible moves randomly pulled from the Pokemon’s movepool.
+Despite all the information given, there were many features missing from the data given by Pokemon Showdown. extra information like base stats and types were queried from a database and added to the dataset. Ideally, we would have also considered abilities, but we found that Pokemon Showdown did not display ability names. In addition, hold items were not present because they had passive effects\footnote{Only a small subset of items like Leftovers activated during battle, so we were able to detect them.}. For hold items, we substituted a useless Soothe Bell to take its place. We also noticed that EVs, IVs, and Natures were not displayed. Thus, we had to rely on the stat predictor described earlier to fill this information in. The most unfortunate missing data, however, were the missing moves. Because some Pokemon may not have been sent out or did not get to use a move before leaving battle, some movesets were blank. Thus, we simply inserted a dummy move that did no damage and had no special effects.
 
 \subsection{Spectral Clustering Results}
-Intuitively, spectral clustering should have worked the best out of all of the classifiers. In any game, there are unbalanced elements that dominate the meta and thus have a high usage frequency and win often.
 
-\subsection{Naive Bayes Results}
+\begin{table}
 
-\subsection{SVM Results}
+\centering
 
-\subsection{Ensemble Results}
+\caption{Spectral Clustering Results}
+
+\begin{tabular}{|c|c|c|l|} \hline
+
+k & Label & Purity & Silhouette \\ \hline
+2 & 0 & 0 & 0 \\ \hline
+2 & 1 & 0 & 0 \\ \hline
+3 & 0 & 0 & 0 \\ \hline
+3 & 1 & 0 & 0 \\ \hline
+3 & 2 & 0 & v \\ \hline
+4 & 0 & 0 & 0 \\ \hline
+4 & 1 & 0 & 0 \\ \hline
+4 & 2 & 0 & 0 \\ \hline
+4 & 3 & 0 & 0 \\ \hline
+5 & 0 & 0 & 0 \\ \hline
+5 & 1 & 0 & 0 \\ \hline
+5 & 2 & 0 & 0 \\ \hline
+5 & 3 & 0 & 0 \\ \hline
+5 & 4 & 0 & 0 \\ \hline
+6 & 0 & 0 & 0 \\ \hline
+6 & 1 & 0 & 0 \\ \hline
+6 & 2 & 0 & 0 \\ \hline
+6 & 3 & 0 & 0 \\ \hline
+6 & 4 & 0 & 0 \\ \hline
+6 & 5 & 0 & 0 \\ \hline
+\end{tabular}
+
+\end{table}
+
+Intuitively, spectral clustering should have worked the best out of all of the classifiers. In any game, should be unbalanced elements that dominate the meta and thus have a high usage frequency and win often. For Pokemon, however, spectral clustering says otherwise. Intuitively, we felt that testing up to $k=2$ would distinguish between 2 clusters: winners and losers. However, the clustering was no better than randomly guessing. Based on the dataset, we suspect that the clustering failed because of the 0 moves resulting from blank movesets. Because of these blanks, spectral clustering most likely computed that two Pokemon were similar because they had blank movesets when in reality they weren't. In order to see if spectral clustering would be more sensitive to other differences, we increased the number of clusters.
+
+Even when tested for up to $k=6$ clusters, however, spectral clustering still failed to distinguish between strong and weak teams effectively, indicating that the teams were fairly evenly matched. Sure enough, looking through the data revealed that Legendary Pokemon are very popular, and slight increases in purity and the silhouette coefficient for higher values of $k$ came from separating out teams with more Legendary Pokemon from those with fewer.
+
+\subsection{Naive Bayes Results, Average Confusion Matrix Entries}
+
+\begin{table}
+
+\centering
+
+\caption{Naive Bayes Results}
+
+\begin{tabular}{|c|c|c|l|} \hline
+
+ & Predict True & Predict False \\ \hline
+Actual True & 16.98 & 14.52 \\ \hline
+Actual False & 8.08 & 24.42 \\ \hline
+
+\end{tabular}
+
+\end{table}
+
+Average Accuracy: 0.646875
+
+Standard Deviation of Accuracy: 0.06226518
+
+95\% Confidence Interval: [0.6316200309, 0.6621299691]
+
+Out of all the classifiers, Naive Bayes had the highest average accuracy. 
+
+\subsection{SVM Results, Average Confusion Matrix Entries}
+
+\begin{table}
+
+\centering
+
+\caption{SVM Results}
+
+\begin{tabular}{|c|c|c|l|} \hline
+
+ & Predict True & Predict False \\ \hline
+Actual True & 17.02 & 15.18 \\ \hline
+Actual False & 15.76 & 16.04 \\ \hline
+
+\end{tabular}
+
+\end{table}
+
+Average Accuracy: 0.5165625
+
+Standard Deviation of Accuracy: 0.06054844
+
+95\% Confidence Interval: [0.5017281322, 0.5313968678]
+
+SVM did not do well in this setting, most likely for the same reason as spectral clustering. Visually, SVM and spectral clustering accomplish nearly the same thing but through different means. For $k=2$, spectral clustering failed to accurately distinguish between strong and weak teams. This implies that the margin between them is small, so an SVM would not be able to get a good enough decision boundary. Once again, this is probably due to missing move information.
+
+\subsection{Ensemble Results, Average Confusion Matrix Entries}
+
+\begin{table}
+
+\centering
+
+\caption{Ensemble Results}
+
+\begin{tabular}{|c|c|c|l|} \hline
+
+ & Predict True & Predict False \\ \hline
+Actual True & & \\ \hline
+Actual False & & \\ \hline
+
+\end{tabular}
+
+\end{table}
+
+Average Accuracy: 
+
+Standard Deviation of Accuracy: 
+
+95\% Confidence Interval: 
+
+Like spectral clustering and SVM, the ensemble also did not do too well. This is probably because we decided to use a majority vote, which gave the wrong predictions in spectral clustering and SVM equal weight relative to the more accurate Naive Bayes results. From reading a dump of the voting process, we found that there were several cases when two wrong answers outvoted a correct answer, resulting in false positives and false negatives.
+
+\section{Conclusion}
+
+From the analysis of the data, it is clear that analyzing the effectiveness of any team solely based on team composition and raw power does not yield conclusive results about the effectiveness of a team. In fact, every classifier we used just barely distinguished winning teams from losing teams better than a truly random function.
+
+While it is true that this study was limited by the data that was withheld from us by Pokemon Showdown, one important takeaway is that Pokemon is very well-balanced. In fact, throughout the history of Pokemon, game mechanics are rarely "re-balanced." This means that the developers do not retroactively change "unfair" mechanics. Throughout six generations of Pokemon, even as features were added, equations rarely changed and mechanics were rarely overhauled.\footnote{In fact, the last major change was three generations ago, when weather effects were toned down before Gen IV was released.} By comparison, games like League of Legends and Defense of the Ancients are frequently patched once developers find that people are exploiting abilities that seemed "balanced" when they were put in. Not only that, the ban list is very limited. The number of restrictions in place are few enough to fit in one chat window at the start of every Pokemon Showdown match, and, even with the tier list, the game is balanced enough that there need only be 4 competitive tiers in existence at any given time to cover all 720 Pokemon.\footnote{It is actually ironic to note that Super Smash Bros., also published by Nintendo, is documented to be grossly unbalanced and has a definitive character tier list. This is where we got the inspiration to try and see if Pokemon had definitive tier list, but for teams instead.}
+
+Another important discovery is that Trainers are very "meta-focused." On the side, we went through the data to find frequently and rarely-used Pokemon. After running through the data multiple times, we found that about 50 Pokemon were used very often. While the official OU tier has around 50 Pokemon in it, the 50 Pokemon in our set included Pokemon from UU and the first Borderline. Not only that, many teams that had these Pokemon in them won games, which means that focusing on raw strength fails to capture these cases. On top of these errors, there were also some weak Pokemon that almost never see competitive play on winning teams. This explains the large number of false positives and false negatives across all of the datasets; they were misclassifications of a theoretically strong team that lost to a theoretically weak team. From our experience playing online games, we attribute these types of losses to players being unable to handle new situations. Thus, we define "meta-focused" as "following the meta so strictly that one loses to tactics that are not prevalent in the meta."
+
+In the future, we would definitely like to try this problem again with a more complete dataset. If that doesn't work out, it would be interesting to see how a Trainer develops throughout his or her journey in competitive Pokemon. Instead of looking at team composition and measuring Pokemon characteristics, our future work would follow a subset of Trainers from when they first start playing on Pokemon Showdown and see how their record and rank change as they modify their teams and battle. This kind of analysis would instead focus on learning what kind of decisions the Trainer makes to be successful, such as the kinds of moves they actually pick and use in battle and what kinds of Pokemon they like to have on their teams. In this way, we believe it is possible to (1) create an advice system for rookie Trainers that tells them how to modify their team to improve their odds of winning, (2) derive playstyles and player archetypes that help a Trainer succeed, and (3) construct individualized tier lists for individual players rather than a global tier list that may not fit certain people's playstyles.
+
+Based on this research, we have discovered that it is far too optimistic to think that certain Pokemon are much more powerful than others within any tier, OU or otherwise. Instead of trying to rank teams and find team archetypes that dominate the meta, we encourage new players to try many different kinds of teams and find a playstyle that feels as natural as breathing. Finally, we recommend all players to use the meta only as a guide and try and play around the meta that others follow so religiously.
+
+\begin{thebibliography}{1}
+
+\bibitem{smogon14}
+  Smogon University.
+  \emph{Smogon Official Tier Lists}.
+  July 2014.
+  URL: http://www.smogon.com/forums/threads/smogon-official-tier-lists.3513352/
+
+\end{thebibliography}
 
 \end{document}
