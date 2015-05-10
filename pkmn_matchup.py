@@ -238,7 +238,7 @@ if __name__ == '__main__':
 					for j in range(-10, 6): # coef0
 						print "Degree", degree, "polynomial with and coefficient of 2 **", j
 						
-						svm_settings = ['poly', degree, i, j, 10000]
+						svm_settings = ['poly', degree, len(data[1]), j, 10000]
 						acc = runSVM(data, results, float( sys.argv[2] ), svm_settings, 1, use_data = set_data, outfile = False )
 						
 						# Update accuracy
@@ -304,7 +304,7 @@ if __name__ == '__main__':
 					for j in range(-10, 6): # coef0
 						print "Degree", degree, "polynomial with and coefficient of 2 **", j
 						
-						svm_settings = ['poly', degree, i, j, 10000]
+						svm_settings = ['poly', degree, len(data[1]), j, 10000]
 						acc = runSVM(data, results, float( sys.argv[2] ), svm_settings, 1, use_data = set_data, outfile = False )
 						
 						# Update accuracy
