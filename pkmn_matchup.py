@@ -95,10 +95,10 @@ def runEnsemble(matches, labels, win, valid_size, all_settings, iterations):
 		# Support vector machine
 		# Note that numpy arrays are needed
 		clf_svm = []
-		for i in range(0, len(all_settings)):
-			svm_settings = all_settings[i]
+		for j in range(0, len(all_settings)):
+			svm_settings = all_settings[j]
 			clf_svm.append( svm.SVC(kernel = svm_settings[0], degree = svm_settings[1], gamma = 1 / float( svm_settings[2] ), coef0 = 2 ** svm_settings[3], max_iter = svm_settings[4]) )
-			clf_svm[i].fit( np.array(test), np.array(test_res) )
+			clf_svm[j].fit( np.array(test), np.array(test_res) )
 		
 		# Make note of the current iteration
 		f.write( "Iteration " + str(i + 1) + "\n\n" )
@@ -124,16 +124,14 @@ def runEnsemble(matches, labels, win, valid_size, all_settings, iterations):
 				else:
 					win_vote += 1
 				# SVM
-				for i in range(0, len(clf_svm)):
-					predict_svm = clf_svm[i].predict( valid[j] )
 					if predict_svm[0] == 0:
-						lose_vote += 1
+						lose_vote += 0.25
 					else:
-						win_vote += 1
+						win_vote += 0.25
 				# Spectral Clustering
 				predict_spec = []
-				for i in range(0, len(win)):
-					predict_spec = [1] if labels [ data.index( valid[j] ) ] == win[i] else [0]
+				for k in range(0, len(win)):
+					predict_spec = [1] if labels [ data.index( valid[j] ) ] == win[k] else [0]
 				if predict_spec[0] == 0:
 					lose_vote += 1
 				else:
