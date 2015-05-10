@@ -1,0 +1,31 @@
+Cluster label 0, size 185
+49.7297297297% wins and 50.2702702703% losses
+
+
+Cluster label 1, size 164
+50.0% wins and 50.0% losses
+
+
+Cluster label 2, size 114
+50.0% wins and 50.0% losses
+
+
+Cluster label 3, size 179
+50.2793296089% wins and 49.7206703911% losses
+
+
+Silhouette Coefficient: -0.00260954409667
+Silhouette Coefficient: 0.00603436521691
+Silhouette Coefficient: -0.0112377555624
+
+Silhouette Coefficient: -0.00117443651282
+Silhouette Coefficient: 0.00457384909093
+Silhouette Coefficient: -0.0107916911553
+
+Silhouette Coefficient: -0.0126884657875
+Silhouette Coefficient: -0.0156008502598
+Silhouette Coefficient: -0.021738785738
+
+Silhouette Coefficient: 0.00379250540629
+Silhouette Coefficient: 0.00276204965853
+Silhouette Coefficient: 0.0119702066716
